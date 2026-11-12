@@ -197,6 +197,14 @@ line_chart(
     out="ch03_partner_hhi.png", fmt=lambda v: f"{v:.2f}", ymin=0,
 )
 N["hhi_baci"] = hhi.round(3).to_dict()
+# Singapore's HHI among all exporters in BACI's latest year (1st = least concentrated); written by scripts/baci_hhi.py
+from chart_style import rank_table  # noqa: E402
+hall = pd.read_csv(DERIVED / "baci_hhi_latest.csv")
+econ_all, eas_all = economies()
+hs = hall[hall.exporter.isin(econ_all)].set_index("exporter").hhi
+ht = rank_table(hs, eas_all, higher_is_better=False).loc[FOCUS]
+N["hhi_rank"] = {"value": float(ht.value), "rank": int(ht["rank"]), "n": int(ht.n), "region_rank": int(ht.region_rank),
+                 "region_n": int(ht.region_n), "year": int(hall.year.iloc[0])}
 
 # ---- 3.6 Gravity: ln(exports) = a + b1 ln(partner GDP) + b2 ln(distance)
 c = pd.read_csv(RAW / "wdi" / "countries.csv", keep_default_na=False)

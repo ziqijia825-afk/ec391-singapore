@@ -70,6 +70,14 @@
         "HKG": 2024,
         "VNM": 2024
       }
+    },
+    "manufacturing_rank": {
+      "value": 16.2580935927289,
+      "rank": 33,
+      "n": 178,
+      "region_rank": 10,
+      "region_n": 28,
+      "year": 2024
     }
   },
   "vs_region": {

@@ -16,7 +16,7 @@ Every chart and table on this site was built by the team from raw files download
 | UN Comtrade | UN | Singapore's reported exports and imports by partner, every year 2004 to 2024; HS chapter titles | [API](https://comtradeplus.un.org), `fetch_comtrade.py` |
 | OECD, Trade in Value Added, 2025 edition | IGO | Foreign and domestic value added in exports, origin of value added | [SDMX API](https://sdmx.oecd.org), `fetch_tiva.py` |
 | Penn World Table 11.0 | University (Groningen Growth and Development Centre) | Capital stock, employment, human capital | [Dataverse](https://doi.org/10.34894/FABVLR), `fetch_other.py` |
-| UNCTAD, World Investment Report 2026 annex tables | UN | FDI inflows, greenfield projects, cross-border M&A | [Annex tables](https://unctad.org/topic/investment/world-investment-report), `fetch_other.py` |
+| UNCTAD, World Investment Report 2026 annex tables | UN | FDI inflows, inward and outward FDI stocks for ranks, greenfield projects, cross-border M&A | [Annex tables](https://unctad.org/topic/investment/world-investment-report), `fetch_other.py` |
 | WTO Tariff Profiles | IGO | MFN averages, duty-free lines, tariff peaks and maximum duties for Singapore and peers | [WTO](https://www.wto.org/english/res_e/statis_e/tariff_profiles_list_e.htm), `fetch_other.py` |
 | UNCTAD TRAINS via World Bank WITS | UN / IGO | Non-tariff measures by type and sector | [WITS](https://wits.worldbank.org/tariff/non-tariff-measures/en/country/SGP), `fetch_wits_ntm.py` |
 | Enterprise Singapore, WTO RTA database, METI | Government / IGO | List of free trade agreements | `data/raw/manual/sg_fta_list.csv` |

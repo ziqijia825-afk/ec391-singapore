@@ -103,6 +103,32 @@
     "2024": 136199.07605933995,
     "2025": 150897.70163294964
   },
+  "stock_ranks": {
+    "inward": {
+      "pct_gdp": 389.41566246638945,
+      "rank": 4,
+      "n": 193,
+      "region_rank": 2,
+      "region_n": 33,
+      "usd_bn": 2230.873777843123,
+      "usd_rank": 6,
+      "usd_n": 199,
+      "usd_region_rank": 3,
+      "year": 2024
+    },
+    "outward": {
+      "pct_gdp": 204.95179928744673,
+      "rank": 5,
+      "n": 174,
+      "region_rank": 2,
+      "region_n": 28,
+      "usd_bn": 1174.1222524443137,
+      "usd_rank": 13,
+      "usd_n": 177,
+      "usd_region_rank": 4,
+      "year": 2024
+    }
+  },
   "sources_2024": {
     "United States Of America": 24.9,
     "Cayman Islands": 11.0,

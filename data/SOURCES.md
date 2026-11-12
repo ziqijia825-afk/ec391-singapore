@@ -17,6 +17,6 @@ One line per file group: files · database · version/edition · download date �
 | data/raw/manual/ti_cpi_2012_2024_owid.csv | Transparency International CPI via Our World in Data (replace with TI's own CPI2025_Results.xlsx, downloaded by hand in a browser) | 2012–2024 | 12 Nov 2026 | https://www.transparency.org/en/cpi/2025 | `fetch_other.py` |
 | data/raw/manual/undp_hdr25_composite_time_series.csv | UNDP Human Development Report | HDR 2025 (data to 2023) | 12 Nov 2026 | https://hdr.undp.org | `fetch_other.py` |
 | data/raw/manual/pwt110.dta | Penn World Table | 11.0 | 12 Nov 2026 | https://doi.org/10.34894/FABVLR | `fetch_other.py` |
-| data/raw/manual/unctad_wir26_tab*.xlsx | UNCTAD World Investment Report annex tables 1, 5, 7, 14, 17 | WIR 2026 | 12 Nov 2026 | https://unctad.org/topic/investment/world-investment-report | `fetch_other.py` |
+| data/raw/manual/unctad_wir26_tab*.xlsx | UNCTAD World Investment Report annex tables 1, 5, 7, 14, 17 (12 Nov 2026) and 3, 4 (FDI stocks, 13 Nov 2026) | WIR 2026 | 12 to 13 Nov 2026 | https://unctad.org/topic/investment/world-investment-report | `fetch_other.py` |
 | data/raw/manual/sg_fta_list.csv | Team list from Enterprise Singapore + WTO RTA database | Nov 2026 | 12 Nov 2026 | see `sg_fta_list.README.md` | hand-compiled |
 | (in `export_site_data.py`, facts) | Land area 745.1 km², June 2026, supplied by Estella; source to cite: SingStat Population Trends 2026 | Jun 2026 | 12 Nov 2026 | https://www.singstat.gov.sg/publication-resources/population-trends-2026 | typed in |

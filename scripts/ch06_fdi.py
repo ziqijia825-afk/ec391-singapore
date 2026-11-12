@@ -119,6 +119,42 @@ print("wrote data/derived/ch06_entry_mode_table.md")
 N["entry_mode"] = entry
 N["unctad_inflows"] = {y: float(inflow.loc["Singapore", y]) for y in (2004, 2014, 2024, 2025)}
 
+# ---- FDI stocks relative to GDP for every economy (UNCTAD WIR 2026 annex tables 3 and 4, US$; WDI GDP in US$)
+# UNCTAD excludes special purpose entities and the Caribbean financial centres, so its ratios are lower than SingStat's.
+import re as _re  # noqa: E402
+import unicodedata as _ud  # noqa: E402
+from chart_style import countries, economies, load, rank_table  # noqa: E402
+_norm = lambda t: _re.sub(r"[^a-z]", "", _ud.normalize("NFKD", str(t)).encode("ascii", "ignore").decode().lower())
+_cty = countries()
+_cty = _cty[~_cty.is_aggregate]
+_iso = {_norm(n): i for n, i in zip(_cty.name, _cty.iso3)}
+_iso.update({_norm(k): v for k, v in {
+    "Slovakia": "SVK", "Republic of Moldova": "MDA", "Republic of Korea": "KOR", "Egypt": "EGY", "Congo": "COG",
+    "Congo, Democratic Republic of": "COD", "Somalia": "SOM", "United Republic of Tanzania": "TZA", "Gambia": "GMB",
+    "Democratic People’s Republic of Korea": "PRK", "Hong Kong, China": "HKG", "Macao, China": "MAC",
+    "Lao People's Democratic Republic": "LAO", "Iran, Islamic Republic of": "IRN", "Yemen": "YEM", "State of Palestine": "PSE",
+    "Kyrgyzstan": "KGZ", "Bolivia, Plurinational State of": "BOL", "Venezuela, Bolivarian Republic of": "VEN",
+    "Saint Kitts and Nevis": "KNA", "Saint Lucia": "LCA", "Saint Vincent and the Grenadines": "VCT", "Sint Maarten": "SXM",
+    "Marshall Islands (the)": "MHL", "Micronesia, Federated States of": "FSM", "Nauru": "NRU"}.items()})
+_econ, _eas = economies()
+_gdp = load("NY.GDP.MKTP.CD")
+
+
+def stock_rank(tab, year=2024):
+    t = unctad(tab)
+    v = t[year].rename(index=lambda n: _iso.get(_norm(n))).dropna()
+    v = v[v.index.notna() & v.index.isin(_econ) & ~v.index.duplicated()] * 1e6
+    g = _gdp[_gdp.year == year].set_index("iso3").value
+    ratio = (100 * v / g.reindex(v.index)).dropna()
+    r = rank_table(ratio, _eas).loc[FOCUS]
+    rv = rank_table(v, _eas).loc[FOCUS]
+    return {"pct_gdp": float(r.value), "rank": int(r["rank"]), "n": int(r.n), "region_rank": int(r.region_rank),
+            "region_n": int(r.region_n), "usd_bn": float(rv.value / 1e9), "usd_rank": int(rv["rank"]), "usd_n": int(rv.n),
+            "usd_region_rank": int(rv.region_rank), "year": year}
+
+
+N["stock_ranks"] = {"inward": stock_rank("03"), "outward": stock_rank("04")}
+
 # ---- 6.4 Inward stock by immediate source economy, 2024
 src = singstat("M083801").query("period == '2024'")
 total = float(src.query("series_no == '1'").value.iloc[0])

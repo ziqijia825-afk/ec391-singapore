@@ -5,7 +5,7 @@ Run: python scripts/ch01_profile.py
 """
 import pandas as pd
 
-from chart_style import (DERIVED, FOCUS, GROUP, NAMES, RAW, economies, grouped_bars, line_chart, load, ordinal,
+from chart_style import (wdi_rank, DERIVED, FOCUS, GROUP, NAMES, RAW, economies, grouped_bars, line_chart, load, ordinal,
                          rank_table, retrieved, save_numbers)
 
 HDR = RAW / "manual" / "undp_hdr25_composite_time_series.csv"
@@ -72,7 +72,9 @@ for label, code in parts.items():
     rows[label] = last.value.reindex(GROUP)
     years[label] = last.year.reindex(GROUP).to_dict()
 struct = pd.DataFrame(rows).T
-numbers["structure"] = {"table": struct.round(1).to_dict(), "years": years}
+man_year = int(years["Manufacturing"][FOCUS])
+numbers["structure"] = {"table": struct.round(1).to_dict(), "years": years,
+                        "manufacturing_rank": wdi_rank("NV.IND.MANF.ZS", man_year)}  # share of GDP, 1st = highest
 y_note = sorted({int(y) for v in years.values() for y in v.values() if pd.notna(y)})
 grouped_bars(
     struct,

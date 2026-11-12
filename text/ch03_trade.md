@@ -59,7 +59,7 @@ Imports mirror exports. Electronics and instruments were 34.8 percent of goods i
 
 ![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
 
-**Mostly Asia, and no single market dominates.** On Singapore's own figures mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets on reconciled BACI data, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
+**Mostly Asia, and no single market dominates.** On Singapore's own figures mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets on reconciled BACI data, 0.074, is the lowest of the four economies and 45th lowest of 208 exporters (3rd of 37 in East Asia and the Pacific), so a downturn in one market hurts Singapore less than its neighbours.
 
 <details class="more" markdown="1">
 <summary>More: partner shares and how concentration changed</summary>

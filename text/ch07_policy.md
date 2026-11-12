@@ -57,11 +57,13 @@ Almost all imports of fuels, animal and vegetable products and processed food fa
 
 </details>
 
-## How does it protect investors?
+## How does it attract and protect investors?
 
 ![Singapore has 45 bilateral investment treaties in force](../figures/ch07_bits.png)
 
-**With 45 investment treaties and investment chapters in 26 trade agreements.** The treaties run from the United States in 1966 to Nigeria and Côte d'Ivoire in 2025, and with the FTA chapters they cover more than 60 partners ([METI](https://www.meti.gov.sg/trade-international-economic-relations/agreements-/international-investment-agreements--iias-/)). Free Trade Zones at the seaports and Changi Airport, and specialised estates such as Jurong Island and the wafer fab parks, add ready infrastructure for foreign plants (map in Chapter 1).
+**With 45 investment treaties and investment chapters in 26 trade agreements.** The treaties run from the United States in 1966 to Nigeria and Côte d'Ivoire in 2025, and with the FTA chapters they cover more than 60 partners ([METI](https://www.meti.gov.sg/trade-international-economic-relations/agreements-/international-investment-agreements--iias-/)).
+
+**Zones and estates.** With almost no tariffs there is little for an export processing zone to exempt, so Singapore's zones do two other jobs. Free Trade Zones at the seaports and Changi Airport let goods be stored and reshipped without paying duty or goods and services tax, which serves the re-export trade of Chapter 3. Estates built by the state agency JTC give foreign manufacturers ready land and utilities, and the industries they house hold more than half of the foreign capital in manufacturing, with S$69.3 billion in semiconductors at the wafer fab parks and 2.0 percent of all inward FDI in refining and chemicals on Jurong Island, out of 8.0 percent for manufacturing as a whole (Chapter 6). The Johor Singapore Special Economic Zone of January 2025 carries the idea across the border (map in Chapter 1).
 
 <details class="more" markdown="1">
 <summary>All 45 treaty partners, by decade of entry into force</summary>

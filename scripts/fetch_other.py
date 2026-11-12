@@ -21,10 +21,10 @@ FILES = {
     "undp_hdr25_composite_time_series.csv":
         "https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv",
     "pwt110.dta": "https://dataverse.nl/api/access/datafile/554030",  # doi:10.34894/FABVLR
-    # UNCTAD World Investment Report 2026 annex tables (FDI inflows; net cross-border M&A sales value and number;
+    # UNCTAD World Investment Report 2026 annex tables (FDI inflows; inward and outward FDI stock; net cross-border M&A sales value and number;
     # announced greenfield projects value and number, by destination)
     **{f"unctad_wir26_tab{t}.xlsx": f"https://unctad.org/system/files/non-official-document/wir26_tab{t}.xlsx"
-       for t in ("01", "05", "07", "14", "17")},
+       for t in ("01", "03", "04", "05", "07", "14", "17")},
 }
 # WTO tariff profiles (MFN applied and bound tariffs, duty ranges, maximum duties by product group), Ch. 7
 WTO = Path(__file__).resolve().parents[1] / "data" / "raw" / "wto"

@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-STEPS = ["ch01_profile.py", "ch02_macro.py", "ch03_trade.py", "ch04_rca.py", "ch05_gvc.py", "ch06_fdi.py",
+STEPS = ["baci_hhi.py", "ch01_profile.py", "ch02_macro.py", "ch03_trade.py", "ch04_rca.py", "ch05_gvc.py", "ch06_fdi.py",
          "ch07_policy.py", "ch09_case.py", "export_site_data.py"]
 
 

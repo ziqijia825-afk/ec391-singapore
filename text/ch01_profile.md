@@ -59,7 +59,7 @@ Singapore's Human Development Index rose from 0.905 in 2004 to 0.946 in 2023, ju
 
 ![Manufacturing is still 16% of Singapore's GDP](../figures/ch01_structure.png)
 
-**Mostly services, with a factory sector that Hong Kong SAR gave up.** Services are 73 percent of value added and manufacturing 16 percent, against less than 1 percent in Hong Kong SAR, which moved its factories into mainland China while Singapore kept courting high value manufacturing at home.
+**Mostly services, with a factory sector that Hong Kong SAR gave up.** Services are 73 percent of value added and manufacturing 16 percent (33rd of 178 economies and 10th of 28 in East Asia and the Pacific), against less than 1 percent in Hong Kong SAR, which moved its factories into mainland China while Singapore kept courting high value manufacturing at home.
 
 ## Implications for trade and investment
 
