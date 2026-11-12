@@ -139,6 +139,34 @@
     "chemicals": 0.6863271678429953,
     "refining": 1.2696881702919118
   },
+  "income": {
+    "receipts_pct_gdp": {
+      "2004": 19.5,
+      "2014": 22.6,
+      "2024": 36.3
+    },
+    "payments_pct_gdp": {
+      "2004": 25.5,
+      "2014": 26.1,
+      "2024": 53.7
+    },
+    "gni_gdp": {
+      "2004": 94.0,
+      "2014": 96.5,
+      "2024": 82.7
+    }
+  },
+  "outward_industries_2024": {
+    "Finance & Insurance": 50.5,
+    "Manufacturing": 17.0,
+    "Wholesale & Retail Trade": 6.7,
+    "Real Estate": 6.6,
+    "Others": 6.5,
+    "Information & Communications": 5.1,
+    "Professional And Administrative & Support Services": 3.8,
+    "Transportation & Storage": 2.7,
+    "Accommodation & Food Services": 0.8
+  },
   "outward_2024": {
     "total_sgd_bn": 1652.7955,
     "asia_share": 52.369201150414554,

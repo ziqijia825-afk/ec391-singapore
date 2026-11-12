@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Singapore: Trade and Investment Hub | EC 391</title>
+<meta name="description" content="A data-driven economic portrait of Singapore's trade and foreign direct investment, built from raw data for EC 391.">
+<link rel="icon" href="merlion.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:wght@400;600;700;800&family=Patrick+Hand+SC&display=swap">
+<link rel="stylesheet" href="app.css">
+<script src="vendor/echarts.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<section id="landing" aria-label="Singapore, from 1965 to 2024">
+  <h1 class="lettering title-top">From a Little Red Dot&hellip;</h1>
+  <div class="panel-map">
+    <div class="ph"><b>How a city with no resources<br>became a global trade hub</b><b class="r">Hover over Singapore<br>for its rankings</b></div>
+    <div id="landing-map" role="img" aria-label="Map of Southeast Asia with Singapore and its main shipping routes"></div>
+    <div class="pf"><span>Every chart built from raw data<br><span class="accent">EC 391 &middot; Fall 2026</span></span>
+      <button id="enter" type="button">Explore the data &darr;</button></div>
+  </div>
+  <p class="lettering title-bottom">&hellip;to a Global Hub</p>
+  <span class="credit">Illustration drawn by the team &middot; 1&deg;17&prime;N 103&deg;51&prime;E</span>
+</section>
+<div id="topbar">
+  <div class="row">
+    <a class="brand" href="#intro"><img src="merlion.svg" alt=""><span>Singapore</span></a>
+    <nav id="nav">{{NAV}}</nav>
+    <div id="timebar" title="Time control: line charts show 2004 to the selected year; snapshot charts show the selected year">
+      <label for="year">Year</label><input type="range" id="year" step="1"><output id="yearout"></output>
+      <button id="play" type="button" aria-label="Play through the years">▶</button>
+    </div>
+  </div>
+</div>
+<main id="content">
+{{SECTIONS}}
+<footer class="site"><img src="merlion.svg" alt=""><div>EC 391 Country Team Project: Singapore. Every chart is built by the team from raw
+data with the scripts in the project repository; sources are under each figure and in the <a href="#appendix">appendix</a>.
+<a href="EC391_Singapore.md">Full text (Markdown)</a> · <a href="article/index.html">Static article version</a></div></footer>
+</main>
+</body>
+</html>

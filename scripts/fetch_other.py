@@ -4,6 +4,7 @@
 - UNDP Human Development Report 2025, composite indices time series (HDI, schooling).
 - Penn World Table 11.0 (Groningen Growth and Development Centre): capital stock and employment for K/L (Ch. 4).
 - UNCTAD World Investment Report 2026 annex tables: FDI inflows, M&A and greenfield by host economy (Ch. 6).
+- WTO tariff profiles for Singapore and peers (data/raw/wto/), Ch. 7.
 Run: python scripts/fetch_other.py
 """
 from pathlib import Path
@@ -25,6 +26,11 @@ FILES = {
     **{f"unctad_wir26_tab{t}.xlsx": f"https://unctad.org/system/files/non-official-document/wir26_tab{t}.xlsx"
        for t in ("01", "05", "07", "14", "17")},
 }
+# WTO tariff profiles (MFN applied and bound tariffs, duty ranges, maximum duties by product group), Ch. 7
+WTO = Path(__file__).resolve().parents[1] / "data" / "raw" / "wto"
+WTO.mkdir(parents=True, exist_ok=True)
+WTO_FILES = {f"tariff_profile_{c}.pdf": f"https://www.wto.org/english/res_e/statis_e/daily_update_e/tariff_profiles/{c}_e.pdf"
+             for c in ("SG", "MY", "HK", "VN")}
 
 
 def main():
@@ -33,6 +39,11 @@ def main():
         r.raise_for_status()
         (OUT / name).write_bytes(r.content)
         print(f"{name}: {len(r.content) / 1e6:.1f} MB")
+    for name, url in WTO_FILES.items():
+        r = requests.get(url, headers=HEADERS, timeout=120)
+        r.raise_for_status()
+        (WTO / name).write_bytes(r.content)
+        print(f"wto/{name}: {len(r.content) / 1e3:.0f} kB")
 
 
 if __name__ == "__main__":

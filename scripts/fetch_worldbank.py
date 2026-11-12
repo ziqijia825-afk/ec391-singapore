@@ -32,6 +32,9 @@ INDICATORS = [
     *[(f"{d}.{m}", 3, f"A ch2 WGI {d} {m}")
       for d in ("VA", "PV", "GE", "RQ", "RL", "CC") for m in ("EST", "SC")],
     # Ch. 2 - B-READY: every IC.BRE.* indicator in WDI is added at run time (see discover()).
+    # Ch. 2 - legacy Doing Business (source 1, discontinued 2021): overall score (DB17-20 methodology) and rank
+    ("IC.BUS.EASE.DFRN.XQ.DB1719", 1, "A ch2 Doing Business score, DB17-20 methodology"),
+    ("IC.BUS.EASE.XQ", 1, "A ch2 Doing Business rank (1 = most business-friendly)"),
     # Ch. 1, 3, 4 - Member B
     ("SP.POP.TOTL", 2, "B ch1 population"),
     ("SP.DYN.LE00.IN", 2, "B ch1 life expectancy"),
@@ -72,6 +75,11 @@ INDICATORS = [
     ("BM.KLT.DINV.CD.WD", 2, "C ch6 FDI net outflows US$"),
     ("BM.KLT.DINV.WD.GD.ZS", 2, "C ch6 FDI net outflows % of GDP"),
     ("NE.GDI.FTOT.CD", 2, "C ch6 gross fixed capital formation US$"),
+    ("BX.GSR.FCTY.CD", 2, "C ch6 primary income receipts (BoP) US$: earnings on investment abroad"),
+    ("BM.GSR.FCTY.CD", 2, "C ch6 primary income payments (BoP) US$: earnings of foreign investors"),
+    ("NY.GNP.MKTP.CD", 2, "C ch6 GNI current US$"),
+    ("BX.GSR.TOTL.CD", 2, "B ch3 exports of goods, services and primary income"),
+    ("BX.GSR.CCIS.CD", 2, "B ch4 ICT service exports US$"),
     # Ch. 7 - Member C: tariffs (applied and MFN, simple and trade-weighted mean, all products)
     ("TM.TAX.MRCH.SM.AR.ZS", 2, "C ch7 tariff rate, applied, simple mean %"),
     ("TM.TAX.MRCH.WM.AR.ZS", 2, "C ch7 tariff rate, applied, weighted mean %"),

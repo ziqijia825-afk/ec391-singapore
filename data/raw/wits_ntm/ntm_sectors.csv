@@ -1,0 +1,51 @@
+iso3,sector,coverage,frequency,products
+SGP,Fuels,99.77,41.18,14.0
+SGP,Animal,99.22,93.08,242.0
+SGP,Vegetable,96.72,84.76,267.0
+SGP,Food Products,95.36,92.65,189.0
+SGP,Chemicals,63.87,50.0,365.0
+SGP,All Import Products,39.3,27.79,1343.0
+SGP,Transportation,36.11,36.97,44.0
+SGP,Miscellaneous,30.47,17.49,60.0
+SGP,Plastic or Rubber,13.65,7.11,15.0
+SGP,Stone and Glass,7.77,4.26,8.0
+SGP,Mach and Elec,7.41,12.43,95.0
+SGP,Textiles and Clothing,1.96,0.71,5.0
+SGP,Minerals,1.92,11.25,9.0
+SGP,Wood,0.94,2.69,6.0
+SGP,Metals,0.56,3.99,22.0
+SGP,Footwear,0.03,2.13,1.0
+SGP,Hides and Skins,0.02,1.85,1.0
+MYS,Animal,100.0,100.0,304.0
+MYS,Vegetable,99.58,99.42,344.0
+MYS,Food Products,99.31,99.04,206.0
+MYS,Fuels,92.05,46.15,18.0
+MYS,Mach and Elec,72.77,40.86,315.0
+MYS,Hides and Skins,59.28,81.25,52.0
+MYS,All Import Products,54.96,36.6,1862.0
+MYS,Chemicals,32.62,28.06,213.0
+MYS,Miscellaneous,30.54,33.9,120.0
+MYS,Transportation,28.37,14.96,19.0
+MYS,Wood,26.92,45.92,107.0
+MYS,Footwear,25.04,31.91,15.0
+MYS,Textiles and Clothing,14.01,11.86,92.0
+MYS,Metals,4.07,7.04,39.0
+MYS,Minerals,2.1,4.85,5.0
+MYS,Stone and Glass,0.59,5.76,11.0
+MYS,Plastic or Rubber,0.22,0.95,2.0
+VNM,Food Products,100.0,100.0,206.0
+VNM,Vegetable,99.98,99.07,319.0
+VNM,Textiles and Clothing,98.52,98.98,777.0
+VNM,Animal,79.17,95.0,247.0
+VNM,Fuels,78.17,7.69,3.0
+VNM,Chemicals,52.97,33.24,248.0
+VNM,Wood,51.61,47.64,111.0
+VNM,Metals,50.58,35.57,196.0
+VNM,Stone and Glass,42.51,37.7,72.0
+VNM,All Import Products,37.99,47.04,2340.0
+VNM,Minerals,33.41,40.86,38.0
+VNM,Transportation,30.1,17.74,22.0
+VNM,Miscellaneous,16.13,13.6,45.0
+VNM,Plastic or Rubber,10.19,8.53,18.0
+VNM,Mach and Elec,4.39,3.37,26.0
+VNM,Footwear,3.49,25.53,12.0

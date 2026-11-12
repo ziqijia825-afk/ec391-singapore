@@ -1,50 +1,40 @@
 """Ch. 4 Specialization and comparative advantage.
 
-Balassa RCA_ik = (X_ik / X_i) / (X_wk / X_w), computed by the team from Atlas exports of goods (HS 1992) and services,
-with the world = all economies in the Atlas. Sector RCA uses goods + services totals; HS-chapter RCA uses goods only.
+Balassa RCA_ik = (X_ik / X_i) / (X_wk / X_w), computed by the team from approved sources only: CEPII BACI (goods,
+HS 1992) and World Bank WDI balance-of-payments services exports (see trade_data.py). Sector RCA uses goods +
+services; HS-chapter RCA in the table uses goods only.
 Endowments: Penn World Table 11.0 (capital per worker, human capital), WDI (arable land, resource rents).
-Outputs: figures/ch04_*.png, data/derived/ch04_rca_heat.md, ch04_hs_table.md, ch04_endowments.md, ch04.json
+Outputs: figures/ch04_*.png, data/derived/ch04_rca_heat.md, ch04_hs_table.md, ch04_endowments.md, ch04.json,
+         data/derived/rca_years.json (treemap and trend panel on the site)
 Run: python scripts/ch04_rca.py
 """
+import json
+
 import pandas as pd
 
 from chart_style import (DERIVED, FOCUS, GROUP, NAMES, RAW, bar_rank, economies, grouped_bars, load, ordinal,
-                         rank_table, retrieved, save_numbers, wdi_rank)
-from sectors import GOODS, SERVICES, hs_to_sector, services_to_sector
+                         rank_table, retrieved, sanitize, save_numbers, wdi_rank)
+from sectors import GOODS, SERVICES, hs_to_sector
+from trade_data import SOURCE, exports_by_sector, goods_hs2, rca
 
 econ, eas = economies()
-ATLAS = RAW / "atlas"
-YEARS = [2004, 2014, 2024]
 N = {}
-
-hs = pd.read_csv(ATLAS / "hs92_country_product_year_2.csv", dtype={"product_hs92_code": str},
-                 usecols=["country_iso3_code", "product_hs92_code", "year", "export_value"])
-hs = hs[hs.product_hs92_code.str.isdigit() & hs.year.isin(YEARS)]
-hs["chapter"] = hs.product_hs92_code.astype(int)
-hs["sector"] = hs.chapter.map(hs_to_sector())
-sv = pd.read_csv(ATLAS / "services_unilateral_country_product_year_2.csv",
-                 usecols=["country_iso3_code", "product_services_unilateral_code", "year", "export_value"])
-sv = sv[sv.year.isin(YEARS) & (sv.export_value > 0)]  # a zero services category means "not reported" (n/a)
-sv["sector"] = sv.product_services_unilateral_code.map(services_to_sector()).fillna("Other services")
-
-# ---- sector RCA (goods + services)
-x = pd.concat([hs.groupby(["country_iso3_code", "year", "sector"]).export_value.sum(),
-               sv.groupby(["country_iso3_code", "year", "sector"]).export_value.sum()])
-x = x.groupby(level=[0, 1, 2]).sum()
-xi = x.groupby(level=[0, 1]).transform("sum")              # country total
-xwk = x.groupby(level=[1, 2]).transform("sum")             # world by sector
-xw = x.groupby(level=[1]).transform("sum")                 # world total
-rca = (x / xi) / (xwk / xw)
-rca = rca.rename("rca").reset_index().rename(columns={"country_iso3_code": "iso3"})
-SECTOR_ORDER = [s for s in GOODS if s != "Other goods"] + [s for s in SERVICES] + ["Other goods"]
+BACI_NOTE = DERIVED / "baci_hs2.csv"
+x = exports_by_sector()
+LAST = int(x.year.max())
+YEARS = [2004, 2014, LAST]
+r = rca(x)
+SECTOR_ORDER = [s for s in GOODS if s != "Other goods"] + SERVICES + ["Other goods"]
+src_line = f"Source: team calculation from {SOURCE}. BACI downloaded {retrieved(path=BACI_NOTE)}."
 
 
 def rca_table(year):
-    t = rca[(rca.year == year) & rca.iso3.isin(GROUP)].pivot(index="sector", columns="iso3", values="rca")
+    t = r[(r.year == year) & r.iso3.isin(GROUP)].pivot(index="sector", columns="iso3", values="rca")
     return t.reindex(index=[s for s in SECTOR_ORDER if s in t.index], columns=GROUP)
 
 
-heat = rca_table(2024)
+# ---- heat table, latest year
+heat = rca_table(LAST)
 
 
 def shade(v):
@@ -64,63 +54,90 @@ def shade(v):
 html = ['<table class="rca">', "<thead><tr><th>Sector</th>" + "".join(f"<th>{NAMES[g]}</th>" for g in GROUP)
         + "</tr></thead>", "<tbody>"]
 for sector, row in heat.iterrows():
-    cells = "".join(f"<td{shade(v)[0]}>{shade(v)[1]}</td>" for v in row.values)
-    html.append(f"<tr><td>{sector}</td>{cells}</tr>")
+    html.append(f"<tr><td>{sector}</td>" + "".join(f"<td{shade(v)[0]}>{shade(v)[1]}</td>" for v in row.values) + "</tr>")
 html += ["</tbody></table>", "",
-         "*Balassa RCA = (country's exports of sector k / its total exports of goods and services) ÷ (world exports of "
-         "k / world total), 2024. Shading: dark blue ≥ 10, blue 2 to 10, light blue 1 to 2, gray < 1 (no comparative "
-         "advantage); n/a = the Atlas has no data for that services category (Vietnam reports only unspecified services, "
-         "Hong Kong SAR no business services in 2024). Computed by the team from the Harvard Growth Lab Atlas of Economic Complexity (Dataverse v18), "
-         f"downloaded {retrieved(path=ATLAS / 'hs92_country_product_year_2.csv')}; sector grouping in the appendix.*", ""]
+         f"*Balassa RCA = (country's exports of sector k / its total exports of goods and services) ÷ (world exports of k / "
+         f"world total), {LAST}. Shading: dark blue ≥ 10, blue 2 to 10, light blue 1 to 2, gray < 1 (no comparative "
+         f"advantage); n/a = no services breakdown reported. {src_line} Sector grouping in the appendix.*", ""]
 (DERIVED / "ch04_rca_heat.md").write_text("\n".join(html))
 print("wrote data/derived/ch04_rca_heat.md")
 
 # ---- Singapore's RCA over time
-sg = pd.DataFrame({str(y): rca_table(y)[FOCUS] for y in [2024, 2014, 2004]})
-sg = sg.loc[[s for s in SECTOR_ORDER if s in sg.index and s != "Other goods"]]
-sg_sorted = sg.sort_values("2024", ascending=False)
-n_adv = int((sg["2024"] >= 1).sum())
+sg = pd.DataFrame({str(y): rca_table(y)[FOCUS] for y in sorted(YEARS, reverse=True)})
+sg = sg.loc[[s for s in SECTOR_ORDER if s in sg.index and s != "Other goods"]].sort_values(str(LAST), ascending=False)
 grouped_bars(
-    sg_sorted.rename(columns={"2024": "2024", "2014": "2014", "2004": "2004"}),
-    title=f"Singapore's comparative advantage shifted from goods toward transport and financial services",
-    subtitle="Balassa RCA by sector, Singapore, 2004, 2014 and 2024. Dashed line: RCA = 1",
+    sg,
+    title="How Singapore's revealed comparative advantage changed by sector",
+    subtitle=f"Balassa RCA by sector, Singapore, 2004, 2014 and {LAST}. Dashed line: RCA = 1",
     xlabel="RCA (above 1 = comparative advantage)", fmt=lambda v: f"{v:.1f}",
-    source="Source: team calculation from the Harvard Growth Lab Atlas of Economic Complexity (goods HS 1992 and "
-           f"services, Dataverse v18), downloaded {retrieved(path=ATLAS / 'hs92_country_product_year_2.csv')}. "
-           "Sector grouping in the appendix.",
-    out="ch04_rca_change.png", ref=1,
+    source=src_line + " Sector grouping in the appendix.", out="ch04_rca_change.png", ref=1,
 )
+N["last_year"] = LAST
 N["rca_sector"] = {y: rca_table(y).round(2).to_dict() for y in YEARS}
-N["rca_sgp_n_above1_2024"] = n_adv
+N["rca_sgp_n_above1"] = int((sg[str(LAST)] >= 1).sum())
 
-# ---- HS-chapter RCA (goods only) for Singapore: top chapters by export value
-g = hs.groupby(["country_iso3_code", "year", "chapter"]).export_value.sum()
-gi = g.groupby(level=[0, 1]).transform("sum")
-gwk = g.groupby(level=[1, 2]).transform("sum")
-gw = g.groupby(level=[1]).transform("sum")
-grca = ((g / gi) / (gwk / gw)).rename("rca").reset_index()
-names = pd.read_csv(ATLAS / "product_hs92.csv", dtype={"product_hs92_code": str})
-names = names[names.product_level == 2].set_index("product_hs92_code").product_name_short
-sgx = g.loc[FOCUS].unstack(0)
-share24 = sgx[2024] / sgx[2024].sum() * 100
-top = share24.sort_values(ascending=False).head(15).index
-lines = ["| HS | Product | Share of Singapore's goods exports, 2024 | RCA 2004 | RCA 2014 | RCA 2024 |",
+# ---- HS-chapter RCA (goods only) for Singapore
+g = goods_hs2()
+g = g[g.iso3.isin(econ | {"TWN"})]
+gr = rca(g, by=("iso3", "chapter", "year"))
+titles = pd.read_csv(RAW / "comtrade" / "hs_chapters.csv", dtype={"chapter": str}).set_index("chapter").title
+sgx = g[g.iso3 == FOCUS].pivot(index="chapter", columns="year", values="value")
+share = sgx[LAST] / sgx[LAST].sum() * 100
+top = share.sort_values(ascending=False).head(15).index
+lines = ["| HS | Product | Share of Singapore's goods exports, " + str(LAST) + " | RCA 2004 | RCA 2014 | RCA " + str(LAST) + " |",
          "| --- | --- | --- | --- | --- | --- |"]
 hs_out = []
 for ch in top:
-    r = {y: grca[(grca.country_iso3_code == FOCUS) & (grca.year == y) & (grca.chapter == ch)].rca for y in YEARS}
-    vals = [float(r[y].iloc[0]) if len(r[y]) else float("nan") for y in YEARS]
-    nm = names.get(f"{ch:02d}", str(ch))
-    lines.append(f"| {ch:02d} | {nm} | {share24[ch]:.1f}% | " + " | ".join(f"{v:.2f}" for v in vals) + " |")
-    hs_out.append([f"{ch:02d}", nm, round(float(share24[ch]), 1)] + [round(v, 2) for v in vals])
-lines.append("\n*Goods-only Balassa RCA by HS 1992 chapter (world = all Atlas economies). Source: team calculation from "
-             "the Harvard Growth Lab Atlas of Economic Complexity. HS 99 is unclassified trade.*\n")
+    vals = []
+    for y in YEARS:
+        v = gr[(gr.iso3 == FOCUS) & (gr.year == y) & (gr.chapter == ch)].rca
+        vals.append(float(v.iloc[0]) if len(v) else float("nan"))
+    nm = titles.get(f"{ch:02d}", str(ch))
+    nm = nm if len(nm) <= 70 else nm[:67].rsplit(" ", 1)[0] + "…"
+    lines.append(f"| {ch:02d} | {nm} | {share[ch]:.1f}% | " + " | ".join(f"{v:.2f}" for v in vals) + " |")
+    hs_out.append([f"{ch:02d}", nm, round(float(share[ch]), 1)] + [round(v, 2) for v in vals])
+lines.append("\n*Goods-only Balassa RCA by HS 1992 chapter (world = all BACI exporters). Source: team calculation from "
+             "CEPII BACI; chapter titles from UN Comtrade's HS reference.*\n")
 (DERIVED / "ch04_hs_table.md").write_text("\n".join(lines))
 print("wrote data/derived/ch04_hs_table.md")
 N["rca_hs_top"] = hs_out
-# number of HS chapters with RCA >= 1 (diversification), Singapore and peers
-N["n_chapters_rca_ge1_2024"] = {k: int((grca[(grca.country_iso3_code == k) & (grca.year == 2024)].rca >= 1).sum())
-                                for k in GROUP}
+N["n_chapters_rca_ge1"] = {k: int((gr[(gr.iso3 == k) & (gr.year == LAST)].rca >= 1).sum()) for k in GROUP}
+
+# ---- data for the interactive treemap: sectors (goods + services) with HS-chapter children, every year
+items = pd.concat([g.assign(item=g.chapter.map(lambda c: f"HS {c:02d}"))[["iso3", "item", "year", "value"]],
+                   x[x.sector.isin(SERVICES)].rename(columns={"sector": "item"})[["iso3", "item", "year", "value"]]])
+ir = rca(items, by=("iso3", "item", "year")).set_index(["iso3", "item", "year"]).rca
+sector_of = {f"HS {c:02d}": s for c, s in hs_to_sector().items()}
+tm_years = {}
+for y in sorted(set(x.year)):
+    if y < 2004:
+        continue
+    xs = x[(x.iso3 == FOCUS) & (x.year == y)].groupby("sector").value.sum()
+    rs = r[(r.iso3 == FOCUS) & (r.year == y)].set_index("sector").rca
+    gy = g[(g.iso3 == FOCUS) & (g.year == y)].set_index("chapter").value
+    sectors = []
+    for sname in SECTOR_ORDER:
+        if sname not in xs.index:
+            continue
+        node = {"name": sname, "value": float(xs[sname] / 1e9), "rca": float(rs.get(sname, float("nan")))}
+        if sname in GOODS:
+            kids = [{"name": f"HS {c:02d} {titles.get(f'{c:02d}', '')[:38]}", "value": float(v / 1e9),
+                     "rca": float(ir.get((FOCUS, f"HS {c:02d}", y), float("nan")))}
+                    for c, v in gy.items() if sector_of.get(f"HS {c:02d}") == sname and v > 5e7]
+            node["children"] = sorted(kids, key=lambda k: -k["value"])
+        sectors.append(node)
+    tm_years[int(y)] = sectors
+trend = {}
+for sname in SECTOR_ORDER:
+    t = r[(r.sector == sname) & r.iso3.isin(GROUP) & (r.year >= 2004)].pivot(index="year", columns="iso3", values="rca")
+    if len(t):
+        trend[sname] = {"years": [int(v) for v in t.index],
+                        "values": {k: [None if pd.isna(v) else float(v) for v in t[k]] if k in t.columns else []
+                                   for k in GROUP}}
+(DERIVED / "rca_years.json").write_text(json.dumps(sanitize({"years": tm_years, "trend": trend,
+                                                             "source": src_line.replace("Source: ", "")}),
+                                                   separators=(",", ":"), allow_nan=False))
+print("wrote data/derived/rca_years.json")
 
 # ---- Endowments (Penn World Table 11.0)
 PWT = RAW / "manual" / "pwt110.dta"
@@ -143,44 +160,35 @@ bar_rank(
            f"variables rnna / emp, downloaded {retrieved(path=PWT)}. Rank among {int(klr.n)} economies in PWT {pyear}.",
     out="ch04_capital_per_worker.png",
 )
-end_rows = [
-    ("Capital per worker (PWT rnna/emp)", f"${kl[FOCUS] / 1e3:,.0f}k", pyear, klr),
-    ("Human capital index (PWT hc)", f"{p.hc[FOCUS]:.2f}", pyear, hcr),
-]
-for label, code, hib, fmt in [("Arable land per person", "AG.LND.ARBL.HA.PC", True, lambda v: f"{v:.4f} ha"),
-                              ("Natural resource rents, % of GDP", "NY.GDP.TOTL.RT.ZS", True, lambda v: f"{v:.2f}%")]:
+end_rows = [("Capital per worker (PWT rnna/emp)", f"${kl[FOCUS] / 1e3:,.0f}k", pyear, klr),
+            ("Human capital index (PWT hc)", f"{p.hc[FOCUS]:.2f}", pyear, hcr)]
+for label, code, fmt in [("Arable land per person", "AG.LND.ARBL.HA.PC", lambda v: f"{v:.4f} ha"),
+                         ("Natural resource rents, % of GDP", "NY.GDP.TOTL.RT.ZS", lambda v: f"{v:.2f}%")]:
     yr = int(load(code).query("iso3 == 'SGP'").year.max())
-    r = wdi_rank(code, yr, hib)
-    end_rows.append((label, fmt(r["value"]), yr, pd.Series({"rank": r["rank"], "n": r["n"],
-                                                            "region_rank": r["region_rank"], "region_n": r["region_n"]})))
-lines = ["| Endowment | Singapore | Year | Global rank | East Asia & Pacific rank | Malaysia | Hong Kong SAR | Vietnam |",
-         "| --- | --- | --- | --- | --- | --- | --- | --- |"]
-peer_vals = {
-    "Capital per worker (PWT rnna/emp)": [f"${kl.get(k, float('nan')) / 1e3:,.0f}k" for k in ["MYS", "HKG", "VNM"]],
-    "Human capital index (PWT hc)": [f"{p.hc.get(k, float('nan')):.2f}" for k in ["MYS", "HKG", "VNM"]],
-}
+    rr = wdi_rank(code, yr, True)
+    end_rows.append((label, fmt(rr["value"]), yr, pd.Series({"rank": rr["rank"], "n": rr["n"],
+                                                             "region_rank": rr["region_rank"], "region_n": rr["region_n"]})))
+peer_vals = {"Capital per worker (PWT rnna/emp)": [f"${kl.get(k, float('nan')) / 1e3:,.0f}k" for k in ["MYS", "HKG", "VNM"]],
+             "Human capital index (PWT hc)": [f"{p.hc.get(k, float('nan')):.2f}" for k in ["MYS", "HKG", "VNM"]]}
 for label, code in [("Arable land per person", "AG.LND.ARBL.HA.PC"), ("Natural resource rents, % of GDP", "NY.GDP.TOTL.RT.ZS")]:
     d = load(code)
-    pv = []
-    for k in ["MYS", "HKG", "VNM"]:
-        dk = d[d.iso3 == k].sort_values("year")
-        pv.append(f"{dk.value.iloc[-1]:.4f} ha" if "ha" in label or "Arable" in label else f"{dk.value.iloc[-1]:.2f}%")
-    peer_vals[label] = pv
-for label, val, yr, r in end_rows:
-    lines.append(f"| {label} | {val} | {yr} | {ordinal(r['rank'])} of {int(r['n'])} | "
-                 f"{ordinal(r['region_rank'])} of {int(r['region_n'])} | " + " | ".join(peer_vals[label]) + " |")
+    peer_vals[label] = [(f"{d[d.iso3 == k].sort_values('year').value.iloc[-1]:.4f} ha" if "Arable" in label
+                         else f"{d[d.iso3 == k].sort_values('year').value.iloc[-1]:.2f}%") for k in ["MYS", "HKG", "VNM"]]
+lines = ["| Endowment | Singapore | Year | Global rank | East Asia & Pacific rank | Malaysia | Hong Kong SAR | Vietnam |",
+         "| --- | --- | --- | --- | --- | --- | --- | --- |"]
+for label, val, yr, rr in end_rows:
+    lines.append(f"| {label} | {val} | {yr} | {ordinal(rr['rank'])} of {int(rr['n'])} | "
+                 f"{ordinal(rr['region_rank'])} of {int(rr['region_n'])} | " + " | ".join(peer_vals[label]) + " |")
 lines.append("\n*Rank 1st = most abundant. Sources: Penn World Table 11.0; World Bank WDI (AG.LND.ARBL.HA.PC, "
              f"NY.GDP.TOTL.RT.ZS), retrieved {retrieved('NY.GDP.TOTL.RT.ZS')}.*\n")
 (DERIVED / "ch04_endowments.md").write_text("\n".join(lines))
 print("wrote data/derived/ch04_endowments.md")
 N["endowments"] = {"pwt_year": pyear, "kl_sgp": float(kl[FOCUS]), "kl_rank": int(klr["rank"]), "kl_n": int(klr.n),
                    "kl_peers": {k: float(kl.get(k, float("nan"))) for k in sel},
-                   "hc_sgp": float(p.hc[FOCUS]), "hc_rank": int(hcr["rank"]), "hc_n": int(hcr.n),
-                   "hc_peers": {k: float(p.hc.get(k, float("nan"))) for k in GROUP}}
+                   "hc_sgp": float(p.hc[FOCUS]), "hc_rank": int(hcr["rank"]), "hc_n": int(hcr.n)}
 save_numbers("ch04", N)
 print(heat.round(2).to_string())
 print(sg.round(2).to_string())
-print("\n".join(lines))
-for r in hs_out:
-    print(r)
-print(N["n_chapters_rca_ge1_2024"])
+for row in hs_out:
+    print(row)
+print(N["n_chapters_rca_ge1"])

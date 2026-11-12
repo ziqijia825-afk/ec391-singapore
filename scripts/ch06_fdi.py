@@ -188,6 +188,41 @@ bar_rank(
            f"({total_o / float(gdp[2024]) * 100:.0f}% of GDP). Recorded by immediate destination.",
     out="ch06_outward_destinations.png",
 )
+# ---- 6.8 Is investment abroad a significant source of income? Primary income flows, % of GDP
+inc = pd.DataFrame({
+    "Income received from abroad": wide("BX.GSR.FCTY.CD", [FOCUS])[FOCUS] / wide("NY.GDP.MKTP.CD", [FOCUS])[FOCUS] * 100,
+    "Income paid to foreign investors": wide("BM.GSR.FCTY.CD", [FOCUS])[FOCUS] / wide("NY.GDP.MKTP.CD", [FOCUS])[FOCUS] * 100,
+}).dropna()
+gni_gdp = (wide("NY.GNP.MKTP.CD", [FOCUS])[FOCUS] / wide("NY.GDP.MKTP.CD", [FOCUS])[FOCUS] * 100).dropna()
+line_chart(
+    inc,
+    title=f"Income from investment abroad reached {inc.iloc[-1, 0]:.0f}% of GDP, but foreign investors take out more",
+    subtitle=f"Primary income receipts and payments (mostly investment income), % of GDP, 2004 to {inc.index.max()}",
+    ylabel="% of GDP", fmt=lambda v: f"{v:.0f}%", labels={c: c for c in inc.columns},
+    source=f"Source: World Bank WDI (BX.GSR.FCTY.CD, BM.GSR.FCTY.CD, NY.GDP.MKTP.CD), balance of payments basis, "
+           f"retrieved {retrieved('BX.GSR.FCTY.CD')}. Primary income also includes a small amount of compensation of "
+           "employees.",
+    out="ch06_income.png",
+)
+N["income"] = {"receipts_pct_gdp": inc.iloc[:, 0].round(1).loc[[2004, 2014, inc.index.max()]].to_dict(),
+               "payments_pct_gdp": inc.iloc[:, 1].round(1).loc[[2004, 2014, inc.index.max()]].to_dict(),
+               "gni_gdp": gni_gdp.round(1).loc[[2004, 2014, gni_gdp.index.max()]].to_dict()}
+
+# ---- 6.7 Outward stock by industry abroad, 2024
+oi = singstat("M084441").query("period == '2024'")
+oi_tot = float(oi.query("series_no == '1'").value.iloc[0])
+oi_sh = (oi[oi.series_no != "1"].set_index("series").value / oi_tot * 100).sort_values(ascending=False)
+oi_sh = oi_sh[oi_sh > 0.5]
+bar_rank(
+    oi_sh,
+    title=f"Half of Singapore's investment abroad is in finance; manufacturing takes "
+          f"{oi_sh.filter(like='Manufacturing').iloc[0]:.0f}%".replace(";", ","),
+    subtitle="Singapore's direct investment abroad by industry of the foreign affiliate, % of total, end-2024",
+    xlabel="% of outward FDI stock", fmt=lambda v: f"{v:.1f}%", highlight=(), light=("Manufacturing",),
+    source=f"Source: {ss_note('M084441')}; total S${oi_tot / 1e6:,.2f} trillion.",
+    out="ch06_outward_industries.png",
+)
+N["outward_industries_2024"] = oi_sh.round(1).to_dict()
 N["outward_2024"] = {"total_sgd_bn": total_o / 1e3, "asia_share": float(asia.iloc[0]) / total_o * 100,
                      "asean_share": float(asean.iloc[0]) / total_o * 100 if len(asean) else None,
                      "top": dshare.head(12).round(1).to_dict()}

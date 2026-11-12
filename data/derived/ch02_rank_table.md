@@ -8,6 +8,7 @@
 | Inflation (CPI), 2024 | 2.4% | 2024 | 65th of 176 | 15th of 26 |
 | Current account, % of GDP | 17.2% | 2024 | 6th of 168 | 3rd of 26 |
 | Logistics Performance Index (1 to 5) | 4.30 | 2022 | 1st of 138 | 1st of 18 |
+| Ease of Doing Business rank (legacy, DB2020 report) | 2 of 190 | 2019 | 2nd of 189 | 2nd of 28 |
 | Average real growth 2004 to 2024 | 5.0% | 2004 to 2024 | 41st of 193 | 10th of 32 |
 | WGI: Voice and accountability (0 to 100) | 54.6 | 2025 | 111th of 203 | 22nd of 34 |
 | WGI: Political stability (0 to 100) | 89.0 | 2025 | 12th of 207 | 7th of 36 |
@@ -22,4 +23,4 @@
 | Gini, after taxes and transfers (SingStat) | 0.359 | 2025 | not ranked¹ | not ranked¹ |
 | Poverty headcount, $3.00/day (2021 PPP) | no data² | | | |
 
-*Ranks: 1st = best (highest, except inflation: lowest) among economies with data; World Bank aggregates excluded; ties share a rank. B-READY ranks are among the economies it covers. ¹ Singapore's Gini is a national series on employment income and is not comparable with survey-based Gini for other countries. ² The World Bank publishes no poverty headcount for Singapore (no household survey in its database). Sources: World Bank WDI, WGI and B-READY via the WDI API, retrieved Nov 12, 2026; Transparency International CPI; Singapore Department of Statistics.*
+*Ranks: 1st = best (highest, except inflation: lowest) among economies with data; World Bank aggregates excluded; ties share a rank. Doing Business (discontinued in 2021) ranked 190 economies; its last edition, DB2020, uses 2019 data (WDI IC.BUS.EASE.XQ). B-READY ranks are among the economies it covers. ¹ Singapore's Gini is a national series on employment income and is not comparable with survey-based Gini for other countries. ² The World Bank publishes no poverty headcount for Singapore (no household survey in its database). Sources: World Bank WDI, WGI and B-READY via the WDI API, retrieved Nov 12, 2026; Transparency International CPI; Singapore Department of Statistics.*

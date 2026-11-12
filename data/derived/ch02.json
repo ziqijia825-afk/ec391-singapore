@@ -373,6 +373,14 @@
     "region_n": 18,
     "year": 2022
   },
+  "doing_business_2019": {
+    "value": 2.0,
+    "rank": 2,
+    "n": 189,
+    "region_rank": 2,
+    "region_n": 28,
+    "year": 2019
+  },
   "inflation_2024": {
     "value": 2.38951123595017,
     "rank": 65,

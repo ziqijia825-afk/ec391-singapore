@@ -1,4 +1,4 @@
-| Sector | HS 1992 chapters | Atlas services | OECD TiVA (ISIC rev.4) | SingStat FDI series |
+| Sector | HS 1992 chapters (BACI) | WDI services exports | OECD TiVA (ISIC rev.4) | SingStat FDI series |
 | --- | --- | --- | --- | --- |
 | Electronics & instruments | 85, 90 to 92 |  | C26_27 | 1.1.10, 1.1.11 |
 | Machinery incl. computers | 84 |  | C28 | 1.1.9 |
@@ -10,9 +10,9 @@
 | Transport equipment | 86 to 89 |  | C29_30 | 1.1.12 |
 | Other goods | all other |  |  |  |
 | Wholesale trade |  |  | G | 1.3.1 |
-| Transport & logistics |  | transport | H | 1.5 |
-| Finance & insurance |  | financial | K | 1.7 |
-| ICT & business services |  | ict | J, M_N | 1.6, 1.9 |
-| Travel & tourism |  | travel | I | 1.4 |
+| Transport & logistics |  | BX.GSR.TRAN.ZS | H | 1.5 |
+| Finance & insurance |  | BX.GSR.INSF.ZS | K | 1.7 |
+| ICT & business services |  | BX.GSR.CMCP.ZS | J, M_N | 1.6, 1.9 |
+| Travel & tourism |  | BX.GSR.TRVL.ZS | I | 1.4 |
 
 *Mapping between classifications is approximate (for example, HS 84 includes computers, which ISIC classifies in C26).*

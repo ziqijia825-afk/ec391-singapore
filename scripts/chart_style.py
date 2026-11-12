@@ -118,9 +118,10 @@ def latest_year(code, iso=FOCUS, last=LAST):
 def retrieved(code=None, path=None):
     """Date a raw file was committed (= downloaded); today if not committed yet."""
     path = path or (WDI / f"{code}.csv")
-    out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", str(path)],
+    out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", str(path)],
                          cwd=ROOT, capture_output=True, text=True).stdout.strip()
-    day = dt.date.fromisoformat(out) if out else dt.datetime.now(dt.timezone.utc).date()
+    stamp = dt.datetime.fromisoformat(out) if out else dt.datetime.now(dt.timezone.utc)
+    day = stamp.astimezone(dt.timezone.utc).date()  # UTC, so local and GitHub-workflow commits agree
     return f"{day:%b} {day.day}, {day.year}"
 
 
@@ -187,6 +188,45 @@ def _finish(fig, title, subtitle, source, out):
     print(f"wrote figures/{out}")
 
 
+SPECS = ROOT / "site" / "data" / "figs"
+
+
+def _clean(v):
+    """JSON-safe number: None for NaN, rounded to keep files small."""
+    if v is None or (isinstance(v, float) and np.isnan(v)):
+        return None
+    if isinstance(v, (int, np.integer)):
+        return int(v)
+    return float(f"{float(v):.6g}")
+
+
+def sanitize(o):
+    """Recursively make an object strict-JSON safe: NaN/inf -> None, numpy scalars -> Python numbers."""
+    if isinstance(o, dict):
+        return {str(k): sanitize(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [sanitize(v) for v in o]
+    if isinstance(o, (bool, np.bool_)):
+        return bool(o)
+    if isinstance(o, (int, np.integer)):
+        return int(o)
+    if isinstance(o, (float, np.floating)):
+        return None if not np.isfinite(o) else float(f"{float(o):.6g}")
+    return o
+
+
+def _spec(out, kind, title, subtitle, source, **data):
+    """Write the data behind a figure as JSON so the interactive site draws exactly the same numbers."""
+    SPECS.mkdir(parents=True, exist_ok=True)
+    spec = {"id": Path(out).stem, "kind": kind, "title": title, "subtitle": subtitle, "source": source,
+            "png": f"figures/{out}", **data}
+    (SPECS / f"{Path(out).stem}.json").write_text(json.dumps(sanitize(spec), separators=(",", ":"), allow_nan=False))
+
+
+def _fmt_all(fmt, values):
+    return [None if v is None or (isinstance(v, float) and np.isnan(v)) else fmt(v) for v in values]
+
+
 def _spread(ys, gap):
     """Nudge label positions apart so no two are closer than `gap`, keeping their order."""
     order = sorted(range(len(ys)), key=lambda i: ys[i])
@@ -207,7 +247,7 @@ def _nice_limits(ax, lo_data, hi_data, ymin):
 # ---------------------------------------------------------------- charts
 
 def line_chart(data, *, title, subtitle, ylabel, source, out, fmt, scale=1.0, ymin=0, dashed=(), labels=None,
-               zero_line=False, height=5.4, events=(), step=False):
+               zero_line=False, height=5.4, events=(), step=False, logy=False):
     """Line chart, focus economy first in `data.columns`; other series gray, darker the higher they end.
 
     scale divides values for display (e.g. 1e9 for billions); fmt formats the end value in the direct label;
@@ -226,15 +266,20 @@ def line_chart(data, *, title, subtitle, ylabel, source, out, fmt, scale=1.0, ym
         ax.plot(s.index, s.values, color=colors[c], lw=2.6 if focus else 1.8, zorder=3 if focus else 2,
                 ls="--" if c in dashed else "-", solid_capstyle="round", drawstyle="steps-post" if step else "default")
         ends.append((c, s.index[-1], s.iloc[-1], focus))
-    lo, hi = _nice_limits(ax, np.nanmin(d.values), np.nanmax(d.values), ymin)
+    if logy:
+        ax.set_yscale("log")
+        lo, hi = np.nanmin(d.values) * 0.8, np.nanmax(d.values) * 1.25
+    else:
+        lo, hi = _nice_limits(ax, np.nanmin(d.values), np.nanmax(d.values), ymin)
     ax.set_ylim(lo, hi)
     ax.set_xlim(d.index.min(), d.index.max())
     if zero_line and lo < 0 < hi:
         ax.axhline(0, color="#8a8a85", lw=0.9, zorder=1)
     for i, (year, text) in enumerate(events):  # policy events: dotted vertical line with a short label
         ax.axvline(year, color="#b3b2ab", lw=1, ls=":", zorder=1)
-        ax.text(year + 0.25, hi - (hi - lo) * (0.03 + 0.065 * (i % 3)), text, fontsize=8.5, color=MUTED, va="top")
-    label_y = _spread([e[2] for e in ends], gap=(hi - lo) * 0.06)
+        ty = hi / (1.12 ** (i % 3 + 0.3)) if logy else hi - (hi - lo) * (0.03 + 0.065 * (i % 3))
+        ax.text(year + 0.25, ty, text, fontsize=8.5, color=MUTED, va="top")
+    label_y = [e[2] for e in ends] if logy else _spread([e[2] for e in ends], gap=(hi - lo) * 0.06)
     for (c, year, val, focus), y in zip(ends, label_y):
         name = labels.get(c, NAMES.get(c, c))
         ax.annotate(f"{name}  {fmt(val)}", xy=(year, y), xytext=(12, 0), textcoords="offset points",
@@ -243,8 +288,15 @@ def line_chart(data, *, title, subtitle, ylabel, source, out, fmt, scale=1.0, ym
     _style_axis(ax)
     ax.set_ylabel(ylabel)
     years = d.index
-    step = 4 if years.max() - years.min() > 12 else 2
-    ax.set_xticks(range(years.min(), years.max() + 1, step))
+    span = years.max() - years.min()
+    xstep = 10 if span > 40 else 4 if span > 12 else 2
+    ax.set_xticks(range(years.min(), years.max() + 1, xstep))
+    _spec(out, "line", title, subtitle, source, ylabel=ylabel, years=[int(y) for y in d.index], logy=logy,
+          step=step, zero_line=zero_line, ymin=ymin, events=[[float(y), t] for y, t in events],
+          series=[{"key": str(c), "name": labels.get(c, NAMES.get(c, c)), "color": colors[c],
+                   "focus": c == focus_iso, "dashed": c in dashed,
+                   "values": [_clean(v) for v in d[c].values], "labels": _fmt_all(fmt, d[c].values)}
+                  for c in [focus_iso, *others]])
     _finish(fig, title, subtitle, source, out)
 
 
@@ -255,13 +307,14 @@ def bar_rank(values, *, title, subtitle, xlabel, source, out, fmt, highlight=(FO
     v = values.dropna().sort_values()
     labels = labels or {}
     height = 1.45 + 0.34 * len(v)
-    labs = [labels.get(k, NAMES.get(k, k)) for k in v.index]
-    left = (max(len(str(x)) for x in labs) * 0.095 + 0.35) / width
+    labs = ["\n".join(textwrap.wrap(str(labels.get(k, NAMES.get(k, k))), 34)) for k in v.index]
+    left = min((max(len(line) for x in labs for line in x.split("\n")) * 0.095 + 0.35) / width, 0.45)
+    height += 0.18 * sum(x.count("\n") for x in labs)
     fig, ax = _figure(width=width, height=height, plot_box=(left, 0.90, 1 - 1.0 / height, 0.85 / height))
     colors = [BLUE if k in highlight else BLUE_LIGHT if k in light else GRAY_BAR for k in v.index]
     ax.barh(range(len(v)), v.values, color=colors, height=0.68, zorder=2)
     ax.set_yticks(range(len(v)))
-    ax.set_yticklabels([labels.get(k, NAMES.get(k, k)) for k in v.index])
+    ax.set_yticklabels(labs)
     for lab in ax.get_yticklabels():
         if lab.get_text() in [labels.get(k, NAMES.get(k, k)) for k in highlight]:
             lab.set_color(INK)
@@ -280,6 +333,11 @@ def bar_rank(values, *, title, subtitle, xlabel, source, out, fmt, highlight=(FO
     _style_axis(ax, grid="x")
     ax.tick_params(axis="y", length=0)
     ax.set_xlabel(xlabel)
+    order = list(v.index)[::-1]  # high to low for the interactive version
+    _spec(out, "bar", title, subtitle, source, xlabel=xlabel, ref=ref, ref_label=ref_label,
+          cats=[str(labels.get(k, NAMES.get(k, k))) for k in order], keys=[str(k) for k in order],
+          values=[_clean(v[k]) for k in order], labels=[fmt(v[k]) for k in order],
+          colors=[BLUE if k in highlight else BLUE_LIGHT if k in light else GRAY_BAR for k in order])
     _finish(fig, title, subtitle, source, out)
 
 
@@ -309,6 +367,10 @@ def grouped_bars(table, *, title, subtitle, xlabel, source, out, fmt, width=9.0,
     _style_axis(ax, grid="x")
     ax.tick_params(axis="y", length=0)
     ax.set_xlabel(xlabel)
+    _spec(out, "grouped", title, subtitle, source, xlabel=xlabel, ref=ref, cats=[str(i) for i in t.index],
+          series=[{"key": str(c), "name": NAMES.get(c, c), "color": colors[j % len(colors)],
+                   "values": [_clean(x) for x in t[c].values], "labels": _fmt_all(fmt, t[c].values)}
+                  for j, c in enumerate(t.columns)])
     _finish(fig, title, subtitle, source, out)
 
 
@@ -343,10 +405,13 @@ def stacked_shares(table, *, title, subtitle, source, out, colors=None, width=9.
               handlelength=1.1, columnspacing=1.2)
     _style_axis(ax, grid=None)
     ax.tick_params(axis="y", length=0)
+    _spec(out, "stacked", title, subtitle, source, rows=[str(i) for i in t.index],
+          parts=[{"name": str(c), "color": palette[j % len(palette)], "values": [_clean(x) for x in t[c].values]}
+                 for j, c in enumerate(t.columns)])
     _finish(fig, title, subtitle, source, out)
 
 
-def radar(table, *, title, subtitle, source, out, vmax=100):
+def radar(table, *, title, subtitle, source, out, vmax=100, ranks=None):
     """Radar chart: rows = axes (dimensions), columns = series (focus first; a column named like the region dashed)."""
     t = table
     angles = np.linspace(0, 2 * np.pi, len(t), endpoint=False).tolist()
@@ -372,6 +437,10 @@ def radar(table, *, title, subtitle, source, out, vmax=100):
     ax.spines["polar"].set_color(GRID)
     ax.tick_params(axis="x", pad=10)
     ax.legend(loc="upper left", bbox_to_anchor=(1.12, 0.95), frameon=False, fontsize=10)
+    _spec(out, "radar", title, subtitle, source, vmax=vmax, dims=[str(i).replace("\n", " ") for i in t.index],
+          ranks=ranks, series=[{"key": str(c), "name": NAMES.get(c, c), "color": colors[j % len(colors)],
+                                "dashed": c in ("EAS", "East Asia & Pacific", "Region"),
+                                "values": [_clean(x) for x in t[c].values]} for j, c in enumerate(t.columns)])
     _finish(fig, title, subtitle, source, out)
 
 
@@ -397,4 +466,10 @@ def scatter(df, *, x, y, title, subtitle, xlabel, ylabel, source, out, label_col
     _style_axis(ax, grid="both")
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    _spec(out, "scatter", title, subtitle, source, xlabel=xlabel, ylabel=ylabel, logx=logx,
+          fit=[_clean(f) for f in fit] if fit is not None else None, highlight=list(highlight),
+          annotate=list(annotate),
+          points=[{"key": str(r[label_col]) if label_col else None,
+                   "name": NAMES.get(r[label_col], r[label_col]) if label_col else None,
+                   "x": _clean(r[x]), "y": _clean(r[y])} for _, r in df.iterrows()])
     _finish(fig, title, subtitle, source, out)

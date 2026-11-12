@@ -30,6 +30,34 @@ N["gdp"] = {"2004_bn": sgp0, "2024_bn": sgp1, "ratio": sgp1 / sgp0,
             "rank_2004": wdi_rank("NY.GDP.MKTP.CD", 2004), "rank_2024": wdi_rank("NY.GDP.MKTP.CD", 2024),
             "ppp_rank_2024": wdi_rank("NY.GDP.MKTP.PP.CD", 2024)}
 
+# ---- 2.1b GDP at PPP and GDP per capita in current US$ (the guidelines ask for both measures as time series)
+gppp = wide("NY.GDP.MKTP.PP.CD", GROUP)
+r_gppp = wdi_rank("NY.GDP.MKTP.PP.CD", 2024)
+line_chart(
+    gppp,
+    title=f"At purchasing power parity Singapore's GDP reached ${gppp.loc[2024, FOCUS] / 1e9:,.0f}bn, "
+          f"{ordinal(r_gppp['rank'])} in the world",
+    subtitle="GDP, PPP (current international $), billions, 2004 to 2024",
+    ylabel="GDP, PPP, billion international $",
+    source=f"Source: World Bank, World Development Indicators (NY.GDP.MKTP.PP.CD), retrieved "
+           f"{retrieved('NY.GDP.MKTP.PP.CD')}. PPP values adjust for differences in price levels across countries; "
+           f"rank among {r_gppp['n']} economies with 2024 data.",
+    out="ch02_gdp_ppp.png", fmt=lambda v: f"${v:,.0f}bn", scale=1e9,
+)
+pcu = wide("NY.GDP.PCAP.CD", GROUP + ["EAS", "WLD"])
+r_pcu = wdi_rank("NY.GDP.PCAP.CD", 2024)
+line_chart(
+    pcu,
+    title=f"In current dollars Singapore's GDP per person is ${pcu.loc[2024, FOCUS] / 1e3:,.0f}k, "
+          f"{ordinal(r_pcu['rank'])} in the world",
+    subtitle="GDP per capita, current US$, thousands, 2004 to 2024. Dashed: regional and world aggregates",
+    ylabel="GDP per capita, thousand current US$",
+    source=f"Source: World Bank, World Development Indicators (NY.GDP.PCAP.CD), retrieved "
+           f"{retrieved('NY.GDP.PCAP.CD')}. Rank among {r_pcu['n']} economies with 2024 data.",
+    out="ch02_gdp_per_capita_usd.png", fmt=lambda v: f"${v:,.0f}k", scale=1e3, dashed=("EAS", "WLD"),
+    labels={"EAS": "East Asia & Pacific", "WLD": "World"},
+)
+
 # ---- 2.2 GDP per capita, PPP
 pc = wide("NY.GDP.PCAP.PP.CD", GROUP + ["EAS", "WLD"])
 r_pc = wdi_rank("NY.GDP.PCAP.PP.CD", 2024)
@@ -122,7 +150,7 @@ radar(
              "average",
     source=f"Source: World Bank, Worldwide Governance Indicators via WDI API (GOV_WGI_VA/PV/GE/RQ/RL/CC.SC), retrieved "
            f"{retrieved('GE.SC')}. Regional average: simple mean of World Bank East Asia & Pacific economies.",
-    out="ch02_wgi_radar.png",
+    out="ch02_wgi_radar.png", ranks=[wgi_ranks[d] for d in dims],
 )
 N["wgi"] = {"year": wgi_year, "ranks": wgi_ranks, "table": wgi.round(1).to_dict()}
 
@@ -191,6 +219,8 @@ rows = [
     ("Inflation (CPI), 2024", wdi_rank("FP.CPI.TOTL.ZG", 2024, higher_is_better=False), lambda v: f"{v:.1f}%"),
     ("Current account, % of GDP", wdi_rank("BN.CAB.XOKA.GD.ZS", 2024), lambda v: f"{v:.1f}%"),
     ("Logistics Performance Index (1 to 5)", wdi_rank("LP.LPI.OVRL.XQ", lpi_year), lambda v: f"{v:.2f}"),
+    ("Ease of Doing Business rank (legacy, DB2020 report)", wdi_rank("IC.BUS.EASE.XQ", 2019, higher_is_better=False),
+     lambda v: f"{v:.0f} of 190"),
 ]
 lines = ["| Indicator | Singapore | Year | Global rank | East Asia & Pacific rank |", "| --- | --- | --- | --- | --- |"]
 for label, r, fmt in rows:
@@ -210,7 +240,8 @@ for label, r in pillars.items():
 lines.append(f"| Gini, after taxes and transfers (SingStat) | {N['gini']['after_2025']:.3f} | 2025 | not ranked¹ | not ranked¹ |")
 lines.append("| Poverty headcount, $3.00/day (2021 PPP) | no data² | | | |")
 note = ("\n*Ranks: 1st = best (highest, except inflation: lowest) among economies with data; World Bank aggregates "
-        "excluded; ties share a rank. B-READY ranks are among the economies it covers. ¹ Singapore's Gini is a "
+        "excluded; ties share a rank. Doing Business (discontinued in 2021) ranked 190 economies; its last edition, "
+        "DB2020, uses 2019 data (WDI IC.BUS.EASE.XQ). B-READY ranks are among the economies it covers. ¹ Singapore's Gini is a "
         "national series on employment income and is not comparable with survey-based Gini for other countries. "
         "² The World Bank publishes no poverty headcount for Singapore (no household survey in its database). Sources: "
         f"World Bank WDI, WGI and B-READY via the WDI API, retrieved {retrieved('GE.SC')}; Transparency International "
@@ -218,6 +249,7 @@ note = ("\n*Ranks: 1st = best (highest, except inflation: lowest) among economie
 (DERIVED / "ch02_rank_table.md").write_text("\n".join(lines) + "\n" + note)
 print("wrote data/derived/ch02_rank_table.md")
 N["lpi"] = wdi_rank("LP.LPI.OVRL.XQ", lpi_year)
+N["doing_business_2019"] = wdi_rank("IC.BUS.EASE.XQ", 2019, higher_is_better=False)
 N["inflation_2024"] = wdi_rank("FP.CPI.TOTL.ZG", 2024, higher_is_better=False)
 N["current_account_2024"] = wdi_rank("BN.CAB.XOKA.GD.ZS", 2024)
 save_numbers("ch02", N)

@@ -96,33 +96,41 @@ structure, data routes and methods only; never their text, charts or numbers (th
 
 ## Repo
 
-- Download: `scripts/fetch_worldbank.py` (WDI, WGI, B-READY; also the "Fetch data" workflow), `fetch_singstat.py`,
-  `fetch_tiva.py` (OECD SDMX, sti-public endpoint), `fetch_comtrade.py` (public preview API), `fetch_atlas.py`
-  (Harvard Dataverse, ~500 MB, git-ignored), `fetch_other.py` (CPI via OWID, UNDP HDI, PWT 11.0, UNCTAD WIR 2026).
-  SingStat and Dataverse reject python-requests' default User-Agent: the scripts send an honest project UA. Never spoof
-  a browser UA (Transparency International's own CPI file needs a browser, so CPI comes from Our World in Data).
-  Network from Estella's Mac is intermittent for some hosts (World Bank API, objectstore.surf.nl): retry, or use the
-  GitHub workflow.
-- Analysis: one script per chapter (`scripts/ch01_profile.py` … `ch09_case.py`) writes `figures/chNN_*.png`,
-  `data/derived/chNN.json` (numbers quoted in the text) and `data/derived/*.md` tables. Shared helpers in
-  `chart_style.py` (`line_chart`, `bar_rank`, `grouped_bars`, `stacked_shares`, `radar`, `scatter`, `rank_table`,
-  `wdi_rank`); shared sector table in `sectors.py`. `scripts/run_all.py` reruns everything and builds the site.
-- Site: `site/build.py` builds `_site/` from `text/*.md` (+ `<!-- include: data/derived/X.md -->` tables) and writes the
-  single-Markdown deliverable `report/EC391_Singapore.md`. Pages publish on every push (`pages.yml`).
-- Local preview: `ec391-site` in `~/.claude/launch.json` (builds, then serves `_site` on :8391).
+- Approved sources only (guidelines p. 4 list + national statistics office). The Harvard Atlas is NOT on the list and
+  was removed on Nov 12: goods trade now comes from CEPII BACI HS92 V202601 (2.4 GB zip in data/raw/baci/, git-ignored;
+  `scripts/process_baci.py` aggregates it into data/derived/baci_*.csv), services exports by category from WDI BoP
+  (`scripts/trade_data.py`). CPI still comes via Our World in Data until someone downloads TI's CPI2025_Results.xlsx by
+  hand (TI blocks scripts); UNCTAD's IIA Navigator is behind Cloudflare, so BIT partners come from METI's page.
+- Download: `fetch_worldbank.py` (WDI, WGI, B-READY, Doing Business rank; "Fetch data" workflow too), `fetch_singstat.py`,
+  `fetch_tiva.py` (OECD SDMX sti-public), `fetch_comtrade.py` (partners every year + HS chapter titles),
+  `fetch_other.py` (CPI via OWID, UNDP HDI, PWT 11.0, UNCTAD WIR 2026 annex, WTO tariff profiles), `fetch_wits_ntm.py`
+  (TRAINS NTMs via WITS), `fetch_geo.py` (Natural Earth + geoBoundaries for the maps). Scripts send an honest project
+  User-Agent; never spoof a browser or get past bot checks.
+- Analysis: one script per chapter (`ch01_profile.py` … `ch09_case.py`) writes `figures/chNN_*.png`, a JSON spec per
+  figure in `site/data/figs/` (same numbers, units, source), `data/derived/chNN.json` and `data/derived/*.md` tables.
+  `export_site_data.py` writes the interactive datasets (KPIs, Sankey, GVC network, FDI explorer, WGI by year, RCA by
+  year). `run_all.py` reruns everything and builds the site.
+- Site: `site/build.py` builds `_site/index.html` (single-page interactive app from `site/app/`: landing map, scroll-spy
+  nav, global year slider, ECharts 5.5.0 vendored in `site/app/vendor/`) + `_site/article/*.html` (static version) +
+  the Markdown deliverable `report/EC391_Singapore.md`. In `text/*.md`, `<!-- include: data/derived/X.md -->` inserts a
+  table and `<!-- interactive: NAME -->` places a component (sgmap, sankey, treemap, gvc, fdi). Build adds `?v=` cache
+  busting to JS and data. Local preview `ec391-site` on :8391 (`~/.claude/launch.json`).
+- Testing in a hidden browser pane: IntersectionObserver and animations are throttled, so render charts by importing
+  `/js/chart.js?v=${window.__V}` and disable animation before screenshots.
 
 ## Status (Nov 12, 2026)
 
-- All chapters drafted (Nov 12): 34 charts, generated tables and text for Ch. 1–7, 9, conclusion (SWOT + investment
-  recommendation) and appendix (sources, methods, sector table, questions for the professor). Case study topic chosen by
-  the AI hub: semiconductors vs pharmaceuticals under the EDB's FDI-led policy (team to confirm).
+- Guidelines audit: `docs/guidelines_audit_and_design.md`. Fixed: approved sources only (BACI + WDI services), literacy
+  and regional averages (Ch. 1), PWT long-run GDP with structural breaks, GDP PPP and per-capita USD series, $2.15 to
+  $3.00 poverty-line note, Doing Business 2020 rank (Ch. 2), outward FDI by industry and investment income (Ch. 6),
+  WTO tariff profiles with peaks, TRAINS NTMs, 45 BITs with partners (Ch. 7).
 - Writing rules for text and chart titles: connected paragraphs, no bullet lists, no en/em dashes (ranges as "2004 to
   2024"), no semicolon pivots or "not X but Y" lead-ins; every number must come from `data/derived/*.json`.
-- Data caveats: Atlas goods exports for SGP are ~27% below SGP's Comtrade figure; Atlas services categories with 0
-  mean "not reported" (VNM reports only unspecified services); FDI is by immediate investor (55% holding companies);
-  WB has no SGP poverty/Gini (use SingStat 17892, not ranked); TiVA ends 2022; tariffs end 2022; B-READY ranks among 100.
-- Still to do by members: check 2–3 numbers per chart against the source; rewrite text in own words; link each chapter
-  to specific lectures/readings (e.g. class gravity estimate, Ch. 8 infant industry); confirm case topic; answer the
-  open questions for the professor (SingStat OK? Atlas RCA OK? AI-assisted drafting OK? presentation?).
-- Unverified items flagged in the research notes: UNCTAD BIT count (METI's 45 used), exact TPSEP/UKSFTA/DEPA dates,
-  official excise rates, why the Atlas chip RCA dips in 2005–06.
+- Ch. 3, 4 and 9 rerun on BACI (Nov 12): services 20% to 48% of exports, transport RCA 4.5, chips RCA 4.6, finished pharma
+  RCA 0.16 to 1.78 (so the case verdict changed: pharma built an export advantage but its value added and FDI stock fell).
+  BACI 2017 chip value for SGP is a one-year outlier ($125bn), footnoted. Treemap RCA uses a goods + services base, the
+  HS table a goods-only base; both are labelled.
+- UI restyled as an illustrated poster (hero.svg 1965 vs 2024, Chewy / Patrick Hand SC / Nunito, ink outlines, chapter
+  banners with icons in site/app/icons/).
+- Still to do by members: check 2–3 numbers per chart; rewrite text in own words; link chapters to specific lectures;
+  confirm case topic; download TI's CPI 2025 file; ask the professor the open questions in the appendix.

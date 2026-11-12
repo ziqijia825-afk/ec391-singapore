@@ -2,7 +2,7 @@
 
 Data test of the course argument: did FDI-led industrial policy create a lasting comparative advantage?
 - RCA of Singapore in integrated circuits (HS 8542), semiconductor devices (8541) and pharmaceuticals
-  (finished 3004, biologics 3002, active ingredients 2933/2934/2937/2941), 1995-2024 (Atlas HS 1992, goods-only RCA)
+  (finished 3004, biologics 3002, active ingredients 2933/2934/2937/2941), 1995-latest (CEPII BACI, goods-only RCA)
 - Share of semiconductors and pharmaceuticals in manufacturing output and value added (EDB census via SingStat)
 - FDI stock in semiconductor devices vs pharmaceutical products (SingStat M084831)
 Run: python scripts/ch09_case.py
@@ -11,7 +11,6 @@ import pandas as pd
 
 from chart_style import DERIVED, FOCUS, GROUP, RAW, line_chart, retrieved, save_numbers
 
-ATLAS = RAW / "atlas"
 SS = RAW / "singstat"
 N = {}
 PRODUCTS = {"8542": "Integrated circuits", "8541": "Semiconductor devices", "3004": "Medicaments (finished)",
@@ -21,24 +20,17 @@ GROUPS = {"Chips": ["8541", "8542"],
           "Finished pharma": ["3002", "3004"],
           "Pharma ingredients": ["2933", "2934", "2937", "2941"]}
 
-# ---- product exports: Singapore, peers and world totals, from the 4-digit Atlas file (read in chunks)
-cache = DERIVED / "ch09_hs4_extract.csv"
-if not cache.exists():
-    parts = []
-    for chunk in pd.read_csv(ATLAS / "hs92_country_product_year_4.csv", chunksize=2_000_000,
-                             usecols=["country_iso3_code", "product_hs92_code", "year", "export_value"],
-                             dtype={"product_hs92_code": str}):
-        c = chunk[chunk.product_hs92_code.isin(PRODUCTS)]
-        world = c.groupby(["product_hs92_code", "year"]).export_value.sum().reset_index().assign(country_iso3_code="WLD")
-        parts += [c[c.country_iso3_code.isin(GROUP)], world]
-    ext = pd.concat(parts).groupby(["country_iso3_code", "product_hs92_code", "year"]).export_value.sum().reset_index()
-    ext.to_csv(cache, index=False)
-ext = pd.read_csv(cache, dtype={"product_hs92_code": str})
-
-# goods totals for RCA denominators
-hs2 = pd.read_csv(ATLAS / "hs92_country_product_year_2.csv", usecols=["country_iso3_code", "year", "export_value"])
+# ---- product exports by exporter (BACI, aggregated by scripts/process_baci.py) and goods totals for RCA
+ext = pd.read_csv(DERIVED / "baci_hs4_case.csv", dtype={"hs4": str}).rename(
+    columns={"exp": "country_iso3_code", "hs4": "product_hs92_code", "v": "export_value"})
+world = ext.groupby(["product_hs92_code", "year"]).export_value.sum().reset_index().assign(country_iso3_code="WLD")
+ext = pd.concat([ext, world])
+hs2 = pd.read_csv(DERIVED / "baci_hs2.csv", dtype={"hs2": str}).rename(columns={"exp": "country_iso3_code",
+                                                                              "v": "export_value"})
 tot = hs2.groupby(["country_iso3_code", "year"]).export_value.sum()
 wtot = hs2.groupby("year").export_value.sum()
+BACI_SRC = (f"team calculation from CEPII BACI (HS 1992, V202601), downloaded "
+            f"{retrieved(path=DERIVED / 'baci_hs2.csv')}")
 
 
 def group_rca(iso, codes):
@@ -47,34 +39,35 @@ def group_rca(iso, codes):
     return (x / tot.loc[iso].reindex(x.index)) / (w / wtot.reindex(w.index))
 
 
-rca = pd.DataFrame({g: group_rca(FOCUS, c) for g, c in GROUPS.items()}).loc[1995:2024]
+rca = pd.DataFrame({g: group_rca(FOCUS, c) for g, c in GROUPS.items()}).loc[1995:]
 line_chart(
     rca,
-    title=f"Chips keep a strong advantage (RCA {rca.iloc[-1, 0]:.1f}) while finished pharma never got one "
-          f"({rca.iloc[-1, 1]:.1f})",
-    subtitle="Singapore's revealed comparative advantage by product group, 1995 to 2024 (above 1 = advantage)",
+    title=f"Chips keep a strong advantage (RCA {rca.iloc[-1, 0]:.1f}) and finished pharma built one, "
+          f"from {rca.loc[2004].iloc[1]:.1f} in 2004 to {rca.iloc[-1, 1]:.1f}",
+    subtitle=f"Singapore's revealed comparative advantage by product group, 1995 to {rca.index.max()} (above 1 = advantage)",
     ylabel="Balassa RCA (goods only)", fmt=lambda v: f"{v:.1f}", ymin=0,
     labels={c: c for c in rca.columns},
     events=[(2000, "Biomedical initiative"), (2003, "Biopolis opens"), (2009, "GlobalFoundries buys Chartered"),
             (2021, "New fab wave")],
-    source="Source: team calculation from the Harvard Growth Lab Atlas of Economic Complexity (HS 1992, 4-digit; "
-           f"Dataverse v18), downloaded {retrieved(path=ATLAS / 'hs92_country_product_year_2.csv')}. RCA = product share "
+    source=f"Source: {BACI_SRC}. RCA = product share "
            "of Singapore's goods exports ÷ product share of world goods exports. Chips: HS 8541 and 8542; finished pharma: "
-           "HS 3002, 3004; ingredients: HS 2933, 2934, 2937, 2941.",
+           "HS 3002, 3004; ingredients: HS 2933, 2934, 2937, 2941. The 2017 chip value is a one-year BACI outlier (see text).",
     out="ch09_rca.png", height=5.8,
 )
-peer = pd.DataFrame({k: group_rca(k, GROUPS["Chips"]) for k in GROUP}).loc[1995:2024]
-N["rca_groups"] = rca.loc[[1995, 2000, 2004, 2010, 2014, 2020, 2024]].round(2).to_dict()
-N["rca_semis_peers"] = peer.loc[[2004, 2014, 2024]].round(2).to_dict()
+peer = pd.DataFrame({k: group_rca(k, GROUPS["Chips"]) for k in GROUP}).loc[1995:]
+LASTC = int(rca.index.max())
+N["last_year"] = LASTC
+N["rca_groups"] = rca.loc[[1995, 2000, 2004, 2010, 2014, 2020, LASTC]].round(2).to_dict()
+N["rca_semis_peers"] = peer.loc[[2004, 2014, LASTC]].round(2).to_dict()
 single = {}
 for code, name in PRODUCTS.items():
     s = group_rca(FOCUS, [code])
-    single[f"{code} {name}"] = {y: round(float(s.get(y, float("nan"))), 2) for y in (2004, 2014, 2024)}
+    single[f"{code} {name}"] = {y: round(float(s.get(y, float("nan"))), 2) for y in (2004, 2014, LASTC)}
 N["rca_products"] = single
 sg_ic = ext[(ext.country_iso3_code == FOCUS) & (ext.product_hs92_code == "8542")].set_index("year").export_value
 w_ic = ext[(ext.country_iso3_code == "WLD") & (ext.product_hs92_code == "8542")].set_index("year").export_value
-N["ic_world_share"] = {y: float(sg_ic[y] / w_ic[y] * 100) for y in (2004, 2014, 2024)}
-N["ic_exports_bn"] = {y: float(sg_ic[y] / 1e9) for y in (2004, 2014, 2024)}
+N["ic_world_share"] = {y: float(sg_ic[y] / w_ic[y] * 100) for y in (2004, 2014, LASTC)}
+N["ic_exports_bn"] = {y: float(sg_ic[y] / 1e9) for y in (2004, 2014, LASTC)}
 
 # ---- manufacturing structure (EDB Census of Manufacturing Activities via SingStat)
 def cluster(table):
@@ -131,8 +124,8 @@ line_chart(
 N["fdi_stock_sgd_bn"] = {c: {int(y): round(float(v), 1) for y, v in fd[c].dropna().items()
                              if int(y) in (2004, 2010, 2014, 2020, 2024)} for c in fd.columns}
 save_numbers("ch09", N)
-print(rca.round(2).loc[[1995, 2000, 2004, 2010, 2014, 2020, 2024]])
-print(peer.round(2).loc[[2004, 2014, 2024]])
+print(rca.round(2).loc[[1995, 2000, 2004, 2010, 2014, 2020, LASTC]])
+print(peer.round(2).loc[[2004, 2014, LASTC]])
 print(single)
 print(N["ic_world_share"], N["ic_exports_bn"])
 print(share.round(1))

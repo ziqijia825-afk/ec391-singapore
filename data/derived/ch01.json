@@ -1,4 +1,17 @@
 {
+  "long_run": {
+    "breaks": {
+      "1964": -3.8431167602539062,
+      "1985": -0.6227076053619385,
+      "1998": -2.1910250186920166,
+      "2001": -1.0708630084991455,
+      "2009": 0.12794733047485352,
+      "2020": -3.869795799255371
+    },
+    "ratio": 63.81759262084961,
+    "first": 1960,
+    "last": 2023
+  },
   "hdi": {
     "value_2023": 0.946,
     "rank": 13,
@@ -59,6 +72,53 @@
       }
     }
   },
+  "vs_region": {
+    "table": {
+      "SGP": {
+        "Life expectancy (years)": 83.3,
+        "Adult literacy (%)": 97.7,
+        "Secondary enrolment, gross (%)": 103.1,
+        "Tertiary enrolment, gross (%)": 97.3,
+        "Human Development Index (x100)": 94.6
+      },
+      "EAS": {
+        "Life expectancy (years)": 76.7,
+        "Adult literacy (%)": 96.6,
+        "Secondary enrolment, gross (%)": 92.0,
+        "Tertiary enrolment, gross (%)": 63.3,
+        "Human Development Index (x100)": 77.5
+      },
+      "WLD": {
+        "Life expectancy (years)": 73.5,
+        "Adult literacy (%)": 87.7,
+        "Secondary enrolment, gross (%)": 77.3,
+        "Tertiary enrolment, gross (%)": 43.6,
+        "Human Development Index (x100)": 75.6
+      }
+    },
+    "years": {
+      "Life expectancy (years)": {
+        "SGP": 2024,
+        "EAS": 2024,
+        "WLD": 2024
+      },
+      "Adult literacy (%)": {
+        "SGP": 2021,
+        "EAS": 2024,
+        "WLD": 2024
+      },
+      "Secondary enrolment, gross (%)": {
+        "SGP": 2023,
+        "EAS": 2024,
+        "WLD": 2024
+      },
+      "Tertiary enrolment, gross (%)": {
+        "SGP": 2023,
+        "EAS": 2024,
+        "WLD": 2024
+      }
+    }
+  },
   "facts": {
     "SP.POP.TOTL": {
       "value": 6036860.0,
@@ -99,6 +159,22 @@
       "n": 217,
       "region_rank": 5,
       "region_n": 37
+    },
+    "SE.ADT.LITR.ZS": {
+      "value": 97.6500015258789,
+      "year": 2021,
+      "rank": 9,
+      "n": 44,
+      "region_rank": 2,
+      "region_n": 5
+    },
+    "SE.SEC.ENRR": {
+      "value": 103.082801906213,
+      "year": 2023,
+      "rank": 40,
+      "n": 147,
+      "region_rank": 4,
+      "region_n": 23
     },
     "SE.TER.ENRR": {
       "value": 97.2886546863037,

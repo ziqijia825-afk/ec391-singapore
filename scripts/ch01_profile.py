@@ -13,6 +13,30 @@ hdr = pd.read_csv(HDR, encoding="latin-1")
 econ, eas = economies()
 numbers = {}
 
+# ---- Fig 1.0 Long-run real GDP with structural breaks (Penn World Table 11.0)
+PWT = RAW / "manual" / "pwt110.dta"
+pwt = pd.read_stata(PWT, columns=["countrycode", "year", "rgdpna"])
+lr = pwt[pwt.countrycode.isin(GROUP)].pivot(index="year", columns="countrycode", values="rgdpna")[GROUP] / 1e3
+lr = lr.dropna(how="all").loc[1960:]
+lr.index = lr.index.astype(int)
+growth = lr[FOCUS].pct_change() * 100
+breaks = {int(y): float(v) for y, v in growth.items() if v < 1}
+line_chart(
+    lr,
+    title=f"Singapore's real GDP grew {lr[FOCUS].iloc[-1] / lr[FOCUS].iloc[0]:.0f}-fold since 1960, with six "
+          "sharp breaks",
+    subtitle=f"Real GDP at constant 2021 national prices, US$ billions, log scale, 1960 to {lr.index.max()}",
+    ylabel="Real GDP, 2021 US$ billions (log scale)", fmt=lambda v: f"${v:,.0f}bn", ymin=None, logy=True,
+    events=[(1965, "Independence"), (1985, "1985 recession"), (1998, "Asian crisis"), (2001, "Dot-com bust"),
+            (2009, "Global financial crisis"), (2020, "COVID-19")],
+    source=f"Source: Penn World Table 11.0 (rgdpna), Groningen Growth and Development Centre, downloaded "
+           f"{retrieved(path=PWT)}. Breaks = years when Singapore's real GDP grew by less than 1% "
+           f"({', '.join(str(y) for y in breaks)}).",
+    out="ch01_long_run_gdp.png", height=5.8,
+)
+numbers["long_run"] = {"breaks": breaks, "ratio": float(lr[FOCUS].iloc[-1] / lr[FOCUS].iloc[0]),
+                       "first": int(lr.index.min()), "last": int(lr.index.max())}
+
 # ---- Fig 1.1 HDI over time
 cols = [f"hdi_{y}" for y in range(2004, 2024)]
 h = hdr.set_index("iso3")
@@ -62,6 +86,31 @@ grouped_bars(
     out="ch01_structure.png",
 )
 
+# ---- Fig 1.3 Human development and education vs regional and world averages (World Bank aggregates)
+comp_rows = {}
+comp_years = {}
+for label, code in [("Life expectancy (years)", "SP.DYN.LE00.IN"), ("Adult literacy (%)", "SE.ADT.LITR.ZS"),
+                    ("Secondary enrolment, gross (%)", "SE.SEC.ENRR"), ("Tertiary enrolment, gross (%)", "SE.TER.ENRR")]:
+    d = load(code)
+    d = d[d.iso3.isin([FOCUS, "EAS", "WLD"]) & (d.year <= 2024)].sort_values("year").groupby("iso3").tail(1)
+    comp_rows[label] = d.set_index("iso3").value.reindex([FOCUS, "EAS", "WLD"])
+    comp_years[label] = d.set_index("iso3").year.reindex([FOCUS, "EAS", "WLD"]).astype(int).to_dict()
+comp = pd.DataFrame(comp_rows).T
+comp.loc["Human Development Index (x100)"] = [h.loc[FOCUS, "hdi_2023"] * 100, h.loc["ZZF.EAP", "hdi_2023"] * 100,
+                                            h.loc["ZZK.WORLD", "hdi_2023"] * 100]
+grouped_bars(
+    comp,
+    title=f"Singapore is ahead of the East Asia & Pacific average on every human development measure",
+    subtitle="Singapore vs regional and world averages, latest year (see note for years)",
+    xlabel="Value (units in each row label)", fmt=lambda v: f"{v:.0f}",
+    source=f"Source: World Bank WDI (SP.DYN.LE00.IN, SE.ADT.LITR.ZS, SE.SEC.ENRR, SE.TER.ENRR; East Asia & Pacific "
+           f"and World aggregates), retrieved {retrieved('SE.ADT.LITR.ZS')}; UNDP HDR 2025 for HDI (UNDP's East Asia "
+           f"and the Pacific average). Singapore's literacy is for {comp_years['Adult literacy (%)'][FOCUS]}, tertiary "
+           f"enrolment for {comp_years['Tertiary enrolment, gross (%)'][FOCUS]}; gross enrolment can exceed 100%.",
+    out="ch01_vs_region.png",
+)
+numbers["vs_region"] = {"table": comp.round(1).to_dict(), "years": comp_years}
+
 # ---- Table 1.1 basic facts with ranks
 facts = [  # label, code, higher_is_better(for rank direction), format, unit note
     ("Population", "SP.POP.TOTL", True, lambda v: f"{v / 1e6:.2f} m"),
@@ -69,11 +118,13 @@ facts = [  # label, code, higher_is_better(for rank direction), format, unit not
     ("Population density", "EN.POP.DNST", True, lambda v: f"{v:,.0f} per km²"),
     ("Urban population", "SP.URB.TOTL.IN.ZS", True, lambda v: f"{v:.0f}%"),
     ("Life expectancy at birth", "SP.DYN.LE00.IN", True, lambda v: f"{v:.1f} years"),
+    ("Adult literacy rate", "SE.ADT.LITR.ZS", True, lambda v: f"{v:.1f}%"),
+    ("Secondary enrolment (gross)", "SE.SEC.ENRR", True, lambda v: f"{v:.0f}%"),
     ("Tertiary enrolment (gross)", "SE.TER.ENRR", True, lambda v: f"{v:.0f}%"),
     ("Population aged 65+", "SP.POP.65UP.TO.ZS", True, lambda v: f"{v:.1f}%"),
 ]
-lines = ["| Indicator | Singapore | Year | Global rank | East Asia & Pacific rank | Malaysia | Hong Kong SAR | Vietnam |",
-         "| --- | --- | --- | --- | --- | --- | --- | --- |"]
+lines = ["| Indicator | Singapore | Year | Global rank | East Asia & Pacific rank | East Asia & Pacific average | "
+         "Malaysia | Hong Kong SAR | Vietnam |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
 table_numbers = {}
 for label, code, hib, fmt in facts:
     d = load(code)
@@ -83,11 +134,19 @@ for label, code, hib, fmt in facts:
     t = rank_table(s, eas, hib)
     r = t.loc[FOCUS]
     peer = []
+    reg = d[(d.iso3 == "EAS")].sort_values("year")
+    reg_txt = fmt(reg[reg.year == yr].value.iloc[0]) if (reg.year == yr).any() else (
+        f"{fmt(reg.value.iloc[-1])} ({int(reg.year.iloc[-1])})" if len(reg) and code not in ("AG.LND.TOTL.K2", "SP.POP.TOTL") else "n/a")
     for iso in ["MYS", "HKG", "VNM"]:
-        dp = d[d.iso3 == iso]
-        peer.append(fmt(dp[dp.year == yr].value.iloc[0]) if (dp.year == yr).any() else "n/a")
+        dp = d[d.iso3 == iso].sort_values("year")
+        if (dp.year == yr).any():
+            peer.append(fmt(dp[dp.year == yr].value.iloc[0]))
+        elif len(dp):
+            peer.append(f"{fmt(dp.value.iloc[-1])} ({int(dp.year.iloc[-1])})")
+        else:
+            peer.append("n/a")
     lines.append(f"| {label} | {fmt(r.value)} | {yr} | {ordinal(r['rank'])} of {int(r.n)} | "
-                 f"{ordinal(r.region_rank)} of {int(r.region_n)} | " + " | ".join(peer) + " |")
+                 f"{ordinal(r.region_rank)} of {int(r.region_n)} | {reg_txt} | " + " | ".join(peer) + " |")
     table_numbers[code] = {"value": float(r.value), "year": yr, "rank": int(r["rank"]), "n": int(r.n),
                            "region_rank": int(r.region_rank), "region_n": int(r.region_n)}
 # HDI and schooling rows from UNDP
@@ -98,14 +157,15 @@ for label, col, fmt in [("Human Development Index", "hdi_2023", lambda v: f"{v:.
     t = rank_table(s, eas, True)
     r = t.loc[FOCUS]
     lines.append(f"| {label} | {fmt(r.value)} | 2023 | {ordinal(r['rank'])} of {int(r.n)} | "
-                 f"{ordinal(r.region_rank)} of {int(r.region_n)} | "
+                 f"{ordinal(r.region_rank)} of {int(r.region_n)} | {fmt(h.loc['ZZF.EAP', col])} (UNDP) | "
                  + " | ".join(fmt(h.loc[i, col]) for i in ["MYS", "HKG", "VNM"]) + " |")
     table_numbers[col] = {"value": float(r.value), "rank": int(r["rank"]), "n": int(r.n),
                           "region_rank": int(r.region_rank), "region_n": int(r.region_n)}
 numbers["facts"] = table_numbers
 note = ("\n*Ranks: 1st = highest value among economies with data that year (World Bank aggregates excluded); "
-        "East Asia & Pacific = World Bank region. Sources: World Bank WDI (SP.POP.TOTL, AG.LND.TOTL.K2, EN.POP.DNST, "
-        "SP.URB.TOTL.IN.ZS, SP.DYN.LE00.IN, SE.TER.ENRR, SP.POP.65UP.TO.ZS), retrieved "
+        "East Asia & Pacific = World Bank region; its average is the World Bank aggregate (UNDP's regional average for HDI "
+        "and schooling, which covers developing economies only). A year in brackets marks an earlier latest year. Sources: World Bank WDI (SP.POP.TOTL, AG.LND.TOTL.K2, EN.POP.DNST, "
+        "SP.URB.TOTL.IN.ZS, SP.DYN.LE00.IN, SE.ADT.LITR.ZS, SE.SEC.ENRR, SE.TER.ENRR, SP.POP.65UP.TO.ZS), retrieved "
         f"{retrieved('SP.POP.TOTL')}; UNDP Human Development Report 2025 (HDI, schooling).*\n")
 DERIVED.mkdir(parents=True, exist_ok=True)
 (DERIVED / "ch01_profile_table.md").write_text("\n".join(lines) + "\n" + note)
