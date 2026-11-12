@@ -1,9 +1,10 @@
 // Interactive components that go beyond the static figures: maps, Sankey, treemap, network, FDI explorer,
 // WGI radar by year, FDI explorer. All data come from site/data/*.json (built by Python).
 import { state, set, on, getJSON, pickYear, YEARS } from './state.js';
+import { ICON } from './icons.js';
 import { cardShell, baseOption, tipFooter, shortSource, radarOption, registry, nameOf, ECON, CATEGORICAL, rgba } from './chart.js';
 
-const INK = '#1d2b33', MUTED = '#4f5b62', LINE = '#e6dcc4', BLUE = '#2a78d6', RED = '#e23d3d';
+const INK = '#14212e', MUTED = '#6b7a89', LINE = '#e9ecef', BLUE = '#2a78d6', RED = '#e23d3d';
 const GRAYS = ['#5f5e5a', '#8a8a85', '#b3b2ab'];
 const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const ord = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : { 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'}`;
@@ -11,82 +12,203 @@ const rankTxt = (r) => (r ? `${ord(r.rank)} of ${r.n} globally · ${ord(r.region
 const badge = (el, text) => { const b = el.querySelector('.badge') || el.insertAdjacentElement('afterbegin', Object.assign(document.createElement('span'), { className: 'badge' })); b.textContent = text; };
 
 // ---------- landing: Southeast Asia map ----------
-export async function landingMap(el, onEnter) {
-  const [geo, k] = await Promise.all([getJSON('data/geo_sea.json'), getJSON('data/kpis.json')]);
-  echarts.registerMap('sea', geo);
+export async function coverMap(el, kpiEl) {
+  const [geo, k, a] = await Promise.all([getJSON('data/geo_sea.json'), getJSON('data/kpis.json'), getJSON('data/atlas.json')]);
+  if (!echarts.getMap('sea')) echarts.registerMap('sea', geo);
+  const ord = (n) => `${n}${[11, 12, 13].includes(n % 100) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th')}`;
+  if (kpiEl) {
+    kpiEl.innerHTML = k.kpis.map((x) => `<div class="kpi"><b>${esc(x.value)}</b><span>${esc(x.label)}</span>`
+      + `<small>${x.rank?.rank ? `${ord(x.rank.rank)} of ${x.rank.n}` : ''}</small></div>`).join('');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      kpiEl.querySelectorAll('.kpi b').forEach((b, i) => {  // count each headline number up from zero
+        const m = b.textContent.match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/);
+        if (!m) return;
+        const [, pre, num, post] = m;
+        const target = parseFloat(num.replace(/,/g, '')), dec = (num.split('.')[1] || '').length, comma = num.includes(',');
+        const t0 = performance.now() + i * 90;
+        const step = (t) => {
+          const kk = Math.max(0, Math.min(1, (t - t0) / 1300));
+          const v = target * (1 - Math.pow(1 - kk, 3));
+          b.textContent = `${pre}${comma ? v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : v.toFixed(dec)}${post}`;
+          if (kk < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }
+  }
+  const SG = [103.82, 1.35];
+  const narrow = () => el.clientWidth < 760;
+  const SERIF = '"Source Serif 4", Georgia, serif';
+  const SHIP = 'path://M5 0 L10 7 L10 24 L0 24 L0 7 Z';  // a hull seen from above, bow first
+  const graticule = [];
+  for (let lon = 90; lon <= 130; lon += 5) graticule.push({ coords: [[lon, -15], [lon, 30]] });
+  for (let lat = -10; lat <= 25; lat += 5) graticule.push({ coords: [[84, lat], [136, lat]] });
   const chart = echarts.init(el);
-  const kpiHtml = `<b style="font-size:14px">Singapore</b>${k.kpis.map((x) => `<div style="margin-top:5px">${esc(x.label)}: <b>${esc(x.value)}</b><br><span style="color:${MUTED};font-size:11px">${esc(rankTxt(x.rank))}</span></div>`).join('')}<div style="margin-top:6px;color:${BLUE}">Click to explore</div>`;
-  const o = baseOption();
-  const HAND = '"Patrick Hand SC", "Patrick Hand", cursive';
-  const sg = k.facts.coords;
-  const routes = [  // main sea lanes through the Strait of Malacca and the South China Sea (illustrative)
-    { name: 'To China, Korea and Japan', to: [116.5, 15.5], via: [109, 9] },
-    { name: 'To India, the Gulf and Europe', to: [94.5, 9.5], via: [99, 4.5] },
-    { name: 'To Indonesia and Australia', to: [117, -7.6], via: [108, -3.5] },
-  ];
-  o.tooltip.trigger = 'item';
-  o.tooltip.formatter = (p) => (p.name === 'Singapore' || p.seriesType === 'effectScatter' ? kpiHtml
-    : p.seriesType === 'lines' ? `<b>${esc(p.name)}</b><br>Illustrative sea lane` : `<b>${esc(p.name)}</b>`);
-  o.geo = { map: 'sea', roam: false, boundingCoords: [[93, 21], [127, -9]], layoutCenter: ['50%', '50%'], layoutSize: '104%', silent: false,
-    itemStyle: { areaColor: '#eef7e2', borderColor: '#1d2b33', borderWidth: 1.2 },
-    emphasis: { itemStyle: { areaColor: '#ffe7a8' }, label: { show: false } },
-    regions: [{ name: 'Singapore', itemStyle: { areaColor: RED } }] };
-  o.series = [
-    { type: 'lines', coordinateSystem: 'geo', zlevel: 1, silent: false,
-      lineStyle: { color: '#e8552f', width: 3.5, type: [8, 6], curveness: .25, opacity: .95 },
-      effect: { show: true, period: 6, trailLength: 0, symbol: 'circle', symbolSize: 7, color: '#ffc93c' },
-      data: routes.map((r) => ({ name: r.name, coords: [sg, r.via, r.to] })), polyline: true },
-    { type: 'scatter', coordinateSystem: 'geo', symbolSize: 1, silent: true,
-      data: [...routes.map((r) => ({ name: r.name, value: r.to, label: r.to[0] < 100 ? { position: 'right' } : undefined })),
-        { name: 'Strait of Malacca', value: [98.6, 5.8] }],
-      label: { show: true, formatter: '{b}', position: 'top', fontFamily: HAND, fontSize: el.clientWidth < 500 ? 12 : 15, color: INK,
-        backgroundColor: '#fffdf6', borderColor: INK, borderWidth: 1.5, borderRadius: 4, padding: [2, 6] } },
-    { type: 'effectScatter', coordinateSystem: 'geo', zlevel: 2, data: [{ name: 'Singapore', value: sg }],
-      symbolSize: 16, rippleEffect: { scale: 4.5, brushType: 'stroke' }, itemStyle: { color: RED, borderColor: INK, borderWidth: 2 },
-      label: { show: true, formatter: 'Singapore', position: 'right', fontFamily: HAND, fontSize: 20, color: INK,
-        backgroundColor: '#ffc93c', borderColor: INK, borderWidth: 2, borderRadius: 6, padding: [2, 8] } },
-  ];
-  chart.setOption(o);
-  chart.on('click', (p) => { if (p.name === 'Singapore') onEnter(); });
-  new ResizeObserver(() => chart.resize()).observe(el);
+  const draw = () => {
+    const o = baseOption();
+    o.animationDuration = 1400;
+    o.tooltip.trigger = 'item';
+    o.tooltip.formatter = (p) => {
+      const x = a.partners.find((q) => q.id === p.data?.id);
+      if (!x) return '';
+      const rows = x.rows.slice(0, 3).map((r) => `<div><b>${esc(r[0])}</b> <span style="color:${MUTED}">${esc(r[1])}</span></div>`).join('');
+      return `<b style="font-size:14px">${esc(x.name)}</b><div style="color:${MUTED};margin:2px 0 6px">${esc(x.fta || '')}</div>${rows}`;
+    };
+    o.geo = { map: 'sea', roam: false, silent: true, boundingCoords: [[86, 28], [134, -14]],
+      layoutCenter: narrow() ? ['50%', '50%'] : ['67%', '52%'], layoutSize: narrow() ? '100%' : '112%',
+      itemStyle: { areaColor: '#e8dcc0', borderColor: '#a88d5f', borderWidth: 0.8, shadowColor: 'rgba(0,0,0,.35)', shadowBlur: 10 },
+      emphasis: { disabled: true }, regions: [{ name: 'Singapore', itemStyle: { areaColor: ECON.SGP, borderColor: ECON.SGP } }] };
+    o.series = [
+      { type: 'lines', coordinateSystem: 'geo', silent: true, z: 0, polyline: true, data: graticule,
+        lineStyle: { color: 'rgba(255,255,255,.08)', width: 1, type: [2, 6] } },
+      { type: 'scatter', coordinateSystem: 'geo', silent: true, symbolSize: 0, z: 1,
+        data: [{ name: 'South China Sea', value: [113.5, 12.5] }, { name: 'Indian Ocean', value: [92, -4] },
+          { name: 'Strait of Malacca', value: [97.4, 6.4] }, { name: 'Java Sea', value: [110.8, -5.4] }],
+        label: { show: true, formatter: '{b}', color: 'rgba(243,234,215,.55)', fontFamily: SERIF, fontStyle: 'italic', fontSize: 14 } },
+      { type: 'lines', coordinateSystem: 'geo', silent: true, z: 2,
+        lineStyle: { color: 'rgba(255,207,122,.55)', curveness: 0.24, type: [6, 5] },
+        data: a.partners.filter((p) => p.share_x).map((p) => ({ coords: [SG, p.coord], lineStyle: { width: 0.7 + p.share_x / 4.5 } })) },
+      { type: 'lines', coordinateSystem: 'geo', silent: true, z: 3,
+        effect: { show: true, period: 9, trailLength: 0, symbol: SHIP, symbolSize: [5, 12], color: '#ffffff' },
+        lineStyle: { opacity: 0, curveness: 0.24 },
+        data: a.partners.filter((p) => p.share_x).map((p) => ({ coords: [SG, p.coord] })) },
+      { type: 'scatter', coordinateSystem: 'geo', z: 4, symbol: 'circle', symbolSize: 8,
+        itemStyle: { color: '#ffcf7a', borderColor: '#0a2f3e', borderWidth: 2 },
+        data: a.partners.map((p) => ({ name: p.edge ? `${p.name} ↗` : p.name, value: p.coord, id: p.id,
+          label: { position: p.coord[0] > 125 ? 'left' : 'right' } })),
+        label: { show: !narrow(), formatter: '{b}', color: '#f3ead7', fontFamily: SERIF, fontSize: 13, fontWeight: 600, distance: 7,
+          textBorderColor: 'rgba(10,47,62,.85)', textBorderWidth: 3 },
+        emphasis: { scale: 1.8, label: { color: '#ffffff' } } },
+      { type: 'effectScatter', coordinateSystem: 'geo', z: 5, silent: true, data: [{ name: 'Singapore', value: SG }], symbolSize: 12,
+        rippleEffect: { scale: 4.5, brushType: 'stroke', color: ECON.SGP }, itemStyle: { color: ECON.SGP, borderColor: '#fff', borderWidth: 1.5 },
+        label: { show: true, formatter: 'Singapore', position: 'right', color: '#ffffff', fontFamily: SERIF, fontSize: 17, fontWeight: 700,
+          distance: 9, textBorderColor: 'rgba(10,47,62,.9)', textBorderWidth: 3 } },
+    ];
+    chart.setOption(o, true);
+  };
+  draw();
+  new ResizeObserver(() => { chart.resize(); draw(); }).observe(el);
 }
 
-// ---------- country profile: Singapore map with key sites ----------
-const SITES = [
-  ['Central business district', [103.851, 1.282], 'Finance and regional headquarters (Ch. 6)'],
-  ['Jurong Island', [103.69, 1.265], 'Refining and petrochemicals cluster on reclaimed land (Ch. 3, 4)'],
-  ['Tuas Port and Tuas Biomedical Park', [103.63, 1.305], 'Container port of the future and pharma plants (Ch. 7, 9)'],
-  ['Pasir Panjang terminals', [103.765, 1.272], 'Container transshipment hub (Ch. 3)'],
-  ['one-north and Biopolis', [103.789, 1.299], 'Biomedical research complex opened in 2003 (Ch. 9)'],
-  ['Woodlands wafer fab park', [103.789, 1.447], 'Semiconductor fabs, including GlobalFoundries (Ch. 9)'],
-  ['Tampines and Pasir Ris wafer fab parks', [103.95, 1.372], 'Chip fabs of UMC, Siltronic and VSMC (Ch. 9)'],
-  ['Changi Airport and Airport Logistics Park', [103.99, 1.355], 'Air cargo free trade zone (Ch. 7)'],
-];
+// ---------- country profile: a data atlas of places and partners, each linked to a course idea and a chapter ----------
+const LABEL_POS = { onenorth: 'top', port: 'bottom', jurong: 'left', cbd: 'right', tuas: 'top', changi: 'top', fabs: 'right' };
+const SHORT_LABEL = { port: 'Port', jurong: 'Jurong Island', fabs: 'Wafer fabs', tuas: 'Biomedical Park', onenorth: 'one-north',
+  cbd: 'CBD', changi: 'Changi Airport' };
+const SITE_COLORS = ['#5aa9ef', '#eb6834', '#8f7ff0', '#f08cb3', '#2fc48f', '#f2b84b', '#7fd36a'];
 export async function sgMap(el) {
-  const [geo, k] = await Promise.all([getJSON('data/geo_sgp.json'), getJSON('data/kpis.json')]);
-  echarts.registerMap('sgp', geo);
+  const [geoS, geoR, k, a] = await Promise.all([getJSON('data/geo_sgp.json'), getJSON('data/geo_sea.json'),
+    getJSON('data/kpis.json'), getJSON('data/atlas.json')]);
+  if (!echarts.getMap('sgp')) echarts.registerMap('sgp', geoS);
+  if (!echarts.getMap('sea')) echarts.registerMap('sea', geoR);
   const f = k.facts;
-  const spec = { title: 'Singapore at a glance: one island economy, eight places that matter for trade',
-    subtitle: 'Main island and key economic zones (locations approximate). Hover a point for its role in this report.',
-    source: 'Source: geoBoundaries (gbOpen, CC BY 4.0) boundary of Singapore; site roles from the chapters of this report; facts from SingStat (Population Trends 2026, land area mid-2024) and the Constitution.' };
+  const spec = { title: `An atlas of Singapore's trade: ${a.sites.length} places and ${a.partners.length} partners`,
+    subtitle: 'Click a place or a partner for its numbers, the course idea it illustrates and the chapter that tests it.',
+    source: `${a.source} Boundaries from geoBoundaries (CC BY 4.0) and Natural Earth, locations approximate. Facts from SingStat (Population Trends 2026).` };
   const chart = cardShell(el, spec, {});
-  el.querySelector('.plot').outerHTML = `<div class="split"><div class="plot"></div><div class="panel"><h5>Key facts</h5><dl>
-    <dt>Capital</dt><dd>${esc(f.capital)} (city state)</dd><dt>Land area</dt><dd>${f.area_km2} km², +28% since 1965</dd>
-    <dt>Population</dt><dd>${f.population_m} million (June 2026)</dd><dt>Languages</dt><dd>${esc(f.languages)}</dd>
-    <dt>Political system</dt><dd>${esc(f.system)}; PAP in government since 1959</dd></dl></div></div>`;
-  const plot = el.querySelector('.plot');
-  const c = echarts.init(plot);
-  const o = baseOption();
-  o.tooltip.trigger = 'item';
-  o.tooltip.formatter = (p) => (p.seriesType === 'scatter' ? `<b>${esc(p.name)}</b><br>${esc(p.data.note)}${tipFooter(spec.source)}` : '<b>Singapore</b>');
-  o.geo = { map: 'sgp', roam: true, itemStyle: { areaColor: '#f1efe9', borderColor: '#b3b2ab' }, emphasis: { disabled: true } };
-  o.series = [{ type: 'scatter', coordinateSystem: 'geo', symbolSize: 14, itemStyle: { color: ECON.SGP, borderColor: INK, borderWidth: 2 },
-    data: SITES.map(([n, xy, note]) => ({ name: n, value: xy, note })),
-    label: { show: true, formatter: '{b}', fontSize: 10.5, color: INK }, emphasis: { scale: 1.6 } }];
-  o.series[0].data.forEach((d) => { d.label = { position: d.value[0] > 103.9 ? 'left' : 'right' }; });
-  c.setOption(o);
-  new ResizeObserver(() => c.resize()).observe(plot);
-  chart.dispose();
+  el.classList.add('atlas');
+  el.querySelector('.controls').innerHTML = '<div class="seg"><button type="button" data-v="sites" class="on">Places in Singapore</button>'
+    + '<button type="button" data-v="partners">Trading partners</button></div>';
+  const panel = el.querySelector('.extra');
+  let mode = 'sites', sel = null;
+  const items = () => (mode === 'sites' ? a.sites : a.partners);
+  const colorOf = (x) => (mode === 'sites' ? SITE_COLORS[a.sites.indexOf(x) % SITE_COLORS.length] : partnerColor(x.id));
+  const badge = (x) => (mode === 'sites' ? `<i class="ab" style="--k:${colorOf(x)}">${ICON[x.id] || ICON.globe}</i>`
+    : `<i class="ab iso" style="--k:${colorOf(x)}">${esc(x.id)}</i>`);
+  const sub = (x) => (mode === 'sites' ? `${x.tag} · ${x.chapter_label}` : `${x.share_x != null ? `${x.share_x.toFixed(1)}% of exports` : 'largest import source'} · ${x.edge ? 'off map' : `${Math.round(x.km || 0).toLocaleString()} km`}`);
+  const list = () => `<div class="panel atlas-card atlas-list"><p class="al-h">${mode === 'sites' ? 'Places that matter for trade' : 'Twelve largest partners'}</p>
+    <ul>${items().map((x) => `<li><button type="button" data-id="${x.id}">${badge(x)}<span><b>${esc(x.name)}</b><small>${esc(sub(x))}</small></span></button></li>`).join('')}</ul>
+    <p class="hint">${mode === 'sites' ? 'Pick a place here or on the map.' : 'Line width is the share of Singapore’s exports. Each card compares actual exports with the gravity prediction of Chapter 3.'}</p></div>`;
+  const card = (x) => {
+    const [hero, ...rest] = x.rows;
+    return `<div class="panel atlas-card" style="--k:${colorOf(x)}">
+    <div class="ac-top">${badge(x)}<div><h5>${esc(x.name)}</h5><p class="ac-sub">${x.km ? `${Math.round(x.km).toLocaleString()} km from Singapore · ${esc(x.fta || 'no trade agreement')}` : esc(x.fta || sub(x))}</p></div>
+      <button type="button" class="ac-x" aria-label="Back to the list">${ICON.close}</button></div>
+    ${hero ? `<div class="ac-hero"><b>${esc(hero[0])}</b><span>${esc(hero[1])} <small>${esc(hero[2])}</small></span></div>` : ''}
+    <dl class="ac-rows">${rest.map((r) => `<div><dt>${esc(r[1])}<small>${esc(r[2])}</small></dt><dd>${esc(r[0])}</dd></div>`).join('')}</dl>
+    <blockquote><span class="tag">${esc(x.tag)}</span> ${esc(x.note)}</blockquote>
+    <a class="go" href="#sec=${x.chapter}|${encodeURIComponent(x.section || '')}">Read ${esc(x.chapter_label)}${x.section ? `, ${esc(x.section)}` : ''} &rarr;</a></div>`;
+  };
+  const show = () => {
+    const x = items().find((i) => i.id === sel);
+    panel.innerHTML = x ? card(x) : list();
+    panel.querySelectorAll('[data-id]').forEach((b) => b.addEventListener('click', () => { sel = b.dataset.id; draw(); show(); }));
+    panel.querySelector('.ac-x')?.addEventListener('click', () => { sel = null; draw(); show(); });
+  };
+  // map controls: zoom in and out around the selected place, and reset
+  let zoom = 1;
+  const plotEl = el.querySelector('.plot');
+  plotEl.insertAdjacentHTML('beforeend', `<div class="mapctl"><button type="button" data-z="in" aria-label="Zoom in">${ICON.plus}</button>`
+    + `<button type="button" data-z="out" aria-label="Zoom out">${ICON.minus}</button><button type="button" data-z="reset" aria-label="Reset view">${ICON.reset}</button></div>`);
+  el.querySelectorAll('.mapctl button').forEach((b) => b.addEventListener('click', () => {
+    zoom = b.dataset.z === 'in' ? Math.min(zoom * 1.6, 6) : b.dataset.z === 'out' ? Math.max(zoom / 1.6, 1) : 1;
+    if (b.dataset.z === 'reset') sel = null;
+    draw(); show();
+  }));
+  const SG = [103.82, 1.35];
+  const narrow = () => el.querySelector('.plot').clientWidth < 420;  // phones: only the selected place is labelled
+  // the island in context: Singapore from geoBoundaries, the Johor and Riau coasts from Natural Earth
+  if (!echarts.getMap('sgp_region')) {
+    echarts.registerMap('sgp_region', { type: 'FeatureCollection', features: [
+      ...geoR.features.filter((ft) => ['Malaysia', 'Indonesia'].includes(ft.properties.name)), ...geoS.features] });
+  }
+  const lab = (extra = {}) => ({ show: true, formatter: '{b}', fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600,
+    color: '#e8eef4', textBorderColor: '#0b2239', textBorderWidth: 3, distance: 7, ...extra });
+  const water = (data) => ({ type: 'scatter', coordinateSystem: 'geo', symbolSize: 0, silent: true, z: 1, data,
+    label: { show: true, formatter: '{b}', fontFamily: 'Inter, sans-serif', fontSize: 10.5, fontWeight: 600, letterSpacing: 2.5,
+      color: 'rgba(159,182,204,.6)' } });
+  const LAND = { areaColor: '#163a5c', borderColor: '#3f6b93', borderWidth: 0.8 };
+  const draw = () => {
+    const o = baseOption();
+    o.tooltip.trigger = 'item';
+    o.tooltip.formatter = (p) => (p.seriesType === 'scatter' && p.data?.id ? `<b>${esc(p.data.full || p.data.name)}</b><br><span style="color:${MUTED}">Click for its card</span>` : '');
+    o.series = [];
+    if (mode === 'sites') {
+      o.geo = { map: 'sgp_region', roam: false, boundingCoords: [[103.56, 1.515], [104.11, 1.165]], left: 6, right: 6, top: 6, bottom: 6,
+        zoom, center: zoom > 1 ? (items().find((i) => i.id === sel)?.coord || [103.83, 1.35]) : undefined,
+        itemStyle: LAND, emphasis: { disabled: true }, silent: true,
+        regions: [{ name: 'Singapore', itemStyle: { areaColor: '#24507a', borderColor: '#9cc0e0', borderWidth: 1.3 } }] };
+      o.series.push(water([{ name: 'SINGAPORE STRAIT', value: [103.86, 1.205] }, { name: 'JOHOR, MALAYSIA', value: [103.78, 1.497] },
+        { name: 'BATAM, INDONESIA', value: [104.0, 1.178] }]));
+      const cur = a.sites.find((x) => x.id === sel);
+      if (cur) o.series.push({ type: 'effectScatter', coordinateSystem: 'geo', z: 3, silent: true, symbolSize: 18,
+        data: [{ value: cur.coord }], rippleEffect: { scale: 3.2, brushType: 'stroke' }, itemStyle: { color: colorOf(cur) } });
+      o.series.push({ type: 'scatter', coordinateSystem: 'geo', z: 4, labelLayout: { moveOverlap: 'shiftY' },
+        data: a.sites.map((x) => ({ name: SHORT_LABEL[x.id] || x.name, full: x.name, value: x.coord, id: x.id,
+          symbolSize: sel === x.id ? 20 : 13, itemStyle: { color: colorOf(x), borderColor: '#ffffff', borderWidth: 2 },
+          label: { show: !narrow() || sel === x.id, position: LABEL_POS[x.id] || (x.coord[0] > 103.9 ? 'left' : 'right'),
+            ...(sel === x.id ? { color: '#f2b84b', fontSize: 13.5 } : {}) } })),
+        label: lab(), emphasis: { scale: 1.25 } });
+    } else {
+      o.geo = { map: 'sea', roam: false, boundingCoords: [[92, 26.5], [128.5, -11.5]], left: 6, right: 6, top: 10, bottom: 6,
+        zoom, center: zoom > 1 ? (items().find((i) => i.id === sel)?.coord || [108, 6]) : undefined,
+        itemStyle: LAND, emphasis: { disabled: true }, silent: true,
+        regions: [{ name: 'Singapore', itemStyle: { areaColor: ECON.SGP, borderColor: ECON.SGP } }] };
+      o.series.push(water([{ name: 'SOUTH CHINA SEA', value: [114, 13] }, { name: 'INDIAN OCEAN', value: [95.5, -3] },
+        { name: 'STRAIT OF MALACCA', value: [97.8, 6] }]));
+      o.series.push({ type: 'lines', coordinateSystem: 'geo', silent: true, z: 2,
+        effect: { show: true, period: 6, trailLength: 0.3, symbol: 'circle', symbolSize: 3, color: '#ffe2a3' },
+        data: a.partners.filter((p) => p.share_x).map((p) => ({ coords: [SG, p.coord],
+          lineStyle: { width: 0.8 + p.share_x / 2.4, color: sel === p.id ? '#ffffff' : 'rgba(242,184,75,.75)',
+            opacity: sel && sel !== p.id ? 0.18 : 1, curveness: 0.22 } })) });
+      o.series.push({ type: 'effectScatter', coordinateSystem: 'geo', z: 3, data: [{ name: 'Singapore', value: SG }], symbolSize: 11,
+        rippleEffect: { scale: 3.5, brushType: 'stroke' }, itemStyle: { color: ECON.SGP }, silent: true,
+        label: { ...lab({ fontSize: 13.5, fontWeight: 700 }), formatter: 'Singapore', position: 'bottom' } });
+      o.series.push({ type: 'scatter', coordinateSystem: 'geo', z: 4, labelLayout: { moveOverlap: 'shiftY' },
+        data: a.partners.map((x) => ({ name: x.edge ? `${x.name} ↗` : x.name, value: x.coord, id: x.id,
+          symbolSize: sel === x.id ? 14 : 9, itemStyle: { color: sel === x.id ? '#ffffff' : '#f2b84b', borderColor: '#0b2239', borderWidth: 1.5 },
+          label: { show: !narrow() || sel === x.id, position: LABEL_POS[x.id] || (x.coord[0] > 124 ? 'left' : 'right'),
+            ...(sel === x.id ? { color: '#f2b84b' } : {}) } })),
+        label: lab({ fontSize: 11.5 }), emphasis: { scale: 1.4 } });
+    }
+    chart.setOption(o, true);
+  };
+  chart.on('click', (p) => { if (p.seriesType === 'scatter' && p.data?.id && p.data.id !== sel) { sel = p.data.id; draw(); show(); } });
+  el.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
+    el.querySelectorAll('.seg button').forEach((x) => x.classList.toggle('on', x === b));
+    mode = b.dataset.v; sel = null; zoom = 1; draw(); show();
+  }));
+  draw(); show();
+  new ResizeObserver(() => draw()).observe(el.querySelector('.plot'));  // re-fit the map when its box settles
 }
 
 // ---------- governance: WGI radar following the year control ----------
@@ -262,7 +384,7 @@ export async function gvcNetwork(el) {
     o.tooltip.formatter = (p) => (p.dataType === 'edge'
       ? `<b>${esc(nameOf(p.data.source))} → ${esc(nameOf(p.data.target))}</b>, ${y}<br>Value added: <b>$${p.data.value.toFixed(1)}bn</b>${tipFooter(d.source)}`
       : `<b>${esc(p.name)}</b>, ${y}<br>Gross exports: <b>$${p.data.x0.exgr_bn.toFixed(0)}bn</b><br>Backward: <b>${p.data.x0.backward.toFixed(1)}%</b> · Forward: <b>${p.data.x0.forward.toFixed(1)}%</b><br>Position index: <b>${p.data.x0.position.toFixed(3)}</b> (${p.data.x0.position > 0 ? 'upstream' : 'downstream'})${tipFooter(d.source)}`);
-    o.series = [{ type: 'graph', layout: 'force', roam: true, draggable: true, data: nodes, links,
+    o.series = [{ type: 'graph', layout: 'force', roam: false, draggable: true, data: nodes, links,
       edgeSymbol: ['none', 'arrow'], edgeSymbolSize: 6, force: { repulsion: 420, edgeLength: [70, 170], gravity: .08 },
       emphasis: { focus: 'adjacency' } }];
     chart.setOption(o, true);
@@ -324,7 +446,8 @@ export async function fdiExplorer(el) {
     o.yAxis = [{ type: 'value', gridIndex: 0, name: 'S$ billions', splitLine: { lineStyle: { color: LINE } } },
       { type: 'category', gridIndex: 1, inverse: true, data: p.series.map((s) => s.name), axisLabel: { width: 135, overflow: 'truncate', fontSize: 11, color: INK } }];
     o.tooltip.trigger = 'axis';
-    o.tooltip.formatter = (ps) => {
+    o.tooltip.formatter = (raw) => {
+      const ps = Array.isArray(raw) ? raw : [raw];
       if (ps[0].axisIndex === 1 || ps[0].seriesType === 'bar') return `<b>${esc(ps[0].name)}</b>, ${y}<br><b>${ps[0].value.toFixed(1)}%</b> of total${hubs.has(ps[0].name) ? '<br><i>Holding-company hub: immediate, not ultimate, investor</i>' : ''}${tipFooter(d.source)}`;
       return `<b>${ps[0].axisValue}</b>${ps.filter((x) => x.value != null).map((x) => `<div>${esc(x.seriesName)}: <b>S$${x.value.toFixed(0)}bn</b></div>`).join('')}${tipFooter(d.source)}`;
     };

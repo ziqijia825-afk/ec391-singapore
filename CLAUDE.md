@@ -113,14 +113,20 @@ structure, data routes and methods only; never their text, charts or numbers (th
   figure in `site/data/figs/` (same numbers, units, source), `data/derived/chNN.json` and `data/derived/*.md` tables.
   `export_site_data.py` writes the interactive datasets (KPIs, Sankey, GVC network, FDI explorer, WGI by year, RCA by
   year). `run_all.py` reruns everything and builds the site.
-- Site: `site/build.py` builds `_site/index.html` (interactive picture book from `site/app/`: poster cover with map, then
-  each chapter paginated into two-page spreads by `paginate()` (text left, figure right, interactive components across
-  both pages), turned with a 3D flip in `js/book.js`, one page at a time below 820px. Figures and tables are numbered
-  per chapter at build time; `## Heading {Feyrer 2009}` in text/*.md becomes a course-reading tag (stripped from the
-  Markdown report); chapter openers show three number cards from `data/derived/tiles.json` and Ch. 5 has value-chain
-  cards (`ch05_chains.md`), both written by `export_site_data.py` from the derived JSON; global year slider, ECharts 5.5.0
-  vendored in `site/app/vendor/`) + `_site/article/*.html` (static version) +
-  the Markdown deliverable `report/EC391_Singapore.md`. In `text/*.md`, `<!-- include: data/derived/X.md -->` inserts a
+- Site: `site/build.py` builds `_site/index.html`, an editorial country profile modelled on the Growth Lab and OEC
+  profiles (Nov 13, after the picture book was dropped): a dark nautical cover map of Singapore's export lanes with six
+  ranked KPIs, then one screen per question, made by `paginate()`: text column on the left (question, bold answer,
+  short paragraphs, expandable details, previous/next section links), a sticky full-height chart on the right,
+  full-width screens for interactive components, single-column prose screens, navy chapter openers with contents and
+  three number cards. `js/story.js` renders charts lazily, follows the reader (chapter tab, address, progress bar) and
+  resolves `#pN`, `#chNN` and `#sec=chNN|Heading` links. Palette and type: navy, gold, Singapore red, Source Serif 4,
+  Inter, one accent colour per chapter (`BANNER_COLORS` in build.py); small UI: numbered chapter chips, a Contents
+  drawer, a key-number strip with line icons (`js/icons.js`), a dictionary-style fact grid (`ch01_facts.md`), atlas list
+  and detail cards with map zoom controls. `js/enhance.js` threads small UI through the text (number highlights, peer colour dots,
+  glossary tooltips with the team's own definitions, counts on "More" toggles, chapter meta chips, next-chapter cards);
+  `chart.js` adds a stat strip, source badges and a copy-link button under each chart. Figures and tables are numbered per chapter; `## Heading {Feyrer 2009}` becomes a course-reading tag; the
+  Ch. 1 atlas (`site/data/atlas.json`) has 7 places and 12 partners with sourced cards. ECharts 5.5.0 vendored;
+  `_site/article/*.html` is the static version and the Markdown deliverable `report/EC391_Singapore.md`. In `text/*.md`, `<!-- include: data/derived/X.md -->` inserts a
   table and `<!-- interactive: NAME -->` places a component (sgmap, sankey, treemap, gvc, fdi). Build adds `?v=` cache
   busting to JS and data. Local preview `ec391-site` on :8391 (`~/.claude/launch.json`).
 - Testing in a hidden browser pane: IntersectionObserver and animations are throttled, so render charts by importing

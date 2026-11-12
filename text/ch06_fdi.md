@@ -15,7 +15,7 @@ Singapore is the world's second largest destination for foreign direct investmen
 
 ![Foreign firms own assets worth 4.1 times Singapore's GDP](../figures/ch06_stocks_gdp.png)
 
-Inward FDI rose from S$277 billion at the end of 2004 (142 percent of GDP) to S$3,130 billion at the end of 2024 (409 percent of GDP), and Singapore's direct investment abroad from S$180 billion to S$1,653 billion (216 percent of GDP). Both ratios keep rising, which is typical of an economy that serves as a base from which multinationals hold and finance operations in other countries. Malaysia and Vietnam, whose FDI goes mainly into factories, receive far less relative to GDP.
+Inward FDI rose from 142 percent of GDP at the end of 2004 to 409 percent (S$3,130 billion) at the end of 2024, the profile of a base from which multinationals hold and finance operations in other countries. Malaysia and Vietnam, whose FDI goes mainly into factories, receive far less relative to GDP.
 
 </details>
 
@@ -32,11 +32,7 @@ Inward FDI rose from S$277 billion at the end of 2004 (142 percent of GDP) to S$
 
 ![The US is the largest investor](../figures/ch06_sources.png)
 
-Japan and the United Kingdom follow the Caribbean centres as sources. Wholesale and retail trade holds 13.4 percent of the stock and manufacturing 8.0 percent.
-
-
-The Caribbean financial centres together account for 22 percent of the inward stock, and Luxembourg and the Netherlands for another 7.5 percent. Singapore follows the IMF's Balance of Payments Manual and publishes no series by ultimate investor ([SingStat technical notes](https://www.singstat.gov.sg/files/4603e8e3-2291-424f-9c8d-b96962ef6a02.pdf)). Damgaard, Elkjaer and Johannesen (2019) estimate that close to 40 percent of global FDI is "phantom" investment through empty corporate shells, and they name Singapore among the ten economies that host most of it ([IMF Finance and Development](https://www.imf.org/en/Publications/fandd/issues/2019/09/the-rise-of-phantom-FDI-in-tax-havens-damgaard)). Finance and insurance as a whole hold 65.5 percent of the stock, professional and administrative services 4.9 percent and transport and storage 3.7 percent. Within manufacturing, semiconductors account for 2.2 percent of the total stock and pharmaceuticals for only 0.3 percent, a contrast examined in Chapter 9.
-
+Finance and insurance hold 65.5 percent of the stock, wholesale and retail trade 13.4 percent and manufacturing 8.0 percent, of which semiconductors are 2.2 percent and pharmaceuticals only 0.3 percent (Chapter 9). Singapore publishes no series by ultimate investor ([SingStat technical notes](https://www.singstat.gov.sg/files/4603e8e3-2291-424f-9c8d-b96962ef6a02.pdf)). Damgaard, Elkjaer and Johannesen (2019) estimate that close to 40 percent of global FDI is "phantom" investment through empty corporate shells and name Singapore among the ten economies that host most of it ([IMF Finance and Development](https://www.imf.org/en/Publications/fandd/issues/2019/09/the-rise-of-phantom-FDI-in-tax-havens-damgaard)).
 
 </details>
 
@@ -63,24 +59,22 @@ Singapore combines a large flow of new plants and headquarters with an active ma
 
 ![Singapore invests mostly in Asia](../figures/ch06_outward_destinations.png)
 
-**Heavily, mostly in Asia.** Direct investment abroad reached S$1,653 billion at the end of 2024, 216 percent of GDP, and Asia, led by mainland China, India and Indonesia, takes 52 percent. Income from these investments rose from 19.5 to 36.3 percent of GDP between 2004 and 2024, but foreign investors in Singapore earn even more (53.7 percent of GDP), so gross national income is only 82.7 percent of GDP.
+**Heavily, mostly in Asia.** Direct investment abroad reached S$1,653 billion at the end of 2024, 216 percent of GDP, and Asia, led by mainland China, India and Indonesia, takes 52 percent. Income from it rose from 19.5 to 36.3 percent of GDP between 2004 and 2024, but foreign investors in Singapore earn even more (53.7 percent of GDP), so gross national income is only 82.7 percent of GDP.
 
 <details class="more" markdown="1">
 <summary>More: investment income over time and outward FDI by industry</summary>
 
 ![Income from investment abroad reached 36% of GDP](../figures/ch06_income.png)
 
-
 ![Half of Singapore's investment abroad is in finance](../figures/ch06_outward_industries.png)
 
-Half of the outward stock (50.5 percent) is in finance and insurance, much of it holding companies that own operating firms elsewhere, 17.0 percent in manufacturing, 6.7 percent in wholesale and retail trade and 6.6 percent in real estate. Part of this outward investment is the second half of the pass through described above. It also includes state linked investors and Singaporean firms that have moved labour intensive production to neighbouring countries, a movement that the Johor Singapore Special Economic Zone agreed with Malaysia in January 2025 is designed to support.
-
+Half of the outward stock (50.5 percent) is in finance and insurance, much of it holding companies that own firms elsewhere, and 17.0 percent in manufacturing, including labour intensive production moved to neighbouring countries, a shift the Johor Singapore Special Economic Zone agreed with Malaysia in January 2025 is designed to support.
 
 </details>
 
 ## Implications for trade and investment
 
-FDI is the engine of Singapore's model, bringing the capital, technology and market access that six million people could not build alone. Because so much of it is pass through money, the headline numbers overstate productive capital and react to global tax rules, including the minimum tax of 2025 (Chapter 9). Chapter 7 looks at the policies that keep it coming.
+FDI brings the capital, technology and market access that six million people could not build alone. Because so much of it is pass through money, the headline numbers overstate productive capital and react to global tax rules such as the minimum tax of 2025 (Chapter 9). Chapter 7 looks at the policies that keep it coming.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

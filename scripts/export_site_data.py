@@ -57,7 +57,7 @@ kpis = [
     {"label": "Government effectiveness, 2025", "value": f"{d2['wgi']['ranks']['GE']['value']:.1f}/100",
      "rank": d2["wgi"]["ranks"]["GE"], "source": "World Bank WGI"},
 ]
-dump("kpis", {"kpis": kpis, "facts": {"capital": "Singapore", "area_km2": 735.6, "population_m": 6.21,
+dump("kpis", {"kpis": kpis, "facts": {"capital": "Singapore", "area_km2": 745.1, "population_m": 6.21,
                                       "languages": "Malay (national), English, Mandarin, Tamil",
                                       "system": "Parliamentary republic", "coords": [103.82, 1.35]}})
 
@@ -269,6 +269,11 @@ tiles = {
          "rank": f"{c9['rca_groups']['Finished pharma']['2004']:.2f} in 2004"},
         {"value": f"{c9['va_share']['Semiconductors']['2025']:.0f}%", "label": "Chips' share of manufacturing value added, 2025",
          "rank": f"pharma {c9['va_share']['Pharmaceuticals']['2025']:.0f}%"}],
+    "conclusion": [  # one number from each part of the argument
+        {"value": f"{c3['openness']['2024']['SGP']:.0f}%", "label": "Trade, % of GDP, 2024 (Chapter 3)", "rank": rk(c3["openness"]["rank"], False)},
+        {"value": f"{c6['stocks']['pct_gdp']['Inward FDI stock']['2024']:.0f}%", "label": "Inward FDI stock, % of GDP, 2024 (Chapter 6)",
+         "rank": f"outward {c6['stocks']['pct_gdp']['Outward FDI stock']['2024']:.0f}%"},
+        {"value": ordinal(ge["rank"]), "label": "Government effectiveness, world rank, 2025 (Chapter 2)", "rank": f"of {ge['n']} economies"}],
 }
 (ROOT / "data" / "derived" / "tiles.json").write_text(json.dumps(tiles, indent=1, ensure_ascii=False))
 print("wrote data/derived/tiles.json")
@@ -312,3 +317,147 @@ md.append("\n*Sources: team calculation from CEPII BACI (RCA, world shares); EDB
           "M355181 (value added, 2025 preliminary); SingStat M084831 (FDI stock).*\n")
 (ROOT / "data" / "derived" / "ch09_scorecard.md").write_text("\n".join(md))
 print("wrote data/derived/ch09_scorecard.md")
+
+# ---------------------------------------------------------------- Ch. 1 data atlas: places and partners
+# Every number below is read from data/derived; the notes are the team's own wording and link each place to a course idea.
+c4e = c4["endowments"]
+ntm_sg = next(r for r in c7["ntm"]["summary"] if r["iso3"] == "SGP")
+reex = c3["reexports"]["share"]
+ind = c6["industries_2024"]
+sites = [
+    {"id": "port", "section": "Does its trade follow gravity?", "name": "Pasir Panjang port", "coord": [103.765, 1.272], "chapter": "ch03_trade", "chapter_label": "Chapter 3",
+     "tag": "Feyrer 2009", "rows": [
+        [f"{c4['rca_sector']['2024']['SGP']['Transport & logistics']:.1f}", "RCA in transport and logistics, 2024",
+         f"{c4['rca_sector']['2004']['SGP']['Transport & logistics']:.1f} in 2004, team calculation"],
+        [f"{c3['structure']['exports']['Transport services']['2024']:.1f}%", "of exports are transport services, 2024", "World Bank BoP and BACI"],
+        [f"{reex['Re-exports']['2024']:.1f}%", "of merchandise exports are re-exports, 2024", f"{reex['Re-exports']['2004']:.1f}% in 2004, SingStat"],
+        [f"{c2['lpi']['value']:.2f}", f"Logistics Performance Index, {c2['lpi']['year']}", f"{ordinal(c2['lpi']['rank'])} of {c2['lpi']['n']}, World Bank"]],
+     "note": "Ships between the Indian Ocean and East Asia pass this port, so Singapore earns a living by moving goods made elsewhere. "
+             "Feyrer's Suez Canal experiment shows that sea distance is a real trade cost, and the port exists to lower it."},
+    {"id": "jurong", "section": "Does it fit Heckscher Ohlin?", "name": "Jurong Island", "coord": [103.69, 1.262], "chapter": "ch04_rca", "chapter_label": "Chapter 4",
+     "tag": "Nunn 2007", "rows": [
+        [f"{sec['Refined petroleum']['fva_share']:.0f}%", f"foreign value in refined fuel exports, {c5['year']}", "OECD TiVA"],
+        [f"{c4['rca_sector']['2024']['SGP']['Refined petroleum']:.2f}", "RCA in refined petroleum, 2024",
+         f"{c4['rca_sector']['2004']['SGP']['Refined petroleum']:.2f} in 2004, team calculation"],
+        [f"{reex['Oil domestic exports']['2024']:.1f}%", "of merchandise exports are oil made in Singapore, 2024", "SingStat"],
+        [f"{c4['rca_sector']['2024']['SGP']['Chemicals & plastics']:.2f}", "RCA in chemicals and plastics, 2024",
+         f"{c4['rca_sector']['2004']['SGP']['Chemicals & plastics']:.2f} in 2004"]],
+     "note": "Crude comes in and fuels and plastics go out. Refining is among Nunn's least contract intensive industries, and it lost its "
+             "advantage as capacity grew in the Middle East and China, while Singapore's skill and contract intensive sectors kept theirs."},
+    {"id": "fabs", "section": "The scorecard", "name": "Wafer fab parks", "coord": [103.789, 1.447], "chapter": "ch09_case", "chapter_label": "Chapter 9",
+     "tag": "Infant industry", "rows": [
+        [f"{c9['rca_groups']['Chips']['2024']:.1f}", "RCA in chips, 2024", f"{c9['rca_groups']['Chips']['1995']:.1f} in 1995, team calculation from BACI"],
+        [f"${c9['ic_exports_bn']['2024']:.1f}bn", "integrated circuit exports, 2024", f"{c9['ic_world_share']['2024']:.1f}% of the world, BACI"],
+        [f"{c9['va_share']['Semiconductors']['2025']:.0f}%", "of manufacturing value added, 2025", "EDB census via SingStat"],
+        [f"S${c9['fdi_stock_sgd_bn']['Semiconductors']['2024']:.0f}bn", "foreign investment stock in chips, 2024", "SingStat"]],
+     "note": "Woodlands, Tampines and Pasir Ris host the wafer fabs. Chips are the infant industry that grew up without a tariff, "
+             "drawn in by tax holidays in 1968 and moved up into fabrication from 1987."},
+    {"id": "tuas", "section": "The scorecard", "name": "Tuas Biomedical Park", "coord": [103.635, 1.322], "chapter": "ch09_case", "chapter_label": "Chapter 9",
+     "tag": "Infant industry", "rows": [
+        [f"{c9['rca_groups']['Finished pharma']['2024']:.2f}", "RCA in finished medicines and biologics, 2024",
+         f"{c9['rca_groups']['Finished pharma']['2004']:.2f} in 2004, team calculation"],
+        [f"{c9['rca_products']['3002 Biologics and vaccines']['2024']:.2f}", "RCA in biologics and vaccines, 2024", "HS 3002, BACI"],
+        [f"{c9['va_share']['Pharmaceuticals']['2025']:.1f}%", "of manufacturing value added, 2025",
+         f"{c9['va_share']['Pharmaceuticals']['2004']:.0f}% in 2004, EDB census"],
+        [f"S${c9['fdi_stock_sgd_bn']['Pharmaceuticals']['2024']:.0f}bn", "foreign investment stock in pharma, 2024",
+         f"S${c9['fdi_stock_sgd_bn']['Pharmaceuticals']['2004']:.0f}bn in 2004, SingStat"]],
+     "note": "The second bet of the industrial policy, launched in 2000. Its plants built a real export advantage in biologics, "
+             "while the industry's weight in value added and foreign capital at home shrank."},
+    {"id": "onenorth", "section": "Implications for trade and investment", "name": "one-north and Biopolis", "coord": [103.789, 1.299], "chapter": "ch05_gvc", "chapter_label": "Chapter 5",
+     "tag": "Fort 2017", "rows": [
+        [f"{c4e['hc_sgp']:.2f}", "human capital index, PWT", f"{ordinal(c4e['hc_rank'])} of {c4e['hc_n']}"],
+        [f"{c1['vs_region']['table']['SGP']['Tertiary enrolment, gross (%)']:.0f}%", "tertiary enrolment, gross",
+         f"East Asia & Pacific {c1['vs_region']['table']['EAS']['Tertiary enrolment, gross (%)']:.0f}%, World Bank"],
+        [f"{c4['rca_sector']['2024']['SGP']['ICT & business services']:.1f}", "RCA in ICT and business services, 2024",
+         f"{c4['rca_sector']['2004']['SGP']['ICT & business services']:.1f} in 2004"],
+        [f"{c1['hdi']['value_2023']:.3f}", "Human Development Index, 2023", f"{ordinal(c1['hdi']['rank'])} of {c1['hdi']['n']}, UNDP"]],
+     "note": "The research district. Fort shows that cheaper communication lets firms split production toward places with high "
+             "human capital, so Singapore keeps the design and research stages while assembly moves to its neighbours."},
+    {"id": "cbd", "section": "Who invests, and in what?", "name": "Central business district", "coord": [103.851, 1.282], "chapter": "ch06_fdi", "chapter_label": "Chapter 6",
+     "tag": "Phantom FDI", "rows": [
+        [f"${c6['inflows_gdp']['inflows_usd_rank_2024']['value'] / 1e9:.0f}bn", "FDI net inflows, 2024",
+         f"{ordinal(c6['inflows_gdp']['inflows_usd_rank_2024']['rank'])} of {c6['inflows_gdp']['inflows_usd_rank_2024']['n']}, World Bank"],
+        [f"{ind['Finance: holding companies']:.1f}%", "of the inward FDI stock is in holding companies, 2024", "SingStat"],
+        [f"{c6['stocks']['pct_gdp']['Inward FDI stock']['2024']:.0f}%", "inward FDI stock, % of GDP, 2024", "SingStat"],
+        [f"{c4['rca_sector']['2024']['SGP']['Finance & insurance']:.1f}", "RCA in finance and insurance, 2024",
+         f"{c4['rca_sector']['2004']['SGP']['Finance & insurance']:.1f} in 2004"]],
+     "note": "Banks, regional headquarters and holding companies sit here, so much of the investment recorded in Singapore "
+             "is money passing through on its way to the rest of Asia."},
+    {"id": "changi", "section": "What are its trade agreements for?", "name": "Changi Airport and Airport Logistics Park", "coord": [103.99, 1.355], "chapter": "ch07_policy",
+     "chapter_label": "Chapter 7", "tag": "Rules of origin", "rows": [
+        [f"{c7['TM.TAX.MRCH.SM.FN.ZS']['value']:.2f}%", "average MFN tariff, 2022",
+         f"{ordinal(c7['TM.TAX.MRCH.SM.FN.ZS']['rank'])} lowest of {c7['TM.TAX.MRCH.SM.FN.ZS']['n']}, WITS"],
+        [str(c7["fta"]["n"]), "free trade agreements in force", f"{c7['fta']['count_2004']} in 2004, Enterprise Singapore"],
+        [f"{ntm_sg['imports_coverage']:.1f}%", "of imports touched by non-tariff measures", "UNCTAD TRAINS via WITS"],
+        [str(c7["bits"]["n"]), "bilateral investment treaties", f"first in {c7['bits']['first'][:4]}, METI"]],
+     "note": "An air cargo free trade zone inside a country that already charges almost no tariffs. Because of that, partners "
+             "rely on rules of origin to stop goods slipping through, which makes regional content rules matter for Singapore."},
+]
+FDI_NAME = {"USA": "United States Of America", "JPN": "Japan", "HKG": "Hong Kong", "CHN": "Mainland China", "TWN": "Taiwan",
+            "KOR": "Republic Of Korea"}
+OUT_NAME = {"CHN": "Mainland China", "IND": "India", "IDN": "Indonesia", "HKG": "Hong Kong", "AUS": "Australia", "MYS": "Malaysia",
+            "USA": "United States Of America"}
+partner_pos = {  # map position; partners beyond the regional map sit at its edge, marked "off map"
+    "MYS": ([101.69, 3.14], False), "IDN": ([106.85, -6.21], False), "THA": ([100.50, 13.75], False), "VNM": ([105.85, 21.03], False),
+    "HKG": ([114.17, 22.32], False), "CHN": ([110.0, 25.6], True), "TWN": ([121.0, 24.2], False), "KOR": ([126.8, 25.6], True),
+    "JPN": ([127.8, 19.0], True), "USA": ([127.8, 8.0], True), "AUS": ([123.0, -10.3], True), "IND": ([92.7, 19.5], True)}
+pnotes = {
+    "MYS": "The closest partner, across the Causeway, trades about what gravity predicts. Much of it is two way trade in "
+           "electronics inside the same supply chains, and the Johor Singapore Special Economic Zone of 2025 aims to deepen it.",
+    "CHN": "The largest export market and, with the United States, the largest source of foreign value in Singapore's exports. "
+           "Trade runs well above what size and distance predict, with two agreements and shared supply chains behind it.",
+    "HKG": "The other entrepôt buys far more than gravity predicts, most likely because goods bound for mainland China pass "
+           "through it. Trade between two hubs shows how re-exports stretch the gravity model.",
+    "USA": "Distant yet one of the largest markets and the largest direct investor. Its 2025 tariffs and chip export controls "
+           "are the main outside risk for Singapore's two industrial bets (Chapters 7 and 9).",
+    "IDN": "A large neighbour that buys about what gravity predicts, and one of the main destinations of Singapore's own "
+           "investment abroad.",
+    "TWN": "The largest source of imports, largely chips for testing, packaging and re-export. Taiwan is outside the gravity "
+           "sample because the World Bank publishes no GDP for it.",
+    "JPN": "An early agreement partner (2002), the third largest source of foreign value in Singapore's exports and a large "
+           "direct investor.",
+    "KOR": "A supplier of inputs to Singapore's exports that also buys far more than gravity predicts, under an agreement in "
+           "force since 2006.",
+    "IND": "Linked by a 2005 agreement, India supplies services and goods to Singapore's exports and is the second destination "
+           "of its investment abroad.",
+    "THA": "An ASEAN partner in the same electronics and chemicals chains, buying above the gravity prediction.",
+    "VNM": "The newcomer competing for the same factories also buys well above the gravity prediction, a sign of supply "
+           "chain links across ASEAN.",
+    "AUS": "A distant partner with an agreement since 2003 that buys several times the gravity prediction and hosts Singapore "
+           "investment.",
+}
+sk = json.loads((OUT / "sankey.json").read_text())["partners"]
+partners = []
+for iso, (pos, edge) in partner_pos.items():
+    p = sk.get(iso, {})
+    rows = []
+    if p:
+        rows.append([f"{p['share_x']['2024']:.1f}%", "of Singapore's exports, 2024", "UN Comtrade"])
+        rows.append([f"{p['share_m']['2024']:.1f}%", "of Singapore's imports, 2024", "UN Comtrade"])
+    ratio = c3["gravity_ratio"].get(iso)
+    if ratio:
+        rows.append([f"{ratio:.1f}×", "actual exports over the gravity prediction", "team regression, Chapter 3"])
+    if iso in c5["fva_origin_top10"]:
+        rows.append([f"{c5['fva_origin_top10'][iso]:.1f}%", f"of foreign value in Singapore's exports, {c5['year']}", "OECD TiVA"])
+    if iso in FDI_NAME and FDI_NAME[iso] in c6["sources_2024"]:
+        rows.append([f"{c6['sources_2024'][FDI_NAME[iso]]:.1f}%", "of inward FDI stock, 2024", "SingStat"])
+    if iso in OUT_NAME and OUT_NAME[iso] in c6["outward_2024"]["top"]:
+        rows.append([f"{c6['outward_2024']['top'][OUT_NAME[iso]]:.1f}%", "of Singapore's FDI abroad, 2024", "SingStat"])
+    partners.append({"id": iso, "name": p.get("name") or NAMES.get(iso, iso), "coord": pos, "edge": edge,
+                     "km": p.get("km"), "fta": p.get("fta"), "rows": rows[:5], "note": pnotes[iso],
+                     "share_x": p.get("share_x", {}).get("2024"), "chapter": "ch03_trade", "chapter_label": "Chapter 3",
+                     "section": "Does its trade follow gravity?", "tag": "Gravity model"})
+dump("atlas", {"sites": sites, "partners": partners,
+               "source": "Team calculations from UN Comtrade, CEPII BACI, OECD TiVA, SingStat, World Bank WDI and LPI, PWT, UNDP, "
+                         "WITS and METI; numbers as in the chapters."})
+
+# ---------------------------------------------------------------- Ch. 1 fact grid (dictionary-style entries)
+facts = json.loads((OUT / "kpis.json").read_text())["facts"]
+entries = [("Capital", f"{facts['capital']} (city state)"), ("Official languages", facts["languages"]),
+           ("Land area", f"{facts['area_km2']} km² (June 2026), +28% since 1965"), ("Population", f"{facts['population_m']} million (June 2026)"),
+           ("Political system", f"{facts['system']}, PAP in government since 1959"), ("Prime minister", "Lawrence Wong, since May 2024"),
+           ("Currency", "Singapore dollar (S$)"), ("Memberships", "ASEAN (1967), APEC (1989), WTO (1995), CPTPP, RCEP")]
+(ROOT / "data" / "derived" / "ch01_facts.md").write_text(
+    '<section class="facts">' + "".join(f"<div><span>{k}</span><b>{v}</b></div>" for k, v in entries)
+    + '<p class="facts-src">SingStat Population Trends 2026 and land area series, Constitution of Singapore, Prime Minister\'s Office, WTO.</p></section>\n')
+print("wrote data/derived/ch01_facts.md")

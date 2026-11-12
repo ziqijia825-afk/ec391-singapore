@@ -102,8 +102,8 @@ NAV = [("intro", "Overview"), ("ch01_profile", "1 Profile"), ("ch02_macro", "2 M
        ("ch06_fdi", "6 FDI"), ("ch07_policy", "7 Trade policy"), ("ch09_case", "9 Case study"),
        ("conclusion", "Conclusion"), ("appendix", "Appendix")]
 SPECIAL_FIGS = {"ch02_wgi_radar": "wgi"}
-BANNER_COLORS = ["#4db6ec", "#5dae4b", "#f28a2e", "#ffc93c", "#2e8fd0", "#e8552f", "#2f7d3a", "#4db6ec", "#f28a2e",
-                 "#5dae4b", "#9aa7b0"]  # figures replaced by a richer interactive component
+BANNER_COLORS = ["#334e68", "#0f766e", "#4338ca", "#e2562b", "#15803d", "#7c3aed", "#0369a1", "#b45309", "#be123c",
+                 "#0b2239", "#475569"]  # one accent per chapter, in NAV order
 IMG = re.compile(r'<p>\s*<img alt="([^"]*)" src="figures/([\w-]+)\.png"\s*/?>\s*</p>')
 MARK = re.compile(r"<!--\s*interactive:\s*(\w+)\s*-->")
 
@@ -331,46 +331,62 @@ def build_book(texts):
             for sec in [sp.get("section"), *sp.get("also", [])]:
                 if sec and (stem, sec) not in sid:
                     sid[(stem, sec)] = sp
+    contents = []
+    for stem, label, color, title, spreads in chapters:
+        m = re.match(r"ch(\d+)_", stem)
+        num = m.group(1) if m else ""
+        heads = spreads[0].get("heads", []) if spreads and spreads[0]["kind"] == "opener" else []
+        items = "".join(f'<li><a href="#p{sid[(stem, h)]["id"]}">{h}</a></li>' for h in heads if (stem, h) in sid)
+        name = re.sub(r"^\d+\s+", "", title)
+        contents.append(f'<div class="ct-ch" style="--c:{color}"><a class="ct-head" href="#{stem}"><i>{num or "&middot;"}</i>'
+                        f'<span>{name}</span></a>' + (f'<ol>{items}</ol>' if items else "") + "</div>")
+    build_book.contents = "".join(contents)
     out = []
     for stem, label, color, title, spreads in chapters:
         short = re.sub(r"^\d+\s+", "", label)
         for sp in spreads:
             f = sp["folio"]
-            attrs = f'class="spread {sp["kind"]}" id="p{sp["id"]}" data-ch="{stem}" style="--c:{color}"'
+            chn = re.match(r"ch(\d+)_", stem)
+            attrs = (f'class="spread {sp["kind"]}" id="p{sp["id"]}" data-ch="{stem}" style="--c:{color}"'
+                     + (f' data-chn="{chn.group(1)}"' if chn else ""))
             if sp["kind"] == "opener":
                 m = re.match(r"(\d+)\s+(.*)", title)
                 num, name = (f"Chapter {m.group(1)}", m.group(2)) if m else ("", title)
-                toc = "".join(f'<li><a href="#p{sid[(stem, h)]["id"]}">{h}</a><span>{sid[(stem, h)]["folio"]}</span></li>'
-                              for h in sp["heads"] if (stem, h) in sid)
-                left = (f'<div class="titlepage"><img src="icons/{stem}.svg" alt=""><div class="chnum">{num}</div>'
-                        f'<h1 class="lettering">{name}</h1>' + (f'<ol class="toc">{toc}</ol>' if toc else "") + "</div>")
+                toc = "".join(f'<li><a href="#p{sid[(stem, h)]["id"]}">{h}</a></li>' for h in sp["heads"] if (stem, h) in sid)
+                left = (f'<div class="titlepage"><div class="chnum">{num}</div><h1>{name}</h1>'
+                        + (f'<ol class="toc">{toc}</ol>' if toc else "") + "</div>")
                 out.append(f'<article {attrs}>{page_html("left", "", left, f)}'
-                           f'{page_html("right", short, "".join(sp["right"]) + tiles_html(stem), f + 1)}</article>')
+                           f'{page_html("right", "", "".join(sp["right"]) + tiles_html(stem), f + 1)}</article>')
             elif sp["kind"] == "wide":
-                out.append(f'<article {attrs}>{page_html("full", f"{short} &middot; {sp["section"]}", sp["left"][0], f"{f} and {f + 1}")}</article>')
+                out.append(f'<article {attrs}>{page_html("full", f"{short} &middot; {sp["section"]}", sp["left"][0], "")}</article>')
             else:
-                right = ("".join(sp["right"]) if sp["kind"] == "text"
-                         else f'<div class="plate-art"><img src="icons/{stem}.svg" alt=""><p class="lettering">{short}</p></div>')
-                out.append(f'<article {attrs}>{page_html("left", short, "".join(sp["left"]), f)}'
-                           f'{page_html("right", sp.get("section") or short, right, f + 1)}</article>')
+                has_visual = any(b.startswith(('<div data-', '<div class="tablewrap"', '<section', '<div class="footnote"'))
+                                 for b in sp["right"])
+                if has_visual:
+                    out.append(f'<article {attrs}>{page_html("left", short, "".join(sp["left"]), f)}'
+                               f'{page_html("right", "", "".join(sp["right"]), f + 1)}</article>')
+                else:  # text only: one reading column
+                    attrs = attrs.replace(f'class="spread {sp["kind"]}"', 'class="spread prose"')
+                    out.append(f'<article {attrs}>{page_html("prose", short, "".join(sp["left"] + sp["right"]), f)}</article>')
     n += 1
-    f = 2 * n - 1
-    colophon = ('<div class="colophon"><h2>About this book</h2><p>EC 391 Country Team Project: Singapore, Fall 2026. Every chart '
+    colophon = ('<div class="colophon"><h2>About this site</h2><p>EC 391 Country Team Project: Singapore, Fall 2026. Every chart '
                 'is built by the team from raw data with the scripts in the project repository, and sources are under each '
-                'figure and in the appendix.</p><p><a href="EC391_Singapore.md">Full text (Markdown)</a><br>'
-                '<a href="article/index.html">Static article version</a><br><a href="#cover" class="to-cover">Back to the cover</a></p></div>')
-    back = ('<div class="backcover"><img src="merlion.svg" alt=""><p class="lettering">The End</p>'
-            '<p class="hand">From a little red dot to a global hub</p></div>')
-    out.append(f'<article class="spread end" id="p{n}" data-ch="appendix" style="--c:#4db6ec">'
-               f'{page_html("left", "Colophon", colophon, f)}{page_html("right", "", back, f + 1)}</article>')
+                'figure and in the appendix.</p><p><a href="EC391_Singapore.md">Full text (Markdown)</a> &middot; '
+                '<a href="article/index.html">Static article version</a> &middot; <a href="#cover">Back to the top</a></p></div>')
+    out.append(f'<article class="spread prose end" id="p{n}" data-ch="appendix">{page_html("prose", "Colophon", colophon, "")}</article>')
     return "\n".join(out), n
 
 
 def build_interactive(texts):
     book, nspreads = build_book(texts)
-    nav = "".join(f'<a href="#{s}">{l}</a>' for s, l in NAV)
+    def chip(i, s, l):
+        m = re.match(r"(\d+)\s+(.*)", l)
+        num, name = (m.group(1).zfill(2), m.group(2)) if m else ("", l)
+        return (f'<a href="#{s}" style="--c:{BANNER_COLORS[i % len(BANNER_COLORS)]}">'
+                + (f'<i>{num}</i>' if num else "") + f'<span>{name}</span></a>')
+    nav = "".join(chip(i, s, l) for i, (s, l) in enumerate(NAV))
     version = str(int(time.time()))  # cache-busting: browsers must not mix old modules or data with new ones
-    page = (APP / "index.html").read_text(encoding="utf-8").replace("{{NAV}}", nav).replace("{{SECTIONS}}", book)
+    page = (APP / "index.html").read_text(encoding="utf-8").replace("{{NAV}}", nav).replace("{{SECTIONS}}", book).replace("{{CONTENTS}}", build_book.contents)
     page = page.replace('src="js/main.js"', f'src="js/main.js?v={version}"').replace('href="app.css"', f'href="app.css?v={version}"')
     page = page.replace("</head>", f"<script>window.__V='{version}';</script>\n</head>", 1)
     (OUT / "index.html").write_text(page, encoding="utf-8")

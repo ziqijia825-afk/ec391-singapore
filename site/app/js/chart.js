@@ -2,7 +2,7 @@
 // Each spec carries the same numbers, labels, units and source line as the static PNG.
 import { state, on, getJSON, YEARS } from './state.js';
 
-const INK = '#1d2b33', MUTED = '#4f5b62', LINE = '#e6dcc4', BLUE = '#2a78d6';
+const INK = '#14212e', MUTED = '#6b7a89', LINE = '#e9ecef', BLUE = '#2a78d6';
 // one colour per economy in every chart (same as scripts/chart_style.py), a fixed categorical order for the rest
 export const ECON = { SGP: '#e34948', MYS: '#2a78d6', HKG: '#eda100', VNM: '#008300', EAS: '#7d7468', WLD: '#a89f90' };
 export const CATEGORICAL = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6'];
@@ -23,10 +23,45 @@ export const tipFooter = (src) => `<div style="margin-top:6px;color:${MUTED};fon
 
 export const baseOption = () => ({
   animationDuration: 500,
-  textStyle: { fontFamily: 'Nunito, system-ui, -apple-system, Segoe UI, sans-serif', color: MUTED },
-  tooltip: { backgroundColor: '#fffdf6', borderColor: INK, borderWidth: 2, textStyle: { color: INK, fontSize: 12.5, fontFamily: 'Nunito, sans-serif' },
-    confine: true, extraCssText: 'box-shadow:3px 3px 0 #1d2b33;border-radius:10px;' },
+  textStyle: { fontFamily: 'Inter, system-ui, -apple-system, Segoe UI, sans-serif', color: MUTED },
+  tooltip: { backgroundColor: '#ffffff', borderColor: '#e2e5e9', borderWidth: 1, padding: [10, 12],
+    textStyle: { color: INK, fontSize: 12.5, fontFamily: 'Inter, sans-serif' },
+    confine: true, extraCssText: 'box-shadow:0 8px 24px rgba(20,33,46,.14);border-radius:8px;' },
 });
+
+// ---------- source badges: the databases a chart draws on, as small chips ----------
+const DBS = [['BACI', 'CEPII BACI'], ['TiVA', 'OECD TiVA'], ['World Development Indicators', 'World Bank'], ['World Bank', 'World Bank'],
+  ['WDI', 'World Bank'], ['SingStat', 'SingStat'], ['Singapore Department of Statistics', 'SingStat'], ['Comtrade', 'UN Comtrade'],
+  ['UNCTAD', 'UNCTAD'], ['Penn World', 'Penn World Table'], ['UNDP', 'UNDP'], ['WTO', 'WTO'], ['WITS', 'WITS'], ['METI', 'METI'],
+  ['Transparency International', 'Transparency Intl'], ['Our World in Data', 'OWID'], ['EDB', 'EDB'], ['geoBoundaries', 'geoBoundaries']];
+function sourceBadges(src = '') {
+  const seen = [...new Set(DBS.filter(([k]) => src.includes(k)).map(([, v]) => v))];
+  return seen.length ? `<span class="dbs">${seen.map((v) => `<i>${esc(v)}</i>`).join('')}</span>` : '';
+}
+
+// ---------- stat strip under a chart: Singapore's latest and first values, and how the others compare ----------
+function statStrip(spec) {
+  const cell = (k, v) => `<div><small>${esc(k)}</small><b>${esc(v)}</b></div>`;
+  if (spec.kind === 'line') {
+    const s = spec.series.find((x) => x.key === 'SGP') || spec.series.find((x) => x.focus);
+    if (!s) return '';
+    const idx = s.values.map((v, i) => (v == null ? -1 : i)).filter((i) => i >= 0);
+    if (idx.length < 2) return '';
+    const [f, l] = [idx[0], idx[idx.length - 1]];
+    const others = spec.series.filter((x) => x !== s && !['EAS', 'WLD'].includes(x.key) && x.values[l] != null);
+    const best = others.sort((a, b) => b.values[l] - a.values[l])[0];
+    const name = s.key === 'SGP' ? 'Singapore' : s.name;
+    return `<div class="figstrip">${cell(`${name}, ${spec.years[l]}`, s.labels[l])}${cell(`${name}, ${spec.years[f]}`, s.labels[f])}`
+      + `${best ? cell(`Highest of the others, ${spec.years[l]}`, `${best.name} ${best.labels[l]}`) : ''}</div>`;
+  }
+  if (spec.kind === 'bar') {
+    const i = spec.keys.indexOf('SGP');
+    if (i < 0) return '';
+    return `<div class="figstrip">${cell('Singapore', spec.labels[i])}${cell('Position in this chart', `${i + 1} of ${spec.keys.length}`)}`
+      + `${i > 0 ? cell('Top', `${spec.cats[0]} ${spec.labels[0]}`) : ''}</div>`;
+  }
+  return '';
+}
 
 // ---------- card shell: title, subtitle, plot, source line, data table, PNG link ----------
 export function cardShell(el, spec, { tall = false, badge = '' } = {}) {
@@ -37,10 +72,20 @@ export function cardShell(el, spec, { tall = false, badge = '' } = {}) {
     <div class="controls"></div>
     <div class="plot${tall ? ' tall' : ''}" role="img" aria-label="${esc(spec.title)}"></div>
     <div class="extra"></div>
-    <div class="foot"><div class="src">${esc(spec.source)}</div>
-      <div class="actions"><button type="button" class="tbl">Data</button>
-      ${spec.png ? `<a class="btn" href="${spec.png}" download>PNG</a>` : ''}</div></div>
+    <div class="foot"><div class="src">${sourceBadges(spec.source)}${esc(spec.source)}</div>
+      <div class="actions"><button type="button" class="tbl" title="Show the numbers behind the chart">Data</button>
+      ${spec.png ? `<a class="btn" href="${spec.png}" download title="Download the static figure">PNG</a>` : ''}
+      <button type="button" class="lnk" title="Copy a link to this chart" aria-label="Copy a link to this chart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></button></div></div>
     <div class="data"></div>`;
+  const lnk = el.querySelector('.lnk');
+  lnk?.addEventListener('click', () => {
+    const id = el.closest('.spread')?.id;
+    const url = `${location.origin}${location.pathname}${id ? `#${id}` : ''}`;
+    (navigator.clipboard?.writeText(url) || Promise.reject()).then(() => {
+      lnk.classList.add('done');
+      setTimeout(() => lnk.classList.remove('done'), 1400);
+    }).catch(() => { location.hash = id || ''; });
+  });
   const dataBox = el.querySelector('.data');
   el.querySelector('.tbl').addEventListener('click', () => {
     if (!dataBox.innerHTML) dataBox.innerHTML = dataTable(spec);
@@ -240,6 +285,7 @@ export async function renderFigure(el, id) {
   else if (spec.kind === 'radar') o = radarOption(spec.dims, spec.series, spec.vmax, () => '');
   chart.setOption(o);
   chart.resize();
+  el.querySelector('.foot')?.insertAdjacentHTML('beforebegin', statStrip(spec));
   if (spec.kind === 'line') lineFollow(chart, spec, o);
   registry.set(id, chart);
   return { chart, spec };

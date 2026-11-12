@@ -26,22 +26,22 @@ Singapore is compared throughout with Malaysia, the resource rich neighbour, Hon
 
 ## Key finding
 
-Singapore is a city state with the land of a small county and the human development of a rich nation. Its 6.2 million people live on 725 square kilometres, 181st of 214 economies by area, and its Human Development Index ranks 13th of 193 and 3rd in East Asia and the Pacific.
+Singapore is a city state with the land of a small county and the human development of a rich nation. Its 6.2 million people live on 745.1 square kilometres, 181st of 214 economies by area, and its Human Development Index ranks 13th of 193 and 3rd in East Asia and the Pacific.
 
 ## What kind of country is it?
 
 
 
-**A crowded island republic on one of the world's busiest sea lanes.** Singapore sits on the Strait of Malacca, its capital is the city itself, and the People's Action Party has governed the parliamentary republic since 1959. A third of the 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and the four official languages, with English for business, connect it to China, India and the Malay world.
+**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and four official languages, with English for business, connect it to China, India and the Malay world. The atlas links seven places on the island and twelve trading partners to the chapters that test them.
+
+<section class="facts"><div><span>Capital</span><b>Singapore (city state)</b></div><div><span>Official languages</span><b>Malay (national), English, Mandarin, Tamil</b></div><div><span>Land area</span><b>745.1 km² (June 2026), +28% since 1965</b></div><div><span>Population</span><b>6.21 million (June 2026)</b></div><div><span>Political system</span><b>Parliamentary republic, PAP in government since 1959</b></div><div><span>Prime minister</span><b>Lawrence Wong, since May 2024</b></div><div><span>Currency</span><b>Singapore dollar (S$)</b></div><div><span>Memberships</span><b>ASEAN (1967), APEC (1989), WTO (1995), CPTPP, RCEP</b></div><p class="facts-src">SingStat Population Trends 2026 and land area series, Constitution of Singapore, Prime Minister's Office, WTO.</p></section>
 
 <details class="more" markdown="1">
 <summary>More on land, population, languages and politics</summary>
 
-Singapore's land area was 581.5 square kilometres in 1965 and 744.3 square kilometres at the end of 2025, an increase of 28 percent that came mostly from reclamation ([SingStat via data.gov.sg](https://data.gov.sg/datasets/d_0b2c034da121ef8efc71949af1694b4d/view)). The World Bank series used in the table below records 725 square kilometres for 2024 because it lags the national figure.
+Reclamation has added 28 percent to the land since independence, from 581.5 square kilometres in 1965 ([SingStat via data.gov.sg](https://data.gov.sg/datasets/d_0b2c034da121ef8efc71949af1694b4d/view)) to 745.1 in June 2026 ([SingStat, Population Trends 2026](https://www.singstat.gov.sg/publication-resources/population-trends-2026)), and the World Bank's 725 square kilometres for 2024 lags the national series. Of the 6.21 million people, 4.23 million are residents and about 1.98 million foreign workers, students and dependants ([SingStat, Population Trends 2026](https://www.singstat.gov.sg/publication-resources/population-trends-2026)).
 
-In June 2026 the population was 6.21 million, of whom 4.23 million were residents (3.68 million citizens and 0.55 million permanent residents) and about 1.98 million were foreign workers, students and dependants ([SingStat, Population Trends 2026](https://www.singstat.gov.sg/publication-resources/population-trends-2026)). The resident population is 73.9 percent Chinese, 13.5 percent Malay, 9.0 percent Indian and 3.6 percent other groups. Malay is the national language and English the working language of government and business. The large share of non-residents matters for trade, because the labour force can expand with demand in a way that a country of six million citizens could not manage on its own.
-
-The prime minister and cabinet answer to an elected parliament, and a directly elected president holds a largely ceremonial office with custodial powers over the national reserves. In the general election of 3 May 2025 the People's Action Party won 87 of 97 seats with about 65.6 percent of the vote ([AP via PBS](https://www.pbs.org/newshour/world/singapores-long-ruling-party-wins-another-election-landslide-in-boost-for-new-prime-minister)). Lawrence Wong has been prime minister since 15 May 2024 and Tharman Shanmugaratnam president since September 2023. This long continuity of government is one reason investors treat policy in Singapore as predictable, a point Chapter 2 returns to with the governance indicators.
+In the general election of 3 May 2025 the People's Action Party won 87 of 97 seats with about 65.6 percent of the vote ([AP via PBS](https://www.pbs.org/newshour/world/singapores-long-ruling-party-wins-another-election-landslide-in-boost-for-new-prime-minister)). Investors read this continuity as predictable policy, a point Chapter 2 tests with the governance indicators.
 
 </details>
 
@@ -50,18 +50,14 @@ The prime minister and cabinet answer to an elected parliament, and a directly e
 
 **By answering every outside shock with a move up the value chain.** Real GDP grew 64-fold between 1960 and 2023, interrupted six times when growth fell below 1 percent, in 1964, 1985, 1998, 2001, 2009 and 2020. Each break came through trade, and each was followed by a policy push toward higher value work, from export factories in the 1960s to services, biomedicine and digital trade.
 
-<section class="timeline"><div class="era"><b>1819</b><span>Free port</span><p>Raffles opens a free port and Singapore lives by moving goods it does not make.</p></div><div class="era"><b>1961</b><span>EDB founded</span><p>The Economic Development Board begins to court foreign manufacturers.</p></div><div class="era brk"><b>1964 to 65</b><span>Break and independence</span><p>Output falls, then separation from Malaysia ends a brief turn to import substitution.</p></div><div class="era"><b>1965 to 79</b><span>Export factories</span><p>Multinationals build labour intensive plants in Jurong until full employment.</p></div><div class="era"><b>1979</b><span>Wage correction</span><p>Higher wages push firms toward higher value work.</p></div><div class="era brk"><b>1985</b><span>Recession</span><p>Cost cuts and services become a second engine of growth.</p></div><div class="era"><b>1990s</b><span>Clusters and the region</span><p>Industry clusters at home and parks abroad, such as Suzhou in 1994.</p></div><div class="era brk"><b>1998 and 2001</b><span>Asian crisis, chip slump</span><p>Two external shocks hit trade and electronics.</p></div><div class="era"><b>2000</b><span>Biomedical pillar</span><p>Biomedicine joins electronics, chemicals and engineering.</p></div><div class="era brk"><b>2009 and 2020</b><span>Global crisis, pandemic</span><p>World demand collapses twice and recovers.</p></div><div class="era"><b>2020s</b><span>Resilience</span><p>Digital trade, AI, energy and supply chain security.</p></div><p class="timeline-src">Shaded: years in which real GDP grew by less than 1 percent (Penn World Table). Sources: NLB Infopedia, METI, EDB.</p></section>
+<section class="timeline"><div class="era"><b>1819</b><span>Free port</span><p>Raffles opens a free port and Singapore lives by moving goods it does not make.</p></div><div class="era"><b>1961</b><span>EDB founded</span><p>The Economic Development Board begins to court foreign manufacturers.</p></div><div class="era brk"><b>1964 to 65</b><span>Break and independence</span><p>Output falls, then separation from Malaysia ends a brief turn to import substitution.</p></div><div class="era"><b>1965 to 79</b><span>Export factories</span><p>Multinationals build labour intensive plants in Jurong until full employment. <a class="xref" href="#ch06_fdi">Ch. 6</a></p></div><div class="era"><b>1979</b><span>Wage correction</span><p>Higher wages push firms toward higher value work.</p></div><div class="era brk"><b>1985</b><span>Recession</span><p>Cost cuts and services become a second engine of growth. <a class="xref" href="#ch03_trade">Ch. 3</a></p></div><div class="era"><b>1990s</b><span>Clusters and the region</span><p>Industry clusters at home and parks abroad, such as Suzhou in 1994.</p></div><div class="era brk"><b>1998 and 2001</b><span>Asian crisis, chip slump</span><p>Two external shocks hit trade and electronics.</p></div><div class="era"><b>2000</b><span>Biomedical pillar</span><p>Biomedicine joins electronics, chemicals and engineering. <a class="xref" href="#ch09_case">Ch. 9</a></p></div><div class="era brk"><b>2009 and 2020</b><span>Global crisis, pandemic</span><p>World demand collapses twice and recovers.</p></div><div class="era"><b>2020s</b><span>Resilience</span><p>Digital trade, AI, energy and supply chain security. <a class="xref" href="#ch07_policy">Ch. 7</a></p></div><p class="timeline-src">Shaded: years in which real GDP grew by less than 1 percent (Penn World Table). Sources: NLB Infopedia, METI, EDB.</p></section>
 
 <details class="more" markdown="1">
 <summary>More on the development phases, from entrepôt port to knowledge economy</summary>
 
-The Penn World Table shows output falling by 3.8 percent in 1964, the year of race riots and confrontation with Indonesia that preceded separation from Malaysia in 1965, by 0.6 percent in 1985, by 2.2 percent in 1998 and by 1.1 percent in 2001, stalling in 2009 and falling by 3.9 percent in 2020.
+In the Penn World Table output fell by 3.8 percent in 1964, 0.6 percent in 1985, 2.2 percent in 1998, 1.1 percent in 2001 and 3.9 percent in 2020, and stalled in 2009.
 
-Singapore's modern economy began as an entrepôt. Stamford Raffles established a free port in 1819, and within five years it had become the main transit point for regional trade, earning its living by moving goods it did not produce ([NLB Infopedia](https://eresources.nlb.gov.sg/infopedia/articles/SIP_2018-04-20_085007.html)). This history explains why re-exports are still more than half of Singapore's merchandise exports today (Chapter 3).
-
-The Economic Development Board was set up in 1961, and after independence in August 1965 the government turned from a short attempt at import substitution to export oriented manufacturing led by foreign multinationals. Labour intensive plants in Jurong produced garments, wigs and electronic components, and by the late 1970s the economy had reached full employment. In 1979 the National Wages Council deliberately raised wages to push firms toward higher value activities ([NLB](https://www.nlb.gov.sg/main/article-detail?cmsuuid=98e1b55f-093d-4d44-b219-d51f6a38c313)). The 1985 recession led to cuts in business costs and a decision to build services as a second engine of growth alongside manufacturing.
-
-The 1990s brought a Strategic Economic Plan built on industry clusters and a drive to invest in the region, symbolised by the China Singapore Suzhou Industrial Park of 1994. In 2000 the Biomedical Sciences Initiative added a fourth manufacturing pillar next to electronics, chemicals and engineering. The 2010s were about productivity, with a target of 2 to 3 percent productivity growth a year. In the 2020s the agenda has shifted to resilience, digital trade, artificial intelligence and energy, and in October 2026 the Ministry of Trade and Industry was renamed the Ministry of Energy, Trade and Industry ([METI](https://www.mti.gov.sg/newsroom/mti-to-be-renamed-ministry-of-energy--trade-and-industry/)).
+Raffles's free port of 1819 lived by moving goods it did not produce ([NLB Infopedia](https://eresources.nlb.gov.sg/infopedia/articles/SIP_2018-04-20_085007.html)), which is why re-exports are still more than half of merchandise exports (Chapter 3). After independence the Economic Development Board turned the economy to export manufacturing led by foreign multinationals, and in 1979 the National Wages Council raised wages on purpose to push firms toward higher value work ([NLB](https://www.nlb.gov.sg/main/article-detail?cmsuuid=98e1b55f-093d-4d44-b219-d51f6a38c313)). Every later plan repeated that move, up to the renaming of the trade ministry as the Ministry of Energy, Trade and Industry in October 2026 ([METI](https://www.mti.gov.sg/newsroom/mti-to-be-renamed-ministry-of-energy--trade-and-industry/)).
 
 </details>
 
@@ -76,7 +72,7 @@ The 1990s brought a Strategic Economic Plan built on industry clusters and a dri
 
 ![Singapore ranks 13th of 193 countries on human development](../figures/ch01_hdi.png)
 
-Singapore's Human Development Index rose from 0.905 in 2004 to 0.946 in 2023. It was ahead of Hong Kong SAR until 2014 and slightly behind it since 2015, while both city economies stay far above Malaysia (0.819) and Vietnam (0.766). A child entering school can expect 16.7 years of education, and Singapore's fifteen year olds ranked first of 81 systems in mathematics, reading and science in PISA 2022 and first in reading and second in mathematics and science in PISA 2025 ([Ministry of Education](https://www.moe.gov.sg/news/press-releases/20260908-pisa-2025-singapore-students-demonstrate-strong-real-world-problem-solving-skills-in-computational-thinking-domain)). Mean years of schooling of adults (12.0 years, 42nd) ranks lower because older cohorts were educated before the expansion of secondary and university education.
+Singapore's Human Development Index rose from 0.905 in 2004 to 0.946 in 2023, just behind Hong Kong SAR since 2015 and far above Malaysia (0.819) and Vietnam (0.766). Its fifteen year olds ranked first in reading and second in mathematics and science in PISA 2025 ([Ministry of Education](https://www.moe.gov.sg/news/press-releases/20260908-pisa-2025-singapore-students-demonstrate-strong-real-world-problem-solving-skills-in-computational-thinking-domain)), while adults' mean years of schooling (12.0 years, 42nd) ranks lower because older cohorts left school before secondary and university education expanded.
 
 | Indicator | Singapore | Year | Global rank | East Asia & Pacific rank | East Asia & Pacific average | Malaysia | Hong Kong SAR | Vietnam |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -105,7 +101,7 @@ Singapore's Human Development Index rose from 0.905 in 2004 to 0.946 in 2023. It
 
 ## Implications for trade and investment
 
-A small island with no resources and a skilled, partly foreign workforce has to trade to live, importing food, water and energy and reaching scale only in world markets. Investors get skills and stable government at the price of very expensive land and a population ageing fast (13.7 percent were 65 or older in 2024). Chapter 2 asks how this mix has turned into income and institutions.
+A small island with no resources has to trade to live, importing food, water and energy and reaching scale only in world markets. Investors get skills and stable government at the price of very expensive land and a fast ageing population (13.7 percent were 65 or older in 2024). Chapter 2 asks how this mix became income and institutions.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>
@@ -127,19 +123,18 @@ Singapore is the second richest economy in the world per person at purchasing po
 
 ![Singapore's economy grew about fivefold in 20 years](../figures/ch02_gdp_current_usd.png)
 
-**About five times bigger than in 2004, and second in the world per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, although income per resident is lower because foreign owners and workers take part of it home (Chapter 6). Real growth averaged 5.0 percent a year, 41st of 193, with deep swings in 2009 and 2020.
+**About five times bigger than in 2004, and second in the world per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world and from 9th to 6th of 33 in East Asia and the Pacific, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, and real growth averaged 5.0 percent a year, 41st of 193.
 
 <details class="more" markdown="1">
 <summary>More: income per person, real growth, GDP at PPP and the current account</summary>
 
 ![Singapore is the 2nd richest economy per person](../figures/ch02_gdp_per_capita_ppp.png)
 
-GDP per person at purchasing power parity rose from $54,384 in 2004 to $153,161 in 2024. Gross national income is only 83 percent of GDP, because a large non-resident workforce and the profits of foreign owned firms are counted in GDP but partly paid abroad.
+GDP per person at purchasing power parity almost tripled from $54,384 in 2004. Income per resident is lower, because foreign owners and workers send part of it home (Chapter 6).
 
 ![Singapore averaged 5.0% real growth a year](../figures/ch02_real_growth.png)
 
-Singapore moved from 9th to 6th of the 33 economies of East Asia and the Pacific by size, behind only China, Japan, Korea, Australia and Indonesia. Growth swings with world demand. Output stalled in 2009, rebounded by 14.5 percent in 2010 and fell by 3.6 percent in 2020.
-
+Growth swings with world demand. Output stalled in 2009, rebounded by 14.5 percent in 2010 and fell by 3.6 percent in 2020, less than in Malaysia (5.5 percent) or Hong Kong SAR (6.5 percent).
 
 ![At purchasing power parity Singapore's GDP reached $925bn](../figures/ch02_gdp_ppp.png)
 
@@ -147,8 +142,7 @@ At purchasing power parity the economy is $925 billion, 34th in the world.
 
 ![In current dollars Singapore's GDP per person is $95k](../figures/ch02_gdp_per_capita_usd.png)
 
-In current dollars GDP per person was $94,897 in 2024, eighth in the world. Real growth in 2024 was 5.3 percent, faster than Malaysia (5.1 percent) and Hong Kong SAR (2.6 percent), and the 2020 contraction was smaller than in Malaysia (5.5 percent) or Hong Kong SAR (6.5 percent). Inflation was 2.4 percent in 2024 and the current account surplus 17.2 percent of GDP, the sixth largest in the world relative to output, reflecting high national saving and large income from investment abroad.
-
+In current dollars GDP per person was $94,897 in 2024, eighth in the world. The current account surplus of 17.2 percent of GDP, the sixth largest relative to output, reflects high national saving and income from investment abroad.
 
 </details>
 
@@ -161,7 +155,7 @@ In current dollars GDP per person was $94,897 in 2024, eighth in the world. Real
 <details class="more" markdown="1">
 <summary>More on the poverty line and why this Gini is not ranked</summary>
 
-The guidelines ask for the share of the population below $2.15 a day. In June 2025 the World Bank replaced that line, set in 2017 prices, with a new international poverty line of $3.00 a day in 2021 prices, and the World Development Indicators now report only the new line. Singapore's household surveys are not in the World Bank's poverty database. The regional benchmarks show that 2.0 percent of people in East Asia and the Pacific lived below $3.00 a day in 2024, against 10.1 percent worldwide, and the latest figures for Malaysia (0.0 percent in 2021) and Vietnam (1.6 percent in 2022) suggest that extreme poverty is not the relevant measure for a high income city. The national Gini covers only employment income of resident households, so it is not comparable with the survey based Gini of 40.7 for Malaysia (2021) and 36.1 for Vietnam (2022), and we do not rank it. Whether the Department of Statistics is acceptable for this indicator is one of our questions for the professor.
+In June 2025 the World Bank replaced the $2.15 a day line named in the guidelines with $3.00 a day in 2021 prices, and Singapore's surveys are not in its poverty database. In East Asia and the Pacific 2.0 percent of people lived below $3.00 a day in 2024, against 10.1 percent worldwide, so extreme poverty is not the relevant measure for a high income city. The national Gini covers only the employment income of resident households, so we do not rank it against survey based figures such as Malaysia's 40.7 (2021) and Vietnam's 36.1 (2022).
 
 </details>
 
@@ -174,7 +168,7 @@ The guidelines ask for the share of the population below $2.15 a day. In June 20
 
 ![Singapore is top 5 of 100 on 5 of 10 B-READY topics](../figures/ch02_bready.png)
 
-Doing Business was discontinued in 2021 after data irregularities. In DB2020 Singapore was behind New Zealand and ahead of Hong Kong SAR (third), Malaysia (twelfth) and Vietnam (seventieth). In B-READY Singapore scores lower on labour regulation (65th) and market competition (17th), where the index rewards worker protection and competition rules that Singapore has kept deliberately light. Malaysia, Hong Kong SAR and Vietnam score below Singapore on most topics, with the largest gaps in business insolvency and international trade.
+In the last Doing Business report Hong Kong SAR was third, Malaysia twelfth and Vietnam seventieth. B-READY places Singapore lower on labour regulation (65th) and market competition (17th), where the index rewards worker protection and competition rules that Singapore keeps deliberately light.
 
 </details>
 
@@ -215,12 +209,12 @@ Doing Business was discontinued in 2021 after data irregularities. In DB2020 Sin
 
 ![Singapore is the 3rd least corrupt economy](../figures/ch02_cpi.png)
 
-Transparency International's Corruption Perceptions Index scores Singapore 84 out of 100 in 2024, third of 178 economies and first in the region, and the score has stayed between 83 and 87 since 2012. Political stability ranks twelfth and rule of law eighteenth on the Worldwide Governance Indicators.
+Transparency International scores Singapore 84 of 100 in 2024, third of 178 economies and first in the region, and the score has stayed between 83 and 87 since 2012.
 
 </details>
 
 ## Implications for trade and investment
-Nunn (2007) shows that countries that enforce contracts well specialize in goods built from made to order inputs, such as electronics and machinery. Singapore's courts, regulators and logistics are exactly that kind of advantage, and they explain why supply chains and regional headquarters settle there despite high costs. Chapter 3 follows the trade these institutions carry.
+Nunn (2007) shows that countries that enforce contracts well specialize in goods built from made to order inputs, such as electronics and machinery. Singapore's courts, regulators and logistics are that kind of advantage, and they explain why supply chains and regional headquarters settle there despite high costs. Chapter 3 follows the trade these institutions carry.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>
@@ -228,6 +222,7 @@ Nunn (2007) shows that countries that enforce contracts well specialize in goods
 World Bank, World Development Indicators, Worldwide Governance Indicators, B-READY and Doing Business (via the WDI API); Transparency International, Corruption Perceptions Index; Singapore Department of Statistics, table 17892. All figures are generated by `scripts/ch02_macro.py`.
 
 </details>
+
 
 ---
 
@@ -241,12 +236,12 @@ Singapore is the third most open economy in the world, and almost half of what i
 
 ![Singapore trades 313% of its GDP](../figures/ch03_openness.png)
 
-**Trade is three times GDP, the third highest ratio of 172 economies.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific, and only Hong Kong SAR (359 percent) and one other economy are higher. The ratio can pass 100 percent because trade counts the gross value crossing the border while GDP counts only value added at home.
+**Trade is three times GDP, the third highest ratio of 172 economies.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific. Only Hong Kong SAR (359 percent) and one other economy are higher.
 
 <details class="more" markdown="1">
 <summary>More: why openness has fallen since 2008</summary>
 
-Openness peaked at 437 percent in 2008 and was 402 percent in 2004. It has drifted down since, as services and domestic activity have grown faster than goods trade and as commodity prices have fallen from their peaks. A falling ratio therefore does not mean that Singapore has become less integrated. It means that a larger share of what it sells is value added at home.
+The ratio peaked at 437 percent in 2008 and has drifted down as services and domestic activity grew faster than goods trade, so the fall means that more of what Singapore sells is made at home. It can pass 100 percent because trade counts the gross value crossing the border while GDP counts only value added.
 
 </details>
 
@@ -259,7 +254,7 @@ Openness peaked at 437 percent in 2008 and was 402 percent in 2004. It has drift
 <details class="more" markdown="1">
 <summary>More: where the services deficit came from and how it closed</summary>
 
-The services deficit, still $13 billion in 2014, came mainly from Singaporeans' travel abroad and from firms' payments for foreign transport, insurance and intellectual property. The account has been in surplus every year since 2018 and peaked at $43 billion in 2022. On balance of payments data services rose from 16 percent of Singapore's exports of goods and services in 2004 to 40 percent in 2024.
+The deficit, still $13 billion in 2014, came from Singaporeans' travel abroad and from payments for foreign transport, insurance and intellectual property. The account has been in surplus every year since 2018.
 
 </details>
 
@@ -267,29 +262,22 @@ The services deficit, still $13 billion in 2014, came mainly from Singaporeans' 
 
 ![Re-exports grew to 58% of merchandise exports](../figures/ch03_reexports.png)
 
-**Less than half.** Re-exports, goods shipped on with little change, rose from 46.5 to 57.5 percent of merchandise exports between 2004 and 2024, while non oil domestic exports such as chips and medicines fell from 42.4 to 25.7 percent. Gross exports therefore overstate what Singapore produces, which is why Chapter 5 turns to value added.
-
-<details class="more" markdown="1">
-<summary>More: oil exports and what the split means for other indicators</summary>
-
-Oil domestic exports, mainly refined petroleum from the refineries on Jurong Island, rose from 11.1 percent of merchandise exports in 2004 to 16.8 percent in 2024, with peaks above 20 percent when oil prices were high in 2012 to 2014. The split matters for every trade indicator in this report. It is the reason we measure export structure and comparative advantage with reconciled trade data (below and Chapter 4) and test gravity on two samples.
-
-</details>
+**Less than half.** Re-exports, goods shipped on with little change, rose from 46.5 to 57.5 percent of merchandise exports between 2004 and 2024, while non oil domestic exports such as chips and medicines fell from 42.4 to 25.7 percent. Gross exports therefore overstate what Singapore produces, which is why we measure its export structure with reconciled data below and turn to value added in Chapter 5.
 
 ## What does it sell?
 
 ![Services rose from 20% to 48% of Singapore's exports](../figures/ch03_export_structure.png)
 
-**More and more services.** Combining goods from CEPII's BACI with services from the World Bank, services rose from 20 to 48 percent of exports between 2004 and 2024, led by transport (21.5 percent) and business and ICT services (13.9 percent). Electronics remain the largest goods group but fell from 26.9 to 18.7 percent, and machinery and computers from 19.1 to 7.3 percent as assembly moved to cheaper neighbours.
+**More and more services.** Combining goods from CEPII's BACI with services from the World Bank, services rose from 20 to 48 percent of exports between 2004 and 2024, led by transport (21.5 percent) and business and ICT services (13.9 percent). Electronics remain the largest goods group but fell from 26.9 to 18.7 percent, and machinery and computers from 19.1 to 7.3 percent.
 
 <details class="more" markdown="1">
 <summary>More: why BACI counts fewer goods exports, and the import side</summary>
 
-BACI reconciles the reports of exporters and importers, and importers usually record the country where a good was made. Goods that only pass through Singapore are therefore largely attributed to their country of origin, which is the likely reason BACI's figure for Singapore's goods exports in 2024 ($332 billion) is about a third below the $505 billion Singapore reports to UN Comtrade. For a structure of what Singapore itself sells, this is an advantage.
+BACI reconciles the reports of exporters and importers, and importers record the country where a good was made, so goods that only pass through Singapore are largely attributed to their origin. That is the likely reason BACI's $332 billion of goods exports in 2024 is about a third below the $505 billion Singapore reports to UN Comtrade, and why BACI better describes what Singapore itself sells.
 
 ![Electronics are also Singapore's largest import](../figures/ch03_import_structure.png)
 
-Imports mirror exports. Electronics and instruments were 34.8 percent of goods imports in 2024, refined petroleum and crude oil 20.4 percent and machinery and computers 15.2 percent, much of it capital equipment for semiconductor plants. Large two way trade in the same sectors is the signature of an economy that imports components and crude oil, processes them and ships them on.
+Imports mirror exports. Electronics and instruments were 34.8 percent of goods imports in 2024, refined petroleum and crude oil 20.4 percent and machinery and computers 15.2 percent. Large two way trade in the same sectors is the signature of an economy that imports inputs, processes them and ships them on.
 
 </details>
 
@@ -299,18 +287,14 @@ Imports mirror exports. Electronics and instruments were 34.8 percent of goods i
 
 ![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
 
-**Mostly Asia, and no single market dominates.** Mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent, while Taiwan, mainland China and the United States each supplied 12 to 14 percent of imports. The concentration index of export markets, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
+**Mostly Asia, and no single market dominates.** Mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
 
 <details class="more" markdown="1">
 <summary>More: partner shares and how concentration changed</summary>
 
 ![Asia takes most of Singapore's exports](../figures/ch03_partners.png)
 
-The United States (8.7 percent) and Indonesia (7.9 percent) follow as export markets, and Malaysia (11.2 percent) as a source of imports, a list dominated by chip producers and suppliers of equipment and fuel. The Herfindahl Hirschman index is the sum of squared partner shares, 0.074 in 2024 on BACI data and 0.068 on Singapore's reported figures.
-
-
-Singapore's index has barely moved since 2004 (0.060). Vietnam's rose from 0.077 to 0.125 as exports to the United States grew, and Malaysia's and Hong Kong SAR's both ended at 0.091. Hong Kong SAR's index jumped to 0.311 in 2013 on BACI data and fell back by 2015, a break we have not been able to explain and treat as a data issue.
-
+Singapore's Herfindahl Hirschman index has barely moved since 2004 (0.060), while Vietnam's rose from 0.077 to 0.125 as exports to the United States grew. Hong Kong SAR's index jumps to 0.311 in 2013 on BACI data and falls back by 2015, a break we treat as a data issue.
 
 </details>
 
@@ -330,22 +314,22 @@ Singapore's index has barely moved since 2004 (0.060). Vietnam's rose from 0.077
 
 *OLS of ln(Singapore's exports to partner j) on ln(GDP of j, current US$, 2024) and ln(great-circle distance between capitals, km). Robust (HC1) standard errors in parentheses. FTA in force = 1 for the 64 partners covered by an agreement in force in 2024 (team list from Enterprise Singapore and METI). The class estimate is the 2024 gravity regression on all country pairs in the EC 391 gravity lecture (CEPII and UN Comtrade data). Sources: UN Comtrade; CEPII BACI; World Bank WDI (GDP, capital coordinates). Taiwan is excluded (no World Bank GDP).*
 
-**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 on 23,790 country pairs and well above the value of about 1 typical in the literature (Head and Mayer, 2014). **Size.** A partner with 1 percent higher GDP buys 0.79 percent more, less than the class importer elasticity of 1.00, so small nearby economies buy more from Singapore than their size predicts, as expected of a regional hub.
+**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 and above the value of about 1 typical in the literature (Head and Mayer, 2014). **Size.** The GDP elasticity of 0.79 is below the class value of 1.00, so small nearby economies buy more than their size predicts, as expected of a regional hub.
 
-**Trade agreements.** The lecture lists shared trade agreements among the factors that raise trade. The 64 partners with an agreement in force in 2024 buy about seven times as much as their size and distance predict (coefficient 1.98), and the distance elasticity falls to −1.29 because the nearest partners are mostly agreement partners. This is an association, since Singapore signed first with its largest markets.
+**Trade agreements.** The 64 partners with an agreement in force in 2024 buy about seven times as much as size and distance predict (coefficient 1.98), and the distance elasticity falls to −1.29 because the nearest partners are mostly agreement partners. This is an association, since Singapore signed first with its largest markets.
 
-**Distance as a cost.** Feyrer (2009) uses the closure of the Suez Canal from 1967 to 1975 as a natural experiment and finds a sea distance elasticity of −0.46, and that each extra dollar of trade raises income by about 25 cents. Our cross section estimate is more than three times larger because distance between capitals also carries history, language and business networks. The ocean distances Feyrer measures are the costs Singapore's port, on the Strait of Malacca, exists to lower.
+**Distance as a cost.** Using the closure of the Suez Canal from 1967 to 1975, Feyrer (2009) finds a sea distance elasticity of −0.46 and that each extra dollar of trade raises income by about 25 cents. Our estimate is more than three times larger because distance between capitals also carries history, language and business networks. Sea distance is the cost Singapore's port exists to lower.
 
 <details class="more" markdown="1">
 <summary>More: the partners that do not fit</summary>
 
-The partners that buy far more than the model predicts are the Marshall Islands, Liberia, Panama, Tuvalu, the Bahamas and Malta. All of them register large merchant fleets, so these exports probably include ships and ship supplies recorded under the flag state, which is where trade statistics place a ship regardless of the routes it sails. The partners that buy much less include Lesotho, Haiti, Afghanistan, Sudan and Iran, where poverty, conflict and sanctions limit trade.
+The Marshall Islands, Liberia and Panama buy far more than the model predicts because they register large merchant fleets, and trade statistics place ships and ship supplies under the flag state. Haiti, Afghanistan and Iran buy much less, held back by poverty, conflict and sanctions.
 
 </details>
 
 ## Implications for trade and investment
 
-Openness on this scale makes Singapore an ideal base for serving the region and also passes every swing in world demand straight into the economy. Because more and more of its earnings come from handling and financing trade, Chapter 4 asks what Singapore is actually good at producing.
+Openness on this scale makes Singapore the natural base for serving the region and passes every swing in world demand straight into the economy. Chapter 4 asks what Singapore is actually good at producing.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>
@@ -353,6 +337,7 @@ Openness on this scale makes Singapore an ideal base for serving the region and 
 World Bank, World Development Indicators; Singapore Department of Statistics and Enterprise Singapore, table M451001; CEPII, BACI HS92 V202601 (Gaulier and Zignago, 2010); UN Comtrade; EC 391 lecture "The Gravity Equation: Geography and Size as Sources of Comparative Advantage" (Prof. Ramondo), slides on gravity determinants, the 2000 and 2024 class estimates and Feyrer's first stage; Feyrer, J. (2009), "The 1967 to 1975 Suez Canal closure: lessons for trade and the trade income link", VoxEU, CEPR, 23 December; Head, K. and T. Mayer (2014), "Gravity equations: workhorse, toolkit, and cookbook", *Handbook of International Economics* 4. Figures generated by `scripts/ch03_trade.py`.
 
 </details>
+
 
 ---
 
@@ -363,18 +348,11 @@ World Bank, World Development Indicators; Singapore Department of Statistics and
 Singapore's comparative advantage has moved from factories to services, and transport and finance are now its strongest sectors. The pattern fits its abundance of capital and skills, and it fits Nunn's institutional explanation even better.
 
 ## How do we measure it?
-**With Balassa's index, which we computed ourselves from raw trade data.** A sector's share in Singapore's exports is divided by its share in world exports, so a value above 1 is a revealed comparative advantage. Goods come from CEPII's BACI database and services from the World Bank's balance of payments, grouped in the team's sector table (see the [appendix](appendix.html)).
+**With Balassa's index, which we computed ourselves from raw trade data.** A sector's share in Singapore's exports is divided by its share in world exports, so a value above 1 is a revealed comparative advantage. Goods come from CEPII's BACI database and services from the World Bank's balance of payments, grouped in the team's sector table (see the [appendix](appendix.html)). BACI assigns most re-exports to the country that made the goods (Chapter 3), so these RCAs track what Singapore produces, and Vietnam's services RCAs are missing because the World Bank has no breakdown for it.
 
 <p class="equation">RCA<sub>ik</sub> = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>)<span>X = exports · i = Singapore · k = sector · w = world · above 1 = comparative advantage</span></p>
 
 
-
-<details class="more" markdown="1">
-<summary>More: why reconciled data matter for Singapore</summary>
-
-BACI reconciles exporter and importer reports, and importers record the country where goods were made, so much of Singapore's re-export trade is attributed to its origin (Chapter 3). Singapore's goods RCAs on BACI are therefore closer to what it produces than RCAs on its own reported exports, although some entrepôt trade remains. The World Bank does not publish services exports by category for Vietnam, so its services RCAs are missing.
-
-</details>
 
 ## What is Singapore good at?
 
@@ -403,7 +381,7 @@ BACI reconciles exporter and importer reports, and importers record the country 
 <details class="more" markdown="1">
 <summary>More: Hong Kong SAR's profile</summary>
 
-Hong Kong SAR's largest advantages are finance (3.8), transport (3.0), gold and metals (2.8) and travel (1.6). Manufacturing is less than 1 percent of its GDP (Chapter 1), so its electronics RCA of 1.45 reflects trade it organizes for mainland China.
+Hong Kong SAR's largest advantages are finance (3.8), transport (3.0) and gold and metals (2.8). Its electronics RCA of 1.45 reflects trade it organizes for mainland China, since manufacturing is less than 1 percent of its GDP (Chapter 1).
 
 </details>
 
@@ -416,7 +394,7 @@ Hong Kong SAR's largest advantages are finance (3.8), transport (3.0), gold and 
 <details class="more" markdown="1">
 <summary>More: RCA by HS chapter</summary>
 
-Measured within goods trade alone, which is why these values are higher than in the treemap above, the largest goods exports by HS chapter in 2024 were electrical machinery (29.9 percent of goods exports, RCA 2.1), mineral fuels (17.1 percent, RCA 1.3), industrial machinery (14.2 percent, RCA 1.2), pharmaceuticals (6.9 percent, RCA 1.7) and precision instruments (5.9 percent, RCA 2.0). Singapore has an RCA above 1 in 17 of 97 chapters, the same number as Hong Kong SAR, against 11 for Malaysia and 27 for Vietnam, so its goods exports are concentrated in a few high value lines.
+Measured within goods trade alone, which is why these values are higher than in the treemap, Singapore has an RCA above 1 in 17 of 97 HS chapters, the same number as Hong Kong SAR, against 11 for Malaysia and 27 for Vietnam. Its goods exports are concentrated in a few high value lines, led by electrical machinery (29.9 percent of goods exports, RCA 2.1).
 
 | HS | Product | Share of Singapore's goods exports, 2024 | RCA 2004 | RCA 2014 | RCA 2024 |
 | --- | --- | --- | --- | --- | --- |
@@ -445,7 +423,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 **Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143 and the least arable land per person of 205, so it exports capital and skill intensive services and goods and imports food (RCA 0.3).
 
-**The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law. Its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, and the sectors it lost, refining and plastics, among his least. Since those industries are skill intensive and less capital intensive than average in his data, Singapore's skills and courts appear to matter more than its capital.
+**The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law, and its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, while the sectors it lost, refining and plastics, sit among his least. Those industries are skill intensive and less capital intensive than average, so Singapore's skills and courts appear to matter more than its capital.
 
 <details class="more" markdown="1">
 <summary>More: endowments against the peers, and caveats</summary>
@@ -459,15 +437,13 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 *Rank 1st = most abundant. Sources: Penn World Table 11.0; World Bank WDI (AG.LND.ARBL.HA.PC, NY.GDP.TOTL.RT.ZS), retrieved Nov 12, 2026.*
 
-
-Large exports of refined petroleum are consistent with the model too, because they rest on imported crude processed in very large, capital intensive refineries. Two caveats apply. Factor intensities are not observed directly in these data, so the test is a qualitative comparison. And much of the capital and technology was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore's growth came mainly from factor accumulation. With mobile capital, Singapore's abundance of capital is itself partly the result of the FDI analysed in Chapter 6.
-
+Two caveats apply. Factor intensities are not observed in these data, so the test is a qualitative comparison. And much of the capital was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore grew mainly by accumulating factors, so its abundance of capital is partly the result of the FDI analysed in Chapter 6.
 
 </details>
 
 ## Implications for trade and investment
 
-Activities that need capital, skills, reliable courts and connections, such as advanced chips, biologics, logistics and finance, play to Singapore's strengths, while those that need land, cheap labour or raw materials have moved to Malaysia and Vietnam. Gross exports cannot show how much of this value is created in Singapore, so Chapter 5 turns to value added.
+Activities that need capital, skills, reliable courts and connections, such as advanced chips, biologics, logistics and finance, play to Singapore's strengths, while those that need land, cheap labour or raw materials have moved to Malaysia and Vietnam. Chapter 5 asks how much of this value is created in Singapore.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>
@@ -475,6 +451,7 @@ Activities that need capital, skills, reliable courts and connections, such as a
 CEPII, BACI HS92 V202601 (Gaulier and Zignago, 2010); World Bank, World Development Indicators (services exports by category); UN Comtrade (HS chapter titles); Penn World Table 11.0 (Feenstra, Inklaar and Timmer, Groningen Growth and Development Centre); Nunn, N. (2007) and Young, A. (1992), see appendix. Figures and tables generated by `scripts/ch04_rca.py`.
 
 </details>
+
 
 ---
 
@@ -495,7 +472,7 @@ Almost half the value of Singapore's exports is created abroad, which makes it o
 <details class="more" markdown="1">
 <summary>How we measured participation from the OECD TiVA data</summary>
 
-Value added trade data split the value of a country's exports into the part created at home and the part embodied in imported inputs. Backward participation is the foreign share of a country's exports. Forward participation is the share of a country's exports that other countries use as inputs into their own exports. We downloaded the 2025 edition of the OECD TiVA database, which covers Singapore and 79 other economies up to 2022, and computed both measures ourselves. Forward participation comes from TiVA's table of the origin of value added in gross exports, summing Singapore's value added in every other country's exports.
+Backward participation is the foreign share of a country's exports, and forward participation the share of its exports that other countries use as inputs into their own exports. We computed both from the 2025 edition of OECD TiVA, which covers Singapore and 79 other economies up to 2022, taking forward participation from the table of the origin of value added in gross exports.
 
 </details>
 
@@ -517,9 +494,7 @@ Value added trade data split the value of a country's exports into the part crea
 
 *Ranks among the 80 economies in TiVA 2025 (1st = highest). Position index: Koopman et al. (2010), ln(1 + forward) − ln(1 + backward). Source: OECD TiVA 2025 edition; team calculation.*
 
-
-A Singapore specific measure in TiVA is the value of re-exported intermediate imports, inputs that are imported and leave the country again inside exports. It equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world. Together with the re-export figures in Chapter 3, this confirms that a large part of Singapore's role in value chains is to receive, process and redistribute inputs for the region. The position index is the logarithm of one plus forward participation minus the logarithm of one plus backward participation.
-
+TiVA also reports re-exported intermediate imports, inputs that leave the country again inside its exports. They equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world, which confirms with the re-export data of Chapter 3 that Singapore's role is to receive, process and redistribute inputs for the region.
 
 </details>
 
@@ -533,12 +508,12 @@ A Singapore specific measure in TiVA is the value of re-exported intermediate im
 
 ![Refining and transport carry the most foreign content](../figures/ch05_sector_fva.png)
 
-**Refining and transport, while finance is the most home grown.** Refined fuels carry 72 percent foreign value because all crude is imported, and transport 60 percent because fuel, ships and aircraft are bought abroad. Finance (28 percent) and wholesale trade (34 percent) carry the most domestic value, which confirms Chapter 4's finding that services are where Singapore adds most of its own value.
+**Refining and transport, while finance is the most home grown.** Refined fuels carry 72 percent foreign value because all crude is imported, and transport 60 percent because fuel, ships and aircraft are bought abroad. Finance (28 percent) and wholesale trade (34 percent) carry the most domestic value, so services are where Singapore adds most of its own value (Chapter 4).
 
 <details class="more" markdown="1">
 <summary>More: sector table and where Singapore's foreign inputs come from</summary>
 
-Using the team's shared sector table, the industries that account for most of Singapore's gross exports in TiVA are transport and logistics (20.6 percent), ICT and business services (18.7 percent), electronics and instruments (17.8 percent) and wholesale trade (14.8 percent).
+In TiVA the industries that account for most of Singapore's gross exports are transport and logistics (20.6 percent), ICT and business services (18.7 percent), electronics and instruments (17.8 percent) and wholesale trade (14.8 percent).
 
 | Sector | Share of Singapore's gross exports | Foreign value added, % | Malaysia FVA % | Hong Kong SAR FVA % | Vietnam FVA % |
 | --- | --- | --- | --- | --- | --- |
@@ -560,12 +535,12 @@ Using the team's shared sector table, the industries that account for most of Si
 
 ![The US and China each supply 14% of the foreign value in Singapore's exports](../figures/ch05_fva_origin.png)
 
-The United States and China each supplied 13.7 percent of the foreign value added in Singapore's exports in 2022, followed by Japan (7.1 percent), India (5.4 percent) and Taiwan (5.1 percent). Semiconductor production draws on American design and equipment, Japanese materials and Taiwanese and Korean chips, while trade and transport services draw on Chinese and Indian goods and services. Denmark's share of 2.9 percent reflects shipping, since Denmark is home to some of the world's largest container lines. Malaysia supplies only 2.6 percent of the foreign value added although it is one of Singapore's largest sources of imports, which suggests that much of what Singapore buys from Malaysia passes through with little processing.
+The United States and China each supplied 13.7 percent of the foreign value added in Singapore's exports in 2022, followed by Japan (7.1 percent), as chip production draws on American design and equipment and Japanese materials. Malaysia supplies only 2.6 percent although it is one of Singapore's largest sources of imports, so much of what Singapore buys from Malaysia passes through with little processing.
 
 </details>
 
 ## Implications for trade and investment
-**Why a high cost location wins some stages.** Fort (2017) finds with American plant data that communication technology helps firms split production, most of all in industries with codified designs such as semiconductor machinery, and only toward countries with high human capital. Singapore, 28th of 143 on human capital, is that kind of location, so it keeps the design intensive stages of electronics while assembly goes to Malaysia and Vietnam. The cost of this position is exposure to every upstream shock and to rivalry between its two largest suppliers of foreign value, the United States and China. Chapter 6 turns to the foreign firms that run these links.
+**Why a high cost location wins some stages.** Fort (2017) finds with American plant data that communication technology helps firms split production, most of all in industries with codified designs such as semiconductor machinery, and only toward countries with high human capital. Singapore, 28th of 143 on human capital, is that kind of location, so it keeps the design intensive stages of electronics while assembly goes to Malaysia and Vietnam. The price is exposure to every upstream shock and to rivalry between its two largest suppliers of foreign value, the United States and China. Chapter 6 turns to the foreign firms that run these links.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>
@@ -593,7 +568,7 @@ Singapore is the world's second largest destination for foreign direct investmen
 
 ![Foreign firms own assets worth 4.1 times Singapore's GDP](../figures/ch06_stocks_gdp.png)
 
-Inward FDI rose from S$277 billion at the end of 2004 (142 percent of GDP) to S$3,130 billion at the end of 2024 (409 percent of GDP), and Singapore's direct investment abroad from S$180 billion to S$1,653 billion (216 percent of GDP). Both ratios keep rising, which is typical of an economy that serves as a base from which multinationals hold and finance operations in other countries. Malaysia and Vietnam, whose FDI goes mainly into factories, receive far less relative to GDP.
+Inward FDI rose from 142 percent of GDP at the end of 2004 to 409 percent (S$3,130 billion) at the end of 2024, the profile of a base from which multinationals hold and finance operations in other countries. Malaysia and Vietnam, whose FDI goes mainly into factories, receive far less relative to GDP.
 
 </details>
 
@@ -609,11 +584,7 @@ Inward FDI rose from S$277 billion at the end of 2004 (142 percent of GDP) to S$
 
 ![The US is the largest investor](../figures/ch06_sources.png)
 
-Japan and the United Kingdom follow the Caribbean centres as sources. Wholesale and retail trade holds 13.4 percent of the stock and manufacturing 8.0 percent.
-
-
-The Caribbean financial centres together account for 22 percent of the inward stock, and Luxembourg and the Netherlands for another 7.5 percent. Singapore follows the IMF's Balance of Payments Manual and publishes no series by ultimate investor ([SingStat technical notes](https://www.singstat.gov.sg/files/4603e8e3-2291-424f-9c8d-b96962ef6a02.pdf)). Damgaard, Elkjaer and Johannesen (2019) estimate that close to 40 percent of global FDI is "phantom" investment through empty corporate shells, and they name Singapore among the ten economies that host most of it ([IMF Finance and Development](https://www.imf.org/en/Publications/fandd/issues/2019/09/the-rise-of-phantom-FDI-in-tax-havens-damgaard)). Finance and insurance as a whole hold 65.5 percent of the stock, professional and administrative services 4.9 percent and transport and storage 3.7 percent. Within manufacturing, semiconductors account for 2.2 percent of the total stock and pharmaceuticals for only 0.3 percent, a contrast examined in Chapter 9.
-
+Finance and insurance hold 65.5 percent of the stock, wholesale and retail trade 13.4 percent and manufacturing 8.0 percent, of which semiconductors are 2.2 percent and pharmaceuticals only 0.3 percent (Chapter 9). Singapore publishes no series by ultimate investor ([SingStat technical notes](https://www.singstat.gov.sg/files/4603e8e3-2291-424f-9c8d-b96962ef6a02.pdf)). Damgaard, Elkjaer and Johannesen (2019) estimate that close to 40 percent of global FDI is "phantom" investment through empty corporate shells and name Singapore among the ten economies that host most of it ([IMF Finance and Development](https://www.imf.org/en/Publications/fandd/issues/2019/09/the-rise-of-phantom-FDI-in-tax-havens-damgaard)).
 
 </details>
 
@@ -646,24 +617,22 @@ Singapore combines a large flow of new plants and headquarters with an active ma
 
 ![Singapore invests mostly in Asia](../figures/ch06_outward_destinations.png)
 
-**Heavily, mostly in Asia.** Direct investment abroad reached S$1,653 billion at the end of 2024, 216 percent of GDP, and Asia, led by mainland China, India and Indonesia, takes 52 percent. Income from these investments rose from 19.5 to 36.3 percent of GDP between 2004 and 2024, but foreign investors in Singapore earn even more (53.7 percent of GDP), so gross national income is only 82.7 percent of GDP.
+**Heavily, mostly in Asia.** Direct investment abroad reached S$1,653 billion at the end of 2024, 216 percent of GDP, and Asia, led by mainland China, India and Indonesia, takes 52 percent. Income from it rose from 19.5 to 36.3 percent of GDP between 2004 and 2024, but foreign investors in Singapore earn even more (53.7 percent of GDP), so gross national income is only 82.7 percent of GDP.
 
 <details class="more" markdown="1">
 <summary>More: investment income over time and outward FDI by industry</summary>
 
 ![Income from investment abroad reached 36% of GDP](../figures/ch06_income.png)
 
-
 ![Half of Singapore's investment abroad is in finance](../figures/ch06_outward_industries.png)
 
-Half of the outward stock (50.5 percent) is in finance and insurance, much of it holding companies that own operating firms elsewhere, 17.0 percent in manufacturing, 6.7 percent in wholesale and retail trade and 6.6 percent in real estate. Part of this outward investment is the second half of the pass through described above. It also includes state linked investors and Singaporean firms that have moved labour intensive production to neighbouring countries, a movement that the Johor Singapore Special Economic Zone agreed with Malaysia in January 2025 is designed to support.
-
+Half of the outward stock (50.5 percent) is in finance and insurance, much of it holding companies that own firms elsewhere, and 17.0 percent in manufacturing, including labour intensive production moved to neighbouring countries, a shift the Johor Singapore Special Economic Zone agreed with Malaysia in January 2025 is designed to support.
 
 </details>
 
 ## Implications for trade and investment
 
-FDI is the engine of Singapore's model, bringing the capital, technology and market access that six million people could not build alone. Because so much of it is pass through money, the headline numbers overstate productive capital and react to global tax rules, including the minimum tax of 2025 (Chapter 9). Chapter 7 looks at the policies that keep it coming.
+FDI brings the capital, technology and market access that six million people could not build alone. Because so much of it is pass through money, the headline numbers overstate productive capital and react to global tax rules such as the minimum tax of 2025 (Chapter 9). Chapter 7 looks at the policies that keep it coming.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>
@@ -713,19 +682,19 @@ Singapore is close to a pure free trader at home and uses 29 free trade agreemen
 
 *Ties share the best rank, so many zero-tariff economies can be '1st'. Source: World Bank WDI (WITS/UNCTAD TRAINS), retrieved Nov 12, 2026.*
 
-Singapore's average bound rate is 8.9 percent, so it has committed to keep tariffs below that level but applies far less ([WTO tariff profile](https://www.wto.org/english/res_e/statis_e/daily_update_e/tariff_profiles/SG_e.pdf)). Hong Kong SAR, also a free port, applies no tariffs at all. Revenue is raised instead through excise duties on liquor, tobacco, motor vehicles and petroleum, which apply equally to imports and local production, and through a 9 percent goods and services tax. Malaysia's highest duty, on alcoholic drinks, exceeds 1,000 percent.
+Singapore's average bound rate is 8.9 percent, far above what it applies ([WTO tariff profile](https://www.wto.org/english/res_e/statis_e/daily_update_e/tariff_profiles/SG_e.pdf)). Revenue comes instead from excise duties on liquor, tobacco, motor vehicles and petroleum, which fall equally on imports and local production, and from a 9 percent goods and services tax.
 
 </details>
 
 ## What are its trade agreements for?
 ![Singapore has signed its way to 29 FTAs](../figures/ch07_fta_count.png)
 
-**To open partners' markets, since Singapore's own is already open.** The network grew from 6 agreements in 2004 to 29 in 2026, including the US (2004), China (2009), CPTPP (2018), the EU (2019) and RCEP (2022), and covers services, investment and digital trade. **Rules of origin.** Because Singapore charges no tariffs, partners rely on rules of origin to stop third country goods entering through it, and Conconi and coauthors (2016) show such rules cut NAFTA Mexico's imports of non member inputs by around 30 percentage points. With 46 percent foreign content in its exports (Chapter 5), Singapore gains most from RCEP's common rules, which count inputs from all fifteen members.
+**To open partners' markets, since Singapore's own is already open.** The network grew from 6 agreements in 2004 to 29 in 2026, including the US (2004), China (2009), CPTPP (2018), the EU (2019) and RCEP (2022), and covers services, investment and digital trade. **Rules of origin.** Because Singapore charges no tariffs, partners use rules of origin to stop third country goods entering through it, and Conconi and coauthors (2016) show such rules cut NAFTA Mexico's imports of non member inputs by around 30 percentage points. With 46 percent foreign content in its exports (Chapter 5), Singapore gains most from RCEP's common rules, which count inputs from all fifteen members.
 
 <details class="more" markdown="1">
 <summary>Full list of the 29 FTAs: partners, year of entry into force and scope</summary>
 
-Fifteen are bilateral agreements, six are agreements between ASEAN and a partner, five are plurilateral and two are mega regional agreements. MERCOSUR became the twenty-ninth in February 2026 ([METI](https://www.meti.gov.sg/newsroom/mercosur-singapore-free-trade-agreement-enters-into-force-for-singapore-and-paraguay)).
+Fifteen are bilateral, six link ASEAN with a partner, five are plurilateral and two are mega regional. MERCOSUR became the twenty-ninth in February 2026 ([METI](https://www.meti.gov.sg/newsroom/mercosur-singapore-free-trade-agreement-enters-into-force-for-singapore-and-paraguay)).
 
 | Agreement | Partner(s) | Type | In force for Singapore | Scope |
 | --- | --- | --- | --- | --- |
@@ -761,7 +730,7 @@ Fifteen are bilateral agreements, six are agreements between ASEAN and a partner
 
 *Sources: Enterprise Singapore 'Find an FTA'; WTO Regional Trade Agreements database; Ministry of Energy, Trade and Industry. AFTA dated from the start of CEPT tariff cuts (1993). Where sources differ, see data/raw/manual/sg_fta_list.csv.*
 
-Singapore has also pioneered agreements on digital trade, beginning with the Digital Economy Partnership Agreement with Chile and New Zealand in 2020 and followed by agreements with Australia, the United Kingdom, Korea and the European Union ([METI](https://www.meti.gov.sg/trade/digital-economy-agreements)). These set rules on data flows, electronic payments and digital identity, the services trade in which Singapore's comparative advantage is growing (Chapter 4).
+Singapore also pioneered digital economy agreements, starting with Chile and New Zealand in 2020 ([METI](https://www.meti.gov.sg/trade/digital-economy-agreements)). They set rules on data flows, electronic payments and digital identity, the services trade in which its comparative advantage is growing (Chapter 4).
 
 </details>
 
@@ -779,7 +748,7 @@ Singapore has also pioneered agreements on digital trade, beginning with the Dig
 
 ![Food, fuel and chemicals face the most non-tariff measures](../figures/ch07_ntm_sectors.png)
 
-Almost all imports of fuels, animal and vegetable products and processed food are covered by at least one measure, followed by chemicals. These are the sectors with the greatest health, safety and environmental risks, and Singapore produces little of them, so the measures protect consumers and are not designed to shield domestic producers. By tariff line, measures cover 27.8 percent of Singapore's lines, against 36.6 percent in Malaysia and 47.0 percent in Vietnam.
+Almost all imports of fuels, animal and vegetable products and processed food face at least one measure. These carry the greatest health and safety risks and Singapore produces little of them, so the measures guard consumers more than producers. By tariff line, measures cover 27.8 percent of Singapore's lines, against 36.6 percent in Malaysia and 47.0 percent in Vietnam.
 
 </details>
 
@@ -804,7 +773,7 @@ Almost all imports of fuels, animal and vegetable products and processed food ar
 
 *Source: Ministry of Energy, Trade and Industry (METI), BITs/IGAs in force. Ten treaties with EU members will lapse when the EU-Singapore Investment Protection Agreement enters into force.*
 
-Most treaties date from the 1970s to the 2000s, when Singapore was both attracting investment and starting to invest abroad, and recent ones with Kazakhstan, Nigeria and Côte d'Ivoire reflect Singaporean investment in new regions. Ten treaties with EU members will lapse when the EU Singapore Investment Protection Agreement enters into force.
+Recent treaties with Kazakhstan, Nigeria and Côte d'Ivoire follow Singaporean investment into new regions, and ten treaties with EU members will lapse when the EU Singapore Investment Protection Agreement enters into force.
 
 </details>
 
@@ -846,22 +815,15 @@ Singapore twice tried to grow a high technology industry by courting foreign fir
 **Chips from 1968, pills from 2000.** National Semiconductor opened an assembly plant in 1968, followed by Fairchild and Texas Instruments, and the state backed Chartered Semiconductor opened the first wafer fab in 1987, moving the industry from assembly into fabrication ([EDB](https://www.edb.gov.sg/en/business-insights/insights/made-in-singapore-60-years-of-manufacturing.html)). The Biomedical Sciences Initiative of June 2000 made medicines the fourth pillar of manufacturing, with Tuas Biomedical Park, the Biopolis research complex of 2003 and plants from Pfizer, GSK, Novartis, Lonza and others.
 
 <details class="more" markdown="1">
-<summary>More: the new wave of chip investment and the research budget</summary>
+<summary>More: the new wave of investment and an evaluation of the pharma cluster</summary>
 
-A new wave of investment followed after 2021, including GlobalFoundries' $4 billion expansion (2023), Siltronic's wafer plant (2024), UMC's $5 billion fab (2025), the $7.8 billion VisionPower fab of Vanguard and NXP, and Micron's $7 billion memory packaging plant. The government's research budget for 2026 to 2030 is S$37 billion, with semiconductors as the first flagship ([EDB](https://www.edb.gov.sg/en/news-and-insights/singapore-invests-s37-billion-in-rie2030-research-plan-semiconductors-ageing-among-focus-areas)).
-
-</details>
-
-<details class="more" markdown="1">
-<summary>More: recent pharma investment and an evaluation of the cluster</summary>
-
-AstraZeneca announced a $1.5 billion plant for antibody drug conjugates in 2024 ([AstraZeneca](https://www.astrazeneca.com/country-sites/singapore/press-releases/astrazeneca-to-manufacture-adcs-in-singapore.html)). An evaluation by Cambridge Industrial Innovation Policy found that the cluster met its output and jobs targets but missed its target for research spending and produced few spin-off firms ([CIIP 2021](https://www.ciip.group.cam.ac.uk/wp-content/uploads/2021/02/2021-02-19-SBS.pdf)).
+Chips drew a new wave after 2021, including GlobalFoundries' $4 billion expansion (2023), UMC's $5 billion fab (2025), the $7.8 billion VisionPower fab of Vanguard and NXP and Micron's $7 billion memory packaging plant, and the research budget for 2026 to 2030 of S$37 billion names semiconductors as its first flagship ([EDB](https://www.edb.gov.sg/en/news-and-insights/singapore-invests-s37-billion-in-rie2030-research-plan-semiconductors-ageing-among-focus-areas)). In medicines AstraZeneca announced a $1.5 billion plant for antibody drug conjugates in 2024 ([AstraZeneca](https://www.astrazeneca.com/country-sites/singapore/press-releases/astrazeneca-to-manufacture-adcs-in-singapore.html)), and an evaluation found that the cluster met its output and jobs targets but missed its target for research spending and produced few spin-off firms ([CIIP 2021](https://www.ciip.group.cam.ac.uk/wp-content/uploads/2021/02/2021-02-19-SBS.pdf)).
 
 </details>
 
 ## The scorecard
 
-**Both industries export with an advantage, and only one has deepened at home.** We computed RCAs from four digit BACI data for 1995 to 2024. Chips have stayed far above 1 throughout, at 4.6 in 2024, equal to Malaysia's, with $70.7 billion of integrated circuit exports, 7.1 percent of the world. Finished medicines and biologics rose from 0.16 in 2004, have stayed above 1 since 2018 and reached 1.78 in 2024, driven by biologics and vaccines (3.06). Yet semiconductors' share of manufacturing value added rose from 16 to 35 percent while pharmaceuticals' fell from 19 to 5.5 percent, and the foreign capital stock in pharmaceuticals shrank from S$32 billion to S$10 billion.
+**Both industries export with an advantage, and only one has deepened at home.** We computed RCAs from four digit BACI data for 1995 to 2024. Chips have stayed far above 1 throughout, at 4.6 in 2024 with $70.7 billion of integrated circuit exports, 7.1 percent of the world. Finished medicines and biologics rose from 0.16 in 2004 to 1.78 in 2024 and have stayed above 1 since 2018, driven by biologics and vaccines (3.06). Yet semiconductors' share of manufacturing value added rose from 16 to 35 percent while pharmaceuticals' fell from 19 to 5.5 percent, and the foreign capital stock in pharmaceuticals shrank from S$32 billion to S$10 billion.
 
 ![Chips keep a strong advantage and finished pharma built one](../figures/ch09_rca.png)
 
@@ -881,23 +843,19 @@ AstraZeneca announced a $1.5 billion plant for antibody drug conjugates in 2024 
 
 ![Foreign investment in chip plants grew while pharma's shrank](../figures/ch09_fdi_stock.png)
 
-The stock of foreign investment in semiconductor devices peaked at S$105 billion in 2022, and the stock in pharmaceutical and biological products peaked at S$48 billion in 2007. Part of pharmaceuticals' falling share is mechanical, because chips grew so fast.
-
-
-The pharmaceutical share swings sharply from year to year, as one would expect in an industry where a few large foreign plants account for most of the output and each plant's output depends on its parent's products. The value recorded in Singapore also depends on where the parent books its patents and profits, so tax changes can move it without any change in production. The EDB's investment commitments show a recent revival in biomedical manufacturing (31 percent of fixed asset commitments in 2025, against 33 percent for electronics), so pharmaceutical value added may yet grow again ([EDB Year in Review 2025](https://www.edb.gov.sg/content/dam/edb-en/about-edb/media-releases/news/edb-year-2025-in-review/EDB%20YIR%202025%20Media%20Release.pdf)).
-
+The pharmaceutical share swings sharply because a few foreign plants make most of the output and the value booked in Singapore depends on where parents place patents and profits. Part of its fall is mechanical, since chips grew so fast, and the EDB's commitments show a revival, with biomedical manufacturing at 31 percent of fixed asset commitments in 2025 against 33 percent for electronics ([EDB Year in Review 2025](https://www.edb.gov.sg/content/dam/edb-en/about-edb/media-releases/news/edb-year-2025-in-review/EDB%20YIR%202025%20Media%20Release.pdf)).
 
 </details>
 
 <details class="more" markdown="1">
 <summary>More: the 2017 outlier and the product detail</summary>
 
-BACI records Singapore's chip exports at $125 billion in 2017, more than twice the $46 to $55 billion of the neighbouring years, which lifts the RCA to 7.6 for that year only. We treat it as a reporting anomaly and do not interpret it. Integrated circuits alone (HS 8542) had an RCA of 4.9 in 2024 and other semiconductor devices (HS 8541) 2.6. The world share of 7.1 percent of exported integrated circuits by value is lower than the EDB's statement that Singapore makes one in ten of the world's chips, which counts units produced. Among pharmaceutical ingredients the advantage moved between products, with antibiotics (HS 2941) rising to 3.1 in 2014 and falling to 0.9 in 2024, which shows how much a few plants can move a small product line.
+BACI records Singapore's chip exports at $125 billion in 2017, more than twice the neighbouring years, which lifts the RCA to 7.6 for that year only, and we treat it as a reporting anomaly. Integrated circuits alone (HS 8542) had an RCA of 4.9 in 2024 and other semiconductor devices (HS 8541) 2.6. The world share of 7.1 percent counts value, which is why it sits below the EDB's statement that Singapore makes one in ten of the world's chips by units.
 
 </details>
 
 ## The verdict
-**Chips learned, and pills learned only to export.** In the model's terms chips are a successful infant industry raised without a tariff. Support attracted firms, the industry climbed from assembly to fabrication, and the advantage has survived decades of rising wages because Singapore's capital, skills and suppliers now carry it (Chapter 4). Pharmaceuticals built export capacity, and it took almost two decades to become a stable advantage, while value added and foreign capital moved the other way. Learning has not yet spread into a self sustaining domestic industry, which fits Young's (1992) finding that Singapore grew mainly by accumulating capital and labour and only a little through productivity.
+**Chips learned, and pills learned only to export.** In the model's terms chips are a successful infant industry raised without a tariff. Support attracted firms, the industry climbed from assembly to fabrication, and the advantage has survived decades of rising wages because Singapore's capital, skills and suppliers now carry it (Chapter 4). Pharmaceuticals took almost two decades to turn export capacity into a stable advantage, while value added and foreign capital moved the other way. That fits Young's (1992) finding that Singapore grew mainly by accumulating capital and labour and only a little through productivity.
 
 ## How we would test it properly
 
@@ -905,7 +863,7 @@ BACI records Singapore's chip exports at $125 billion in 2017, more than twice t
 
 ## The next test
 
-**A global minimum tax and US trade policy hit both bets at once.** The OECD minimum tax took effect in Singapore on 1 January 2025 and lifts large groups' effective rate to at least 15 percent, which weakens tax holidays ([IRAS](https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/global-anti-base-erosion-(globe)-rules-and-domestic-top-up-tax-(dtt))). Singapore answered in Budget 2024 with a Refundable Investment Credit that pays up to 50 percent of qualifying spending in cash, a subsidy the global rules allow ([IRAS](https://www.iras.gov.sg/schemes/disbursement-schemes/refundable-investment-credit-(ric))). US tariffs and export controls on chips and medicines (Chapter 7) put both industries at the centre of strategic rivalry.
+**A global minimum tax and US trade policy hit both bets at once.** The OECD minimum tax took effect in Singapore on 1 January 2025 and lifts large groups' effective rate to at least 15 percent, which weakens tax holidays ([IRAS](https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/global-anti-base-erosion-(globe)-rules-and-domestic-top-up-tax-(dtt))). Singapore answered with a Refundable Investment Credit that pays up to 50 percent of qualifying spending in cash, a subsidy the global rules allow ([IRAS](https://www.iras.gov.sg/schemes/disbursement-schemes/refundable-investment-credit-(ric))), while US tariffs and export controls (Chapter 7) put both industries at the centre of strategic rivalry.
 
 ## Sources
 
@@ -916,9 +874,13 @@ CEPII, BACI HS92 V202601 (4-digit products); Economic Development Board, Census 
 
 # Conclusion
 
+## Key finding
+
+Singapore turned a location into an economy. Trade is three times GDP, foreign firms own assets worth four times GDP and its government ranks first of 205 for effectiveness, which makes it the region's best base for headquarters and high value production and a costly one for everything else.
+
 ## What we found
 
-**Singapore turned a location into an economy.** Institutions ranked first in the world (Chapter 2) made it the preferred Asian base for multinationals, whose capital gives it the 14th highest capital per worker and an export mix of capital and skill intensive services and goods, as Heckscher and Ohlin predict (Chapter 4). Trade is three times GDP and half of exports are now services (Chapter 3). Almost half the value of its exports is imported, placing it downstream in value chains as the region's processor and coordinator (Chapter 5). Foreign investment worth four times GDP, much of it passing through holding companies (Chapter 6), and zero tariffs with 29 agreements (Chapter 7) keep goods and capital moving. **The case adds a caution.** Investment led policy built a lasting chip industry, while in pharmaceuticals it built exports without a deeper industry at home (Chapter 9).
+**Location, institutions and foreign capital reinforce each other.** Institutions ranked first in the world (Chapter 2) made Singapore the preferred Asian base for multinationals, whose capital gives it the 14th highest capital per worker and an export mix of capital and skill intensive services and goods, as Heckscher and Ohlin predict (Chapter 4). Half of exports are now services (Chapter 3), and almost half the value of exports is imported, placing Singapore downstream in value chains as the region's processor and coordinator (Chapter 5). Foreign investment, much of it passing through holding companies (Chapter 6), and zero tariffs with 29 agreements (Chapter 7) keep goods and capital moving. **The case adds a caution.** Investment led policy built a lasting chip industry, while in pharmaceuticals it built exports without a deeper industry at home (Chapter 9).
 
 ## SWOT analysis
 

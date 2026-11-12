@@ -17,7 +17,7 @@ Singapore is close to a pure free trader at home and uses 29 free trade agreemen
 
 <!-- include: data/derived/ch07_tariff_table.md -->
 
-Singapore's average bound rate is 8.9 percent, so it has committed to keep tariffs below that level but applies far less ([WTO tariff profile](https://www.wto.org/english/res_e/statis_e/daily_update_e/tariff_profiles/SG_e.pdf)). Hong Kong SAR, also a free port, applies no tariffs at all. Revenue is raised instead through excise duties on liquor, tobacco, motor vehicles and petroleum, which apply equally to imports and local production, and through a 9 percent goods and services tax. Malaysia's highest duty, on alcoholic drinks, exceeds 1,000 percent.
+Singapore's average bound rate is 8.9 percent, far above what it applies ([WTO tariff profile](https://www.wto.org/english/res_e/statis_e/daily_update_e/tariff_profiles/SG_e.pdf)). Revenue comes instead from excise duties on liquor, tobacco, motor vehicles and petroleum, which fall equally on imports and local production, and from a 9 percent goods and services tax.
 
 </details>
 
@@ -25,16 +25,16 @@ Singapore's average bound rate is 8.9 percent, so it has committed to keep tarif
 
 ![Singapore has signed its way to 29 FTAs](../figures/ch07_fta_count.png)
 
-**To open partners' markets, since Singapore's own is already open.** The network grew from 6 agreements in 2004 to 29 in 2026, including the US (2004), China (2009), CPTPP (2018), the EU (2019) and RCEP (2022), and covers services, investment and digital trade. **Rules of origin.** Because Singapore charges no tariffs, partners rely on rules of origin to stop third country goods entering through it, and Conconi and coauthors (2016) show such rules cut NAFTA Mexico's imports of non member inputs by around 30 percentage points. With 46 percent foreign content in its exports (Chapter 5), Singapore gains most from RCEP's common rules, which count inputs from all fifteen members.
+**To open partners' markets, since Singapore's own is already open.** The network grew from 6 agreements in 2004 to 29 in 2026, including the US (2004), China (2009), CPTPP (2018), the EU (2019) and RCEP (2022), and covers services, investment and digital trade. **Rules of origin.** Because Singapore charges no tariffs, partners use rules of origin to stop third country goods entering through it, and Conconi and coauthors (2016) show such rules cut NAFTA Mexico's imports of non member inputs by around 30 percentage points. With 46 percent foreign content in its exports (Chapter 5), Singapore gains most from RCEP's common rules, which count inputs from all fifteen members.
 
 <details class="more" markdown="1">
 <summary>Full list of the 29 FTAs: partners, year of entry into force and scope</summary>
 
-Fifteen are bilateral agreements, six are agreements between ASEAN and a partner, five are plurilateral and two are mega regional agreements. MERCOSUR became the twenty-ninth in February 2026 ([METI](https://www.meti.gov.sg/newsroom/mercosur-singapore-free-trade-agreement-enters-into-force-for-singapore-and-paraguay)).
+Fifteen are bilateral, six link ASEAN with a partner, five are plurilateral and two are mega regional. MERCOSUR became the twenty-ninth in February 2026 ([METI](https://www.meti.gov.sg/newsroom/mercosur-singapore-free-trade-agreement-enters-into-force-for-singapore-and-paraguay)).
 
 <!-- include: data/derived/ch07_fta_table.md -->
 
-Singapore has also pioneered agreements on digital trade, beginning with the Digital Economy Partnership Agreement with Chile and New Zealand in 2020 and followed by agreements with Australia, the United Kingdom, Korea and the European Union ([METI](https://www.meti.gov.sg/trade/digital-economy-agreements)). These set rules on data flows, electronic payments and digital identity, the services trade in which Singapore's comparative advantage is growing (Chapter 4).
+Singapore also pioneered digital economy agreements, starting with Chile and New Zealand in 2020 ([METI](https://www.meti.gov.sg/trade/digital-economy-agreements)). They set rules on data flows, electronic payments and digital identity, the services trade in which its comparative advantage is growing (Chapter 4).
 
 </details>
 
@@ -53,7 +53,7 @@ Singapore has also pioneered agreements on digital trade, beginning with the Dig
 
 ![Food, fuel and chemicals face the most non-tariff measures](../figures/ch07_ntm_sectors.png)
 
-Almost all imports of fuels, animal and vegetable products and processed food are covered by at least one measure, followed by chemicals. These are the sectors with the greatest health, safety and environmental risks, and Singapore produces little of them, so the measures protect consumers and are not designed to shield domestic producers. By tariff line, measures cover 27.8 percent of Singapore's lines, against 36.6 percent in Malaysia and 47.0 percent in Vietnam.
+Almost all imports of fuels, animal and vegetable products and processed food face at least one measure. These carry the greatest health and safety risks and Singapore produces little of them, so the measures guard consumers more than producers. By tariff line, measures cover 27.8 percent of Singapore's lines, against 36.6 percent in Malaysia and 47.0 percent in Vietnam.
 
 </details>
 
@@ -68,7 +68,7 @@ Almost all imports of fuels, animal and vegetable products and processed food ar
 
 <!-- include: data/derived/ch07_bit_table.md -->
 
-Most treaties date from the 1970s to the 2000s, when Singapore was both attracting investment and starting to invest abroad, and recent ones with Kazakhstan, Nigeria and Côte d'Ivoire reflect Singaporean investment in new regions. Ten treaties with EU members will lapse when the EU Singapore Investment Protection Agreement enters into force.
+Recent treaties with Kazakhstan, Nigeria and Côte d'Ivoire follow Singaporean investment into new regions, and ten treaties with EU members will lapse when the EU Singapore Investment Protection Agreement enters into force.
 
 </details>
 

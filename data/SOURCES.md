@@ -19,3 +19,4 @@ One line per file group: files · database · version/edition · download date �
 | data/raw/manual/pwt110.dta | Penn World Table | 11.0 | 12 Nov 2026 | https://doi.org/10.34894/FABVLR | `fetch_other.py` |
 | data/raw/manual/unctad_wir26_tab*.xlsx | UNCTAD World Investment Report annex tables 1, 5, 7, 14, 17 | WIR 2026 | 12 Nov 2026 | https://unctad.org/topic/investment/world-investment-report | `fetch_other.py` |
 | data/raw/manual/sg_fta_list.csv | Team list from Enterprise Singapore + WTO RTA database | Nov 2026 | 12 Nov 2026 | see `sg_fta_list.README.md` | hand-compiled |
+| (in `export_site_data.py`, facts) | Land area 745.1 km², June 2026, supplied by Estella; source to cite: SingStat Population Trends 2026 | Jun 2026 | 12 Nov 2026 | https://www.singstat.gov.sg/publication-resources/population-trends-2026 | typed in |

@@ -303,6 +303,10 @@ N["gravity"] = {k: {"const": float(v[1][0]), "b_gdp": float(v[1][1]), "b_dist": 
                     "se_dist": float(v[3][2]), "r2": float(v[4]), "n": int(v[5])} for k, v in res.items()}
 resid = d.adj - (b[0] + b[2] * np.log(d.dist))
 N["gravity_residuals_top"] = resid.sort_values(ascending=False).head(8).round(2).to_dict()
+# actual exports relative to the gravity prediction, by partner (for the atlas cards): exp(residual)
+N["gravity_ratio"] = np.exp(resid).round(2).to_dict()
+N["exports_bn_2024"] = (d.x / 1e9).round(2).to_dict()
+N["partner_rank_x"] = {k: i + 1 for i, k in enumerate(d.x.sort_values(ascending=False).index)}
 N["gravity_residuals_bottom"] = resid.sort_values().head(5).round(2).to_dict()
 save_numbers("ch03", N)
 print("\n".join(lines))

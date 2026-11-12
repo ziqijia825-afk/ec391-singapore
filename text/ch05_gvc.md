@@ -15,7 +15,7 @@ Almost half the value of Singapore's exports is created abroad, which makes it o
 <details class="more" markdown="1">
 <summary>How we measured participation from the OECD TiVA data</summary>
 
-Value added trade data split the value of a country's exports into the part created at home and the part embodied in imported inputs. Backward participation is the foreign share of a country's exports. Forward participation is the share of a country's exports that other countries use as inputs into their own exports. We downloaded the 2025 edition of the OECD TiVA database, which covers Singapore and 79 other economies up to 2022, and computed both measures ourselves. Forward participation comes from TiVA's table of the origin of value added in gross exports, summing Singapore's value added in every other country's exports.
+Backward participation is the foreign share of a country's exports, and forward participation the share of its exports that other countries use as inputs into their own exports. We computed both from the 2025 edition of OECD TiVA, which covers Singapore and 79 other economies up to 2022, taking forward participation from the table of the origin of value added in gross exports.
 
 </details>
 
@@ -30,9 +30,7 @@ Value added trade data split the value of a country's exports into the part crea
 
 <!-- include: data/derived/ch05_participation_table.md -->
 
-
-A Singapore specific measure in TiVA is the value of re-exported intermediate imports, inputs that are imported and leave the country again inside exports. It equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world. Together with the re-export figures in Chapter 3, this confirms that a large part of Singapore's role in value chains is to receive, process and redistribute inputs for the region. The position index is the logarithm of one plus forward participation minus the logarithm of one plus backward participation.
-
+TiVA also reports re-exported intermediate imports, inputs that leave the country again inside its exports. They equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world, which confirms with the re-export data of Chapter 3 that Singapore's role is to receive, process and redistribute inputs for the region.
 
 </details>
 
@@ -46,24 +44,24 @@ A Singapore specific measure in TiVA is the value of re-exported intermediate im
 
 ![Refining and transport carry the most foreign content](../figures/ch05_sector_fva.png)
 
-**Refining and transport, while finance is the most home grown.** Refined fuels carry 72 percent foreign value because all crude is imported, and transport 60 percent because fuel, ships and aircraft are bought abroad. Finance (28 percent) and wholesale trade (34 percent) carry the most domestic value, which confirms Chapter 4's finding that services are where Singapore adds most of its own value.
+**Refining and transport, while finance is the most home grown.** Refined fuels carry 72 percent foreign value because all crude is imported, and transport 60 percent because fuel, ships and aircraft are bought abroad. Finance (28 percent) and wholesale trade (34 percent) carry the most domestic value, so services are where Singapore adds most of its own value (Chapter 4).
 
 <details class="more" markdown="1">
 <summary>More: sector table and where Singapore's foreign inputs come from</summary>
 
-Using the team's shared sector table, the industries that account for most of Singapore's gross exports in TiVA are transport and logistics (20.6 percent), ICT and business services (18.7 percent), electronics and instruments (17.8 percent) and wholesale trade (14.8 percent).
+In TiVA the industries that account for most of Singapore's gross exports are transport and logistics (20.6 percent), ICT and business services (18.7 percent), electronics and instruments (17.8 percent) and wholesale trade (14.8 percent).
 
 <!-- include: data/derived/ch05_sector_table.md -->
 
 ![The US and China each supply 14% of the foreign value in Singapore's exports](../figures/ch05_fva_origin.png)
 
-The United States and China each supplied 13.7 percent of the foreign value added in Singapore's exports in 2022, followed by Japan (7.1 percent), India (5.4 percent) and Taiwan (5.1 percent). Semiconductor production draws on American design and equipment, Japanese materials and Taiwanese and Korean chips, while trade and transport services draw on Chinese and Indian goods and services. Denmark's share of 2.9 percent reflects shipping, since Denmark is home to some of the world's largest container lines. Malaysia supplies only 2.6 percent of the foreign value added although it is one of Singapore's largest sources of imports, which suggests that much of what Singapore buys from Malaysia passes through with little processing.
+The United States and China each supplied 13.7 percent of the foreign value added in Singapore's exports in 2022, followed by Japan (7.1 percent), as chip production draws on American design and equipment and Japanese materials. Malaysia supplies only 2.6 percent although it is one of Singapore's largest sources of imports, so much of what Singapore buys from Malaysia passes through with little processing.
 
 </details>
 
 ## Implications for trade and investment {Fort 2017}
 
-**Why a high cost location wins some stages.** Fort (2017) finds with American plant data that communication technology helps firms split production, most of all in industries with codified designs such as semiconductor machinery, and only toward countries with high human capital. Singapore, 28th of 143 on human capital, is that kind of location, so it keeps the design intensive stages of electronics while assembly goes to Malaysia and Vietnam. The cost of this position is exposure to every upstream shock and to rivalry between its two largest suppliers of foreign value, the United States and China. Chapter 6 turns to the foreign firms that run these links.
+**Why a high cost location wins some stages.** Fort (2017) finds with American plant data that communication technology helps firms split production, most of all in industries with codified designs such as semiconductor machinery, and only toward countries with high human capital. Singapore, 28th of 143 on human capital, is that kind of location, so it keeps the design intensive stages of electronics while assembly goes to Malaysia and Vietnam. The price is exposure to every upstream shock and to rivalry between its two largest suppliers of foreign value, the United States and China. Chapter 6 turns to the foreign firms that run these links.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

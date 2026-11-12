@@ -8,19 +8,18 @@ Singapore is the second richest economy in the world per person at purchasing po
 
 ![Singapore's economy grew about fivefold in 20 years](../figures/ch02_gdp_current_usd.png)
 
-**About five times bigger than in 2004, and second in the world per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, although income per resident is lower because foreign owners and workers take part of it home (Chapter 6). Real growth averaged 5.0 percent a year, 41st of 193, with deep swings in 2009 and 2020.
+**About five times bigger than in 2004, and second in the world per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world and from 9th to 6th of 33 in East Asia and the Pacific, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, and real growth averaged 5.0 percent a year, 41st of 193.
 
 <details class="more" markdown="1">
 <summary>More: income per person, real growth, GDP at PPP and the current account</summary>
 
 ![Singapore is the 2nd richest economy per person](../figures/ch02_gdp_per_capita_ppp.png)
 
-GDP per person at purchasing power parity rose from $54,384 in 2004 to $153,161 in 2024. Gross national income is only 83 percent of GDP, because a large non-resident workforce and the profits of foreign owned firms are counted in GDP but partly paid abroad.
+GDP per person at purchasing power parity almost tripled from $54,384 in 2004. Income per resident is lower, because foreign owners and workers send part of it home (Chapter 6).
 
 ![Singapore averaged 5.0% real growth a year](../figures/ch02_real_growth.png)
 
-Singapore moved from 9th to 6th of the 33 economies of East Asia and the Pacific by size, behind only China, Japan, Korea, Australia and Indonesia. Growth swings with world demand. Output stalled in 2009, rebounded by 14.5 percent in 2010 and fell by 3.6 percent in 2020.
-
+Growth swings with world demand. Output stalled in 2009, rebounded by 14.5 percent in 2010 and fell by 3.6 percent in 2020, less than in Malaysia (5.5 percent) or Hong Kong SAR (6.5 percent).
 
 ![At purchasing power parity Singapore's GDP reached $925bn](../figures/ch02_gdp_ppp.png)
 
@@ -28,8 +27,7 @@ At purchasing power parity the economy is $925 billion, 34th in the world.
 
 ![In current dollars Singapore's GDP per person is $95k](../figures/ch02_gdp_per_capita_usd.png)
 
-In current dollars GDP per person was $94,897 in 2024, eighth in the world. Real growth in 2024 was 5.3 percent, faster than Malaysia (5.1 percent) and Hong Kong SAR (2.6 percent), and the 2020 contraction was smaller than in Malaysia (5.5 percent) or Hong Kong SAR (6.5 percent). Inflation was 2.4 percent in 2024 and the current account surplus 17.2 percent of GDP, the sixth largest in the world relative to output, reflecting high national saving and large income from investment abroad.
-
+In current dollars GDP per person was $94,897 in 2024, eighth in the world. The current account surplus of 17.2 percent of GDP, the sixth largest relative to output, reflects high national saving and income from investment abroad.
 
 </details>
 
@@ -42,7 +40,7 @@ In current dollars GDP per person was $94,897 in 2024, eighth in the world. Real
 <details class="more" markdown="1">
 <summary>More on the poverty line and why this Gini is not ranked</summary>
 
-The guidelines ask for the share of the population below $2.15 a day. In June 2025 the World Bank replaced that line, set in 2017 prices, with a new international poverty line of $3.00 a day in 2021 prices, and the World Development Indicators now report only the new line. Singapore's household surveys are not in the World Bank's poverty database. The regional benchmarks show that 2.0 percent of people in East Asia and the Pacific lived below $3.00 a day in 2024, against 10.1 percent worldwide, and the latest figures for Malaysia (0.0 percent in 2021) and Vietnam (1.6 percent in 2022) suggest that extreme poverty is not the relevant measure for a high income city. The national Gini covers only employment income of resident households, so it is not comparable with the survey based Gini of 40.7 for Malaysia (2021) and 36.1 for Vietnam (2022), and we do not rank it. Whether the Department of Statistics is acceptable for this indicator is one of our questions for the professor.
+In June 2025 the World Bank replaced the $2.15 a day line named in the guidelines with $3.00 a day in 2021 prices, and Singapore's surveys are not in its poverty database. In East Asia and the Pacific 2.0 percent of people lived below $3.00 a day in 2024, against 10.1 percent worldwide, so extreme poverty is not the relevant measure for a high income city. The national Gini covers only the employment income of resident households, so we do not rank it against survey based figures such as Malaysia's 40.7 (2021) and Vietnam's 36.1 (2022).
 
 </details>
 
@@ -55,7 +53,7 @@ The guidelines ask for the share of the population below $2.15 a day. In June 20
 
 ![Singapore is top 5 of 100 on 5 of 10 B-READY topics](../figures/ch02_bready.png)
 
-Doing Business was discontinued in 2021 after data irregularities. In DB2020 Singapore was behind New Zealand and ahead of Hong Kong SAR (third), Malaysia (twelfth) and Vietnam (seventieth). In B-READY Singapore scores lower on labour regulation (65th) and market competition (17th), where the index rewards worker protection and competition rules that Singapore has kept deliberately light. Malaysia, Hong Kong SAR and Vietnam score below Singapore on most topics, with the largest gaps in business insolvency and international trade.
+In the last Doing Business report Hong Kong SAR was third, Malaysia twelfth and Vietnam seventieth. B-READY places Singapore lower on labour regulation (65th) and market competition (17th), where the index rewards worker protection and competition rules that Singapore keeps deliberately light.
 
 </details>
 
@@ -72,13 +70,13 @@ Doing Business was discontinued in 2021 after data irregularities. In DB2020 Sin
 
 ![Singapore is the 3rd least corrupt economy](../figures/ch02_cpi.png)
 
-Transparency International's Corruption Perceptions Index scores Singapore 84 out of 100 in 2024, third of 178 economies and first in the region, and the score has stayed between 83 and 87 since 2012. Political stability ranks twelfth and rule of law eighteenth on the Worldwide Governance Indicators.
+Transparency International scores Singapore 84 of 100 in 2024, third of 178 economies and first in the region, and the score has stayed between 83 and 87 since 2012.
 
 </details>
 
 ## Implications for trade and investment {Nunn 2007}
 
-Nunn (2007) shows that countries that enforce contracts well specialize in goods built from made to order inputs, such as electronics and machinery. Singapore's courts, regulators and logistics are exactly that kind of advantage, and they explain why supply chains and regional headquarters settle there despite high costs. Chapter 3 follows the trade these institutions carry.
+Nunn (2007) shows that countries that enforce contracts well specialize in goods built from made to order inputs, such as electronics and machinery. Singapore's courts, regulators and logistics are that kind of advantage, and they explain why supply chains and regional headquarters settle there despite high costs. Chapter 3 follows the trade these institutions carry.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

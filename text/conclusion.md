@@ -1,8 +1,12 @@
 # Conclusion
 
+## Key finding
+
+Singapore turned a location into an economy. Trade is three times GDP, foreign firms own assets worth four times GDP and its government ranks first of 205 for effectiveness, which makes it the region's best base for headquarters and high value production and a costly one for everything else.
+
 ## What we found
 
-**Singapore turned a location into an economy.** Institutions ranked first in the world (Chapter 2) made it the preferred Asian base for multinationals, whose capital gives it the 14th highest capital per worker and an export mix of capital and skill intensive services and goods, as Heckscher and Ohlin predict (Chapter 4). Trade is three times GDP and half of exports are now services (Chapter 3). Almost half the value of its exports is imported, placing it downstream in value chains as the region's processor and coordinator (Chapter 5). Foreign investment worth four times GDP, much of it passing through holding companies (Chapter 6), and zero tariffs with 29 agreements (Chapter 7) keep goods and capital moving. **The case adds a caution.** Investment led policy built a lasting chip industry, while in pharmaceuticals it built exports without a deeper industry at home (Chapter 9).
+**Location, institutions and foreign capital reinforce each other.** Institutions ranked first in the world (Chapter 2) made Singapore the preferred Asian base for multinationals, whose capital gives it the 14th highest capital per worker and an export mix of capital and skill intensive services and goods, as Heckscher and Ohlin predict (Chapter 4). Half of exports are now services (Chapter 3), and almost half the value of exports is imported, placing Singapore downstream in value chains as the region's processor and coordinator (Chapter 5). Foreign investment, much of it passing through holding companies (Chapter 6), and zero tariffs with 29 agreements (Chapter 7) keep goods and capital moving. **The case adds a caution.** Investment led policy built a lasting chip industry, while in pharmaceuticals it built exports without a deeper industry at home (Chapter 9).
 
 ## SWOT analysis
 

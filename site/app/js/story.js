@@ -1,0 +1,147 @@
+// The report as a column of screens: one question per screen, text on the left and its chart on the right.
+// Charts render as they come near the viewport; the chapter tab, address and progress bar follow the reader.
+import { renderFigure } from './chart.js';
+
+export function initStory(specials) {
+  const spreads = [...document.querySelectorAll('#story .spread')];
+  const navLinks = [...document.querySelectorAll('#nav a')];
+  const bar = document.querySelector('#topbar .progress i');
+  const firstOf = new Map();
+  spreads.forEach((sp) => { if (!firstOf.has(sp.dataset.ch)) firstOf.set(sp.dataset.ch, sp); });
+
+  // ---------- lazy charts ----------
+  const run = (el) => {
+    if (el.dataset.done) return;
+    el.dataset.done = '1';
+    const job = el.dataset.fig ? renderFigure(el, el.dataset.fig) : specials[el.dataset.special]?.(el);
+    Promise.resolve(job).catch((err) => { console.error(err); el.insertAdjacentHTML('beforeend', `<p class="hint">Chart could not load (${err.message}).</p>`); });
+  };
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting || e.target.closest('details:not([open])')) return;
+    io.unobserve(e.target);
+    run(e.target);
+  }), { rootMargin: '600px 0px' });
+  document.querySelectorAll('#story [data-fig], #story [data-special]').forEach((el) => io.observe(el));
+  document.addEventListener('toggle', (e) => {
+    if (e.target.open) e.target.querySelectorAll('[data-fig], [data-special]').forEach(run);
+  }, true);
+
+  // ---------- previous / next section links under each text column ----------
+  const label = (sp) => {  // the screen's question, without its course tag; full-width screens use their running head
+    const h = sp.querySelector('.pbody h2:not(.kf), .titlepage h1');
+    if (h) {
+      const c = h.cloneNode(true);
+      c.querySelectorAll('.tag').forEach((t) => t.remove());
+      return c.textContent.replace(/\s*\(continued\)$/, '').trim();
+    }
+    const run = sp.querySelector('.runhead')?.textContent || '';
+    return run.split('\u00b7').pop().trim();
+  };
+  spreads.forEach((sp, i) => {
+    const col = sp.querySelector('.page.left .pbody, .page.prose .pbody');
+    if (!col || sp.classList.contains('opener')) return;
+    const prev = spreads[i - 1], next = spreads[i + 1];
+    const link = (t, arrow) => (t ? `<a href="#${t.id}"><b>${arrow}</b><span>${label(t)}</span></a>` : '');
+    col.insertAdjacentHTML('beforeend', `<nav class="secnav" aria-label="Sections">${link(prev, '&uarr;')}${link(next, '&darr;')}</nav>`);
+  });
+
+  // ---------- where the reader is ----------
+  let current = null;
+  const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    current = e.target;
+    const ch = current.dataset.ch;
+    navLinks.forEach((a) => {
+      const on = a.getAttribute('href') === `#${ch}`;
+      a.classList.toggle('on', on);
+      if (on) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+    });
+    current.classList.add('seen');  // whatever the reader is looking at is always shown
+    history.replaceState(null, '', `#${current.id}`);
+    const acc = getComputedStyle(current).getPropertyValue('--c').trim() || '#e34948';
+    document.getElementById('topbar').style.setProperty('--acc', acc);
+  }), { rootMargin: '-45% 0px -50% 0px' });
+
+  // ---------- section numbers within each chapter: 01, 02 ... drawn large above each question ----------
+  const count = new Map();
+  spreads.forEach((sp) => {
+    if (sp.classList.contains('opener')) return;
+    sp.querySelectorAll('.page.left .pbody > h2, .page.prose .pbody > h2').forEach((h) => {
+      if (h.classList.contains('cont') || h.classList.contains('kf')) return;
+      const n = (count.get(sp.dataset.ch) || 0) + 1;
+      count.set(sp.dataset.ch, n);
+      h.dataset.n = String(n).padStart(2, '0');
+    });
+  });
+
+  // ---------- arrival: content rises in, big numbers count up ----------
+  const countUp = (el) => {
+    const m = el.textContent.match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/);
+    if (!m || el.dataset.counted) return;
+    el.dataset.counted = '1';
+    const [, pre, num, post] = m;
+    const target = parseFloat(num.replace(/,/g, ''));
+    const decimals = (num.split('.')[1] || '').length;
+    const comma = num.includes(',');
+    const t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / 1100);
+      const v = target * (1 - Math.pow(1 - k, 3));
+      const s = comma ? v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) : v.toFixed(decimals);
+      el.textContent = `${pre}${s}${post}`;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const seen = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    seen.unobserve(e.target);
+    e.target.classList.add('seen');
+    if (!reduce) e.target.querySelectorAll('.tile b').forEach(countUp);
+  }), { threshold: 0.12 });
+  spreads.forEach((sp) => seen.observe(sp));
+  spreads.forEach((sp) => spy.observe(sp));
+  const progress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+  };
+  addEventListener('scroll', progress, { passive: true });
+  progress();
+
+  // ---------- links and keys ----------
+  const target = (hash) => {
+    const h = decodeURIComponent(hash.replace(/^#/, ''));
+    if (!h) return null;
+    if (h === 'cover') return document.getElementById('cover');
+    const byId = document.getElementById(h.replace(/-r$/, ''));
+    if (byId && (byId.classList.contains('spread') || byId.id === 'cover')) return byId;
+    if (firstOf.has(h)) return firstOf.get(h);
+    const sec = h.match(/^sec=(\w+)\|(.*)$/);
+    if (sec) {
+      const want = sec[2].trim().toLowerCase();
+      return spreads.find((sp) => sp.dataset.ch === sec[1] && [...sp.querySelectorAll('h2')]
+        .some((x) => x.textContent.trim().toLowerCase().startsWith(want))) || firstOf.get(sec[1]) || null;
+    }
+    return null;
+  };
+  const go = (el, smooth = true) => el?.scrollIntoView({ behavior: smooth ? 'smooth' : 'instant', block: 'start' });
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    const page = href.match(/^(\w+)\.html$/);
+    const hash = page ? `#${page[1] === 'index' ? 'intro' : page[1]}` : href.startsWith('#') ? href : null;
+    const t = hash && target(hash);
+    if (t) { e.preventDefault(); go(t); }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest('input, textarea, select') || e.metaKey || e.ctrlKey) return;
+    const i = current ? spreads.indexOf(current) : -1;
+    if (['ArrowDown', 'PageDown', 'ArrowRight'].includes(e.key) && i < spreads.length - 1) { e.preventDefault(); go(spreads[i + 1]); }
+    if (['ArrowUp', 'PageUp', 'ArrowLeft'].includes(e.key)) { e.preventDefault(); go(i > 0 ? spreads[i - 1] : document.getElementById('cover')); }
+  });
+  const start = target(location.hash);
+  if (start && start.id !== 'cover') requestAnimationFrame(() => go(start, false));
+  addEventListener('hashchange', () => { const t = target(location.hash); if (t && t !== current) go(t); });
+}

@@ -7,40 +7,52 @@
 <meta name="description" content="A data-driven economic portrait of Singapore's trade and foreign direct investment, built from raw data for EC 391.">
 <link rel="icon" href="merlion.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:wght@400;600;700;800&family=Patrick+Hand+SC&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="app.css">
+<script>document.documentElement.classList.add("js");</script>
 <script src="vendor/echarts.min.js"></script>
 <script type="module" src="js/main.js"></script>
 </head>
 <body>
-<section id="landing" aria-label="Singapore, from 1965 to 2024">
-  <h1 class="lettering title-top">From a Little Red Dot&hellip;</h1>
-  <div class="panel-map">
-    <div class="ph"><b>How a city with no resources<br>became a global trade hub</b><b class="r">Hover over Singapore<br>for its rankings</b></div>
-    <div id="landing-map" role="img" aria-label="Map of Southeast Asia with Singapore and its main shipping routes"></div>
-    <div class="pf"><span>Every chart built from raw data<br><span class="accent">EC 391 &middot; Fall 2026</span></span>
-      <button id="enter" type="button">Open the book &rarr;</button></div>
+<header id="cover" aria-label="Singapore, a hub of world trade">
+  <div id="cover-map" role="img" aria-label="Chart of the seas around Singapore with its main shipping lanes to trading partners"></div>
+  <div class="cover-text">
+    <p class="eyebrow">EC 391 Country Team Project &middot; Fall 2026</p>
+    <h1>Singapore<span class="dot" aria-hidden="true"></span></h1>
+    <p class="dek">How a city of six million with no resources became a hub of world trade and investment</p>
+    <div class="cover-kpis" id="cover-kpis"></div>
+    <a class="cta" href="#ch01_profile">Start reading <span aria-hidden="true">&darr;</span></a>
   </div>
-  <p class="lettering title-bottom">&hellip;to a Global Hub</p>
-  <span class="credit">Illustration drawn by the team &middot; 1&deg;17&prime;N 103&deg;51&prime;E</span>
-</section>
+  <svg class="compass" viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke="#f3ead7" stroke-width="1.2">
+    <circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="46" stroke-dasharray="2 4"/><circle cx="60" cy="60" r="6"/>
+    <path d="M60 6 L67 53 L114 60 L67 67 L60 114 L53 67 L6 60 L53 53 Z" fill="rgba(243,234,215,.12)"/>
+    <path d="M60 20 L64 56 L100 60 L64 64 L60 100 L56 64 L20 60 L56 56 Z" transform="rotate(45 60 60)" fill="rgba(243,234,215,.08)"/>
+    <path d="M60 6 L67 53 L60 60 Z" fill="#f3ead7"/>
+  </svg>
+  <a class="scroll-cue" href="#ch01_profile" aria-label="Scroll to the first chapter"></a>
+  <p class="cover-note">Lines show Singapore's export routes to its twelve largest partners in 2024, width by share of exports. Hover a partner for its numbers.</p>
+</header>
 <div id="topbar">
   <div class="row">
-    <a class="brand" href="#cover" title="Back to the cover"><img src="merlion.svg" alt=""><span>Singapore</span></a>
+    <a class="brand" href="#cover" title="Back to the top"><i></i><span>Singapore</span></a>
+    <button id="ct-open" type="button" aria-expanded="false" aria-controls="contents"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Contents</span></button>
     <nav id="nav">{{NAV}}</nav>
     <div id="timebar" title="Time control: line charts show 2004 to the selected year; snapshot charts show the selected year">
       <label for="year">Year</label><input type="range" id="year" step="1"><output id="yearout"></output>
       <button id="play" type="button" aria-label="Play through the years">▶</button>
     </div>
   </div>
+  <div class="kpistrip" id="kpistrip"></div>
+  <div class="progress"><i></i></div>
 </div>
-<main id="reader" aria-label="Report as a book">
-  <button class="turn prev" type="button" aria-label="Previous page">&lsaquo;</button>
-  <div id="book" aria-live="polite">
-{{SECTIONS}}
+<aside id="contents" aria-label="Contents" hidden>
+  <div class="ct-panel">
+    <div class="ct-top"><p class="eyebrow">Contents</p><button id="ct-close" type="button" aria-label="Close contents">&times;</button></div>
+    <div class="ct-grid">{{CONTENTS}}</div>
   </div>
-  <button class="turn next" type="button" aria-label="Next page">&rsaquo;</button>
-  <div id="pager"><span id="pageno"></span><div class="progress"><i></i></div><span class="keys">&larr; &rarr; to turn pages</span></div>
+</aside>
+<main id="story" aria-label="Report">
+{{SECTIONS}}
 </main>
 </body>
 </html>
