@@ -1,4 +1,4 @@
-"""Download World Bank data (WDI + WGI) for ALL economies, 2004-2024.
+"""Download World Bank data (WDI + WGI + B-READY) for ALL economies, 2004-2025.
 
 Run by the "Fetch data" GitHub Actions workflow (GitHub's servers can reach the World Bank API).
 Output: data/raw/wdi/<indicator>.csv (long format: iso3, country, year, value) + countries.csv metadata.
@@ -14,7 +14,7 @@ import requests
 OUT = Path(__file__).resolve().parents[1] / "data" / "raw" / "wdi"
 OUT.mkdir(parents=True, exist_ok=True)
 API = "https://api.worldbank.org/v2"
-YEARS = "2004:2024"
+YEARS = "2004:2025"  # charts use 2004-2024; 2025 is here for WGI and B-READY, whose latest editions are dated 2025
 
 # (indicator code, source id, who uses it)
 INDICATORS = [
@@ -27,9 +27,11 @@ INDICATORS = [
     ("SI.POV.GINI", 2, "A ch2 Gini index"),
     ("SI.POV.DDAY", 2, "A ch2 poverty headcount $2.15/day"),
     ("LP.LPI.OVRL.XQ", 2, "A ch2 Logistics Performance Index overall"),
-    # Ch. 2 - Worldwide Governance Indicators (source 3): estimate and percentile rank
+    # Ch. 2 - Worldwide Governance Indicators (source 3): estimate (-2.5..2.5) and governance score (0-100).
+    # The API serves them as GOV_WGI_XX.EST / GOV_WGI_XX.SC; percentile ranks (PER.RNK) are no longer served.
     *[(f"{d}.{m}", 3, f"A ch2 WGI {d} {m}")
-      for d in ("VA", "PV", "GE", "RQ", "RL", "CC") for m in ("EST", "PER.RNK")],
+      for d in ("VA", "PV", "GE", "RQ", "RL", "CC") for m in ("EST", "SC")],
+    # Ch. 2 - B-READY: every IC.BRE.* indicator in WDI is added at run time (see discover()).
     # Ch. 1, 3, 4 - Member B
     ("SP.POP.TOTL", 2, "B ch1 population"),
     ("SP.DYN.LE00.IN", 2, "B ch1 life expectancy"),
@@ -48,7 +50,21 @@ INDICATORS = [
     ("BM.KLT.DINV.CD.WD", 2, "C ch6 FDI net outflows US$"),
     ("BM.KLT.DINV.WD.GD.ZS", 2, "C ch6 FDI net outflows % of GDP"),
     ("NE.GDI.FTOT.CD", 2, "C ch6 gross fixed capital formation US$"),
+    # Ch. 7 - Member C: tariffs (applied and MFN, simple and trade-weighted mean, all products) and tariff peaks
+    ("TM.TAX.MRCH.SM.AR.ZS", 2, "C ch7 tariff rate, applied, simple mean %"),
+    ("TM.TAX.MRCH.WM.AR.ZS", 2, "C ch7 tariff rate, applied, weighted mean %"),
+    ("TM.TAX.MRCH.SM.FN.ZS", 2, "C ch7 tariff rate, MFN, simple mean %"),
+    ("TM.TAX.MRCH.WM.FN.ZS", 2, "C ch7 tariff rate, MFN, weighted mean %"),
+    ("TM.TAX.MRCH.IP.ZS", 2, "C ch7 share of tariff lines with international peaks %"),
 ]
+
+
+def discover(prefix, source):
+    """All indicator codes in a World Bank source that start with `prefix` (e.g. the B-READY family IC.BRE.*)."""
+    found = [(i["id"], source, f"A ch2 {i['name']}")
+             for i in fetch_paged(f"{API}/indicator", {"source": source}) if i["id"].startswith(prefix)]
+    print(f"discovered {len(found)} indicators starting with {prefix}")
+    return found
 
 
 def get(url, params):
@@ -83,8 +99,9 @@ def main():
                         c["incomeLevel"]["value"], c["region"]["value"] == "Aggregates"])
     print(f"countries.csv: {len(countries)} rows")
 
+    indicators = INDICATORS + discover("IC.BRE.", 2)
     failed = []
-    for code, source, note in INDICATORS:
+    for code, source, note in indicators:
         # WGI codes changed names in some API versions, so try the alternative spelling too
         candidates = [code] + ([f"GOV_WGI_{code}"] if source == 3 else [])
         rows = None
