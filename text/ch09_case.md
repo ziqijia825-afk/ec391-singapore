@@ -4,7 +4,7 @@
 
 Singapore has tried twice to build a high technology manufacturing industry by attracting foreign firms with incentives, infrastructure and research funding instead of tariffs. The first attempt, in semiconductors from 1968, produced a lasting comparative advantage. Singapore's RCA in chips was 4.6 in 2024, it sold 7.1 percent of the world's exported integrated circuits, and semiconductors generate 35 percent of manufacturing value added. The second attempt, in pharmaceuticals from 2000, also built an export advantage. The RCA in finished medicines and biologics rose from 0.2 in 2004 to 1.8 in 2024 and in biologics alone to 3.1. But pharmaceuticals' share of manufacturing value added fell from 19 to 4 percent and the stock of foreign investment in the industry shrank. Investment-led policy can create export capacity quickly, and only in chips has it grown into a deep cluster that keeps attracting new capital.
 
-## Part 1 Background and policy
+## Part 1 Background and policy {Infant industry}
 
 The course's infant industry argument holds that a new industry may need temporary support while it rides down a learning curve, after which it becomes competitive and support can be withdrawn. Most countries that tried this protected the home market with tariffs. Singapore could not, because its home market is tiny and its tariffs are zero (Chapter 7), so it used foreign direct investment instead. The Economic Development Board, founded in 1961, offered tax holidays under the Pioneer Certificate and Development and Expansion Incentive schemes, ready built estates through JTC, subsidised training and, later, public research funding. Pioneer firms can pay 5 to 15 percent or nothing against the headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
 
@@ -56,7 +56,7 @@ The pharmaceutical share swings sharply from year to year, as one would expect i
 
 </details>
 
-## Part 3 Impact and conclusion
+## Part 3 Impact and conclusion {Young 1992}
 
 In the model's terms, the semiconductor policy behaves like a successful infant industry intervention without the tariff. Early support attracted firms, the industry moved up from assembly to fabrication, and the advantage has survived decades of rising wages and land costs because Singapore's capital, skilled workers and supplier networks now support it (Chapter 4). Investment, value added and exports all rose together. The pharmaceutical policy also created an export advantage, although it took almost two decades to become stable, and value added and the foreign capital stock moved the other way. Learning has not yet spilled over into a self sustaining domestic industry, which matches the critique of Young (1992) that Singapore's growth came mainly from accumulating capital and labour and only slightly from rising productivity.
 

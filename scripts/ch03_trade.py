@@ -77,7 +77,7 @@ stacked_shares(
     source="Source: Singapore Department of Statistics / Enterprise Singapore, table M451001 (Merchandise Trade by "
            f"Commodity Section), downloaded {retrieved(path=RAW / 'singstat' / 'M451001.csv')}. Re-exports are goods "
            "imported and exported again without substantial transformation; domestic exports are made in Singapore.",
-    out="ch03_reexports.png", colors=["#b3b2ab", "#2a78d6", "#6aa3e5"],
+    out="ch03_reexports.png", colors=["#eb6834", "#2a78d6", "#eda100"],
 )
 N["reexports"] = {"share": shares.round(1).to_dict(), "total_sgd_bn_2024": float(ann.loc[2024, "total"] / 1e6)}
 
@@ -131,7 +131,7 @@ stacked_shares(
            f"chapters in the appendix. BACI reconciles exporter and importer reports, so its goods exports for Singapore "
            f"(${goods_sgp / 1e9:,.0f}bn in {LASTB}) are below Singapore's own report to UN Comtrade "
            f"(${cx.loc[cx.partner_code == 0, 'value_usd'].iloc[0] / 1e9:,.0f}bn in 2024).",
-    out="ch03_export_structure.png", colors=palette, min_label=3.5,
+    out="ch03_export_structure.png", min_label=3.5,
 )
 bi = pd.read_csv(DERIVED / "baci_sgp_imports.csv", dtype={"hs2": str})
 bi = bi[bi.hs2.str.isdigit() & bi.year.isin(SY)]
@@ -144,7 +144,7 @@ stacked_shares(
     subtitle=f"Singapore's goods imports by sector, % of total, 2004, 2014 and {LASTB}",
     source=f"Source: team calculation from CEPII BACI (HS 1992, V202601), downloaded {retrieved(path=BACI)}; grouping of "
            "HS chapters in the appendix. Large two-way trade in the same sectors reflects processing and re-export.",
-    out="ch03_import_structure.png", colors=palette, min_label=3.5,
+    out="ch03_import_structure.png", min_label=3.5,
 )
 N["structure"] = {"last_year": LASTB, "services_share": exp_sh[SVC].sum(axis=1).round(1).to_dict(),
                   "exports": exp_sh.round(1).to_dict(), "imports": imp_sh.round(1).to_dict(),
@@ -254,7 +254,10 @@ scatter(
            f"{b[2]:.2f} (robust s.e. {se_r[2]:.2f}), R² {r2:.2f}.",
     out="ch03_gravity.png",
 )
-N["gravity"] = {k: {"b_gdp": float(v[1][1]), "b_dist": float(v[1][2]), "se_gdp": float(v[3][1]),
+eq = (f'<p class="equation">ln X<sub>j</sub> = {b[0]:.2f} + {b[1]:.2f} · ln GDP<sub>j</sub> − {abs(b[2]):.2f} · ln Dist<sub>j</sub>'
+      f'<span>robust s.e. {se_r[1]:.2f} and {se_r[2]:.2f} · R² {r2:.2f} · N = {n} · UN Comtrade, 2024</span></p>')
+(DERIVED / "ch03_gravity_eq.md").write_text(eq + "\n")
+N["gravity"] = {k: {"const": float(v[1][0]), "b_gdp": float(v[1][1]), "b_dist": float(v[1][2]), "se_gdp": float(v[3][1]),
                     "se_dist": float(v[3][2]), "r2": float(v[4]), "n": int(v[5])} for k, v in res.items()}
 resid = d.adj - (b[0] + b[2] * np.log(d.dist))
 N["gravity_residuals_top"] = resid.sort_values(ascending=False).head(8).round(2).to_dict()

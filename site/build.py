@@ -58,10 +58,26 @@ details summary::before{content:"+ ";font-weight:700}details[open] summary::befo
 details[open]{padding-bottom:8px}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:56px;font:14px system-ui,sans-serif}
 footer{color:var(--muted);font:13px/1.5 system-ui,sans-serif;margin-top:28px;border-top:1px solid var(--line);padding-top:14px}
+.tag{font:600 12px/1.4 system-ui,sans-serif;background:#e8f2fc;color:#1f5fae;border-radius:999px;padding:2px 9px;margin-left:8px;vertical-align:3px}
+.equation{font:600 17px/1.5 Georgia,serif;text-align:center;border:1px solid var(--line);border-left:6px solid #eb6834;border-radius:8px;padding:10px;background:#fff}
+.equation span{display:block;font:12.5px system-ui,sans-serif;color:var(--muted)}
+.timeline .era,.chains .chain{border-left:4px solid #2a78d6;padding:4px 12px;margin:6px 0;background:#fff}
+.timeline .era.brk{border-left-color:#e34948;background:#fdf1ee}.timeline .era b,.timeline .era span{margin-right:8px}
+.chains{display:grid;grid-template-columns:1fr 1fr;gap:10px}.chains-src,.timeline-src{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.chain h4{margin:4px 0}.chain p{margin:4px 0}.chain b{font-size:22px;display:block}
 @media (max-width:600px){body{font-size:16px}h1{font-size:26px}main{padding:24px 16px 64px}nav{position:static;padding:8px 16px;font-size:13px}}
 """
 
 INCLUDE = re.compile(r"<!--\s*include:\s*(\S+)\s*-->")
+TAG = re.compile(r"^(#{2,3} .*?)\s*\{([^{}]+)\}\s*$", re.M)  # "## Heading {Course reading}" -> a tag chip
+
+
+def tags_to_chips(md):
+    return TAG.sub(lambda m: f'{m.group(1)} <span class="tag">{m.group(2)}</span>', md)
+
+
+def tags_strip(md):
+    return TAG.sub(lambda m: m.group(1), md)
 
 
 def expand(md):
@@ -106,7 +122,9 @@ def interactive_html(html):
 
 BLOCK = re.compile(r'<h1>.*?</h1>|<h2>.*?</h2>|<h3>.*?</h3>|<details.*?</details>|<p[ >].*?</p>'
                    r'|<div data-(?:fig|special)=[^>]*>.*?</div>|<div class="tablewrap">.*?</div>'
+                   r'|<section class="\w+">.*?</section>'
                    r'|<ul>.*?</ul>|<ol>.*?</ol>|<blockquote>.*?</blockquote>|<hr\s*/?>', re.S)
+CHIP = re.compile(r'\s*<span class="tag">.*?</span>')
 WIDE = {"sgmap", "sankey", "treemap", "gvc", "fdi"}  # interactive components drawn across both pages
 
 
@@ -126,12 +144,12 @@ def paginate(stem, html):
     for b in blocks[1:]:
         if b.startswith("<h2>"):
             sections.append(cur)
-            cur = {"head": strip_tags(b), "blocks": []}
+            cur = {"head": strip_tags(CHIP.sub("", b)), "h2": b, "blocks": []}
         else:
             cur["blocks"].append(b)
     sections.append(cur)
     pre, body = sections[0], sections[1:]
-    is_visual = lambda b: b.startswith(("<div data-", '<div class="tablewrap"'))
+    is_visual = lambda b: b.startswith(("<div data-", '<div class="tablewrap"', '<section class='))
     special = lambda b: (re.match(r'<div data-special="(\w+)"', b) or [None, None])[1]
     # opener: title page + key finding (or the preamble)
     key = []
@@ -147,7 +165,7 @@ def paginate(stem, html):
     elif pre_vis:
         body.insert(0, {"head": "Overview", "blocks": pre_vis})
     for sec in body:
-        head = f'<h2>{sec["head"]}</h2>' if sec["head"] else ""
+        head = sec.get("h2") or (f'<h2>{sec["head"]}</h2>' if sec["head"] else "")
         cur = None
         for b in sec["blocks"]:
             if special(b) in WIDE:
@@ -209,13 +227,43 @@ def page_html(cls, runhead, inner, folio):
             f'<div class="folio">{folio}</div></section>')
 
 
+def number_figures(stem, html):
+    """Figure 3.1, 3.2 ... and Table 3.1 ... in reading order within each numbered chapter."""
+    m = re.match(r"ch(\d+)_", stem)
+    if not m:
+        return html
+    ch, counts = int(m.group(1)), {"f": 0, "t": 0}
+
+    def fig(mm):
+        counts["f"] += 1
+        return f'{mm.group(0)[:-1]} data-num="Figure {ch}.{counts["f"]}">'
+
+    def tab(mm):
+        counts["t"] += 1
+        return f'<div class="tablewrap"><span class="tabnum">Table {ch}.{counts["t"]}</span>'
+    html = re.sub(r'<div data-(?:fig|special)="[\w-]+">', fig, html)
+    return re.sub(r'<div class="tablewrap">', tab, html)
+
+
+TILES = ROOT / "data" / "derived" / "tiles.json"
+
+
+def tiles_html(stem):
+    import json
+    tiles = json.loads(TILES.read_text()).get(stem, []) if TILES.exists() else []
+    if not tiles:
+        return ""
+    cells = "".join(f'<div class="tile"><b>{t["value"]}</b><span>{t["label"]}</span><small>{t["rank"]}</small></div>' for t in tiles)
+    return f'<div class="tiles">{cells}</div>'
+
+
 def build_book(texts):
     chapters, n = [], 0
     for i, (stem, label) in enumerate(NAV):
         md = texts.get("index" if stem == "intro" else stem)
         if md is None:
             continue
-        html = interactive_html(markdown.markdown(md, extensions=["tables", "md_in_html"]))
+        html = number_figures(stem, interactive_html(markdown.markdown(md, extensions=["tables", "md_in_html"])))
         title, spreads = paginate(stem, html)
         chapters.append((stem, label, BANNER_COLORS[i % len(BANNER_COLORS)], title, spreads))
     # page numbers and anchors first, so tables of contents can point at them
@@ -240,7 +288,7 @@ def build_book(texts):
                 left = (f'<div class="titlepage"><img src="icons/{stem}.svg" alt=""><div class="chnum">{num}</div>'
                         f'<h1 class="lettering">{name}</h1>' + (f'<ol class="toc">{toc}</ol>' if toc else "") + "</div>")
                 out.append(f'<article {attrs}>{page_html("left", "", left, f)}'
-                           f'{page_html("right", short, "".join(sp["right"]), f + 1)}</article>')
+                           f'{page_html("right", short, "".join(sp["right"]) + tiles_html(stem), f + 1)}</article>')
             elif sp["kind"] == "wide":
                 out.append(f'<article {attrs}>{page_html("full", f"{short} &middot; {sp["section"]}", sp["left"][0], f"{f} and {f + 1}")}</article>')
             else:
@@ -293,8 +341,9 @@ def main():
         nxt = PAGES[i + 1] if i + 1 < len(PAGES) else None
         if src.exists():
             md = expand(src.read_text(encoding="utf-8")).replace("](../figures/", "](figures/")
-            texts[stem] = md
-            report.append(md)
+            texts[stem] = tags_to_chips(md)
+            report.append(tags_strip(md))
+            md = texts[stem]
             body = markdown.markdown(md.replace("](figures/", "](../figures/"), extensions=["tables", "md_in_html"])
         else:
             body = f"<h1>{label}</h1><p class=soon>Coming soon.</p>"

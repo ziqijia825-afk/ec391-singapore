@@ -1,0 +1,138 @@
+{
+ "ch01_profile": [
+  {
+   "value": "0.946",
+   "label": "Human Development Index, 2023",
+   "rank": "13th of 193 · 3rd in the region"
+  },
+  {
+   "value": "64×",
+   "label": "Growth of real GDP, 1960 to 2023",
+   "rank": "Penn World Table"
+  },
+  {
+   "value": "16%",
+   "label": "Manufacturing share of GDP, 2024",
+   "rank": "Malaysia 22%, Hong Kong SAR 1%"
+  }
+ ],
+ "ch02_macro": [
+  {
+   "value": "$153k",
+   "label": "GDP per person at PPP, 2024",
+   "rank": "2nd of 195 · 1st in East Asia & Pacific"
+  },
+  {
+   "value": "$573bn",
+   "label": "GDP, current US$, 2024",
+   "rank": "26th of 200 · 6th in East Asia & Pacific"
+  },
+  {
+   "value": "95.2",
+   "label": "Government effectiveness (WGI), 2025",
+   "rank": "1st of 205 · 1st in East Asia & Pacific"
+  }
+ ],
+ "ch03_trade": [
+  {
+   "value": "313%",
+   "label": "Trade in goods and services, % of GDP, 2024",
+   "rank": "3rd of 172 · 2nd in East Asia & Pacific"
+  },
+  {
+   "value": "$399bn",
+   "label": "Services exports, 2024",
+   "rank": "6th of 169 · 1st in East Asia & Pacific"
+  },
+  {
+   "value": "57.5%",
+   "label": "Re-exports, % of merchandise exports, 2024",
+   "rank": "46.5% in 2004"
+  }
+ ],
+ "ch04_rca": [
+  {
+   "value": "4.5",
+   "label": "RCA, transport and logistics, 2024",
+   "rank": "2.3 in 2004"
+  },
+  {
+   "value": "2.8",
+   "label": "RCA, finance and insurance, 2024",
+   "rank": "1.2 in 2004"
+  },
+  {
+   "value": "$657k",
+   "label": "Capital per worker, 2023",
+   "rank": "14th of 173"
+  }
+ ],
+ "ch05_gvc": [
+  {
+   "value": "46.1%",
+   "label": "Foreign value added in exports, 2022",
+   "rank": "7th of 80 · 2nd in East Asia & Pacific"
+  },
+  {
+   "value": "63.4%",
+   "label": "GVC participation, 2022",
+   "rank": "5th of 80 · 1st in East Asia & Pacific"
+  },
+  {
+   "value": "−0.22",
+   "label": "Position index (below 0 = downstream)",
+   "rank": "73rd of 80"
+  }
+ ],
+ "ch06_fdi": [
+  {
+   "value": "23.6%",
+   "label": "FDI net inflows, % of GDP, 2024",
+   "rank": "6th of 194 · 2nd in East Asia & Pacific"
+  },
+  {
+   "value": "$135bn",
+   "label": "FDI net inflows, 2024",
+   "rank": "2nd of 201 · 1st in East Asia & Pacific"
+  },
+  {
+   "value": "409%",
+   "label": "Inward FDI stock, % of GDP, 2024",
+   "rank": "Outward 216%"
+  }
+ ],
+ "ch07_policy": [
+  {
+   "value": "0.07%",
+   "label": "Average MFN tariff, 2022",
+   "rank": "3rd of 143 · 3rd in East Asia & Pacific"
+  },
+  {
+   "value": "29",
+   "label": "Free trade agreements in force",
+   "rank": "6 in 2004"
+  },
+  {
+   "value": "45",
+   "label": "Bilateral investment treaties",
+   "rank": "first in 1966"
+  }
+ ],
+ "ch09_case": [
+  {
+   "value": "4.6",
+   "label": "RCA in chips (HS 8541, 8542), 2024",
+   "rank": "7.1% of world IC exports"
+  },
+  {
+   "value": "1.8",
+   "label": "RCA in finished pharma and biologics, 2024",
+   "rank": "0.16 in 2004"
+  },
+  {
+   "value": "35%",
+   "label": "Chips' share of manufacturing value added, 2025",
+   "rank": "pharma 6%"
+  }
+ ]
+}

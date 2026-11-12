@@ -41,13 +41,15 @@ def shade(v):
     if pd.isna(v):
         return "", "n/a"
     if v >= 10:
-        bg, fg = "#1f5fae", "#ffffff"
+        bg, fg = "#104281", "#ffffff"
     elif v >= 2:
-        bg, fg = "#2a78d6", "#ffffff"
+        bg, fg = "#256abf", "#ffffff"
     elif v >= 1:
-        bg, fg = "#a9c8ee", "#1f1f1d"
+        bg, fg = "#86b6ef", "#1f1f1d"
+    elif v >= 0.5:
+        bg, fg = "#fbd2b8", "#1f1f1d"
     else:
-        bg, fg = "#f1f0ec", "#5f5e5a"
+        bg, fg = "#fde9dc", "#5f5e5a"
     return f' style="background:{bg};color:{fg};text-align:center"', f"{v:.2f}"
 
 
@@ -57,8 +59,8 @@ for sector, row in heat.iterrows():
     html.append(f"<tr><td>{sector}</td>" + "".join(f"<td{shade(v)[0]}>{shade(v)[1]}</td>" for v in row.values) + "</tr>")
 html += ["</tbody></table>", "",
          f"*Balassa RCA = (country's exports of sector k / its total exports of goods and services) ÷ (world exports of k / "
-         f"world total), {LAST}. Shading: dark blue ≥ 10, blue 2 to 10, light blue 1 to 2, gray < 1 (no comparative "
-         f"advantage); n/a = no services breakdown reported. {src_line} Sector grouping in the appendix.*", ""]
+         f"world total), {LAST}. Shading: dark blue ≥ 10, blue 2 to 10, light blue 1 to 2 (advantage); light orange 0.5 to 1 and pale orange "
+         f"below 0.5 (no comparative advantage); n/a = no services breakdown reported. {src_line} Sector grouping in the appendix.*", ""]
 (DERIVED / "ch04_rca_heat.md").write_text("\n".join(html))
 print("wrote data/derived/ch04_rca_heat.md")
 

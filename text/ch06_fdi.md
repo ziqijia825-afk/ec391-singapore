@@ -19,7 +19,7 @@ Inward FDI rose from S$277 billion at the end of 2004 (142 percent of GDP) to S$
 
 </details>
 
-## Who invests, and in which sectors?
+## Who invests, and in which sectors? {Phantom FDI}
 
 <!-- interactive: fdi -->
 
@@ -53,7 +53,7 @@ Singapore combines a large flow of new plants and headquarters with an active ma
 
 </details>
 
-## What do foreign firms seek in Singapore?
+## What do foreign firms seek in Singapore? {Dunning OLI · export platform FDI}
 
 Singapore's domestic market is too small to explain much horizontal investment that serves the host market. The first semiconductor plants of the late 1960s were vertical investments in labour intensive assembly, and today's investment is mostly export platform investment that serves third markets (Ekholm, Forslid and Markusen, 2007) and regional headquarters. Singapore makes about one in ten of the world's chips for export, and the Economic Development Board counts about 4,200 regional headquarters ([EDB](https://www.edb.gov.sg/en/news-and-insights/futuristic-workspace-spore-a-hub-for-corporate-headquarters)). In Dunning's OLI terms, the location advantages that attract them are those measured in Chapter 2: institutions, logistics, a 17 percent corporate tax rate with incentives, skilled workers and the trade agreements of Chapter 7.
 

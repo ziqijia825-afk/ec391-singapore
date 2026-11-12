@@ -30,11 +30,60 @@ REGION = "EAS"  # World Bank "East Asia & Pacific" aggregate
 NAMES = {"SGP": "Singapore", "MYS": "Malaysia", "HKG": "Hong Kong SAR", "VNM": "Vietnam",
          "EAS": "East Asia & Pacific", "WLD": "World"}
 FIRST, LAST = 2004, 2024
+SHORT = {"CHN": "China", "IDN": "Indonesia", "THA": "Thailand", "KOR": "Korea", "JPN": "Japan", "IND": "India",
+         "AUS": "Australia", "USA": "United States", "DEU": "Germany", "GBR": "UK", "BRA": "Brazil", "PHL": "Philippines",
+         "TWN": "Taiwan", "MHL": "Marshall Is.", "LBR": "Liberia", "PAN": "Panama", "NLD": "Netherlands", "FRA": "France"}
 
-BLUE = "#2a78d6"
+# ---- colour: one fixed colour per economy across every chart, a fixed categorical order for everything else.
+# Checked with the dataviz palette validator on the cream page surface (#fffdf6): all four economies pass the
+# lightness, chroma and normal-vision checks pairwise; red/green sits in the CVD 6 to 8 band, so every chart
+# also carries direct labels or a legend plus a data table.
+ECON = {"SGP": "#e34948", "MYS": "#2a78d6", "HKG": "#eda100", "VNM": "#008300",
+        "EAS": "#7d7468", "WLD": "#a89f90"}  # Singapore flag red; aggregates neutral and dashed
+for _iso, _name in list(NAMES.items()):
+    ECON[_name] = ECON[_iso]
+ECON.update({"East Asia & Pacific average": ECON["EAS"], "East Asia and Pacific": ECON["EAS"], "Region": ECON["EAS"]})
+CATEGORICAL = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6"]  # never cycled past 7
+SECTOR = {  # goods in distinct hues, services as one warm family (composite encoding: hue family = goods or services)
+    "Electronics & instruments": "#2a78d6", "Machinery & computers": "#6250d6", "Machinery incl. computers": "#6250d6",
+    "Refined petroleum": "#eda100", "Chemicals & pharma": "#e87ba4", "Chemicals & plastics": "#e87ba4",
+    "Pharmaceuticals": "#c2408a", "Gold & metals": "#1baf7a", "Food & agriculture": "#008300",
+    "Transport equipment": "#5aa0e8", "Other goods": "#cfc6b4", "Other": "#cfc6b4", "All other": "#cfc6b4",
+    "Transport services": "#d95926", "Transport & logistics": "#d95926", "Business & ICT services": "#f08a55",
+    "ICT & business services": "#f08a55", "Financial services": "#a8401a", "Finance & insurance": "#a8401a",
+    "Travel services": "#f7bf9a", "Travel & tourism": "#f7bf9a",
+}
+ORDINAL_BLUE = ["#a9c8ee", "#5598e7", "#256abf", "#104281"]  # light to dark, for years
+OTHER = "#cfc6b4"
+BLUE = ECON["MYS"]
 BLUE_LIGHT = "#a9c8ee"
 GRAYS = ["#5f5e5a", "#8a8a85", "#b3b2ab"]
-GRAY_BAR = "#c9c8c1"
+GRAY_BAR = "#d9d0bd"
+
+
+def color_for(key, i=0, n=1, keys=None):
+    """Colour of a series: the economy's own colour, a sector colour, a year on the ordinal ramp, or the j-th slot."""
+    k = str(key)
+    if k in ECON:
+        return ECON[k]
+    if k in SECTOR:
+        return SECTOR[k]
+    if k.isdigit() and len(k) == 4 and keys:  # years: older lighter, newer darker, whatever the column order
+        years = sorted(str(x) for x in keys)
+        ramp = ORDINAL_BLUE[-len(years):] if len(years) <= len(ORDINAL_BLUE) else ORDINAL_BLUE
+        return ramp[min(years.index(k), len(ramp) - 1)]
+    if k.lower().startswith(("other", "all other", "rest of")):
+        return OTHER
+    return CATEGORICAL[i % len(CATEGORICAL)]
+
+
+def _is_dark(hex_color):
+    r, g, b = (int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.45
+
+
+def is_aggregate(key):
+    return str(key) in ("EAS", "WLD", "East Asia & Pacific", "World", "East Asia & Pacific average", "Region")
 INK = "#1f1f1d"
 MUTED = "#5f5e5a"
 GRID = "#e4e3dd"
@@ -258,7 +307,9 @@ def line_chart(data, *, title, subtitle, ylabel, source, out, fmt, scale=1.0, ym
     fig, ax = _figure(height=height, plot_box=(0.09, 0.75, 1 - 1.0 / height, 0.85 / height))
     focus_iso, others = d.columns[0], list(d.columns[1:])
     others.sort(key=lambda c: d[c].dropna().iloc[-1], reverse=True)
-    colors = {focus_iso: BLUE, **{c: GRAYS[min(i, len(GRAYS) - 1)] for i, c in enumerate(others)}}
+    cols = [focus_iso, *others]
+    colors = {c: color_for(c, j, len(cols), cols) for j, c in enumerate(cols)}
+    dashed = set(dashed) | {c for c in cols if is_aggregate(c)}
     ends = []
     for c in [*reversed(others), focus_iso]:  # focus drawn last, on top
         s = d[c].dropna()
@@ -311,7 +362,13 @@ def bar_rank(values, *, title, subtitle, xlabel, source, out, fmt, highlight=(FO
     left = min((max(len(line) for x in labs for line in x.split("\n")) * 0.095 + 0.35) / width, 0.45)
     height += 0.18 * sum(x.count("\n") for x in labs)
     fig, ax = _figure(width=width, height=height, plot_box=(left, 0.90, 1 - 1.0 / height, 0.85 / height))
-    colors = [BLUE if k in highlight else BLUE_LIGHT if k in light else GRAY_BAR for k in v.index]
+    econ_bars = any(str(k) in ECON for k in v.index) or bool(highlight and set(highlight) & set(v.index))
+
+    def bar_color(k):
+        if econ_bars:  # ranking of economies: each comparison economy in its own colour, the rest neutral
+            return ECON.get(str(k), "#f3a5a4" if k in highlight else ECON["EAS"] if k in light else GRAY_BAR)
+        return SECTOR.get(str(k), "#eb6834" if k in highlight else BLUE_LIGHT if k in light else BLUE)  # one series: one colour
+    colors = [bar_color(k) for k in v.index]
     ax.barh(range(len(v)), v.values, color=colors, height=0.68, zorder=2)
     ax.set_yticks(range(len(v)))
     ax.set_yticklabels(labs)
@@ -337,7 +394,7 @@ def bar_rank(values, *, title, subtitle, xlabel, source, out, fmt, highlight=(FO
     _spec(out, "bar", title, subtitle, source, xlabel=xlabel, ref=ref, ref_label=ref_label,
           cats=[str(labels.get(k, NAMES.get(k, k))) for k in order], keys=[str(k) for k in order],
           values=[_clean(v[k]) for k in order], labels=[fmt(v[k]) for k in order],
-          colors=[BLUE if k in highlight else BLUE_LIGHT if k in light else GRAY_BAR for k in order])
+          colors=[bar_color(k) for k in order])
     _finish(fig, title, subtitle, source, out)
 
 
@@ -349,7 +406,7 @@ def grouped_bars(table, *, title, subtitle, xlabel, source, out, fmt, width=9.0,
     left = (max(len(str(i)) for i in t.index) * 0.095 + 0.35) / width
     fig, ax = _figure(width=width, height=height, plot_box=(left, 0.92, 1 - 1.3 / height, 1.05 / height))
     bar_h = 0.8 / n_ser
-    colors = [BLUE] + GRAYS
+    colors = [color_for(c, j, n_ser, list(t.columns)) for j, c in enumerate(t.columns)]
     for j, col in enumerate(t.columns):
         y = np.arange(n_cat)[::-1] + (n_ser / 2 - j - 0.5) * bar_h
         ax.barh(y, t[col].values, height=bar_h * 0.92, color=colors[j % len(colors)], label=NAMES.get(col, col),
@@ -382,14 +439,14 @@ def stacked_shares(table, *, title, subtitle, source, out, colors=None, width=9.
     top_in = 0.9 + 0.27 * legend_rows
     height = top_in + 0.62 * len(t) + 0.95
     fig, ax = _figure(width=width, height=height, plot_box=(0.10, 0.97, 1 - top_in / height, 0.85 / height))
-    palette = colors or ["#2a78d6", "#6aa3e5", "#a9c8ee", "#5f5e5a", "#8a8a85", "#b3b2ab", "#d9d8d2", "#e9e8e3"]
+    palette = colors or [color_for(c, j, len(t.columns), list(t.columns)) for j, c in enumerate(t.columns)]
     left = np.zeros(len(t))
     y = np.arange(len(t))[::-1]
     for j, col in enumerate(t.columns):
         vals = t[col].fillna(0).values
         color = palette[j % len(palette)]
-        ax.barh(y, vals, left=left, color=color, height=0.62, label=col, edgecolor="white", lw=0.8)
-        dark = color in ("#2a78d6", "#4f8fdd", "#5f5e5a", "#8a8a85", "#6aa3e5")
+        ax.barh(y, vals, left=left, color=color, height=0.62, label=col, edgecolor="#fffdf6", lw=1.5)
+        dark = _is_dark(color)
         for yy, l0, v in zip(y, left, vals):
             if v >= min_label:
                 ax.text(l0 + v / 2, yy, f"{v:.0f}%", ha="center", va="center", fontsize=9,
@@ -418,7 +475,7 @@ def radar(table, *, title, subtitle, source, out, vmax=100, ranks=None):
     angles += angles[:1]
     fig = plt.figure(figsize=(9, 7))
     ax = fig.add_axes([0.16, 0.13, 0.56, 0.68], polar=True)
-    colors = [BLUE] + GRAYS + ["#8a8a85"]
+    colors = [color_for(c, j, len(t.columns)) for j, c in enumerate(t.columns)]
     for j, col in enumerate(t.columns):
         vals = t[col].tolist() + t[col].tolist()[:1]
         focus = j == 0
@@ -426,7 +483,7 @@ def radar(table, *, title, subtitle, source, out, vmax=100, ranks=None):
         ax.plot(angles, vals, color=colors[j % len(colors)], lw=2.6 if focus else 1.5, ls=ls,
                 label=NAMES.get(col, col), zorder=3 if focus else 2)
         if focus:
-            ax.fill(angles, vals, color=BLUE, alpha=0.12)
+            ax.fill(angles, vals, color=colors[0], alpha=0.12)
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(t.index, fontsize=10, color=INK)
     ax.set_ylim(0, vmax)
@@ -449,20 +506,43 @@ def scatter(df, *, x, y, title, subtitle, xlabel, ylabel, source, out, label_col
     """Scatter of all points in gray, `highlight` labels in blue; optional fitted line fit=(intercept, slope)."""
     fig, ax = _figure(height=6.0, plot_box=(0.10, 0.95, 1 - 1.0 / 6.0, 0.95 / 6.0))
     s = 18 if size is None else size
-    ax.scatter(df[x], df[y], s=s, color=GRAY_BAR, edgecolor="#8a8a85", lw=0.4, zorder=2)
+    ax.scatter(df[x], df[y], s=s, color="#a9c8ee", edgecolor="#5598e7", lw=0.5, zorder=2)
     if fit is not None:
         xs = np.linspace(df[x].min(), df[x].max(), 50)
         ax.plot(xs, fit[0] + fit[1] * (np.log(xs) if logx else xs), color=MUTED, lw=1.2, ls="--", zorder=1)
+    pts = []
     for key in annotate:
         r = df[df[label_col] == key]
         if len(r):
             r = r.iloc[0]
             hi = key in highlight
-            ax.scatter([r[x]], [r[y]], s=38 if hi else s, color=BLUE if hi else "#8a8a85", zorder=3)
-            ax.annotate(NAMES.get(key, key), (r[x], r[y]), xytext=(5, 4), textcoords="offset points",
-                        fontsize=9, color=INK if hi else MUTED, fontweight="bold" if hi else "normal")
+            ax.scatter([r[x]], [r[y]], s=46 if hi else 30, color=ECON.get(str(key), "#eb6834"), edgecolor="#fffdf6",
+                       lw=1, zorder=3)
+            pts.append((key, r[x], r[y], hi))
     if logx:
         ax.set_xscale("log")
+    fig.canvas.draw()
+    placed = []  # label boxes already drawn, in display pixels: try four offsets and take the first free one
+    for key, px, py, hi in sorted(pts, key=lambda t: t[1]):
+        name = NAMES.get(key, SHORT.get(key, key))
+        w, h = len(name) * 6.2 * fig.dpi / 100, 12 * fig.dpi / 100
+        X, Y = ax.transData.transform((px, py))
+        for dx, dy, ha in ((5, 4, "left"), (5, -13, "left"), (-5, 4, "right"), (-5, -13, "right"), (5, 15, "left")):
+            x0 = X + dx * fig.dpi / 72 - (w if ha == "right" else 0)
+            y0 = Y + dy * fig.dpi / 72
+            box = (x0, y0, x0 + w, y0 + h)
+            if not any(box[0] < b[2] and b[0] < box[2] and box[1] < b[3] and b[1] < box[3] for b in placed):
+                break
+        placed.append(box)
+        ax.annotate(name, (px, py), xytext=(dx, dy), textcoords="offset points", ha=ha,
+                    fontsize=9, color=INK if hi else MUTED, fontweight="bold" if hi else "normal")
+    if logx:  # plain numbers on the log axis (mathtext is off, so matplotlib's 10^x labels would print raw)
+        ax.set_xscale("log")
+        lo, hi = df[x][df[x] > 0].min(), df[x].max()
+        ticks = [t for t in (100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000) if lo * 0.8 <= t <= hi * 1.25]
+        ax.set_xticks(ticks)
+        ax.set_xticklabels([f"{t:,}" for t in ticks])
+        ax.xaxis.set_minor_formatter(plt.NullFormatter())
     _style_axis(ax, grid="both")
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)

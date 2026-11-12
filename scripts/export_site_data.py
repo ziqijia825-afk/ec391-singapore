@@ -210,3 +210,83 @@ rca_path = DER / "rca_years.json"
 if rca_path.exists():
     (OUT / "rca.json").write_text(rca_path.read_text())
     print("wrote site/data/rca.json")
+
+# ---------------------------------------------------------------- chapter number cards (book title spreads)
+from chart_style import ordinal  # noqa: E402
+
+
+def rk(r, region=True):
+    s = f"{ordinal(r['rank'])} of {r['n']}"
+    return s + (f" · {ordinal(r['region_rank'])} in East Asia & Pacific" if region and r.get("region_rank") else "")
+
+
+c1, c2, c3, c4, c5, c6, c7, c9 = (derived(c) for c in ("ch01", "ch02", "ch03", "ch04", "ch05", "ch06", "ch07", "ch09"))
+ge = c2["wgi"]["ranks"]["GE"]
+tiles = {
+    "ch01_profile": [
+        {"value": f"{c1['hdi']['value_2023']:.3f}", "label": "Human Development Index, 2023",
+         "rank": f"{ordinal(c1['hdi']['rank'])} of {c1['hdi']['n']} · {ordinal(c1['hdi']['eap_rank'])} in the region"},
+        {"value": f"{c1['long_run']['ratio']:.0f}×", "label": f"Growth of real GDP, {c1['long_run']['first']} to {c1['long_run']['last']}",
+         "rank": "Penn World Table"},
+        {"value": f"{c1['structure']['table']['SGP']['Manufacturing']:.0f}%", "label": "Manufacturing share of GDP, 2024",
+         "rank": f"Malaysia {c1['structure']['table']['MYS']['Manufacturing']:.0f}%, Hong Kong SAR {c1['structure']['table']['HKG']['Manufacturing']:.0f}%"}],
+    "ch02_macro": [
+        {"value": f"${c2['gdp_pc']['ppp_2024'] / 1e3:,.0f}k", "label": "GDP per person at PPP, 2024", "rank": rk(c2["gdp_pc"]["ppp_rank"])},
+        {"value": f"${c2['gdp']['2024_bn']:,.0f}bn", "label": "GDP, current US$, 2024", "rank": rk(c2["gdp"]["rank_2024"])},
+        {"value": f"{ge['value']:.1f}", "label": "Government effectiveness (WGI), 2025", "rank": rk(ge)}],
+    "ch03_trade": [
+        {"value": f"{c3['openness']['2024']['SGP']:.0f}%", "label": "Trade in goods and services, % of GDP, 2024", "rank": rk(c3["openness"]["rank"])},
+        {"value": f"${c3['balances']['services_exports_rank']['value'] / 1e9:,.0f}bn", "label": "Services exports, 2024",
+         "rank": rk(c3["balances"]["services_exports_rank"])},
+        {"value": f"{c3['reexports']['share']['Re-exports']['2024']:.1f}%", "label": "Re-exports, % of merchandise exports, 2024",
+         "rank": f"{c3['reexports']['share']['Re-exports']['2004']:.1f}% in 2004"}],
+    "ch04_rca": [
+        {"value": f"{c4['rca_sector']['2024']['SGP']['Transport & logistics']:.1f}", "label": "RCA, transport and logistics, 2024",
+         "rank": f"{c4['rca_sector']['2004']['SGP']['Transport & logistics']:.1f} in 2004"},
+        {"value": f"{c4['rca_sector']['2024']['SGP']['Finance & insurance']:.1f}", "label": "RCA, finance and insurance, 2024",
+         "rank": f"{c4['rca_sector']['2004']['SGP']['Finance & insurance']:.1f} in 2004"},
+        {"value": f"${c4['endowments']['kl_sgp'] / 1e3:,.0f}k", "label": f"Capital per worker, {c4['endowments']['pwt_year']}",
+         "rank": f"{ordinal(c4['endowments']['kl_rank'])} of {c4['endowments']['kl_n']}"}],
+    "ch05_gvc": [
+        {"value": f"{c5['backward']['sgp']:.1f}%", "label": f"Foreign value added in exports, {c5['year']}", "rank": rk(c5["backward"])},
+        {"value": f"{c5['participation']['sgp']:.1f}%", "label": f"GVC participation, {c5['year']}", "rank": rk(c5["participation"])},
+        {"value": f"{c5['position']['sgp']:.2f}".replace("-", "−"), "label": "Position index (below 0 = downstream)", "rank": rk(c5["position"], False)}],
+    "ch06_fdi": [
+        {"value": f"{c6['inflows_gdp']['2024']['SGP']:.1f}%", "label": "FDI net inflows, % of GDP, 2024", "rank": rk(c6["inflows_gdp"]["rank_2024"])},
+        {"value": f"${c6['inflows_gdp']['inflows_usd_rank_2024']['value'] / 1e9:,.0f}bn", "label": "FDI net inflows, 2024",
+         "rank": rk(c6["inflows_gdp"]["inflows_usd_rank_2024"])},
+        {"value": f"{c6['stocks']['pct_gdp']['Inward FDI stock']['2024']:.0f}%", "label": "Inward FDI stock, % of GDP, 2024",
+         "rank": f"Outward {c6['stocks']['pct_gdp']['Outward FDI stock']['2024']:.0f}%"}],
+    "ch07_policy": [
+        {"value": f"{c7['TM.TAX.MRCH.SM.FN.ZS']['value']:.2f}%", "label": "Average MFN tariff, 2022",
+         "rank": rk(c7["TM.TAX.MRCH.SM.FN.ZS"])},
+        {"value": str(c7["fta"]["n"]), "label": "Free trade agreements in force", "rank": f"{c7['fta']['count_2004']} in 2004"},
+        {"value": str(c7["bits"]["n"]), "label": "Bilateral investment treaties", "rank": f"first in {c7['bits']['first'][:4]}"}],
+    "ch09_case": [
+        {"value": f"{c9['rca_groups']['Chips']['2024']:.1f}", "label": "RCA in chips (HS 8541, 8542), 2024",
+         "rank": f"{c9['ic_world_share']['2024']:.1f}% of world IC exports"},
+        {"value": f"{c9['rca_groups']['Finished pharma']['2024']:.1f}", "label": "RCA in finished pharma and biologics, 2024",
+         "rank": f"{c9['rca_groups']['Finished pharma']['2004']:.2f} in 2004"},
+        {"value": f"{c9['va_share']['Semiconductors']['2025']:.0f}%", "label": "Chips' share of manufacturing value added, 2025",
+         "rank": f"pharma {c9['va_share']['Pharmaceuticals']['2025']:.0f}%"}],
+}
+(ROOT / "data" / "derived" / "tiles.json").write_text(json.dumps(tiles, indent=1, ensure_ascii=False))
+print("wrote data/derived/tiles.json")
+
+# ---------------------------------------------------------------- Ch. 5 value-chain cards (numbers from ch05/ch09)
+sec = {r["sector"]: r for r in c5["sectors"] if r["iso"] == "SGP"}
+cards = [
+    ("Chips", "Midstream", "Wafers, tools and designs come in, and Singapore fabricates and tests the chips that assemblers across Asia build into devices.",
+     f"{sec['Electronics & instruments']['fva_share']:.0f}%", "foreign value in electronics exports"),
+    ("Refining", "Downstream processing", "Every barrel of crude is imported, and the refineries on Jurong Island turn it into fuels that leave by sea.",
+     f"{sec['Refined petroleum']['fva_share']:.0f}%", "foreign value in refined fuel exports"),
+    ("Biologics", "Midstream", "Plants make active ingredients and biologics that are formulated, packed and sold by parent firms abroad.",
+     f"{c9['rca_products']['3002 Biologics and vaccines']['2024']:.1f}", "RCA in biologics and vaccines, 2024"),
+    ("Logistics and finance", "Hub services", "Ships, warehouses, banks and insurers move and finance goods made elsewhere in the region.",
+     f"{sec['Finance & insurance']['fva_share']:.0f}%", "foreign value in finance exports, the most domestic sector"),
+]
+html = ['<section class="chains">'] + [
+    f'<div class="chain"><h4>{t}</h4><span class="pos">{p}</span><p>{d}</p><b>{v}</b><small>{lab}</small></div>'
+    for t, p, d, v, lab in cards] + [f'<p class="chains-src">OECD TiVA 2025 edition ({c5["year"]}) and CEPII BACI, team calculations.</p></section>']
+(ROOT / "data" / "derived" / "ch05_chains.md").write_text("".join(html) + "\n")
+print("wrote data/derived/ch05_chains.md")

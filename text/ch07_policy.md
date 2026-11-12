@@ -23,7 +23,7 @@ Singapore's average bound rate is 8.9 percent, so it has committed to keep tarif
 
 </details>
 
-## Preferential trade agreements
+## Preferential trade agreements {Rules of origin · Conconi et al. 2016}
 
 ![Singapore has signed its way to 29 FTAs](../figures/ch07_fta_count.png)
 
@@ -42,7 +42,7 @@ Singapore has also pioneered agreements on digital trade, beginning with the Dig
 
 </details>
 
-## Regional integration
+## Regional integration {Balassa's stages}
 
 ASEAN, launched as a free trade area at the 1992 summit in Singapore, became the ASEAN Economic Community in 2015. On Balassa's ladder it is still a free trade area. Each member keeps its own external tariff, and Singapore's zero tariff alongside Vietnam's 9.7 percent shows there is no common external tariff, so ASEAN cannot become a customs union without either side changing its tariffs. The AEC's goals of free movement of services, investment and skilled labour reach toward a common market but are only partly implemented. RCEP, also a free trade area, adds China, Japan, Korea, Australia and New Zealand, with common rules of origin that help firms build supply chains across all fifteen members.
 

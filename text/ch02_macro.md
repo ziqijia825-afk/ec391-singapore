@@ -67,7 +67,7 @@ Transparency International's Corruption Perceptions Index scores Singapore 84 ou
 
 <!-- include: data/derived/ch02_rank_table.md -->
 
-## Implications for trade and investment
+## Implications for trade and investment {Nunn 2007}
 
 Nunn (2007) shows that countries with better contract enforcement specialize in goods that need relationship specific inputs, such as electronics and machinery, because suppliers there can rely on contracts being honoured. Singapore's first place in government effectiveness and regulatory quality, its low corruption and its top logistics score are exactly the conditions that attract this kind of production and the regional headquarters that coordinate supply chains across Asia. The risks the indicators point to are a high cost base and exposure to swings in world demand. The next chapter looks at the trade these institutions support.
 

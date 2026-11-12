@@ -79,15 +79,17 @@ Singapore's index has barely moved since 2004 (0.060). Vietnam's rose from 0.077
 
 </details>
 
-## Does Singapore's trade follow gravity?
+## Does Singapore's trade follow gravity? {Gravity model · Feyrer 2009}
 
 ![Trade falls with distance](../figures/ch03_gravity.png)
 
 The gravity model predicts that trade rises with the partners' economic size and falls with the distance between them. We regressed the logarithm of Singapore's 2024 exports to each partner on the logarithm of the partner's GDP and of the great circle distance between capitals.
 
+<!-- include: data/derived/ch03_gravity_eq.md -->
+
 <!-- include: data/derived/ch03_gravity_table.md -->
 
-Singapore's trade follows gravity closely. A partner with 1 percent higher GDP buys about 0.8 percent more, and a partner 1 percent farther away buys about 1.6 percent less, with both coefficients significant and half of the variation across 192 partners explained. The distance elasticity is larger in absolute value than the value of about 1 typical in the literature (Head and Mayer, 2014), which suggests that Singapore's hub role concentrates its trade on nearby Asian markets even more than size alone would predict. On BACI's reconciled exports, which count fewer re-exports, the fit is better (R² 0.68) and the distance elasticity slightly larger (−1.69).
+Singapore's trade follows gravity closely. A partner with 1 percent higher GDP buys about 0.8 percent more, and a partner 1 percent farther away buys about 1.6 percent less, with both coefficients significant and half of the variation across 192 partners explained. The distance elasticity is a little larger in absolute value than the class estimate of −1.46 on 2024 world data and well above the value of about 1 typical in the literature (Head and Mayer, 2014), which suggests that Singapore's hub role concentrates its trade on nearby Asian markets even more than size alone would predict. On BACI's reconciled exports, which count fewer re-exports, the fit is better (R² 0.68) and the distance elasticity slightly larger (−1.69).
 
 Feyrer (2009) isolates how much distance itself matters with a natural experiment. When the Suez Canal closed from 1967 to 1975, sea distances between Europe and South Asia rose for reasons unrelated to tastes or history, and trade between the affected pairs fell. His estimates imply that 10 percent less ocean distance raises trade by about 5 percent, an elasticity near 0.5, and that each extra dollar of trade raises income by about 25 cents. Our cross section elasticity of 1.6 is about three times larger because the distance between capitals also captures shared history, language and business networks, which tie Singapore closely to its neighbours. Singapore sits on the Strait of Malacca, the shortest sea route between the Indian Ocean and East Asia and part of the same Europe to Asia shipping lane that runs through Suez, so the ocean distances Feyrer measures are the trade costs its port exists to lower.
 

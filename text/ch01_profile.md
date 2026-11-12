@@ -21,11 +21,13 @@ The prime minister and cabinet answer to an elected parliament, and a directly e
 
 </details>
 
-## Development phases and structural breaks
+## Development phases and structural breaks {Structural breaks}
 
 ![Singapore's real GDP grew 64-fold since 1960, with six sharp breaks](../figures/ch01_long_run_gdp.png)
 
 Singapore's real GDP grew 64-fold between 1960 and 2023, and the path has six structural breaks in which output grew by less than 1 percent. These were 1964, before separation from Malaysia, the 1985 recession, the Asian financial crisis of 1998, the electronics downturn of 2001, the global financial crisis of 2009 and the pandemic of 2020. Each shock came from outside through trade, and each was followed by policy that pushed the economy toward higher value activities.
+
+<section class="timeline"><div class="era"><b>1819</b><span>Free port</span><p>Raffles opens a free port and Singapore lives by moving goods it does not make.</p></div><div class="era"><b>1961</b><span>EDB founded</span><p>The Economic Development Board begins to court foreign manufacturers.</p></div><div class="era brk"><b>1964 to 65</b><span>Break and independence</span><p>Output falls, then separation from Malaysia ends a brief turn to import substitution.</p></div><div class="era"><b>1965 to 79</b><span>Export factories</span><p>Multinationals build labour intensive plants in Jurong until full employment.</p></div><div class="era"><b>1979</b><span>Wage correction</span><p>Higher wages push firms toward higher value work.</p></div><div class="era brk"><b>1985</b><span>Recession</span><p>Cost cuts and services become a second engine of growth.</p></div><div class="era"><b>1990s</b><span>Clusters and the region</span><p>Industry clusters at home and parks abroad, such as Suzhou in 1994.</p></div><div class="era brk"><b>1998 and 2001</b><span>Asian crisis, chip slump</span><p>Two external shocks hit trade and electronics.</p></div><div class="era"><b>2000</b><span>Biomedical pillar</span><p>Biomedicine joins electronics, chemicals and engineering.</p></div><div class="era brk"><b>2009 and 2020</b><span>Global crisis, pandemic</span><p>World demand collapses twice and recovers.</p></div><div class="era"><b>2020s</b><span>Resilience</span><p>Digital trade, AI, energy and supply chain security.</p></div><p class="timeline-src">Shaded: years in which real GDP grew by less than 1 percent (Penn World Table). Sources: NLB Infopedia, METI, EDB.</p></section>
 
 <details class="more" markdown="1">
 <summary>More on the development phases, from entrepôt port to knowledge economy</summary>

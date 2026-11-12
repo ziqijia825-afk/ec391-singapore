@@ -19,7 +19,7 @@ Value added trade data split the value of a country's exports into the part crea
 
 </details>
 
-## Participation and position: upstream or downstream?
+## Participation and position: upstream or downstream? {Koopman et al. 2010}
 
 ![Singapore buys far more foreign value added than it sells into others' exports](../figures/ch05_backward_forward.png)
 
@@ -33,6 +33,12 @@ Exporters of raw materials such as Norway, Saudi Arabia and Australia have low b
 A Singapore specific measure in TiVA is the value of re-exported intermediate imports, inputs that are imported and leave the country again inside exports. It equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world. Together with the re-export figures in Chapter 3, this confirms that a large part of Singapore's role in value chains is to receive, process and redistribute inputs for the region. The position index is the logarithm of one plus forward participation minus the logarithm of one plus backward participation.
 
 </details>
+
+## Where Singapore sits in four chains
+
+Four of Singapore's main export activities show what a downstream position means in practice. In chips and medicines Singapore makes intermediate goods inside multinational networks, in refining it processes imported crude, and in logistics and finance it coordinates goods made elsewhere, which is why finance carries the most domestic value of any sector.
+
+<!-- include: data/derived/ch05_chains.md -->
 
 ## Which sectors are most integrated?
 
@@ -53,7 +59,7 @@ The United States and China each supplied 13.7 percent of the foreign value adde
 
 </details>
 
-## Implications for trade and investment
+## Implications for trade and investment {Fort 2017}
 
 Fort (2017) helps explain why firms choose a high cost location like Singapore for some stages of production. Using plant data for the United States, she finds that communication technology makes firms more likely to split production across locations, most of all in industries whose designs can be codified electronically, with semiconductor machinery at the top, and that the effect appears for sourcing from countries with high human capital and not from low skill ones. Singapore has the 28th highest human capital index of 143 economies (Chapter 4), so cheaper coordination favours it for the design intensive stages of electronics, while labour intensive assembly goes to Malaysia and Vietnam. Her evidence is for American firms, so for Singapore it is suggestive.
 

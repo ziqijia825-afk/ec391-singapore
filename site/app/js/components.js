@@ -1,7 +1,7 @@
 // Interactive components that go beyond the static figures: maps, Sankey, treemap, network, FDI explorer,
 // WGI radar by year, FDI explorer. All data come from site/data/*.json (built by Python).
 import { state, set, on, getJSON, pickYear, YEARS } from './state.js';
-import { cardShell, baseOption, tipFooter, shortSource, radarOption, registry, nameOf } from './chart.js';
+import { cardShell, baseOption, tipFooter, shortSource, radarOption, registry, nameOf, ECON, CATEGORICAL, rgba } from './chart.js';
 
 const INK = '#1d2b33', MUTED = '#4f5b62', LINE = '#e6dcc4', BLUE = '#2a78d6', RED = '#e23d3d';
 const GRAYS = ['#5f5e5a', '#8a8a85', '#b3b2ab'];
@@ -80,7 +80,7 @@ export async function sgMap(el) {
   o.tooltip.trigger = 'item';
   o.tooltip.formatter = (p) => (p.seriesType === 'scatter' ? `<b>${esc(p.name)}</b><br>${esc(p.data.note)}${tipFooter(spec.source)}` : '<b>Singapore</b>');
   o.geo = { map: 'sgp', roam: true, itemStyle: { areaColor: '#f1efe9', borderColor: '#b3b2ab' }, emphasis: { disabled: true } };
-  o.series = [{ type: 'scatter', coordinateSystem: 'geo', symbolSize: 13, itemStyle: { color: BLUE, borderColor: '#fff', borderWidth: 2 },
+  o.series = [{ type: 'scatter', coordinateSystem: 'geo', symbolSize: 14, itemStyle: { color: ECON.SGP, borderColor: INK, borderWidth: 2 },
     data: SITES.map(([n, xy, note]) => ({ name: n, value: xy, note })),
     label: { show: true, formatter: '{b}', fontSize: 10.5, color: INK }, emphasis: { scale: 1.6 } }];
   o.series[0].data.forEach((d) => { d.label = { position: d.value[0] > 103.9 ? 'left' : 'right' }; });
@@ -102,8 +102,8 @@ export async function wgiRadar(el) {
     badge(el, `Showing ${y}`);
     const row = w.years[y];
     const econs = ['SGP', 'MYS', 'HKG', 'VNM'];
-    const series = econs.map((k, j) => ({ name: w.names[k], key: k, color: j === 0 ? BLUE : GRAYS[j - 1], values: dimsKeys.map((d) => row[d].values[k]) }));
-    series.push({ name: 'East Asia & Pacific average', color: '#8a8a85', dashed: true, values: dimsKeys.map((d) => row[d].eap) });
+    const series = econs.map((k) => ({ name: w.names[k], key: k, color: ECON[k], values: dimsKeys.map((d) => row[d].values[k]) }));
+    series.push({ name: 'East Asia & Pacific average', color: ECON.EAS, dashed: true, values: dimsKeys.map((d) => row[d].eap) });
     const tip = (p) => {
       const k = series.find((s) => s.name === p.name)?.key;
       return `<b>${esc(p.name)}, ${y}</b>${dimsKeys.map((d, i) => {
@@ -118,6 +118,16 @@ export async function wgiRadar(el) {
 }
 
 // ---------- openness: Sankey of trade partners, linked to a partner card ----------
+// partners keep one colour wherever they appear: comparison economies their own, others a fixed slot from their code
+const PARTNER = ['#eb6834', '#1baf7a', '#e87ba4', '#6250d6', '#5aa0e8', '#c2408a', '#2a9d8f', '#d95926'];
+const partnerColor = (iso) => {
+  if (!iso || /^(other|oth|rest)/i.test(iso)) return '#cfc6b4';
+  if (ECON[iso]) return ECON[iso];
+  let h = 0;
+  for (const c of iso) h = (h * 31 + c.charCodeAt(0)) % 997;
+  return PARTNER[h % PARTNER.length];
+};
+
 export async function tradeSankey(el) {
   const d = await getJSON('data/sankey.json');
   const spec = { title: 'Where Singapore\'s goods come from and go to', subtitle: 'Merchandise imports by source (left) and exports by destination (right), top 10 partners, US$ billions. Click a partner.', source: d.source };
@@ -129,14 +139,14 @@ export async function tradeSankey(el) {
     const y = pickYear(years);
     badge(el, `Showing ${y}`);
     const r = d.years[y];
-    const nodes = [{ name: 'Singapore', itemStyle: { color: BLUE } }];
+    const nodes = [{ name: 'Singapore', itemStyle: { color: ECON.SGP, borderColor: INK } }];
     const links = [];
-    const add = (iso, side) => { const n = `${nameOf(iso) || iso}${side}`; nodes.push({ name: n, iso, itemStyle: { color: state.partner === iso ? BLUE : '#b3b2ab' } }); return n; };
+    const add = (iso, side) => { const n = `${nameOf(iso) || iso}${side}`; nodes.push({ name: n, iso, itemStyle: { color: partnerColor(iso), borderColor: state.partner === iso ? INK : partnerColor(iso), borderWidth: state.partner === iso ? 2 : 0 } }); return n; };
     r.M.top.forEach(([iso, v]) => links.push({ source: add(iso, ' '), target: 'Singapore', value: v, iso }));
     links.push({ source: add('Other', ' '), target: 'Singapore', value: r.M.other_bn, iso: 'Other' });
     r.X.top.forEach(([iso, v]) => links.push({ source: 'Singapore', target: add(iso, '  '), value: v, iso }));
     links.push({ source: 'Singapore', target: add('Other', '  '), value: r.X.other_bn, iso: 'Other' });
-    links.forEach((l) => { l.lineStyle = { color: state.partner && l.iso === state.partner ? BLUE : '#c9c8c1', opacity: state.partner && l.iso !== state.partner ? .25 : .55 }; });
+    links.forEach((l) => { l.lineStyle = { color: partnerColor(l.iso), opacity: state.partner ? (l.iso === state.partner ? .75 : .12) : .4 }; });
     const o = baseOption();
     o.tooltip.trigger = 'item';
     o.tooltip.formatter = (p) => (p.dataType === 'edge'
@@ -161,8 +171,8 @@ export async function tradeSankey(el) {
     o.yAxis = { type: 'value', axisLabel: { formatter: '{value}%', fontSize: 10 }, splitLine: { lineStyle: { color: LINE } } };
     o.tooltip.trigger = 'axis';
     o.tooltip.valueFormatter = (v) => (v == null ? 'n/a' : `${v.toFixed(1)}%`);
-    o.series = [{ name: 'Share of exports', type: 'line', data: ys.map((y) => p.share_x[y] ?? null), symbol: 'none', lineStyle: { color: BLUE, width: 2.4 }, itemStyle: { color: BLUE } },
-      { name: 'Share of imports', type: 'line', data: ys.map((y) => p.share_m[y] ?? null), symbol: 'none', lineStyle: { color: '#8a8a85' }, itemStyle: { color: '#8a8a85' } }];
+    o.series = [{ name: 'Share of exports', type: 'line', data: ys.map((y) => p.share_x[y] ?? null), symbol: 'none', lineStyle: { color: '#eb6834', width: 2.4 }, itemStyle: { color: '#eb6834' } },
+      { name: 'Share of imports', type: 'line', data: ys.map((y) => p.share_m[y] ?? null), symbol: 'none', lineStyle: { color: '#2a78d6', width: 2 }, itemStyle: { color: '#2a78d6' } }];
     mini.setOption(o, true);
   };
   chart.on('click', (p) => { const iso = p.data?.iso; if (iso && iso !== 'Other') set({ partner: state.partner === iso ? null : iso }); });
@@ -181,13 +191,14 @@ export async function rcaTreemap(el) {
   let d;
   try { d = await getJSON('data/rca.json'); } catch { el.innerHTML = ''; return; }
   const spec = { title: 'Singapore\'s exports by sector, coloured by revealed comparative advantage',
-    subtitle: 'Box size = export value (US$ billions); colour = Balassa RCA (blue above 1 = advantage). Click a sector to see its RCA over time; click again to drill into HS chapters. RCA here is measured against world exports of goods and services, so HS chapter values are lower than the goods-only RCAs in the HS chapter table later in this chapter.',
+    subtitle: 'Box size = export value (US$ billions); colour = Balassa RCA (blue above 1 = advantage, orange below 1). Click a sector to see its RCA over time; click again to drill into HS chapters. RCA here is measured against world exports of goods and services, so HS chapter values are lower than the goods-only RCAs in the HS chapter table later in this chapter.',
     source: d.source };
   const chart = cardShell(el, spec, { tall: true });
   el.querySelector('.extra').innerHTML = '<div class="panel" style="margin-top:8px"><h5 class="pt">Click a sector</h5><div class="mini"></div></div>';
   const mini = echarts.init(el.querySelector('.mini'));
   const years = Object.keys(d.years);
-  const color = (r) => (r == null ? '#e9e8e3' : r >= 2 ? '#2a78d6' : r >= 1 ? '#a9c8ee' : r >= .5 ? '#e4e3dd' : '#f4f3ef');
+  // diverging around RCA = 1: blues for an advantage, oranges for a disadvantage
+  const color = (r) => (r == null ? '#e9e8e3' : r >= 2 ? '#256abf' : r >= 1 ? '#86b6ef' : r >= .5 ? '#fbd2b8' : '#f5a77f');
   const draw = () => {
     const y = pickYear(years);
     badge(el, `Showing ${y}`);
@@ -213,7 +224,7 @@ export async function rcaTreemap(el) {
     o.yAxis = { type: 'value', splitLine: { lineStyle: { color: LINE } } };
     o.tooltip.trigger = 'axis';
     o.tooltip.valueFormatter = (v) => (v == null ? 'n/a' : v.toFixed(2));
-    const cols = { SGP: BLUE, MYS: GRAYS[0], HKG: GRAYS[1], VNM: GRAYS[2] };
+    const cols = ECON;
     o.series = Object.entries(t.values).map(([k, v]) => ({ name: nameOf(k), type: 'line', data: v, symbol: 'none',
       lineStyle: { color: cols[k], width: k === 'SGP' ? 2.6 : 1.5 }, itemStyle: { color: cols[k] } }));
     o.series[0].markLine = { symbol: 'none', silent: true, lineStyle: { color: '#8a8a85', type: 'dashed' }, label: { formatter: 'RCA = 1' }, data: [{ yAxis: 1 }] };
@@ -233,7 +244,8 @@ export async function gvcNetwork(el) {
   el.querySelector('.extra').innerHTML = '<div class="panel" style="margin-top:8px"><h5 class="gt">Backward and forward participation over time</h5><div class="mini"></div></div>';
   const mini = echarts.init(el.querySelector('.mini'));
   const years = Object.keys(d.network);
-  const col = (p) => (p > .1 ? '#b07d2b' : p > 0 ? '#d4b277' : p > -.1 ? '#9aa3ad' : '#5d6873');
+  // diverging position index: oranges upstream (sells inputs), blues downstream (buys inputs)
+  const col = (p) => (p > .1 ? '#eb6834' : p > 0 ? '#f5a77f' : p > -.1 ? '#86b6ef' : '#2a78d6');
   const draw = () => {
     const y = pickYear(years);
     badge(el, `Showing ${y}`);
@@ -241,11 +253,11 @@ export async function gvcNetwork(el) {
     const maxX = Math.max(...n.nodes.map((x) => x.exgr_bn));
     const nodes = n.nodes.map((x) => ({ id: x.id, name: x.name, value: x.exgr_bn, x0: x,
       symbolSize: 14 + 46 * Math.sqrt(x.exgr_bn / maxX),
-      itemStyle: { color: x.id === 'SGP' ? BLUE : col(x.position), borderColor: state.economy === x.id ? INK : '#fff', borderWidth: state.economy === x.id ? 3 : 1 },
+      itemStyle: { color: x.id === 'SGP' ? ECON.SGP : col(x.position), borderColor: state.economy === x.id ? INK : '#fff', borderWidth: state.economy === x.id ? 3 : 1 },
       label: { show: true, color: INK, fontSize: 11 } }));
     const maxL = Math.max(...n.in.map((l) => l[1]), ...n.out.map((l) => l[1]));
     const links = [...n.in.map(([k, v]) => ({ source: k, target: 'SGP', value: v, dir: 'in' })), ...n.out.map(([k, v]) => ({ source: 'SGP', target: k, value: v, dir: 'out' }))]
-      .map((l) => ({ ...l, lineStyle: { width: 0.8 + 7 * l.value / maxL, color: l.dir === 'in' ? '#b3b2ab' : BLUE, opacity: .55, curveness: .15 } }));
+      .map((l) => ({ ...l, lineStyle: { width: 0.8 + 7 * l.value / maxL, color: l.dir === 'in' ? '#1baf7a' : '#e34948', opacity: .5, curveness: .15 } }));
     const o = baseOption();
     o.tooltip.formatter = (p) => (p.dataType === 'edge'
       ? `<b>${esc(nameOf(p.data.source))} → ${esc(nameOf(p.data.target))}</b>, ${y}<br>Value added: <b>$${p.data.value.toFixed(1)}bn</b>${tipFooter(d.source)}`
@@ -268,8 +280,8 @@ export async function gvcNetwork(el) {
     o.tooltip.valueFormatter = (v) => (v == null ? 'n/a' : `${v.toFixed(1)}%`);
     const mk = (iso, i, name, color, dash) => ({ name, type: 'line', symbol: 'none', data: ys.map((y) => d.series[iso]?.[y]?.[i] ?? null),
       lineStyle: { color, width: iso === 'SGP' ? 2.4 : 1.8, type: dash ? 'dashed' : 'solid' }, itemStyle: { color } });
-    o.series = [mk('SGP', 0, 'Singapore backward', BLUE), mk('SGP', 1, 'Singapore forward', BLUE, true)];
-    if (k !== 'SGP') o.series.push(mk(k, 0, `${d.names[k]} backward`, '#b07d2b'), mk(k, 1, `${d.names[k]} forward`, '#b07d2b', true));
+    o.series = [mk('SGP', 0, 'Singapore backward', ECON.SGP), mk('SGP', 1, 'Singapore forward', ECON.SGP, true)];
+    if (k !== 'SGP') o.series.push(mk(k, 0, `${d.names[k]} backward`, ECON[k] || '#6250d6'), mk(k, 1, `${d.names[k]} forward`, ECON[k] || '#6250d6', true));
     mini.setOption(o, true);
     const sc = registry.get('ch05_backward_forward');
     if (sc) { sc.dispatchAction({ type: 'downplay' }); const idx = sc.getOption().series[0].data.findIndex((x) => x.key === k); if (idx >= 0) sc.dispatchAction({ type: 'highlight', seriesIndex: 0, dataIndex: idx }); }
@@ -295,7 +307,11 @@ export async function fdiExplorer(el) {
     draw();
   }));
   const hubs = new Set(d.hubs);
-  const palette = ['#2a78d6', '#4f8fdd', '#7aaae6', '#a9c8ee', '#5f5e5a', '#8a8a85', '#b3b2ab', '#c9c8c1', '#d9d8d2', '#e4e3dd', '#efeee9'];
+  // ten largest sources or industries: the seven categorical slots, then lighter tints; 'All other' neutral;
+  // pass-through hubs carry diagonal stripes so the holding-company caveat is visible in the chart itself
+  const palette = [...CATEGORICAL, '#86b6ef', '#f5a77f', '#8fd8bc', '#c9b2f0'];
+  const colorOf = (s, i) => (/^all other/i.test(s.name) ? '#cfc6b4' : palette[i % palette.length]);
+  const stripes = { symbol: 'rect', dashArrayX: [1, 0], dashArrayY: [3, 4], rotation: Math.PI / 4, color: 'rgba(255,253,246,.7)' };
   const draw = () => {
     const p = d[view];
     const y = pickYear(p.years);
@@ -313,12 +329,12 @@ export async function fdiExplorer(el) {
       return `<b>${ps[0].axisValue}</b>${ps.filter((x) => x.value != null).map((x) => `<div>${esc(x.seriesName)}: <b>S$${x.value.toFixed(0)}bn</b></div>`).join('')}${tipFooter(d.source)}`;
     };
     o.series = p.series.map((s, i) => ({ name: s.name, type: 'line', stack: 'a', areaStyle: { opacity: .85 }, symbol: 'none', xAxisIndex: 0, yAxisIndex: 0,
-      data: s.values, lineStyle: { width: .5, color: '#fff' }, itemStyle: { color: hubs.has(s.name) ? '#cfe0f5' : palette[i % palette.length] },
+      data: s.values, lineStyle: { width: .5, color: '#fffdf6' }, itemStyle: { color: colorOf(s, i), decal: hubs.has(s.name) ? stripes : undefined },
       emphasis: { focus: 'series' } }));
     o.series[0].markLine = { symbol: 'none', silent: true, label: { show: false }, lineStyle: { color: INK, type: 'dashed' }, data: [{ xAxis: String(y) }] };
     const total = p.total[yi];
     o.series.push({ type: 'bar', xAxisIndex: 1, yAxisIndex: 1, data: p.series.map((s, i) => ({ value: s.values[yi] == null ? null : s.values[yi] / total * 100,
-      itemStyle: { color: hubs.has(s.name) ? '#a9c8ee' : i === 0 ? BLUE : '#c9c8c1' } })),
+      itemStyle: { color: colorOf(s, i), decal: hubs.has(s.name) ? stripes : undefined, borderRadius: [0, 3, 3, 0] } })),
       label: { show: true, position: 'right', fontSize: 10.5, formatter: (q) => (q.value == null ? '' : `${q.value.toFixed(1)}%`) }, tooltip: { trigger: 'item' } });
     chart.setOption(o, true);
   };

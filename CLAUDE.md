@@ -60,8 +60,11 @@ Nov 29 text rewritten (Thanksgiving, no meeting) · Dec 6 case + peer review, re
   (EAS). Years **2004–2024**. Keep all economies in raw data so rankings can be computed.
 - A shared table of 8–10 sectors (electronics, chemicals, pharma, machinery, refined petroleum, finance, logistics, …) is
   used by Ch. 4 (HS codes), Ch. 5 (TiVA/ISIC) and Ch. 6 (FDI by industry) so the chapters line up. Not built yet.
-- Chart style (see `figures/ch02_gdp_current_usd.png`): Singapore in blue `#2a78d6`, peers in grays
-  (`#5f5e5a`, `#8a8a85`, `#b3b2ab`); takeaway title stating the finding with its number; subtitle with measure + years;
+- Chart style (see `figures/ch02_gdp_current_usd.png`): one colour per economy in every chart (Nov 12, after comparing
+  with the Argentina site): Singapore red `#e34948`, Malaysia blue `#2a78d6`, Hong Kong SAR gold `#eda100`, Vietnam green
+  `#008300`, regional and world averages neutral and dashed; sectors keep fixed colours (goods distinct hues, services one
+  warm family), years an ordinal blue ramp (older lighter). Palette checked with the dataviz validator. All set in
+  `chart_style.py` (`ECON`, `SECTOR`, `color_for`) and mirrored in `site/app/js/chart.js` (`ECON`, `CATEGORICAL`); takeaway title stating the finding with its number; subtitle with measure + years;
   direct labels at line ends; light horizontal grid only; single y-axis; source line at the bottom with indicator code and
   retrieval date. One PNG per figure, `figures/chNN_topic.png`.
 - Text: one Markdown file per section in `text/` (`ch01_profile.md`, `ch02_macro.md`, … `ch09_case.md`, `conclusion.md`),
@@ -112,7 +115,10 @@ structure, data routes and methods only; never their text, charts or numbers (th
   year). `run_all.py` reruns everything and builds the site.
 - Site: `site/build.py` builds `_site/index.html` (interactive picture book from `site/app/`: poster cover with map, then
   each chapter paginated into two-page spreads by `paginate()` (text left, figure right, interactive components across
-  both pages), turned with a 3D flip in `js/book.js`, one page at a time below 820px; global year slider, ECharts 5.5.0
+  both pages), turned with a 3D flip in `js/book.js`, one page at a time below 820px. Figures and tables are numbered
+  per chapter at build time; `## Heading {Feyrer 2009}` in text/*.md becomes a course-reading tag (stripped from the
+  Markdown report); chapter openers show three number cards from `data/derived/tiles.json` and Ch. 5 has value-chain
+  cards (`ch05_chains.md`), both written by `export_site_data.py` from the derived JSON; global year slider, ECharts 5.5.0
   vendored in `site/app/vendor/`) + `_site/article/*.html` (static version) +
   the Markdown deliverable `report/EC391_Singapore.md`. In `text/*.md`, `<!-- include: data/derived/X.md -->` inserts a
   table and `<!-- interactive: NAME -->` places a component (sgmap, sankey, treemap, gvc, fdi). Build adds `?v=` cache

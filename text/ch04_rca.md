@@ -4,9 +4,11 @@
 
 Measured by Balassa's revealed comparative advantage, Singapore specializes in transport and logistics services (RCA 4.5), finance and insurance (2.8), electronics and instruments (1.4), ICT and business services (1.3) and pharmaceuticals (1.2). Over twenty years its advantage moved from manufactured goods to services. Transport rose from an RCA of 2.3 in 2004 to 4.5 in 2024 and finance from 1.2 to 2.8, while electronics fell from 2.0 to 1.4 and machinery, chemicals and refined petroleum lost their advantage. The pattern fits Singapore's endowments. It has the 14th highest capital per worker of 173 economies, a skilled workforce and almost no land or natural resources, so in the spirit of Heckscher and Ohlin it exports capital and skill intensive goods and services and imports land and resource intensive ones.
 
-## How we measure comparative advantage
+## How we measure comparative advantage {Balassa RCA}
 
 The Balassa index divides a sector's share in a country's exports by the sector's share in world exports, and a value above 1 is a revealed comparative advantage. We computed it ourselves for goods from CEPII's BACI database (HS 1992 chapters, about 200 exporters) and for services from the World Bank's balance of payments categories, using the team's shared sector table so that this chapter lines up with Chapters 5 and 6 (see the [appendix](appendix.html)).
+
+<p class="equation">RCA<sub>ik</sub> = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>)<span>X = exports · i = Singapore · k = sector · w = world · above 1 = comparative advantage</span></p>
 
 <!-- interactive: treemap -->
 
@@ -45,7 +47,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 </details>
 
-## Endowments and the Heckscher Ohlin test
+## Endowments and the Heckscher Ohlin test {Heckscher Ohlin · Nunn 2007}
 
 ![Singapore has the 14th highest capital per worker](../figures/ch04_capital_per_worker.png)
 

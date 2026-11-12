@@ -3,6 +3,10 @@
 import { state, on, getJSON, YEARS } from './state.js';
 
 const INK = '#1d2b33', MUTED = '#4f5b62', LINE = '#e6dcc4', BLUE = '#2a78d6';
+// one colour per economy in every chart (same as scripts/chart_style.py), a fixed categorical order for the rest
+export const ECON = { SGP: '#e34948', MYS: '#2a78d6', HKG: '#eda100', VNM: '#008300', EAS: '#7d7468', WLD: '#a89f90' };
+export const CATEGORICAL = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6'];
+export const rgba = (hex, a) => `rgba(${[1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(',')},${a})`;
 export const registry = new Map(); // figure id -> echarts instance (for cross-chart highlighting)
 let NAMES = {};
 getJSON('data/names.json').then((n) => { NAMES = n; }).catch(() => {});
@@ -29,7 +33,7 @@ export function cardShell(el, spec, { tall = false, badge = '' } = {}) {
   el.classList.add('card');
   el.innerHTML = `
     ${badge ? `<span class="badge">${esc(badge)}</span>` : ''}
-    <h4>${esc(spec.title)}</h4><div class="sub">${esc(spec.subtitle)}</div>
+    <h4>${el.dataset.num ? `<span class="fignum">${esc(el.dataset.num)}</span> ` : ''}${esc(spec.title)}</h4><div class="sub">${esc(spec.subtitle)}</div>
     <div class="controls"></div>
     <div class="plot${tall ? ' tall' : ''}" role="img" aria-label="${esc(spec.title)}"></div>
     <div class="extra"></div>
@@ -114,7 +118,7 @@ function lineFollow(chart, spec, o) {
     const last = spec.years[spec.years.length - 1];
     const marks = (spec.events || []).map(([x, t]) => ({ xAxis: x, label: { formatter: t, position: 'insideEndTop', color: MUTED, fontSize: 11 } }));
     const y = Math.min(state.year, last);
-    const yearMark = { xAxis: y, lineStyle: { color: BLUE, type: 'dashed', opacity: .35 }, label: { show: false } };
+    const yearMark = { xAxis: y, lineStyle: { color: INK, type: 'dashed', opacity: .3 }, label: { show: false } };
     const opt = { series: [{ id: '__year', markLine: { data: [...marks, yearMark] } }] };
     if (!o.__longRun && spec.years[0] >= YEARS.min - 2) {
       const end = Math.max(Math.min(state.year, last), spec.years[0] + 2);
@@ -143,7 +147,7 @@ function barOption(spec) {
   o.tooltip.formatter = (p) => `<b>${esc(p.name)}</b><br>${esc(spec.labels[p.dataIndex])}${tipFooter(spec.source)}`;
   o.series = [{ type: 'bar', barWidth: '62%', data: spec.values.map((v, i) => ({ value: v, itemStyle: { color: spec.colors[i], borderRadius: [0, 3, 3, 0] } })),
     label: { show: true, position: 'right', color: MUTED, formatter: (p) => spec.labels[p.dataIndex] },
-    emphasis: { itemStyle: { color: BLUE } },
+    emphasis: { itemStyle: { borderColor: INK, borderWidth: 1.5 } },
     markLine: spec.ref == null ? undefined : { symbol: 'none', lineStyle: { color: '#8a8a85', type: 'dashed' },
       label: { formatter: spec.ref_label || '', color: MUTED }, data: [{ xAxis: spec.ref }] } }];
   return o;
@@ -190,7 +194,7 @@ export function radarOption(dims, series, vmax, tipRows) {
   o.tooltip.formatter = tipRows;
   o.series = [{ type: 'radar', symbolSize: 5, data: series.map((s, j) => ({ name: s.name, value: s.values,
     lineStyle: { color: s.color, width: j === 0 ? 3 : 1.6, type: s.dashed ? 'dashed' : 'solid' }, itemStyle: { color: s.color },
-    areaStyle: j === 0 ? { color: 'rgba(42,120,214,.12)' } : undefined })) }];
+    areaStyle: j === 0 ? { color: rgba(s.color, 0.14) } : undefined })) }];
   return o;
 }
 
@@ -206,9 +210,10 @@ function scatterOption(spec) {
   const ann = new Set(spec.annotate), hi = new Set(spec.highlight);
   o.series = [{ type: 'scatter', symbolSize: (v, p) => (hi.has(p.data.key) ? 12 : 8),
     data: spec.points.map((p) => ({ value: [p.x, p.y], key: p.key, name: p.key,
-      itemStyle: { color: hi.has(p.key) ? BLUE : '#c9c8c1', borderColor: hi.has(p.key) ? BLUE : '#8a8a85', borderWidth: .6 },
+      itemStyle: ann.has(p.key) || hi.has(p.key) ? { color: ECON[p.key] || '#eb6834', borderColor: '#fffdf6', borderWidth: 1.2 }
+        : { color: '#a9c8ee', borderColor: '#5598e7', borderWidth: .6 },
       label: { show: ann.has(p.key), formatter: () => nameOf(p.key), position: 'right', fontSize: 11, color: hi.has(p.key) ? INK : MUTED } })),
-    emphasis: { scale: 1.8, itemStyle: { color: BLUE, borderColor: INK } } }];
+    emphasis: { scale: 1.8, itemStyle: { color: '#eb6834', borderColor: INK } } }];
   if (spec.fit) {
     const xs = spec.points.map((p) => p.x).filter((x) => x > 0);
     const lo = Math.min(...xs), hiX = Math.max(...xs);

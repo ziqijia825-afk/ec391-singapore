@@ -46,10 +46,11 @@ The prime minister and cabinet answer to an elected parliament, and a directly e
 </details>
 
 ## Development phases and structural breaks
-
 ![Singapore's real GDP grew 64-fold since 1960, with six sharp breaks](../figures/ch01_long_run_gdp.png)
 
 Singapore's real GDP grew 64-fold between 1960 and 2023, and the path has six structural breaks in which output grew by less than 1 percent. These were 1964, before separation from Malaysia, the 1985 recession, the Asian financial crisis of 1998, the electronics downturn of 2001, the global financial crisis of 2009 and the pandemic of 2020. Each shock came from outside through trade, and each was followed by policy that pushed the economy toward higher value activities.
+
+<section class="timeline"><div class="era"><b>1819</b><span>Free port</span><p>Raffles opens a free port and Singapore lives by moving goods it does not make.</p></div><div class="era"><b>1961</b><span>EDB founded</span><p>The Economic Development Board begins to court foreign manufacturers.</p></div><div class="era brk"><b>1964 to 65</b><span>Break and independence</span><p>Output falls, then separation from Malaysia ends a brief turn to import substitution.</p></div><div class="era"><b>1965 to 79</b><span>Export factories</span><p>Multinationals build labour intensive plants in Jurong until full employment.</p></div><div class="era"><b>1979</b><span>Wage correction</span><p>Higher wages push firms toward higher value work.</p></div><div class="era brk"><b>1985</b><span>Recession</span><p>Cost cuts and services become a second engine of growth.</p></div><div class="era"><b>1990s</b><span>Clusters and the region</span><p>Industry clusters at home and parks abroad, such as Suzhou in 1994.</p></div><div class="era brk"><b>1998 and 2001</b><span>Asian crisis, chip slump</span><p>Two external shocks hit trade and electronics.</p></div><div class="era"><b>2000</b><span>Biomedical pillar</span><p>Biomedicine joins electronics, chemicals and engineering.</p></div><div class="era brk"><b>2009 and 2020</b><span>Global crisis, pandemic</span><p>World demand collapses twice and recovers.</p></div><div class="era"><b>2020s</b><span>Resilience</span><p>Digital trade, AI, energy and supply chain security.</p></div><p class="timeline-src">Shaded: years in which real GDP grew by less than 1 percent (Penn World Table). Sources: NLB Infopedia, METI, EDB.</p></section>
 
 <details class="more" markdown="1">
 <summary>More on the development phases, from entrepôt port to knowledge economy</summary>
@@ -211,7 +212,6 @@ Transparency International's Corruption Perceptions Index scores Singapore 84 ou
 *Ranks: 1st = best (highest, except inflation: lowest) among economies with data; World Bank aggregates excluded; ties share a rank. Doing Business (discontinued in 2021) ranked 190 economies; its last edition, DB2020, uses 2019 data (WDI IC.BUS.EASE.XQ). B-READY ranks are among the economies it covers. ¹ Singapore's Gini is a national series on employment income and is not comparable with survey-based Gini for other countries. ² The World Bank publishes no poverty headcount for Singapore (no household survey in its database). Sources: World Bank WDI, WGI and B-READY via the WDI API, retrieved Nov 12, 2026; Transparency International CPI; Singapore Department of Statistics.*
 
 ## Implications for trade and investment
-
 Nunn (2007) shows that countries with better contract enforcement specialize in goods that need relationship specific inputs, such as electronics and machinery, because suppliers there can rely on contracts being honoured. Singapore's first place in government effectiveness and regulatory quality, its low corruption and its top logistics score are exactly the conditions that attract this kind of production and the regional headquarters that coordinate supply chains across Asia. The risks the indicators point to are a high cost base and exposure to swings in world demand. The next chapter looks at the trade these institutions support.
 
 <details class="more" markdown="1">
@@ -306,10 +306,11 @@ Singapore's index has barely moved since 2004 (0.060). Vietnam's rose from 0.077
 </details>
 
 ## Does Singapore's trade follow gravity?
-
 ![Trade falls with distance](../figures/ch03_gravity.png)
 
 The gravity model predicts that trade rises with the partners' economic size and falls with the distance between them. We regressed the logarithm of Singapore's 2024 exports to each partner on the logarithm of the partner's GDP and of the great circle distance between capitals.
+
+<p class="equation">ln X<sub>j</sub> = 13.04 + 0.79 · ln GDP<sub>j</sub> − 1.59 · ln Dist<sub>j</sub><span>robust s.e. 0.08 and 0.18 · R² 0.52 · N = 192 · UN Comtrade, 2024</span></p>
 
 | Sample, 2024 | ln partner GDP | ln distance | R² | Partners (N) |
 | --- | --- | --- | --- | --- |
@@ -318,7 +319,7 @@ The gravity model predicts that trade rises with the partners' economic size and
 
 *OLS of ln(Singapore's exports to partner j) on ln(GDP of j, current US$, 2024) and ln(great-circle distance between capitals, km). Robust (HC1) standard errors in parentheses. Sources: UN Comtrade; CEPII BACI; World Bank WDI (GDP, capital coordinates). Taiwan is excluded (no World Bank GDP).*
 
-Singapore's trade follows gravity closely. A partner with 1 percent higher GDP buys about 0.8 percent more, and a partner 1 percent farther away buys about 1.6 percent less, with both coefficients significant and half of the variation across 192 partners explained. The distance elasticity is larger in absolute value than the value of about 1 typical in the literature (Head and Mayer, 2014), which suggests that Singapore's hub role concentrates its trade on nearby Asian markets even more than size alone would predict. On BACI's reconciled exports, which count fewer re-exports, the fit is better (R² 0.68) and the distance elasticity slightly larger (−1.69).
+Singapore's trade follows gravity closely. A partner with 1 percent higher GDP buys about 0.8 percent more, and a partner 1 percent farther away buys about 1.6 percent less, with both coefficients significant and half of the variation across 192 partners explained. The distance elasticity is a little larger in absolute value than the class estimate of −1.46 on 2024 world data and well above the value of about 1 typical in the literature (Head and Mayer, 2014), which suggests that Singapore's hub role concentrates its trade on nearby Asian markets even more than size alone would predict. On BACI's reconciled exports, which count fewer re-exports, the fit is better (R² 0.68) and the distance elasticity slightly larger (−1.69).
 
 Feyrer (2009) isolates how much distance itself matters with a natural experiment. When the Suez Canal closed from 1967 to 1975, sea distances between Europe and South Asia rose for reasons unrelated to tastes or history, and trade between the affected pairs fell. His estimates imply that 10 percent less ocean distance raises trade by about 5 percent, an elasticity near 0.5, and that each extra dollar of trade raises income by about 25 cents. Our cross section elasticity of 1.6 is about three times larger because the distance between capitals also captures shared history, language and business networks, which tie Singapore closely to its neighbours. Singapore sits on the Strait of Malacca, the shortest sea route between the Indian Ocean and East Asia and part of the same Europe to Asia shipping lane that runs through Suez, so the ocean distances Feyrer measures are the trade costs its port exists to lower.
 
@@ -350,8 +351,9 @@ World Bank, World Development Indicators; Singapore Department of Statistics and
 Measured by Balassa's revealed comparative advantage, Singapore specializes in transport and logistics services (RCA 4.5), finance and insurance (2.8), electronics and instruments (1.4), ICT and business services (1.3) and pharmaceuticals (1.2). Over twenty years its advantage moved from manufactured goods to services. Transport rose from an RCA of 2.3 in 2004 to 4.5 in 2024 and finance from 1.2 to 2.8, while electronics fell from 2.0 to 1.4 and machinery, chemicals and refined petroleum lost their advantage. The pattern fits Singapore's endowments. It has the 14th highest capital per worker of 173 economies, a skilled workforce and almost no land or natural resources, so in the spirit of Heckscher and Ohlin it exports capital and skill intensive goods and services and imports land and resource intensive ones.
 
 ## How we measure comparative advantage
-
 The Balassa index divides a sector's share in a country's exports by the sector's share in world exports, and a value above 1 is a revealed comparative advantage. We computed it ourselves for goods from CEPII's BACI database (HS 1992 chapters, about 200 exporters) and for services from the World Bank's balance of payments categories, using the team's shared sector table so that this chapter lines up with Chapters 5 and 6 (see the [appendix](appendix.html)).
+
+<p class="equation">RCA<sub>ik</sub> = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>)<span>X = exports · i = Singapore · k = sector · w = world · above 1 = comparative advantage</span></p>
 
 
 
@@ -367,22 +369,22 @@ BACI reconciles exporter and importer reports, and importers record the country 
 <table class="rca">
 <thead><tr><th>Sector</th><th>Singapore</th><th>Malaysia</th><th>Hong Kong SAR</th><th>Vietnam</th></tr></thead>
 <tbody>
-<tr><td>Electronics & instruments</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.41</td><td style="background:#2a78d6;color:#ffffff;text-align:center">2.68</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.45</td><td style="background:#2a78d6;color:#ffffff;text-align:center">3.09</td></tr>
-<tr><td>Machinery incl. computers</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.82</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.11</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.99</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.74</td></tr>
-<tr><td>Refined petroleum</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.87</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.90</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.02</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.07</td></tr>
-<tr><td>Chemicals & plastics</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.76</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.84</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.23</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.62</td></tr>
-<tr><td>Pharmaceuticals</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.18</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.04</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.14</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.02</td></tr>
-<tr><td>Gold & metals</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.41</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.69</td><td style="background:#2a78d6;color:#ffffff;text-align:center">2.84</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.49</td></tr>
-<tr><td>Food & agriculture</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.26</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.04</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.38</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.97</td></tr>
-<tr><td>Transport equipment</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.13</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.12</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.10</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.15</td></tr>
-<tr><td>Transport & logistics</td><td style="background:#2a78d6;color:#ffffff;text-align:center">4.49</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.35</td><td style="background:#2a78d6;color:#ffffff;text-align:center">3.04</td><td>n/a</td></tr>
-<tr><td>Finance & insurance</td><td style="background:#2a78d6;color:#ffffff;text-align:center">2.80</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.08</td><td style="background:#2a78d6;color:#ffffff;text-align:center">3.77</td><td>n/a</td></tr>
-<tr><td>ICT & business services</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.29</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.37</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.22</td><td>n/a</td></tr>
-<tr><td>Travel & tourism</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.66</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.79</td><td style="background:#a9c8ee;color:#1f1f1d;text-align:center">1.64</td><td>n/a</td></tr>
-<tr><td>Other goods</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.10</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.46</td><td style="background:#f1f0ec;color:#5f5e5a;text-align:center">0.44</td><td style="background:#2a78d6;color:#ffffff;text-align:center">2.85</td></tr>
+<tr><td>Electronics & instruments</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.41</td><td style="background:#256abf;color:#ffffff;text-align:center">2.68</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.45</td><td style="background:#256abf;color:#ffffff;text-align:center">3.09</td></tr>
+<tr><td>Machinery incl. computers</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.82</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.11</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.99</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.74</td></tr>
+<tr><td>Refined petroleum</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.87</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.90</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.02</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.07</td></tr>
+<tr><td>Chemicals & plastics</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.76</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.84</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.23</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.62</td></tr>
+<tr><td>Pharmaceuticals</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.18</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.04</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.14</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.02</td></tr>
+<tr><td>Gold & metals</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.41</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.69</td><td style="background:#256abf;color:#ffffff;text-align:center">2.84</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.49</td></tr>
+<tr><td>Food & agriculture</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.26</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.04</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.38</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.97</td></tr>
+<tr><td>Transport equipment</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.13</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.12</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.10</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.15</td></tr>
+<tr><td>Transport & logistics</td><td style="background:#256abf;color:#ffffff;text-align:center">4.49</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.35</td><td style="background:#256abf;color:#ffffff;text-align:center">3.04</td><td>n/a</td></tr>
+<tr><td>Finance & insurance</td><td style="background:#256abf;color:#ffffff;text-align:center">2.80</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.08</td><td style="background:#256abf;color:#ffffff;text-align:center">3.77</td><td>n/a</td></tr>
+<tr><td>ICT & business services</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.29</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.37</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.22</td><td>n/a</td></tr>
+<tr><td>Travel & tourism</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.66</td><td style="background:#fbd2b8;color:#1f1f1d;text-align:center">0.79</td><td style="background:#86b6ef;color:#1f1f1d;text-align:center">1.64</td><td>n/a</td></tr>
+<tr><td>Other goods</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.10</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.46</td><td style="background:#fde9dc;color:#5f5e5a;text-align:center">0.44</td><td style="background:#256abf;color:#ffffff;text-align:center">2.85</td></tr>
 </tbody></table>
 
-*Balassa RCA = (country's exports of sector k / its total exports of goods and services) ÷ (world exports of k / world total), 2024. Shading: dark blue ≥ 10, blue 2 to 10, light blue 1 to 2, gray < 1 (no comparative advantage); n/a = no services breakdown reported. Source: team calculation from CEPII BACI (HS 1992, V202601) for goods and World Bank WDI balance-of-payments services exports (BX.GSR.NFSV.CD with category shares BX.GSR.TRAN/TRVL/INSF/CMCP.ZS) for services; RCA computed by the team. BACI downloaded Nov 12, 2026. Sector grouping in the appendix.*
+*Balassa RCA = (country's exports of sector k / its total exports of goods and services) ÷ (world exports of k / world total), 2024. Shading: dark blue ≥ 10, blue 2 to 10, light blue 1 to 2 (advantage); light orange 0.5 to 1 and pale orange below 0.5 (no comparative advantage); n/a = no services breakdown reported. Source: team calculation from CEPII BACI (HS 1992, V202601) for goods and World Bank WDI balance-of-payments services exports (BX.GSR.NFSV.CD with category shares BX.GSR.TRAN/TRVL/INSF/CMCP.ZS) for services; RCA computed by the team. BACI downloaded Nov 12, 2026. Sector grouping in the appendix.*
 
 Singapore and Hong Kong SAR are the only two of the four economies with advantages in both transport and finance, the statistical fingerprint of regional hubs, and Singapore differs from Hong Kong SAR in still making much of the electronics and medicines it exports. Malaysia's advantages are in electronics (2.7), refined petroleum (1.9), machinery and food and agriculture, the profile of a manufacturing economy with natural resources. Vietnam's are in electronics (3.1), machinery (1.7) and other goods such as garments and footwear (2.9), the profile of a labour abundant assembly economy.
 
@@ -427,7 +429,6 @@ Measured within goods trade alone, which is why these values are higher than in 
 </details>
 
 ## Endowments and the Heckscher Ohlin test
-
 ![Singapore has the 14th highest capital per worker](../figures/ch04_capital_per_worker.png)
 
 The Heckscher Ohlin model predicts that a country exports goods that use its abundant factors intensively. Singapore's capital stock per worker was $657,000 in 2023 at constant 2021 prices, 14th of 173 economies in the Penn World Table and above Japan, Germany and the United States. Its human capital index of 3.40 ranks 28th of 143, and its arable land per person is the smallest of 205 economies. The sectors with an RCA above 1 (logistics, finance, chips, instruments and medicines) all use capital and skilled labour intensively, while food and agriculture (RCA 0.3) are imported, so the export pattern matches the endowments.
@@ -486,7 +487,6 @@ Value added trade data split the value of a country's exports into the part crea
 </details>
 
 ## Participation and position: upstream or downstream?
-
 ![Singapore buys far more foreign value added than it sells into others' exports](../figures/ch05_backward_forward.png)
 
 Exporters of raw materials such as Norway, Saudi Arabia and Australia have low backward and high forward participation, because their oil, gas and minerals become inputs into other countries' exports. Small open processing economies such as Luxembourg, Vietnam, Ireland and Singapore have the opposite profile. Singapore's position index (Koopman and coauthors, 2010) is −0.22, 73rd of 80, so it is among the most downstream economies in the database.
@@ -507,6 +507,12 @@ Exporters of raw materials such as Norway, Saudi Arabia and Australia have low b
 A Singapore specific measure in TiVA is the value of re-exported intermediate imports, inputs that are imported and leave the country again inside exports. It equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world. Together with the re-export figures in Chapter 3, this confirms that a large part of Singapore's role in value chains is to receive, process and redistribute inputs for the region. The position index is the logarithm of one plus forward participation minus the logarithm of one plus backward participation.
 
 </details>
+
+## Where Singapore sits in four chains
+
+Four of Singapore's main export activities show what a downstream position means in practice. In chips and medicines Singapore makes intermediate goods inside multinational networks, in refining it processes imported crude, and in logistics and finance it coordinates goods made elsewhere, which is why finance carries the most domestic value of any sector.
+
+<section class="chains"><div class="chain"><h4>Chips</h4><span class="pos">Midstream</span><p>Wafers, tools and designs come in, and Singapore fabricates and tests the chips that assemblers across Asia build into devices.</p><b>46%</b><small>foreign value in electronics exports</small></div><div class="chain"><h4>Refining</h4><span class="pos">Downstream processing</span><p>Every barrel of crude is imported, and the refineries on Jurong Island turn it into fuels that leave by sea.</p><b>72%</b><small>foreign value in refined fuel exports</small></div><div class="chain"><h4>Biologics</h4><span class="pos">Midstream</span><p>Plants make active ingredients and biologics that are formulated, packed and sold by parent firms abroad.</p><b>3.1</b><small>RCA in biologics and vaccines, 2024</small></div><div class="chain"><h4>Logistics and finance</h4><span class="pos">Hub services</span><p>Ships, warehouses, banks and insurers move and finance goods made elsewhere in the region.</p><b>28%</b><small>foreign value in finance exports, the most domestic sector</small></div><p class="chains-src">OECD TiVA 2025 edition (2022) and CEPII BACI, team calculations.</p></section>
 
 ## Which sectors are most integrated?
 
@@ -544,7 +550,6 @@ The United States and China each supplied 13.7 percent of the foreign value adde
 </details>
 
 ## Implications for trade and investment
-
 Fort (2017) helps explain why firms choose a high cost location like Singapore for some stages of production. Using plant data for the United States, she finds that communication technology makes firms more likely to split production across locations, most of all in industries whose designs can be codified electronically, with semiconductor machinery at the top, and that the effect appears for sourcing from countries with high human capital and not from low skill ones. Singapore has the 28th highest human capital index of 143 economies (Chapter 4), so cheaper coordination favours it for the design intensive stages of electronics, while labour intensive assembly goes to Malaysia and Vietnam. Her evidence is for American firms, so for Singapore it is suggestive.
 
 Being downstream and highly integrated lets Singapore specialize in the stages where it is most productive, such as advanced wafer fabrication, testing, logistics and finance, without producing raw materials or every component itself. It also exposes the economy to shocks anywhere upstream, from chip shortages to oil prices and export controls, and to the rivalry between its two largest suppliers of foreign value added, the United States and China. Chapter 6 turns to the foreign firms that operate these links.
@@ -581,7 +586,6 @@ Inward FDI rose from S$277 billion at the end of 2004 (142 percent of GDP) to S$
 </details>
 
 ## Who invests, and in which sectors?
-
 
 
 ![The US is the largest investor](../figures/ch06_sources.png)
@@ -622,7 +626,6 @@ Singapore combines a large flow of new plants and headquarters with an active ma
 </details>
 
 ## What do foreign firms seek in Singapore?
-
 Singapore's domestic market is too small to explain much horizontal investment that serves the host market. The first semiconductor plants of the late 1960s were vertical investments in labour intensive assembly, and today's investment is mostly export platform investment that serves third markets (Ekholm, Forslid and Markusen, 2007) and regional headquarters. Singapore makes about one in ten of the world's chips for export, and the Economic Development Board counts about 4,200 regional headquarters ([EDB](https://www.edb.gov.sg/en/news-and-insights/futuristic-workspace-spore-a-hub-for-corporate-headquarters)). In Dunning's OLI terms, the location advantages that attract them are those measured in Chapter 2: institutions, logistics, a 17 percent corporate tax rate with incentives, skilled workers and the trade agreements of Chapter 7.
 
 ## Outward FDI and investment income
@@ -704,7 +707,6 @@ Singapore's average bound rate is 8.9 percent, so it has committed to keep tarif
 </details>
 
 ## Preferential trade agreements
-
 ![Singapore has signed its way to 29 FTAs](../figures/ch07_fta_count.png)
 
 Because Singapore's own tariffs are already zero, its agreements matter for the partners' tariff cuts and for rules on services, investment, procurement and intellectual property. The network grew from six agreements in force in 2004 to 29 in 2026 and covers all major partners. The key ones are the US Singapore FTA (2004, goods, services and investment), the China Singapore FTA (2009), CPTPP (2018), the EU Singapore FTA (2019, the EU's first in Southeast Asia) and RCEP (2022).
@@ -755,7 +757,6 @@ Singapore has also pioneered agreements on digital trade, beginning with the Dig
 </details>
 
 ## Regional integration
-
 ASEAN, launched as a free trade area at the 1992 summit in Singapore, became the ASEAN Economic Community in 2015. On Balassa's ladder it is still a free trade area. Each member keeps its own external tariff, and Singapore's zero tariff alongside Vietnam's 9.7 percent shows there is no common external tariff, so ASEAN cannot become a customs union without either side changing its tariffs. The AEC's goals of free movement of services, investment and skilled labour reach toward a common market but are only partly implemented. RCEP, also a free trade area, adds China, Japan, Korea, Australia and New Zealand, with common rules of origin that help firms build supply chains across all fifteen members.
 
 ## Non-tariff measures
@@ -834,7 +835,6 @@ WTO tariff profiles and member page; World Bank WDI (WITS/UNCTAD TRAINS); UNCTAD
 Singapore has tried twice to build a high technology manufacturing industry by attracting foreign firms with incentives, infrastructure and research funding instead of tariffs. The first attempt, in semiconductors from 1968, produced a lasting comparative advantage. Singapore's RCA in chips was 4.6 in 2024, it sold 7.1 percent of the world's exported integrated circuits, and semiconductors generate 35 percent of manufacturing value added. The second attempt, in pharmaceuticals from 2000, also built an export advantage. The RCA in finished medicines and biologics rose from 0.2 in 2004 to 1.8 in 2024 and in biologics alone to 3.1. But pharmaceuticals' share of manufacturing value added fell from 19 to 4 percent and the stock of foreign investment in the industry shrank. Investment-led policy can create export capacity quickly, and only in chips has it grown into a deep cluster that keeps attracting new capital.
 
 ## Part 1 Background and policy
-
 The course's infant industry argument holds that a new industry may need temporary support while it rides down a learning curve, after which it becomes competitive and support can be withdrawn. Most countries that tried this protected the home market with tariffs. Singapore could not, because its home market is tiny and its tariffs are zero (Chapter 7), so it used foreign direct investment instead. The Economic Development Board, founded in 1961, offered tax holidays under the Pioneer Certificate and Development and Expansion Incentive schemes, ready built estates through JTC, subsidised training and, later, public research funding. Pioneer firms can pay 5 to 15 percent or nothing against the headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
 
 In semiconductors the strategy began in 1968, when National Semiconductor set up an assembly plant that was running within two weeks, followed by Fairchild, Texas Instruments and others ([EDB](https://www.edb.gov.sg/en/business-insights/insights/made-in-singapore-60-years-of-manufacturing.html)). In 1987 the state backed Chartered Semiconductor opened Singapore's first wafer fab, which GlobalFoundries bought in 2009, and the industry moved up from assembly into fabrication.
@@ -886,7 +886,6 @@ The pharmaceutical share swings sharply from year to year, as one would expect i
 </details>
 
 ## Part 3 Impact and conclusion
-
 In the model's terms, the semiconductor policy behaves like a successful infant industry intervention without the tariff. Early support attracted firms, the industry moved up from assembly to fabrication, and the advantage has survived decades of rising wages and land costs because Singapore's capital, skilled workers and supplier networks now support it (Chapter 4). Investment, value added and exports all rose together. The pharmaceutical policy also created an export advantage, although it took almost two decades to become stable, and value added and the foreign capital stock moved the other way. Learning has not yet spilled over into a self sustaining domestic industry, which matches the critique of Young (1992) that Singapore's growth came mainly from accumulating capital and labour and only slightly from rising productivity.
 
 Two recent shocks will test the model. The OECD's global minimum tax took effect in Singapore on 1 January 2025 through a domestic top-up tax and a multinational top-up tax that bring large groups' effective rate to at least 15 percent, which reduces the value of tax holidays ([IRAS](https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/global-anti-base-erosion-(globe)-rules-and-domestic-top-up-tax-(dtt))). Singapore responded in Budget 2024 with a Refundable Investment Credit that pays up to 50 percent of qualifying spending in cash, a subsidy compatible with the global rules ([IRAS](https://www.iras.gov.sg/schemes/disbursement-schemes/refundable-investment-credit-(ric))). At the same time, US tariffs and export controls on chips and medicines (Chapter 7) put the two target industries at the centre of strategic rivalry.
