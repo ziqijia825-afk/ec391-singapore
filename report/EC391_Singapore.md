@@ -932,6 +932,8 @@ Every chart and table on this site was built by the team from raw files download
 | Ministry of Energy, Trade and Industry (METI) | Government | Bilateral investment treaties in force and partners | `data/raw/manual/sg_bit_list.csv` |
 | Natural Earth; geoBoundaries (CC BY 4.0) | Public domain / open data | Country boundaries for the maps (not statistics) | `fetch_geo.py` |
 | WTO, Singapore Customs, IRAS, EDB, NLB, MOE | Government / IGO | Facts on membership, tariffs, incentives, taxes, history and education | linked in the text |
+| SingStat Population Trends 2026; data.gov.sg land area series | Government | Population by residency, land area in 1965 and 2026 | linked in Chapter 1 |
+| Associated Press via PBS | News | Result of the general election of May 2025 | linked in Chapter 1 |
 
 ## Methods
 
@@ -969,6 +971,10 @@ Every chart and table on this site was built by the team from raw files download
 ## Limitations
 
 Singapore's role as an entrepôt and financial centre complicates almost every statistic in this report. Reported exports include re-exports, so we use domestic export data, BACI reconciled data and value added data alongside them. FDI is recorded by immediate investor and includes large pass through investment by holding companies. The World Bank publishes no poverty or survey based Gini data for Singapore, so we use the national Gini series, which is not comparable across countries. TiVA ends in 2022, and the World Bank's latest tariff data for these economies are for 2022.
+
+## Still to collect
+
+Four gaps remain, and each would sharpen a finding. Transparency International blocks automated downloads, so the corruption scores still come through Our World in Data until a member downloads the 2025 results file by hand. FDI by ultimate investor would show who stands behind the holding companies of Chapter 6, but Singapore publishes only immediate investors. The difference in differences test of Chapter 9 needs every four digit product for Malaysia and Hong Kong SAR, the Economic Development Board's investment commitments by industry and plant level data on local suppliers. And each chapter should name the lecture it tests by date, which needs the course syllabus.
 
 ## Questions for the professor
 

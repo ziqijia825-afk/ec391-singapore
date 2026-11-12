@@ -122,4 +122,16 @@ export function enhance() {
     let n = h;
     while (n && !(n !== h && (n.tagName === 'H2' || n.classList?.contains('nextch')))) { const next = n.nextElementSibling; box.append(n); n = next; }
   });
+  // appendix: the "Type" column of the source table becomes small labels (Government, IGO, UN ...)
+  document.querySelectorAll('#story [data-ch=appendix] table').forEach((t) => {
+    const col = [...t.querySelectorAll('thead th')].findIndex((th) => th.textContent.trim() === 'Type');
+    if (col < 0) return;
+    t.querySelectorAll('tbody tr').forEach((tr) => {
+      const td = tr.children[col];
+      if (!td) return;
+      const [main, ...note] = td.textContent.split('(');
+      td.innerHTML = main.split('/').map((x) => `<span class="srctype">${x.trim()}</span>`).join(' ')
+        + (note.length ? `<small class="srcnote">(${note.join('(')}</small>` : '');
+    });
+  });
 }

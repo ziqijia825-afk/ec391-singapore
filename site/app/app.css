@@ -476,3 +476,8 @@ body.past-cover #cover *, body.past-cover #cover *::after { animation-play-state
 /* ---------- verdict and recommendation stand out as a callout ---------- */
 .callout { border-left: 4px solid var(--acc, var(--red)); background: var(--acc-soft, #f8f4ec); padding: 18px 22px 14px; border-radius: 0 12px 12px 0; margin: 4px 0 18px; }
 .callout > h2 { margin-top: 0; }
+
+/* ---------- appendix: source types as labels ---------- */
+.srctype { display: inline-block; font: 600 11px/1.6 var(--sans); letter-spacing: .03em; color: var(--acc-deep, var(--ink)); border: 1px solid currentColor;
+  border-radius: 999px; padding: 0 8px; margin: 1px 2px 1px 0; white-space: nowrap; }
+.srcnote { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
