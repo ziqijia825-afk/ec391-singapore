@@ -1,5 +1,5 @@
 // Small UI threaded through every chapter: highlighted numbers, peer colour dots and glossary hints in the text,
-// counts on the "More" toggles, chapter facts on each opener and a card that leads into the next chapter.
+// counts on the "More" toggles that hold charts or tables, and a card that leads into the next chapter.
 import { ECON } from './chart.js';
 
 // short definitions, the team's own wording
@@ -93,23 +93,11 @@ export function enhance() {
   // "More" toggles say what they hold
   document.querySelectorAll('#story details.more').forEach((d) => {
     const f = d.querySelectorAll('[data-fig], [data-special]').length, t = d.querySelectorAll('.tablewrap').length;
-    const words = (d.textContent.match(/\S+/g) || []).length;
-    const bits = [f ? `${f} chart${f > 1 ? 's' : ''}` : '', t ? `${t} table${t > 1 ? 's' : ''}` : '', `${Math.max(1, Math.round(words / 200))} min`].filter(Boolean);
-    d.querySelector('summary')?.insertAdjacentHTML('beforeend', `<span class="dchip">${bits.join(' · ')}</span>`);
+    const bits = [f ? `${f} chart${f > 1 ? 's' : ''}` : '', t ? `${t} table${t > 1 ? 's' : ''}` : ''].filter(Boolean);
+    if (bits.length) d.querySelector('summary')?.insertAdjacentHTML('beforeend', `<span class="dchip">${bits.join(' · ')}</span>`);
   });
-  // chapter openers: what is inside the chapter
   const byCh = new Map();
   spreads.forEach((sp) => { if (!byCh.has(sp.dataset.ch)) byCh.set(sp.dataset.ch, []); byCh.get(sp.dataset.ch).push(sp); });
-  byCh.forEach((list) => {
-    const opener = list.find((sp) => sp.classList.contains('opener'));
-    if (!opener) return;
-    const figs = list.reduce((n, sp) => n + sp.querySelectorAll('[data-fig], [data-special]').length, 0);
-    const tabs = list.reduce((n, sp) => n + sp.querySelectorAll('.tablewrap').length, 0);
-    const words = list.reduce((n, sp) => n + (sp.textContent.match(/\S+/g) || []).length, 0);
-    const pl = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
-    opener.querySelector('.titlepage h1')?.insertAdjacentHTML('afterend', `<p class="chmeta"><span>${pl(list.length - 1, 'screen')}</span>`
-      + `${figs ? `<span>${pl(figs, 'chart')}</span>` : ''}${tabs ? `<span>${pl(tabs, 'table')}</span>` : ''}<span>${Math.max(2, Math.round(words / 230))} min read</span></p>`);
-  });
   // the last screen of each chapter leads into the next one
   const chapters = [...byCh.keys()];
   chapters.forEach((ch, i) => {
@@ -124,5 +112,14 @@ export function enhance() {
     const col = lastSp.querySelector('.page.left .pbody, .page.prose .pbody');
     col?.insertAdjacentHTML('beforeend', `<a class="nextch" href="#${nOpen.id}" style="--n:${color}"><small>Next · ${num}</small>`
       + `<b>${title}</b><i aria-hidden="true">→</i></a>`);
+  });
+  // the verdict and the recommendation stand out as a callout box
+  document.querySelectorAll('#story .pbody > h2').forEach((h) => {
+    if (!/^(The verdict|Investment recommendation)/.test(h.textContent.trim())) return;
+    const box = document.createElement('div');
+    box.className = 'callout';
+    h.before(box);
+    let n = h;
+    while (n && !(n !== h && (n.tagName === 'H2' || n.classList?.contains('nextch')))) { const next = n.nextElementSibling; box.append(n); n = next; }
   });
 }

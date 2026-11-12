@@ -9,7 +9,14 @@ const GRAYS = ['#5f5e5a', '#8a8a85', '#b3b2ab'];
 const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const ord = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : { 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'}`;
 const rankTxt = (r) => (r ? `${ord(r.rank)} of ${r.n} globally · ${ord(r.region_rank)} of ${r.region_n} in East Asia & Pacific` : '');
-const badge = (el, text) => { const b = el.querySelector('.badge') || el.insertAdjacentElement('afterbegin', Object.assign(document.createElement('span'), { className: 'badge' })); b.textContent = text; };
+// the year a snapshot shows is written into its title ("…, 2024") instead of a separate badge
+const badge = (el, text) => {
+  const h = el.querySelector('h4');
+  if (!h) return;
+  const y = (text.match(/\d{4}/) || [''])[0];
+  const yr = h.querySelector('.yr') || h.appendChild(Object.assign(document.createElement('span'), { className: 'yr' }));
+  yr.textContent = y ? `, ${y}` : '';
+};
 
 // ---------- landing: Southeast Asia map ----------
 export async function coverMap(el, kpiEl) {
@@ -280,11 +287,13 @@ export async function tradeSankey(el) {
     chart.setOption(o, true);
   };
   const card = () => {
-    const iso = state.partner; const p = iso && d.partners[iso];
+    // with nothing selected the panel shows the largest export market, so it is never empty
+    const top = d.years[years[years.length - 1]].X.top[0][0];
+    const iso = state.partner || top; const p = d.partners[iso];
     const info = el.querySelector('.pinfo');
     el.querySelector('.extra h5').textContent = p ? `${p.name}: share of Singapore's trade, 2004 to 2024` : 'Click a partner to see its trend';
-    if (!p) { info.textContent = 'Shares of Singapore\'s exports and imports, 2004 to 2024.'; mini.clear(); return; }
-    info.innerHTML = `<b>${esc(p.name)}</b>${p.km ? ` · ${Math.round(p.km).toLocaleString()} km from Singapore` : ''}${p.fta ? ` · FTA: ${esc(p.fta)}` : ''}`;
+    if (!p) { info.textContent = ''; mini.clear(); return; }
+    info.innerHTML = `${state.partner ? '' : 'Largest export market. Click another partner to compare. '}${p.km ? `${Math.round(p.km).toLocaleString()} km from Singapore` : ''}${p.fta ? ` · FTA: ${esc(p.fta)}` : ''}`;
     const ys = Array.from({ length: 21 }, (_, i) => 2004 + i);
     const o = baseOption();
     o.grid = { left: 40, right: 12, top: 26, bottom: 22 };
@@ -466,3 +475,75 @@ export async function fdiExplorer(el) {
 }
 
 // ---------- case study: sticky chart + text steps; the years mentioned in the active step are highlighted ----------
+
+// ---------- infant industry learning curve: the course model with sliders, fitted to our own RCA evidence ----------
+// Home productivity H(t) = A − B/t, t = years since support began; the foreign level is 1. Home overtakes foreign at
+// t* = B / (A − 1), when support should end. "Fit to our data" sets t* to the year the BACI RCA in Figure 9.1 says
+// the advantage arrived, keeping the chosen ceiling A.
+export async function learnCurve(el) {
+  const fig = await getJSON('data/figs/ch09_rca.json');
+  const series = (name) => fig.series.find((s) => s.name === name);
+  const yrs = fig.years;
+  // finished pharma: first year after which the RCA stays above 1 to the end of the data
+  const ph = series('Finished pharma').values;
+  let phFrom = null;
+  for (let i = yrs.length - 1; i >= 0 && ph[i] != null && ph[i] > 1; i--) phFrom = yrs[i];
+  const chip0 = series('Chips').values.find((v) => v != null);
+  const CASES = {
+    chips: { label: 'Chips, support from 1968', start: 1968, color: ECON.SGP,
+      tData: yrs[0] - 1968, note: `BACI starts in ${yrs[0]}, when the chip RCA was already ${chip0.toFixed(2)}, so the crossover came within ${yrs[0] - 1968} years. The fit uses that upper bound.` },
+    pills: { label: 'Medicines, support from 2000', start: 2000, color: '#7c3aed',
+      tData: phFrom - 2000, note: `The RCA in finished medicines has stayed above 1 every year since ${phFrom}, ${phFrom - 2000} years after the Biomedical Sciences Initiative.` },
+  };
+  const rcaNum = document.querySelector('[data-fig="ch09_rca"]')?.dataset.num || 'the RCA chart';
+  const spec = { title: 'Try it: when should support have stopped?',
+    subtitle: 'Home productivity H(t) = A − B/t, t in years since support began, against a foreign level of 1. Parameters are illustrative.',
+    source: `Model: the infant industry learning function from the EC 391 lectures. Calibration: CEPII BACI HS92 V202601, revealed comparative advantage by product group (${rcaNum}), team calculation.` };
+  const chart = cardShell(el, spec, {});
+  el.querySelector('.tbl')?.remove();
+  const p = { case: 'pills', A: 1.6, B: 12 };
+  el.querySelector('.controls').innerHTML = `<div class="seg">${Object.entries(CASES).map(([k, c]) => `<button type="button" data-k="${k}"${k === p.case ? ' class="on"' : ''}>${c.label}</button>`).join('')}</div>`
+    + `<div class="lc"><label>Learning ceiling A <output data-o="A"></output><input type="range" data-p="A" min="1.05" max="3" step="0.05"></label>`
+    + `<label>Learning time B (higher is slower) <output data-o="B"></output><input type="range" data-p="B" min="1" max="60" step="1"></label>`
+    + `<button type="button" class="fit">Fit to our data</button></div>`;
+  el.querySelector('.extra').innerHTML = '<div class="lc-out"></div>';
+  const out = el.querySelector('.lc-out');
+  const sync = () => {
+    el.querySelectorAll('[data-p]').forEach((i) => { i.value = p[i.dataset.p]; });
+    el.querySelectorAll('[data-o]').forEach((o) => { o.textContent = p[o.dataset.o].toFixed(o.dataset.o === 'A' ? 2 : 0); });
+    el.querySelectorAll('.seg button').forEach((b) => b.classList.toggle('on', b.dataset.k === p.case));
+  };
+  const draw = () => {
+    const c = CASES[p.case];
+    const tStar = p.B / (p.A - 1);
+    const cross = c.start + tStar;
+    const end = Math.max(2040, Math.ceil(cross) + 4);
+    const xs = []; for (let y = c.start + 1; y <= end; y++) xs.push(y);
+    const o = baseOption();
+    o.grid = { left: 44, right: 74, top: 30, bottom: 30 };
+    o.tooltip.trigger = 'axis';
+    o.tooltip.valueFormatter = (v) => (v == null ? '' : v.toFixed(2));
+    o.xAxis = { type: 'value', min: c.start, max: end, axisLabel: { formatter: (v) => String(v) }, splitLine: { show: false } };
+    o.yAxis = { type: 'value', min: 0, max: Math.max(2, Math.ceil(p.A * 2) / 2),
+      splitLine: { lineStyle: { color: LINE, type: 'dashed' } } };
+    o.series = [
+      { name: 'Home H(t)', type: 'line', showSymbol: false, data: xs.map((y) => [y, Math.max(0, p.A - p.B / (y - c.start))]), lineStyle: { color: c.color, width: 3 }, itemStyle: { color: c.color },
+        endLabel: { show: true, formatter: 'Home', color: c.color, fontWeight: 600 },
+        markLine: { silent: true, symbol: 'none', label: { formatter: (m) => m.name, color: INK, fontWeight: 600 }, lineStyle: { color: INK, type: 'dotted' },
+          data: [{ name: `Crossover ${Math.round(cross)}`, xAxis: Math.min(cross, end) }] },
+        markArea: { silent: true, itemStyle: { color: 'rgba(20,33,46,.05)' }, label: { show: true, position: 'insideTop', color: MUTED, formatter: 'today' },
+          data: [[{ xAxis: 2025.5 }, { xAxis: 2026.5 }]] } },
+      { name: 'Foreign', type: 'line', showSymbol: false, data: xs.map((y) => [y, 1]), lineStyle: { color: MUTED, width: 1.5, type: 'dashed' }, itemStyle: { color: MUTED },
+        endLabel: { show: true, formatter: 'Foreign', color: MUTED } },
+    ];
+    chart.setOption(o, true);
+    const ok = Math.abs(tStar - c.tData) < 0.5;
+    out.innerHTML = `<p><b>Home overtakes foreign in ${Math.round(cross)}</b>, ${tStar.toFixed(1)} years after support began. `
+      + `In the model support should end then, and the industry should export without it.</p>`
+      + `<p class="lc-data">${ok ? '<b>Fitted to our data.</b> ' : ''}${c.note}</p>`;
+  };
+  el.querySelectorAll('[data-p]').forEach((i) => i.addEventListener('input', () => { p[i.dataset.p] = Number(i.value); sync(); draw(); }));
+  el.querySelector('.seg').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { p.case = b.dataset.k; sync(); draw(); } });
+  el.querySelector('.fit').addEventListener('click', () => { p.B = Math.min(60, Math.max(1, Math.round(CASES[p.case].tData * (p.A - 1)))); sync(); draw(); });
+  sync(); draw();
+}

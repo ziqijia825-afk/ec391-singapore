@@ -27,25 +27,6 @@ export function initStory(specials) {
     if (e.target.open) e.target.querySelectorAll('[data-fig], [data-special]').forEach(run);
   }, true);
 
-  // ---------- previous / next section links under each text column ----------
-  const label = (sp) => {  // the screen's question, without its course tag; full-width screens use their running head
-    const h = sp.querySelector('.pbody h2:not(.kf), .titlepage h1');
-    if (h) {
-      const c = h.cloneNode(true);
-      c.querySelectorAll('.tag').forEach((t) => t.remove());
-      return c.textContent.replace(/\s*\(continued\)$/, '').trim();
-    }
-    const run = sp.querySelector('.runhead')?.textContent || '';
-    return run.split('\u00b7').pop().trim();
-  };
-  spreads.forEach((sp, i) => {
-    const col = sp.querySelector('.page.left .pbody, .page.prose .pbody');
-    if (!col || sp.classList.contains('opener')) return;
-    const prev = spreads[i - 1], next = spreads[i + 1];
-    const link = (t, arrow) => (t ? `<a href="#${t.id}"><b>${arrow}</b><span>${label(t)}</span></a>` : '');
-    col.insertAdjacentHTML('beforeend', `<nav class="secnav" aria-label="Sections">${link(prev, '&uarr;')}${link(next, '&darr;')}</nav>`);
-  });
-
   // ---------- where the reader is ----------
   let current = null;
   const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
@@ -70,7 +51,7 @@ export function initStory(specials) {
   const count = new Map();
   spreads.forEach((sp) => {
     if (sp.classList.contains('opener')) return;
-    sp.querySelectorAll('.page.left .pbody > h2, .page.prose .pbody > h2').forEach((h) => {
+    sp.querySelectorAll('.page.left .pbody > h2, .page.prose .pbody > h2, .pbody > .callout > h2').forEach((h) => {
       if (h.classList.contains('cont') || h.classList.contains('kf')) return;
       const n = (count.get(sp.dataset.ch) || 0) + 1;
       count.set(sp.dataset.ch, n);

@@ -1,12 +1,12 @@
 // Page wiring: the cover chart, the column of screens, and the global year control.
 import { state, set, YEARS, getJSON } from './state.js';
-import { coverMap, sgMap, wgiRadar, tradeSankey, rcaTreemap, gvcNetwork, fdiExplorer } from './components.js';
+import { coverMap, sgMap, wgiRadar, tradeSankey, rcaTreemap, gvcNetwork, fdiExplorer, learnCurve } from './components.js';
 import { initStory } from './story.js';
 import { sleepWhenHidden } from './chart.js';
 import { enhance } from './enhance.js';
 import { ICON } from './icons.js';
 
-const SPECIALS = { sgmap: sgMap, wgi: wgiRadar, sankey: tradeSankey, treemap: rcaTreemap, gvc: gvcNetwork, fdi: fdiExplorer };
+const SPECIALS = { sgmap: sgMap, wgi: wgiRadar, sankey: tradeSankey, treemap: rcaTreemap, gvc: gvcNetwork, fdi: fdiExplorer, learncurve: learnCurve };
 
 function setupTime() {
   const input = document.getElementById('year');

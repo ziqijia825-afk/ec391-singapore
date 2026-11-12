@@ -29,50 +29,15 @@ export const baseOption = () => ({
     confine: true, extraCssText: 'box-shadow:0 8px 24px rgba(20,33,46,.14);border-radius:8px;' },
 });
 
-// ---------- source badges: the databases a chart draws on, as small chips ----------
-const DBS = [['BACI', 'CEPII BACI'], ['TiVA', 'OECD TiVA'], ['World Development Indicators', 'World Bank'], ['World Bank', 'World Bank'],
-  ['WDI', 'World Bank'], ['SingStat', 'SingStat'], ['Singapore Department of Statistics', 'SingStat'], ['Comtrade', 'UN Comtrade'],
-  ['UNCTAD', 'UNCTAD'], ['Penn World', 'Penn World Table'], ['UNDP', 'UNDP'], ['WTO', 'WTO'], ['WITS', 'WITS'], ['METI', 'METI'],
-  ['Transparency International', 'Transparency Intl'], ['Our World in Data', 'OWID'], ['EDB', 'EDB'], ['geoBoundaries', 'geoBoundaries']];
-function sourceBadges(src = '') {
-  const seen = [...new Set(DBS.filter(([k]) => src.includes(k)).map(([, v]) => v))];
-  return seen.length ? `<span class="dbs">${seen.map((v) => `<i>${esc(v)}</i>`).join('')}</span>` : '';
-}
-
-// ---------- stat strip under a chart: Singapore's latest and first values, and how the others compare ----------
-function statStrip(spec) {
-  const cell = (k, v) => `<div><small>${esc(k)}</small><b>${esc(v)}</b></div>`;
-  if (spec.kind === 'line') {
-    const s = spec.series.find((x) => x.key === 'SGP') || spec.series.find((x) => x.focus);
-    if (!s) return '';
-    const idx = s.values.map((v, i) => (v == null ? -1 : i)).filter((i) => i >= 0);
-    if (idx.length < 2) return '';
-    const [f, l] = [idx[0], idx[idx.length - 1]];
-    const others = spec.series.filter((x) => x !== s && !['EAS', 'WLD'].includes(x.key) && x.values[l] != null);
-    const best = others.sort((a, b) => b.values[l] - a.values[l])[0];
-    const name = s.key === 'SGP' ? 'Singapore' : s.name;
-    return `<div class="figstrip">${cell(`${name}, ${spec.years[l]}`, s.labels[l])}${cell(`${name}, ${spec.years[f]}`, s.labels[f])}`
-      + `${best ? cell(`Highest of the others, ${spec.years[l]}`, `${best.name} ${best.labels[l]}`) : ''}</div>`;
-  }
-  if (spec.kind === 'bar') {
-    const i = spec.keys.indexOf('SGP');
-    if (i < 0) return '';
-    return `<div class="figstrip">${cell('Singapore', spec.labels[i])}${cell('Position in this chart', `${i + 1} of ${spec.keys.length}`)}`
-      + `${i > 0 ? cell('Top', `${spec.cats[0]} ${spec.labels[0]}`) : ''}</div>`;
-  }
-  return '';
-}
-
 // ---------- card shell: title, subtitle, plot, source line, data table, PNG link ----------
-export function cardShell(el, spec, { tall = false, badge = '' } = {}) {
+export function cardShell(el, spec, { tall = false } = {}) {  // (a year badge is no longer drawn; the year control sits in the top bar)
   el.classList.add('card');
   el.innerHTML = `
-    ${badge ? `<span class="badge">${esc(badge)}</span>` : ''}
     <h4>${el.dataset.num ? `<span class="fignum">${esc(el.dataset.num)}</span> ` : ''}${esc(spec.title)}</h4><div class="sub">${esc(spec.subtitle)}</div>
     <div class="controls"></div>
     <div class="plot${tall ? ' tall' : ''}" role="img" aria-label="${esc(spec.title)}"></div>
     <div class="extra"></div>
-    <div class="foot"><div class="src">${sourceBadges(spec.source)}${esc(spec.source)}</div>
+    <div class="foot"><div class="src">${esc(spec.source)}</div>
       <div class="actions"><button type="button" class="tbl" title="Show the numbers behind the chart">Data</button>
       ${spec.png ? `<a class="btn" href="${spec.png}" download title="Download the static figure">PNG</a>` : ''}
       <button type="button" class="lnk" title="Copy a link to this chart" aria-label="Copy a link to this chart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></button></div></div>
@@ -285,7 +250,6 @@ export async function renderFigure(el, id) {
   else if (spec.kind === 'radar') o = radarOption(spec.dims, spec.series, spec.vmax, () => '');
   chart.setOption(o);
   chart.resize();
-  el.querySelector('.foot')?.insertAdjacentHTML('beforebegin', statStrip(spec));
   if (spec.kind === 'line') lineFollow(chart, spec, o);
   registry.set(id, chart);
   return { chart, spec };

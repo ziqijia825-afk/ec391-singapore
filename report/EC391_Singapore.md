@@ -810,6 +810,8 @@ Singapore twice tried to grow a high technology industry by courting foreign fir
 ## The course argument
 **Comparative advantage can be learned, if support stops once the learning is done.** In the infant industry model a new industry's productivity rises with experience, so temporary help lets it ride down the learning curve until it can compete and export on its own. Most countries gave that help with tariffs. Singapore could not, with a tiny home market and zero tariffs (Chapter 7), so the Economic Development Board offered foreign firms tax holidays, ready built estates, training and research money instead, with pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
 
+
+
 ## The two bets
 
 **Chips from 1968, pills from 2000.** National Semiconductor opened an assembly plant in 1968, followed by Fairchild and Texas Instruments, and the state backed Chartered Semiconductor opened the first wafer fab in 1987, moving the industry from assembly into fabrication ([EDB](https://www.edb.gov.sg/en/business-insights/insights/made-in-singapore-60-years-of-manufacturing.html)). The Biomedical Sciences Initiative of June 2000 made medicines the fourth pillar of manufacturing, with Tuas Biomedical Park, the Biopolis research complex of 2003 and plants from Pfizer, GSK, Novartis, Lonza and others.

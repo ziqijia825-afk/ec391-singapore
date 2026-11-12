@@ -123,8 +123,11 @@ structure, data routes and methods only; never their text, charts or numbers (th
   Inter, one accent colour per chapter (`BANNER_COLORS` in build.py); small UI: numbered chapter chips, a Contents
   drawer, a key-number strip with line icons (`js/icons.js`), a dictionary-style fact grid (`ch01_facts.md`), atlas list
   and detail cards with map zoom controls. `js/enhance.js` threads small UI through the text (number highlights, peer colour dots,
-  glossary tooltips with the team's own definitions, counts on "More" toggles, chapter meta chips, next-chapter cards);
-  `chart.js` adds a stat strip, source badges and a copy-link button under each chart. Figures and tables are numbered per chapter; `## Heading {Feyrer 2009}` becomes a course-reading tag; the
+  glossary tooltips with the team's own definitions, chart and table counts on "More" toggles, next-chapter cards, a
+  callout box for the Ch. 9 verdict and the investment recommendation). Nov 13: fine print cut after a second
+  comparison with Argentina (no running heads, prev/next links, source badges, stat strips, chapter meta chips or year
+  badges; the year sits in the title; Data/PNG/link buttons show on hover). Ch. 9 has a learning-curve model
+  (`learncurve` in components.js, H(t) = A − B/t, sliders, "Fit to our data" from the BACI RCA series). Figures and tables are numbered per chapter; `## Heading {Feyrer 2009}` becomes a course-reading tag; the
   Ch. 1 atlas (`site/data/atlas.json`) has 7 places and 12 partners with sourced cards. ECharts 5.5.0 vendored;
   `_site/article/*.html` is the static version and the Markdown deliverable `report/EC391_Singapore.md`. In `text/*.md`, `<!-- include: data/derived/X.md -->` inserts a
   table and `<!-- interactive: NAME -->` places a component (sgmap, sankey, treemap, gvc, fdi). Build adds `?v=` cache

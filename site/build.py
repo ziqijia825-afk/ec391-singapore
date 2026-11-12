@@ -279,8 +279,7 @@ def visible_len(b):
 
 
 def page_html(cls, runhead, inner, folio):
-    return (f'<section class="page {cls}"><div class="runhead">{runhead}</div><div class="pbody">{inner}</div>'
-            f'<div class="folio">{folio}</div></section>')
+    return f'<section class="page {cls}"><div class="pbody">{inner}</div></section>'  # running heads and folios dropped
 
 
 def number_figures(stem, html):
