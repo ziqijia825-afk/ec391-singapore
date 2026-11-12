@@ -53,6 +53,8 @@ The Heckscher Ohlin model predicts that a country exports goods that use its abu
 
 <!-- include: data/derived/ch04_endowments.md -->
 
+Nunn (2007) adds an institutional source of comparative advantage that fits Singapore better than endowments alone. Countries that enforce contracts well specialize in goods whose inputs are made to order for a particular buyer, and in his estimates contract enforcement explains more of the world's pattern of trade than capital and skilled labour combined. Singapore ranks 18th of 207 economies on the World Bank's rule of law indicator (Chapter 2). Its remaining goods advantage is in electronics and instruments (RCA 1.4), where Nunn's most contract intensive industries include electronic components and analytical and testing instruments. The two goods sectors that lost their advantage between 2004 and 2024, refined petroleum and chemicals and plastics, contain several of his least contract intensive industries, among them petroleum refineries, plastic resins and synthetic rubber. In his data contract intensive industries are skill intensive and less capital intensive than average, which suggests that Singapore's skills and courts matter more for its current advantages than its high capital per worker.
+
 <details class="more" markdown="1">
 <summary>More: caveats to the Heckscher Ohlin reading</summary>
 
