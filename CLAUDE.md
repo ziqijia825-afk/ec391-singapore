@@ -78,15 +78,19 @@ Nov 29 text rewritten (Thanksgiving, no meeting) · Dec 6 case + peer review, re
 
 ## Status (Nov 11, 2026)
 
-- Done: project scaffold; first Ch. 2 chart (GDP current US$, SGP vs peers). Its numbers came through a web-reading tool,
-  so **re-run `scripts/fetch_worldbank.py` and regenerate the chart from the official CSV**; then verify SGP 2024 ≈ $572.9bn
-  on data.worldbank.org.
+- Done: project scaffold; WDI + WGI fetched by the Fetch data workflow (Nov 12, `data/raw/wdi/`); first Ch. 2 chart
+  (GDP current US$, SGP vs peers) redrawn from the official CSV by `scripts/ch02_gdp.py` (SGP 2024 = $572.9bn).
+- Charts: shared style in `scripts/chart_style.py` (`line_chart`, `wide`, `load`, `countries`, `retrieved`); one script per
+  figure, `scripts/chNN_topic.py`. Local setup: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`.
+  The World Bank API is not reachable from Estella's Mac (times out): fetch via the GitHub workflow, then `git pull`.
+- WGI: the API serves the estimates only as `GOV_WGI_XX.EST` (saved as `XX.EST.csv`); percentile ranks (`XX.PER.RNK`)
+  are not available, so compute global/regional ranks from the estimates.
 - Notes found during planning: World Bank WDI likely has no $2.15 poverty or Gini data for Singapore; Singapore's official
   Gini is published by SingStat (household income from work, before/after taxes and transfers): ask the professor
   whether SingStat is acceptable. B-READY 2024 (first edition) covers Singapore. OECD TiVA 2025 edition covers Singapore.
   Much of Singapore's exports are re-exports: use SingStat's domestic exports vs re-exports split in Ch. 3–4.
   A lot of Singapore's FDI passes through regional HQ / holding companies: mention in Ch. 6.
-- Next for Member A: run the fetch; Ch. 2 charts (GDP per capita incl. PPP, growth, WGI radar, CPI/LPI/B-READY rank
+- Next for Member A: Ch. 2 charts (GDP per capita incl. PPP, growth, WGI radar, CPI/LPI/B-READY rank
   tables with global + regional rank); then Ch. 5 from TiVA (download from data-explorer.oecd.org if no API route works).
 - Open questions for the professor: SingStat OK as a source? Compute RCA ourselves or OEC values OK? Required
   platform/format for the site? Is a class presentation required? Is AI-drafted text OK?

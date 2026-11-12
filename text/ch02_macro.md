@@ -4,14 +4,20 @@
 
 ## Key finding
 
-Singapore's GDP grew about fivefold in 20 years, from $115bn in 2004 to $573bn in 2024 (current US dollars),
-overtaking Malaysia, Hong Kong SAR and Vietnam.
+Singapore's GDP grew about fivefold in 20 years, from $115bn in 2004 to $573bn in 2024 (current US dollars).
+It overtook Malaysia in 2015 and Hong Kong SAR in 2017 and has stayed ahead of Vietnam throughout. Its global rank rose
+from 43rd of 209 economies in 2004 to 26th of 200 in 2024; in East Asia & Pacific it rose from 9th of 36 to 6th of 33,
+behind only China, Japan, Korea, Australia and Indonesia.
 
 ## Size and growth
 
 ![Singapore's economy grew about fivefold in 20 years](../figures/ch02_gdp_current_usd.png)
 
-*Status: numbers not yet checked against data.worldbank.org.*
+*Note: ranks count economies with data that year (World Bank aggregates excluded); regional rank uses the World Bank
+"East Asia & Pacific" region.*
+
+*Status: chart redrawn from the official World Bank CSV (retrieved Nov 12, 2026) by `scripts/ch02_gdp.py`.
+Owner to spot-check 2–3 numbers on data.worldbank.org.*
 
 ## Still to come
 
