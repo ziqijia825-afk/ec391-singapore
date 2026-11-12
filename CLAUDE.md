@@ -83,11 +83,16 @@ Nov 29 text rewritten (Thanksgiving, no meeting) · Dec 6 case + peer review, re
 - Charts: shared style in `scripts/chart_style.py` (`line_chart`, `wide`, `load`, `countries`, `retrieved`); one script per
   figure, `scripts/chNN_topic.py`. Local setup: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`.
   The World Bank API is not reachable from Estella's Mac (times out): fetch via the GitHub workflow, then `git pull`.
-- WGI: the API serves the estimates only as `GOV_WGI_XX.EST` (saved as `XX.EST.csv`); percentile ranks (`XX.PER.RNK`)
-  are not available, so compute global/regional ranks from the estimates.
+- Fetch covers 2004–2025 (Nov 12 re-run). Charts stay on 2004–2024 (sliced in each script) unless the team switches;
+  WDI already has 2025 GDP for 234 economies (SGP $603.9bn).
+- WGI: the API serves `GOV_WGI_XX.EST` (estimate) and `GOV_WGI_XX.SC` (governance score 0–100, 2025 edition), saved as
+  `XX.EST.csv` / `XX.SC.csv`. Percentile ranks (`PER.RNK`) are not served: compute global/regional ranks from the scores.
+- B-READY: all 43 `IC.BRE.*` indicators (10 topics × 3 pillars + overall pillars) are in `data/raw/wdi/`; one edition,
+  dated 2025 in the API, 100 economies (SGP Business Location 80.8, 2nd of 100). Rank only among covered economies.
+- Ch. 7 tariffs: `TM.TAX.MRCH.{SM,WM}.{AR,FN}.ZS` downloaded (SGP data ends 2022). Tariff peaks are not in the API.
 - Notes found during planning: World Bank WDI likely has no $2.15 poverty or Gini data for Singapore; Singapore's official
   Gini is published by SingStat (household income from work, before/after taxes and transfers): ask the professor
-  whether SingStat is acceptable. B-READY 2024 (first edition) covers Singapore. OECD TiVA 2025 edition covers Singapore.
+  whether SingStat is acceptable. OECD TiVA 2025 edition covers Singapore.
   Much of Singapore's exports are re-exports: use SingStat's domestic exports vs re-exports split in Ch. 3–4.
   A lot of Singapore's FDI passes through regional HQ / holding companies: mention in Ch. 6.
 - Next for Member A: Ch. 2 charts (GDP per capita incl. PPP, growth, WGI radar, CPI/LPI/B-READY rank

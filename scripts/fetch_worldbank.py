@@ -50,12 +50,12 @@ INDICATORS = [
     ("BM.KLT.DINV.CD.WD", 2, "C ch6 FDI net outflows US$"),
     ("BM.KLT.DINV.WD.GD.ZS", 2, "C ch6 FDI net outflows % of GDP"),
     ("NE.GDI.FTOT.CD", 2, "C ch6 gross fixed capital formation US$"),
-    # Ch. 7 - Member C: tariffs (applied and MFN, simple and trade-weighted mean, all products) and tariff peaks
+    # Ch. 7 - Member C: tariffs (applied and MFN, simple and trade-weighted mean, all products)
     ("TM.TAX.MRCH.SM.AR.ZS", 2, "C ch7 tariff rate, applied, simple mean %"),
     ("TM.TAX.MRCH.WM.AR.ZS", 2, "C ch7 tariff rate, applied, weighted mean %"),
     ("TM.TAX.MRCH.SM.FN.ZS", 2, "C ch7 tariff rate, MFN, simple mean %"),
     ("TM.TAX.MRCH.WM.FN.ZS", 2, "C ch7 tariff rate, MFN, weighted mean %"),
-    ("TM.TAX.MRCH.IP.ZS", 2, "C ch7 share of tariff lines with international peaks %"),
+    # Tariff peaks: TM.TAX.MRCH.IP.ZS is not served by the API (Nov 2026); get peaks from WITS/TRAINS by hand.
 ]
 
 
