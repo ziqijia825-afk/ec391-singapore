@@ -1,0 +1,141 @@
+{
+  "hdi": {
+    "value_2023": 0.946,
+    "rank": 13,
+    "n": 193,
+    "eap_rank": 3,
+    "eap_n": 30,
+    "peers_2023": {
+      "SGP": 0.946,
+      "MYS": 0.819,
+      "HKG": 0.955,
+      "VNM": 0.766
+    },
+    "eap_avg_2023": 0.775,
+    "world_2023": 0.756,
+    "sgp_2004": 0.905
+  },
+  "structure": {
+    "table": {
+      "SGP": {
+        "Agriculture": 0.0,
+        "Manufacturing": 16.3,
+        "Services": 73.1
+      },
+      "MYS": {
+        "Agriculture": 8.1,
+        "Manufacturing": 22.5,
+        "Services": 53.7
+      },
+      "HKG": {
+        "Agriculture": 0.0,
+        "Manufacturing": 0.9,
+        "Services": 91.5
+      },
+      "VNM": {
+        "Agriculture": 12.0,
+        "Manufacturing": 24.3,
+        "Services": 42.4
+      }
+    },
+    "years": {
+      "Agriculture": {
+        "SGP": 2024,
+        "MYS": 2024,
+        "HKG": 2024,
+        "VNM": 2024
+      },
+      "Manufacturing": {
+        "SGP": 2024,
+        "MYS": 2024,
+        "HKG": 2024,
+        "VNM": 2024
+      },
+      "Services": {
+        "SGP": 2024,
+        "MYS": 2024,
+        "HKG": 2024,
+        "VNM": 2024
+      }
+    }
+  },
+  "facts": {
+    "SP.POP.TOTL": {
+      "value": 6036860.0,
+      "year": 2024,
+      "rank": 113,
+      "n": 217,
+      "region_rank": 16,
+      "region_n": 37
+    },
+    "AG.LND.TOTL.K2": {
+      "value": 724.8,
+      "year": 2024,
+      "rank": 181,
+      "n": 214,
+      "region_rank": 27,
+      "region_n": 37
+    },
+    "EN.POP.DNST": {
+      "value": 8329.00110375276,
+      "year": 2024,
+      "rank": 3,
+      "n": 214,
+      "region_rank": 2,
+      "region_n": 37
+    },
+    "SP.URB.TOTL.IN.ZS": {
+      "value": 100.0,
+      "year": 2024,
+      "rank": 1,
+      "n": 217,
+      "region_rank": 1,
+      "region_n": 37
+    },
+    "SP.DYN.LE00.IN": {
+      "value": 83.3463414634146,
+      "year": 2024,
+      "rank": 15,
+      "n": 217,
+      "region_rank": 5,
+      "region_n": 37
+    },
+    "SE.TER.ENRR": {
+      "value": 97.2886546863037,
+      "year": 2023,
+      "rank": 11,
+      "n": 128,
+      "region_rank": 5,
+      "region_n": 23
+    },
+    "SP.POP.65UP.TO.ZS": {
+      "value": 13.6562182859265,
+      "year": 2024,
+      "rank": 72,
+      "n": 217,
+      "region_rank": 9,
+      "region_n": 37
+    },
+    "hdi_2023": {
+      "value": 0.946,
+      "rank": 13,
+      "n": 193,
+      "region_rank": 3,
+      "region_n": 30
+    },
+    "mys_2023": {
+      "value": 11.98999977,
+      "rank": 42,
+      "n": 193,
+      "region_rank": 7,
+      "region_n": 30
+    },
+    "eys_2023": {
+      "value": 16.74227905,
+      "rank": 29,
+      "n": 195,
+      "region_rank": 5,
+      "region_n": 31
+    }
+  }
+}

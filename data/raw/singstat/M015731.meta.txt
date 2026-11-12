@@ -1,0 +1,7 @@
+Gross Domestic Product At Current Prices, By Industry (SSIC 2020), Annual
+Source: SINGAPORE DEPARTMENT OF STATISTICS
+Last updated: 10/02/2026
+Downloaded: 12/11/2026
+https://tablebuilder.singstat.gov.sg/table/TS/M015731
+
+Data may not add up to the total due to rounding. For more information on national accounts methodologies, please visit Singstat website (https://www.singstat.gov.sg/find-data/explore-data-themes/economy-prices/national-accounts/related-information) to view and download related publications.

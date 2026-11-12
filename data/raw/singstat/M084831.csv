@@ -1,0 +1,996 @@
+series_no,series,unit,period,value
+1,Total,Millions Of Singapore Dollars,1998,144197.2
+1,Total,Millions Of Singapore Dollars,1999,170820.8
+1,Total,Millions Of Singapore Dollars,2000,191452.5
+1,Total,Millions Of Singapore Dollars,2001,216454.5
+1,Total,Millions Of Singapore Dollars,2002,229318.6
+1,Total,Millions Of Singapore Dollars,2003,246185.4
+1,Total,Millions Of Singapore Dollars,2004,276819.2
+1,Total,Millions Of Singapore Dollars,2005,323821.1
+1,Total,Millions Of Singapore Dollars,2006,370494.7
+1,Total,Millions Of Singapore Dollars,2007,466567.4
+1,Total,Millions Of Singapore Dollars,2008,510585.2
+1,Total,Millions Of Singapore Dollars,2009,574703.6
+1,Total,Millions Of Singapore Dollars,2010,665113.4
+1,Total,Millions Of Singapore Dollars,2011,702565.2
+1,Total,Millions Of Singapore Dollars,2012,808461.3
+1,Total,Millions Of Singapore Dollars,2013,905760.4
+1,Total,Millions Of Singapore Dollars,2014,1112348.1
+1,Total,Millions Of Singapore Dollars,2015,1268050.1
+1,Total,Millions Of Singapore Dollars,2016,1352400.5
+1,Total,Millions Of Singapore Dollars,2017,1562234.7
+1,Total,Millions Of Singapore Dollars,2018,1731382.7
+1,Total,Millions Of Singapore Dollars,2019,1915069.5
+1,Total,Millions Of Singapore Dollars,2020,2126744.8
+1,Total,Millions Of Singapore Dollars,2021,2466816.1
+1,Total,Millions Of Singapore Dollars,2022,2615819.9
+1,Total,Millions Of Singapore Dollars,2023,2858847.9
+1,Total,Millions Of Singapore Dollars,2024,3130445.8
+1.1,Manufacturing,Millions Of Singapore Dollars,1998,51930.9
+1.1,Manufacturing,Millions Of Singapore Dollars,1999,58139.6
+1.1,Manufacturing,Millions Of Singapore Dollars,2000,69077.6
+1.1,Manufacturing,Millions Of Singapore Dollars,2001,81186.2
+1.1,Manufacturing,Millions Of Singapore Dollars,2002,84050.6
+1.1,Manufacturing,Millions Of Singapore Dollars,2003,90021.1
+1.1,Manufacturing,Millions Of Singapore Dollars,2004,95234.9
+1.1,Manufacturing,Millions Of Singapore Dollars,2005,103666
+1.1,Manufacturing,Millions Of Singapore Dollars,2006,107756.1
+1.1,Manufacturing,Millions Of Singapore Dollars,2007,116483.2
+1.1,Manufacturing,Millions Of Singapore Dollars,2008,105322.8
+1.1,Manufacturing,Millions Of Singapore Dollars,2009,121552.5
+1.1,Manufacturing,Millions Of Singapore Dollars,2010,132469.5
+1.1,Manufacturing,Millions Of Singapore Dollars,2011,139782.5
+1.1,Manufacturing,Millions Of Singapore Dollars,2012,127540.7
+1.1,Manufacturing,Millions Of Singapore Dollars,2013,159496.4
+1.1,Manufacturing,Millions Of Singapore Dollars,2014,156682.6
+1.1,Manufacturing,Millions Of Singapore Dollars,2015,166433
+1.1,Manufacturing,Millions Of Singapore Dollars,2016,168934.7
+1.1,Manufacturing,Millions Of Singapore Dollars,2017,180971.7
+1.1,Manufacturing,Millions Of Singapore Dollars,2018,235413.5
+1.1,Manufacturing,Millions Of Singapore Dollars,2019,231109.2
+1.1,Manufacturing,Millions Of Singapore Dollars,2020,241402.9
+1.1,Manufacturing,Millions Of Singapore Dollars,2021,267895.1
+1.1,Manufacturing,Millions Of Singapore Dollars,2022,295292.5
+1.1,Manufacturing,Millions Of Singapore Dollars,2023,262771.2
+1.1,Manufacturing,Millions Of Singapore Dollars,2024,249584.8
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,1998,478.9
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,1999,504.2
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2000,426.1
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2001,472.1
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2002,447.2
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2003,465.7
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2004,498.8
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2005,621.4
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2006,1334.5
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2007,1627.4
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2008,1378.8
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2009,2780
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2010,3188.4
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2011,3763.4
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2012,4083.3
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2013,5965
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2014,6733.5
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2015,8179.2
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2016,8951.5
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2017,18800.1
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2018,34679.8
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2019,40718.2
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2020,34018.7
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2021,34485.6
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2022,33660.4
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2023,33092.5
+1.1.1,"Food, Beverages & Tobacco",Millions Of Singapore Dollars,2024,33234.1
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,1998,734.7
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,1999,703.8
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2000,744.9
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2001,723.1
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2002,777
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2003,634
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2004,651.8
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2005,813.8
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2006,649.2
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2007,668.9
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2008,711.9
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2009,504.9
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2010,684.8
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2011,912.6
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2012,757.6
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2013,674.3
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2014,424.3
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2015,515.8
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2016,465.6
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2017,565.4
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2018,560.9
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2019,830.5
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2020,854.2
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2021,739.1
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2022,789
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2023,870.9
+1.1.2,"Paper, Paper Products & Printing",Millions Of Singapore Dollars,2024,899.8
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,1998,3858
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,1999,4674.7
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2000,7183.3
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2001,12272.5
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2002,12620
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2003,13636.9
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2004,13665.5
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2005,13937.8
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2006,14335.7
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2007,14146.3
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2008,14569.8
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2009,19689.6
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2010,20625.4
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2011,21427.5
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2012,20748.8
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2013,24952.9
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2014,26148.3
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2015,19173.1
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2016,21911.8
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2017,23326.9
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2018,26895.1
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2019,26611.2
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2020,24616.1
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2021,27871.1
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2022,34624
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2023,37840.7
+1.1.3,Refined Petroleum Products,Millions Of Singapore Dollars,2024,39746.9
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,1998,4470.7
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,1999,3442.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2000,3462.1
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2001,4202.6
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2002,5902.3
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2003,5212.1
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2004,6478.7
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2005,7458.7
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2006,6706.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2007,6889.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2008,7092.5
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2009,8147.1
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2010,9108.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2011,9336.6
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2012,11085.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2013,12181.9
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2014,11925.1
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2015,15181.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2016,17237.3
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2017,16917.9
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2018,18386.3
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2019,20197.8
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2020,20376.1
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2021,23286.6
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2022,27754.6
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2023,26338
+1.1.4,Chemical & Chemical Products,Millions Of Singapore Dollars,2024,21485.1
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,1998,9956.5
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,1999,11105.7
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2000,13234.8
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2001,17443.1
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2002,21991.1
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2003,29312.9
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2004,31864.9
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2005,38679.8
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2006,38339.7
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2007,47879.8
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2008,30872.5
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2009,35909.5
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2010,41088.2
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2011,42979.3
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2012,28320.4
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2013,33521.9
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2014,14800.9
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2015,21719.9
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2016,13688.4
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2017,13128.3
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2018,30439.4
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2019,13101.9
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2020,15752
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2021,14935.1
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2022,13863.5
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2023,15287.1
+1.1.5,Pharmaceutical & Biological Products,Millions Of Singapore Dollars,2024,9779.2
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,1998,649.2
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,1999,746.6
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2000,647
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2001,730.3
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2002,818.2
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2003,959.4
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2004,1044.9
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2005,940
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2006,1153.9
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2007,1002
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2008,1313.2
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2009,1211.8
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2010,1394.6
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2011,862.6
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2012,995.5
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2013,1604.1
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2014,1489.2
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2015,1310.5
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2016,1603.4
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2017,1679.8
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2018,1939.9
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2019,2004.3
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2020,2216.6
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2021,1790
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2022,2307.4
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2023,3518.3
+1.1.6,Rubber & Plastic Products,Millions Of Singapore Dollars,2024,2890.8
+1.1.7,Basic Metals,Millions Of Singapore Dollars,1998,23.5
+1.1.7,Basic Metals,Millions Of Singapore Dollars,1999,47
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2000,35.6
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2001,35.1
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2002,37.7
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2003,35.1
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2004,40
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2005,22.8
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2006,334.9
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2007,625
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2008,487.3
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2009,168.3
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2011,222.8
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2013,365.6
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2014,303.4
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2016,116.9
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2017,144.1
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2018,-111.2
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2019,-124.4
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2020,-157.9
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2021,62.2
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2022,35.5
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2023,93.1
+1.1.7,Basic Metals,Millions Of Singapore Dollars,2024,80
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,1998,1065.9
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,1999,993.1
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2000,1101.7
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2001,1173.5
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2002,1308.3
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2003,1229.9
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2004,1318
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2005,1366.8
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2006,1469
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2007,1827
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2008,1885.5
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2009,1523.9
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2010,1731.7
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2011,2027.8
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2012,2324.8
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2013,3280.5
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2014,2778.7
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2015,2755.5
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2016,2967.9
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2017,3526.4
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2018,3510.4
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2019,3490.7
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2020,3242
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2021,3400
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2022,3134.4
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2023,2976.3
+1.1.8,Fabricated Metal Products,Millions Of Singapore Dollars,2024,3260.6
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,1998,1940.5
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,1999,2310.4
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2000,2462.5
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2001,3295.8
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2002,3472.2
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2003,2778.8
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2004,2690.7
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2005,3553.1
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2006,4294.9
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2007,5184.9
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2008,6192.6
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2009,5845.6
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2010,8395.8
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2011,9759.6
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2012,10798.5
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2013,12975.1
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2014,15395.7
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2015,16291.9
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2016,18496.6
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2017,22041
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2018,16448.3
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2019,17471.4
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2020,17125.1
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2021,16398.9
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2022,17982.5
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2023,15370.8
+1.1.9,Machinery & Equipment,Millions Of Singapore Dollars,2024,16158
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,1998,1245.5
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,1999,1089
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2000,1137.9
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2001,1396.6
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2002,1115.1
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2003,1291
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2004,1272.7
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2005,1183.5
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2006,857.2
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2007,818.3
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2008,1211.2
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2009,1156.3
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2010,1056.7
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2011,699.9
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2012,897.7
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2013,809.9
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2014,1026.9
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2015,1505.1
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2016,1254.7
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2017,1648.1
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2018,1692.2
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2019,1246.9
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2020,1275.4
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2021,1283.2
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2022,1827.1
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2023,2164.2
+1.1.10,Electrical Machinery & Apparatus,Millions Of Singapore Dollars,2024,2259.1
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,1998,25590.9
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,1999,30214.2
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2000,36049.9
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2001,36592.4
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2002,32936
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2003,30913.8
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2004,31732
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2005,31734.3
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2006,34306.8
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2007,31599
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2008,33295.7
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2009,41235
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2010,40226.4
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2011,42369.5
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2012,41275.3
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2013,55255.1
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2014,58167
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2015,59011.6
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2016,61485.9
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2017,58930.6
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2018,79791.3
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2019,82730.1
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2020,96684.6
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2021,117604.2
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2022,125975.1
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2023,93224.5
+1.1.11,"Computer, Electronic And Optical Products",Millions Of Singapore Dollars,2024,88463.1
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2009,16747.3
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2010,19820.7
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2011,20709.3
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2012,16958.9
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2013,20300.3
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2014,24056.5
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2015,26939.1
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2016,33659
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2017,29608.4
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2018,55687.2
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2019,65843.6
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2020,87242.2
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2021,99609.1
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2022,104615.4
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2023,71175.1
+1.1.11.1,Semiconductor Devices,Millions Of Singapore Dollars,2024,69322.6
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2009,12208.2
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2010,8027.3
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2011,8675.8
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2012,12134.3
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2013,16117
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2014,9569
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2015,5640
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2016,5253
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2017,6084.1
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2018,5548.2
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2019,4893
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2020,-1216.5
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2021,-1632.2
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2022,3012.5
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2023,2950.5
+1.1.11.2,Computers & Peripheral Equipment,Millions Of Singapore Dollars,2024,1475.9
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,1998,705.3
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,1999,977.3
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2000,1147.1
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2001,1322.7
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2002,1524.2
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2003,1826.6
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2004,2304
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2005,1473.5
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2006,1618.2
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2007,2763.2
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2008,2111.9
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2009,6289.8
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2010,6230.5
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2011,6544.4
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2012,5883.1
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2013,7412.6
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2014,10479.4
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2015,12275.3
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2016,12815.5
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2017,13496.6
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2018,11502.6
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2019,3594.1
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2020,4763.4
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2021,5144.8
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2022,3773.8
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2023,3809.5
+1.1.11.3,"Instrumentation, Photographic & Optical Goods",Millions Of Singapore Dollars,2024,2313.3
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2009,5989.7
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2010,6147.9
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2011,6440.1
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2012,6299
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2013,11425.1
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2014,14062.1
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2015,14157.2
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2016,9758.4
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2017,9741.5
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2018,7053.2
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2019,8399.4
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2020,5895.6
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2021,14482.5
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2022,14573.3
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2023,15289.4
+1.1.11.4,Other Electronics Nec,Millions Of Singapore Dollars,2024,15351.3
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,1998,1299.1
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,1999,1291
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2000,1461.5
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2001,1566.2
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2002,1838.4
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2003,2764.5
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2004,3150.3
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2005,2561.9
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2006,3153.8
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2007,3394.5
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2008,3698.5
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2009,1868.6
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2010,2690.7
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2011,2636.8
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2012,3265.4
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2013,4055.8
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2014,5689.5
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2015,6507.1
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2016,9116.4
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2017,8671
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2018,9492.9
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2019,11909
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2020,10792.3
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2021,11810.2
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2022,17708.9
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2023,16280.8
+1.1.12,Transport Equipment,Millions Of Singapore Dollars,2024,15729.6
+1.2,Construction,Millions Of Singapore Dollars,1998,1432.9
+1.2,Construction,Millions Of Singapore Dollars,1999,1505.1
+1.2,Construction,Millions Of Singapore Dollars,2000,2078.5
+1.2,Construction,Millions Of Singapore Dollars,2001,1717.7
+1.2,Construction,Millions Of Singapore Dollars,2002,1941.9
+1.2,Construction,Millions Of Singapore Dollars,2003,1407.2
+1.2,Construction,Millions Of Singapore Dollars,2004,1128
+1.2,Construction,Millions Of Singapore Dollars,2005,924.8
+1.2,Construction,Millions Of Singapore Dollars,2006,758.8
+1.2,Construction,Millions Of Singapore Dollars,2007,1517.8
+1.2,Construction,Millions Of Singapore Dollars,2008,1915.8
+1.2,Construction,Millions Of Singapore Dollars,2009,2713.4
+1.2,Construction,Millions Of Singapore Dollars,2010,1483.6
+1.2,Construction,Millions Of Singapore Dollars,2011,2609.3
+1.2,Construction,Millions Of Singapore Dollars,2012,2719.1
+1.2,Construction,Millions Of Singapore Dollars,2013,3693.2
+1.2,Construction,Millions Of Singapore Dollars,2014,4206.7
+1.2,Construction,Millions Of Singapore Dollars,2015,3760.4
+1.2,Construction,Millions Of Singapore Dollars,2016,4388.6
+1.2,Construction,Millions Of Singapore Dollars,2017,5273.9
+1.2,Construction,Millions Of Singapore Dollars,2018,7286.1
+1.2,Construction,Millions Of Singapore Dollars,2019,8108.6
+1.2,Construction,Millions Of Singapore Dollars,2020,6583.5
+1.2,Construction,Millions Of Singapore Dollars,2021,6259.4
+1.2,Construction,Millions Of Singapore Dollars,2022,5878.9
+1.2,Construction,Millions Of Singapore Dollars,2023,5419.8
+1.2,Construction,Millions Of Singapore Dollars,2024,6832.5
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,1998,20065.2
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,1999,26008.7
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2000,27448
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2001,30469.4
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2002,35635.7
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2003,37387.7
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2004,43285.4
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2005,54548.1
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2006,62917.4
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2007,77072
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2008,92951.7
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2009,103420.4
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2010,108078
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2011,122669.3
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2012,162079.2
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2013,184577.4
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2014,237988.9
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2015,282733.2
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2016,293802.3
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2017,277730.2
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2018,275142.4
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2019,278441.2
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2020,318746.5
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2021,370335.3
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2022,430368.1
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2023,433722.3
+1.3,Wholesale & Retail Trade,Millions Of Singapore Dollars,2024,418217.9
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,1998,19342.5
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,1999,24785.4
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2000,26633.3
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2001,28906.5
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2002,33868.6
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2003,36499.8
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2004,42306.3
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2005,53452.2
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2006,60957
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2007,75060.8
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2008,90982.2
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2009,101198.8
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2010,105683.6
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2011,120259.9
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2012,159144.9
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2013,182052.3
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2014,235261.1
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2015,279644.5
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2016,290441.4
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2017,273788.1
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2018,270674.8
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2019,273724.3
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2020,314336.9
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2021,366004
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2022,425682.3
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2023,429745.1
+1.3.1,Wholesale Trade,Millions Of Singapore Dollars,2024,414760.2
+1.3.2,Retail Trade,Millions Of Singapore Dollars,1998,722.7
+1.3.2,Retail Trade,Millions Of Singapore Dollars,1999,1223.2
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2000,814.7
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2001,1562.9
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2002,1767.1
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2003,887.9
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2004,979.2
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2005,1095.9
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2006,1960.4
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2007,2011.3
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2008,1969.5
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2009,2221.6
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2010,2394.5
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2011,2409.4
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2012,2934.3
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2013,2525.1
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2014,2727.8
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2015,3088.7
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2016,3361
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2017,3942.1
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2018,4467.6
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2019,4716.8
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2020,4409.6
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2021,4331.3
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2022,4685.8
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2023,3977.1
+1.3.2,Retail Trade,Millions Of Singapore Dollars,2024,3457.7
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,1998,986.1
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,1999,1993.7
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2000,2015.9
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2001,2398.1
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2002,2302.3
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2003,2515.5
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2004,2522.9
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2005,2043.9
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2006,2795.2
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2007,3012.7
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2008,3355.6
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2009,4921.6
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2010,5367.4
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2011,5865.5
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2012,6300.3
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2013,5867.8
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2014,6394.7
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2015,7791.1
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2016,8625.9
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2017,8343.8
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2018,6244.1
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2019,7320.2
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2020,6085.1
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2021,6203.2
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2022,7104.3
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2023,8075.6
+1.4,Accommodation & Food Services,Millions Of Singapore Dollars,2024,8591.4
+1.5,Transportation & Storage,Millions Of Singapore Dollars,1998,5206.8
+1.5,Transportation & Storage,Millions Of Singapore Dollars,1999,5958.6
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2000,8446
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2001,8602
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2002,9078.6
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2003,10213.9
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2004,13090
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2005,17651.5
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2006,23225.3
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2007,30525.4
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2008,36328.9
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2009,34659.9
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2010,33563.2
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2011,29732.8
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2012,34132.6
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2013,32600.1
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2014,37845.7
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2015,40493
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2016,27863.1
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2017,29616.1
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2018,32091.7
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2019,34805.1
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2020,44273.2
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2021,71167.3
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2022,109718
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2023,101651.3
+1.5,Transportation & Storage,Millions Of Singapore Dollars,2024,115331.3
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,1998,4167.6
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,1999,4645.1
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2000,6764.9
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2001,7169.2
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2002,7593
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2003,8658.8
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2004,11412.8
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2005,15894
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2006,20669.9
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2007,27574.5
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2008,33589.5
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2009,31737.2
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2010,29972
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2011,25983.6
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2012,28240.2
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2013,26615.4
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2014,31123.2
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2015,32934.9
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2016,21041.3
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2017,22956.3
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2018,24735.6
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2019,26375
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2020,34136.7
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2021,60317.3
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2022,97421.2
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2023,90010.5
+1.5.1,Water Transport & Supporting Services,Millions Of Singapore Dollars,2024,106378.7
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2009,26146.2
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2010,23798.1
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2011,22361.5
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2012,23253.7
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2013,23081.5
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2014,26968.8
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2015,29742.8
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2016,17018.7
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2017,18972.9
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2018,21684.2
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2019,24018.9
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2020,33069.9
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2021,58499.4
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2022,95325.3
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2023,87345
+1.5.1.1,Freight Water Transport,Millions Of Singapore Dollars,2024,101981.4
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2009,5591
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2010,6173.8
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2011,3622
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2012,4986.5
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2013,3533.9
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2014,4154.4
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2015,3192.1
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2016,4022.6
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2017,3983.3
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2018,3051.4
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2019,2356
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2020,1066.8
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2021,1818
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2022,2095.8
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2023,2665.5
+1.5.1.2,Other Water Transport Nec,Millions Of Singapore Dollars,2024,4397.2
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,1998,127.3
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,1999,289.4
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2000,128.1
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2001,8.7
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2002,15.1
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2003,-79.7
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2004,-54.2
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2005,-88.7
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2006,-93.8
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2007,-206.4
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2008,-312.5
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2009,-142.5
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2010,-280.3
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2011,-298.2
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2012,-231.4
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2013,-141.7
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2014,-224.2
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2015,-310
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2016,-447
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2017,-835.2
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2018,-605.2
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2019,504.9
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2020,2174.6
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2021,1581
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2022,1470.6
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2023,1396.5
+1.5.2,Land & Air Transport & Supporting Services,Millions Of Singapore Dollars,2024,-2183.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,1998,911.9
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,1999,1024.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2000,1553
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2001,1424.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2002,1470.5
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2003,1634.8
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2004,1731.4
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2005,1846.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2006,2649.3
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2007,3157.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2008,3051.8
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2009,3065.1
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2010,3871.6
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2011,4047.4
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2012,6123.8
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2013,6126.4
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2014,6946.7
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2015,7868.1
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2016,7268.7
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2017,7495
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2018,7961.3
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2019,7925.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2020,7961.8
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2021,9268.9
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2022,10826.2
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2023,10244.3
+1.5.3,"Warehousing, Post & Courier Services",Millions Of Singapore Dollars,2024,11135.8
+1.6,Information & Communications,Millions Of Singapore Dollars,1998,768.7
+1.6,Information & Communications,Millions Of Singapore Dollars,1999,873.7
+1.6,Information & Communications,Millions Of Singapore Dollars,2000,1190.6
+1.6,Information & Communications,Millions Of Singapore Dollars,2001,1898.5
+1.6,Information & Communications,Millions Of Singapore Dollars,2002,2953.3
+1.6,Information & Communications,Millions Of Singapore Dollars,2003,3109
+1.6,Information & Communications,Millions Of Singapore Dollars,2004,3445.8
+1.6,Information & Communications,Millions Of Singapore Dollars,2005,3692.6
+1.6,Information & Communications,Millions Of Singapore Dollars,2006,3565.8
+1.6,Information & Communications,Millions Of Singapore Dollars,2007,4885.5
+1.6,Information & Communications,Millions Of Singapore Dollars,2008,5131.7
+1.6,Information & Communications,Millions Of Singapore Dollars,2009,5507.1
+1.6,Information & Communications,Millions Of Singapore Dollars,2010,7706.8
+1.6,Information & Communications,Millions Of Singapore Dollars,2011,7167.7
+1.6,Information & Communications,Millions Of Singapore Dollars,2012,11331.3
+1.6,Information & Communications,Millions Of Singapore Dollars,2013,10906.1
+1.6,Information & Communications,Millions Of Singapore Dollars,2014,17417.8
+1.6,Information & Communications,Millions Of Singapore Dollars,2015,20970.3
+1.6,Information & Communications,Millions Of Singapore Dollars,2016,19032.6
+1.6,Information & Communications,Millions Of Singapore Dollars,2017,31709.2
+1.6,Information & Communications,Millions Of Singapore Dollars,2018,32764.7
+1.6,Information & Communications,Millions Of Singapore Dollars,2019,30022.9
+1.6,Information & Communications,Millions Of Singapore Dollars,2020,34019.4
+1.6,Information & Communications,Millions Of Singapore Dollars,2021,43738.2
+1.6,Information & Communications,Millions Of Singapore Dollars,2022,48593.6
+1.6,Information & Communications,Millions Of Singapore Dollars,2023,53169
+1.6,Information & Communications,Millions Of Singapore Dollars,2024,64139.2
+1.7,Finance & Insurance,Millions Of Singapore Dollars,1998,53925.7
+1.7,Finance & Insurance,Millions Of Singapore Dollars,1999,64647.4
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2000,68439.8
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2001,76431.8
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2002,77764.3
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2003,86430.2
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2004,101909.2
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2005,121659.3
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2006,146890.5
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2007,195358.1
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2008,210126.8
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2009,247519.5
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2010,310887.4
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2011,315598.1
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2012,380181.1
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2013,410352.8
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2014,521786.8
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2015,587653.5
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2016,673383.4
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2017,866947.4
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2018,917997.1
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2019,1045479
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2020,1197507.9
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2021,1429508.7
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2022,1497143.1
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2023,1809299.9
+1.7,Finance & Insurance,Millions Of Singapore Dollars,2024,2049179.8
+1.7.1,Financial Services,Millions Of Singapore Dollars,1998,51704.3
+1.7.1,Financial Services,Millions Of Singapore Dollars,1999,62185.4
+1.7.1,Financial Services,Millions Of Singapore Dollars,2000,66263.1
+1.7.1,Financial Services,Millions Of Singapore Dollars,2001,73725.6
+1.7.1,Financial Services,Millions Of Singapore Dollars,2002,74914.9
+1.7.1,Financial Services,Millions Of Singapore Dollars,2003,82904
+1.7.1,Financial Services,Millions Of Singapore Dollars,2004,97943.8
+1.7.1,Financial Services,Millions Of Singapore Dollars,2005,115975.9
+1.7.1,Financial Services,Millions Of Singapore Dollars,2006,139877.5
+1.7.1,Financial Services,Millions Of Singapore Dollars,2007,187916
+1.7.1,Financial Services,Millions Of Singapore Dollars,2008,202529.9
+1.7.1,Financial Services,Millions Of Singapore Dollars,2009,239552.9
+1.7.1,Financial Services,Millions Of Singapore Dollars,2010,302444.5
+1.7.1,Financial Services,Millions Of Singapore Dollars,2011,306830.7
+1.7.1,Financial Services,Millions Of Singapore Dollars,2012,368601.7
+1.7.1,Financial Services,Millions Of Singapore Dollars,2013,397401.6
+1.7.1,Financial Services,Millions Of Singapore Dollars,2014,506320.8
+1.7.1,Financial Services,Millions Of Singapore Dollars,2015,569640.8
+1.7.1,Financial Services,Millions Of Singapore Dollars,2016,653613.3
+1.7.1,Financial Services,Millions Of Singapore Dollars,2017,846911.4
+1.7.1,Financial Services,Millions Of Singapore Dollars,2018,897010.2
+1.7.1,Financial Services,Millions Of Singapore Dollars,2019,1021952.5
+1.7.1,Financial Services,Millions Of Singapore Dollars,2020,1172150.9
+1.7.1,Financial Services,Millions Of Singapore Dollars,2021,1401262
+1.7.1,Financial Services,Millions Of Singapore Dollars,2022,1468743.7
+1.7.1,Financial Services,Millions Of Singapore Dollars,2023,1777575.6
+1.7.1,Financial Services,Millions Of Singapore Dollars,2024,2017052.5
+1.7.1.1,Banks,Millions Of Singapore Dollars,1998,8121.4
+1.7.1.1,Banks,Millions Of Singapore Dollars,1999,8393.5
+1.7.1.1,Banks,Millions Of Singapore Dollars,2000,8975.7
+1.7.1.1,Banks,Millions Of Singapore Dollars,2001,8776.2
+1.7.1.1,Banks,Millions Of Singapore Dollars,2002,8393.9
+1.7.1.1,Banks,Millions Of Singapore Dollars,2003,8927.1
+1.7.1.1,Banks,Millions Of Singapore Dollars,2004,8844.8
+1.7.1.1,Banks,Millions Of Singapore Dollars,2005,9741
+1.7.1.1,Banks,Millions Of Singapore Dollars,2006,9884.1
+1.7.1.1,Banks,Millions Of Singapore Dollars,2007,11319.2
+1.7.1.1,Banks,Millions Of Singapore Dollars,2008,13057.9
+1.7.1.1,Banks,Millions Of Singapore Dollars,2009,14202.9
+1.7.1.1,Banks,Millions Of Singapore Dollars,2010,14479.5
+1.7.1.1,Banks,Millions Of Singapore Dollars,2011,14550.6
+1.7.1.1,Banks,Millions Of Singapore Dollars,2012,17134.7
+1.7.1.1,Banks,Millions Of Singapore Dollars,2013,16624.7
+1.7.1.1,Banks,Millions Of Singapore Dollars,2014,16936.3
+1.7.1.1,Banks,Millions Of Singapore Dollars,2015,17637.1
+1.7.1.1,Banks,Millions Of Singapore Dollars,2016,19354.6
+1.7.1.1,Banks,Millions Of Singapore Dollars,2017,19532.9
+1.7.1.1,Banks,Millions Of Singapore Dollars,2018,19466.9
+1.7.1.1,Banks,Millions Of Singapore Dollars,2019,22284.8
+1.7.1.1,Banks,Millions Of Singapore Dollars,2020,20482.7
+1.7.1.1,Banks,Millions Of Singapore Dollars,2021,21790.6
+1.7.1.1,Banks,Millions Of Singapore Dollars,2022,23439.5
+1.7.1.1,Banks,Millions Of Singapore Dollars,2023,22517
+1.7.1.1,Banks,Millions Of Singapore Dollars,2024,22894.5
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,1998,39040.6
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,1999,48472.1
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2000,51852.1
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2001,59321
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2002,60892.6
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2003,67334.4
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2004,79886.6
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2005,95332.2
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2006,120158.4
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2007,161934.3
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2008,168948.9
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2009,205925.4
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2010,264689.6
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2011,269298.5
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2012,326548.6
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2013,349500.1
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2014,447717.9
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2015,508959.9
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2016,582509.3
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2017,773275.2
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2018,817747
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2019,902243.2
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2020,1039987.4
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2021,1258156.4
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2022,1322733.7
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2023,1610881.6
+1.7.1.2,Holding Companies,Millions Of Singapore Dollars,2024,1733909
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,1998,4542.3
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,1999,5319.8
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2000,5435.4
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2001,5628.4
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2002,5628.4
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2003,6642.5
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2004,9212.4
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2005,10902.8
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2006,9834.9
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2007,14662.6
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2008,20523
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2009,19424.6
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2010,23275.4
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2011,22981.6
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2012,24918.4
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2013,31276.8
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2014,41666.6
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2015,43043.8
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2016,51749.5
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2017,54103.2
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2018,59796.2
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2019,97424.5
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2020,111680.8
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2021,121314.9
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2022,122570.5
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2023,144177
+1.7.1.3,Other Financial Services,Millions Of Singapore Dollars,2024,260249.1
+1.7.2,Insurance Services,Millions Of Singapore Dollars,1998,2221.4
+1.7.2,Insurance Services,Millions Of Singapore Dollars,1999,2462
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2000,2176.7
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2001,2706.2
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2002,2849.4
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2003,3526.2
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2004,3965.4
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2005,5683.3
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2006,7013
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2007,7442
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2008,7596.9
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2009,7966.6
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2010,8442.8
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2011,8767.3
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2012,11579.4
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2013,12951.2
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2014,15465.9
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2015,18012.7
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2016,19770.1
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2017,20036
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2018,20986.9
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2019,23526.5
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2020,25357
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2021,28246.8
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2022,28399.3
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2023,31724.3
+1.7.2,Insurance Services,Millions Of Singapore Dollars,2024,32127.3
+1.8,Real Estate,Millions Of Singapore Dollars,1998,5333.7
+1.8,Real Estate,Millions Of Singapore Dollars,1999,5620.7
+1.8,Real Estate,Millions Of Singapore Dollars,2000,6381.6
+1.8,Real Estate,Millions Of Singapore Dollars,2001,5945.1
+1.8,Real Estate,Millions Of Singapore Dollars,2002,6634.8
+1.8,Real Estate,Millions Of Singapore Dollars,2003,6360.9
+1.8,Real Estate,Millions Of Singapore Dollars,2004,6713.2
+1.8,Real Estate,Millions Of Singapore Dollars,2005,6680.3
+1.8,Real Estate,Millions Of Singapore Dollars,2006,8197.7
+1.8,Real Estate,Millions Of Singapore Dollars,2007,12895.5
+1.8,Real Estate,Millions Of Singapore Dollars,2008,14697.8
+1.8,Real Estate,Millions Of Singapore Dollars,2009,17712
+1.8,Real Estate,Millions Of Singapore Dollars,2010,21590.1
+1.8,Real Estate,Millions Of Singapore Dollars,2011,25926.2
+1.8,Real Estate,Millions Of Singapore Dollars,2012,29541.6
+1.8,Real Estate,Millions Of Singapore Dollars,2013,31234.1
+1.8,Real Estate,Millions Of Singapore Dollars,2014,36708
+1.8,Real Estate,Millions Of Singapore Dollars,2015,33839.7
+1.8,Real Estate,Millions Of Singapore Dollars,2016,38218.8
+1.8,Real Estate,Millions Of Singapore Dollars,2017,41411.5
+1.8,Real Estate,Millions Of Singapore Dollars,2018,44741.5
+1.8,Real Estate,Millions Of Singapore Dollars,2019,46534.2
+1.8,Real Estate,Millions Of Singapore Dollars,2020,45645.6
+1.8,Real Estate,Millions Of Singapore Dollars,2021,44326.7
+1.8,Real Estate,Millions Of Singapore Dollars,2022,44991.4
+1.8,Real Estate,Millions Of Singapore Dollars,2023,42941.4
+1.8,Real Estate,Millions Of Singapore Dollars,2024,46528.9
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,1998,4362.3
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,1999,5695.8
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2000,6186.3
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2001,7319.4
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2002,8645
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2003,8588.3
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2004,9339.7
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2005,12532.8
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2006,13407.1
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2007,22605.3
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2008,35594.8
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2009,31402.4
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2010,36553.2
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2011,44439.3
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2012,46126.2
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2013,57126.2
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2014,80523.8
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2015,109664.7
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2016,103799
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2017,106408.5
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2018,162515.3
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2019,217492.5
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2020,220474.1
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2021,214339.5
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2022,163509.7
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2023,124785.1
+1.9,Professional And Administrative & Support Services,Millions Of Singapore Dollars,2024,152038.5
+1.10,Others,Millions Of Singapore Dollars,1998,184.9
+1.10,Others,Millions Of Singapore Dollars,1999,377.4
+1.10,Others,Millions Of Singapore Dollars,2000,188.2
+1.10,Others,Millions Of Singapore Dollars,2001,486.3
+1.10,Others,Millions Of Singapore Dollars,2002,312.1
+1.10,Others,Millions Of Singapore Dollars,2003,151.7
+1.10,Others,Millions Of Singapore Dollars,2004,150.2
+1.10,Others,Millions Of Singapore Dollars,2005,421.8
+1.10,Others,Millions Of Singapore Dollars,2006,980.7
+1.10,Others,Millions Of Singapore Dollars,2007,2212
+1.10,Others,Millions Of Singapore Dollars,2008,5159.3
+1.10,Others,Millions Of Singapore Dollars,2009,5295
+1.10,Others,Millions Of Singapore Dollars,2010,7414.2
+1.10,Others,Millions Of Singapore Dollars,2011,8774.4
+1.10,Others,Millions Of Singapore Dollars,2012,8509.4
+1.10,Others,Millions Of Singapore Dollars,2013,9906.2
+1.10,Others,Millions Of Singapore Dollars,2014,12793.1
+1.10,Others,Millions Of Singapore Dollars,2015,14711.1
+1.10,Others,Millions Of Singapore Dollars,2016,14352
+1.10,Others,Millions Of Singapore Dollars,2017,13822.5
+1.10,Others,Millions Of Singapore Dollars,2018,17186.4
+1.10,Others,Millions Of Singapore Dollars,2019,15756.7
+1.10,Others,Millions Of Singapore Dollars,2020,12006.7
+1.10,Others,Millions Of Singapore Dollars,2021,13042.6
+1.10,Others,Millions Of Singapore Dollars,2022,13220.6
+1.10,Others,Millions Of Singapore Dollars,2023,17012.4
+1.10,Others,Millions Of Singapore Dollars,2024,20001.5

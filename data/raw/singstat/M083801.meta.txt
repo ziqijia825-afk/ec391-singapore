@@ -1,0 +1,7 @@
+Foreign Direct Investment In Singapore By Source Economy (Stock As At Year-End), Annual
+Source: SINGAPORE DEPARTMENT OF STATISTICS
+Last updated: 23/03/2026
+Downloaded: 12/11/2026
+https://tablebuilder.singstat.gov.sg/table/TS/M083801
+
+'na' denotes 'not available' or 'not applicable'. '-' denotes 'nil' or 'negligible' or 'not significant'. Please refer to the Technical Notes (https://www.singstat.gov.sg/find-data/explore-data-themes/trade-investment/foreign-direct-investment/our-data-explained) or video on 'Understanding Foreign Direct Investment' (https://www.singstat.gov.sg/publication-resources/understanding-foreign-direct-investment) for more information on the methodology and concepts of Foreign Direct Investment.

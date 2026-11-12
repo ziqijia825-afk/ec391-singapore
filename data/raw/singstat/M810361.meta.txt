@@ -1,0 +1,7 @@
+Key Indicators On Household Employment Income Among Resident Employed Households, Annual
+Source: SINGAPORE DEPARTMENT OF STATISTICS
+Last updated: 09/02/2026
+Downloaded: 12/11/2026
+https://tablebuilder.singstat.gov.sg/table/TS/M810361
+
+Data refer to resident employed households. A resident employed household refers to a household where the household reference person is a resident (i.e. Singapore citizen or permanent resident), and with at least one employed person. Household employment income refers to the sum of income received by employed members of the household from employment and business, excluding the income of live-in domestic workers. Monthly household employment income includes employer Central Provident Fund (CPF) contributions and one-twelfth of annual bonus. Data on household employment income refers to household employment income before accounting for Government transfers and taxes, unless stated otherwise.

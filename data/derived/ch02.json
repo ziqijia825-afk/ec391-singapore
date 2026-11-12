@@ -1,0 +1,392 @@
+{
+  "gdp": {
+    "2004_bn": 115.033593101049,
+    "2024_bn": 572.877260178427,
+    "ratio": 4.980086640214692,
+    "rank_2004": {
+      "value": 115033593101.049,
+      "rank": 43,
+      "n": 209,
+      "region_rank": 9,
+      "region_n": 36,
+      "year": 2004
+    },
+    "rank_2024": {
+      "value": 572877260178.427,
+      "rank": 26,
+      "n": 200,
+      "region_rank": 6,
+      "region_n": 33,
+      "year": 2024
+    },
+    "ppp_rank_2024": {
+      "value": 924612573514.694,
+      "rank": 34,
+      "n": 195,
+      "region_rank": 10,
+      "region_n": 31,
+      "year": 2024
+    }
+  },
+  "gdp_pc": {
+    "ppp_2024": 153161.175431382,
+    "ppp_rank": {
+      "value": 153161.175431382,
+      "rank": 2,
+      "n": 195,
+      "region_rank": 1,
+      "region_n": 31,
+      "year": 2024
+    },
+    "usd_rank": {
+      "value": 94896.5621495988,
+      "rank": 8,
+      "n": 200,
+      "region_rank": 1,
+      "region_n": 33,
+      "year": 2024
+    },
+    "usd_2024": 94896.5621495988,
+    "ppp_2004": 54383.8062336459,
+    "peers_ppp_2024": {
+      "SGP": 153161.175431382,
+      "MYS": 38835.6013146653,
+      "HKG": 75341.6985534061,
+      "VNM": 16387.9087954113
+    }
+  },
+  "growth": {
+    "avg": {
+      "SGP": 4.96,
+      "MYS": 4.59,
+      "HKG": 2.85,
+      "VNM": 6.28
+    },
+    "min": {
+      "SGP": [
+        2020,
+        -3.61084281729929
+      ],
+      "MYS": [
+        2020,
+        -5.45684658426701
+      ],
+      "HKG": [
+        2020,
+        -6.54479640529367
+      ],
+      "VNM": [
+        2021,
+        2.55372852648131
+      ]
+    },
+    "max": {
+      "SGP": [
+        2010,
+        14.5197497108994
+      ],
+      "MYS": [
+        2022,
+        9.03173723044451
+      ],
+      "HKG": [
+        2004,
+        8.70006555836002
+      ],
+      "VNM": [
+        2022,
+        8.53750041218142
+      ]
+    },
+    "avg_rank": 41,
+    "avg_n": 193,
+    "avg_region_rank": 10,
+    "avg_region_n": 32,
+    "2024": {
+      "SGP": 5.34,
+      "MYS": 5.11,
+      "HKG": 2.63,
+      "VNM": 7.04
+    }
+  },
+  "gini": {
+    "before_2025": 0.426,
+    "after_2025": 0.359,
+    "before_peak": [
+      2007,
+      0.482
+    ],
+    "before_2004": 0.46,
+    "after_2004": 0.419,
+    "peers_wb": {
+      "MYS": [
+        2021,
+        40.7
+      ],
+      "VNM": [
+        2022,
+        36.1
+      ]
+    }
+  },
+  "poverty_peers": {
+    "EAS": [
+      2024,
+      2.0
+    ],
+    "MYS": [
+      2021,
+      0.0
+    ],
+    "VNM": [
+      2022,
+      1.6
+    ],
+    "WLD": [
+      2024,
+      10.1
+    ]
+  },
+  "wgi": {
+    "year": 2025,
+    "ranks": {
+      "VA": {
+        "value": 54.5552427,
+        "rank": 111,
+        "n": 203,
+        "region_rank": 22,
+        "region_n": 34
+      },
+      "PV": {
+        "value": 88.9886918,
+        "rank": 12,
+        "n": 207,
+        "region_rank": 7,
+        "region_n": 36
+      },
+      "GE": {
+        "value": 95.1666394,
+        "rank": 1,
+        "n": 205,
+        "region_rank": 1,
+        "region_n": 34
+      },
+      "RQ": {
+        "value": 91.8674234,
+        "rank": 1,
+        "n": 205,
+        "region_rank": 1,
+        "region_n": 34
+      },
+      "RL": {
+        "value": 83.1706262,
+        "rank": 18,
+        "n": 207,
+        "region_rank": 3,
+        "region_n": 36
+      },
+      "CC": {
+        "value": 87.8314714,
+        "rank": 4,
+        "n": 207,
+        "region_rank": 1,
+        "region_n": 36
+      }
+    },
+    "table": {
+      "SGP": {
+        "Voice and\naccountability": 54.6,
+        "Political\nstability": 89.0,
+        "Government\neffectiveness": 95.2,
+        "Regulatory\nquality": 91.9,
+        "Rule of law": 83.2,
+        "Control of\ncorruption": 87.8
+      },
+      "MYS": {
+        "Voice and\naccountability": 55.8,
+        "Political\nstability": 71.6,
+        "Government\neffectiveness": 71.9,
+        "Regulatory\nquality": 67.3,
+        "Rule of law": 65.4,
+        "Control of\ncorruption": 59.4
+      },
+      "HKG": {
+        "Voice and\naccountability": 48.1,
+        "Political\nstability": 79.2,
+        "Government\neffectiveness": 83.8,
+        "Regulatory\nquality": 83.3,
+        "Rule of law": 74.1,
+        "Control of\ncorruption": 81.1
+      },
+      "VNM": {
+        "Voice and\naccountability": 34.5,
+        "Political\nstability": 67.7,
+        "Government\neffectiveness": 56.0,
+        "Regulatory\nquality": 53.1,
+        "Rule of law": 55.7,
+        "Control of\ncorruption": 45.9
+      },
+      "East Asia & Pacific": {
+        "Voice and\naccountability": 58.6,
+        "Political\nstability": 77.1,
+        "Government\neffectiveness": 58.3,
+        "Regulatory\nquality": 57.1,
+        "Rule of law": 65.2,
+        "Control of\ncorruption": 53.1
+      }
+    }
+  },
+  "cpi": {
+    "2024": 84,
+    "rank": 3,
+    "n": 178,
+    "region_rank": 1,
+    "region_n": 22,
+    "peers_2024": {
+      "SGP": 84,
+      "MYS": 50,
+      "HKG": 74,
+      "VNM": 40
+    },
+    "sgp_2012": 87.0
+  },
+  "bready": {
+    "topics": {
+      "Business entry": {
+        "value": 94.0925925925926,
+        "rank": 2,
+        "n": 100,
+        "region_rank": 1,
+        "region_n": 15
+      },
+      "Business location": {
+        "value": 80.7985811864387,
+        "rank": 2,
+        "n": 100,
+        "region_rank": 1,
+        "region_n": 15
+      },
+      "Utility services": {
+        "value": 92.7579079925391,
+        "rank": 2,
+        "n": 100,
+        "region_rank": 2,
+        "region_n": 15
+      },
+      "Labor": {
+        "value": 63.9934212149119,
+        "rank": 65,
+        "n": 100,
+        "region_rank": 10,
+        "region_n": 15
+      },
+      "Financial services": {
+        "value": 78.740820052116,
+        "rank": 21,
+        "n": 100,
+        "region_rank": 4,
+        "region_n": 15
+      },
+      "International trade": {
+        "value": 82.0183770423175,
+        "rank": 5,
+        "n": 100,
+        "region_rank": 1,
+        "region_n": 15
+      },
+      "Taxation": {
+        "value": 70.6402095769185,
+        "rank": 5,
+        "n": 100,
+        "region_rank": 3,
+        "region_n": 15
+      },
+      "Dispute resolution": {
+        "value": 67.3801651609457,
+        "rank": 11,
+        "n": 100,
+        "region_rank": 2,
+        "region_n": 15
+      },
+      "Market competition": {
+        "value": 63.8412652993203,
+        "rank": 17,
+        "n": 100,
+        "region_rank": 3,
+        "region_n": 15
+      },
+      "Business insolvency": {
+        "value": 79.5758569128134,
+        "rank": 7,
+        "n": 100,
+        "region_rank": 2,
+        "region_n": 15
+      }
+    },
+    "pillars": {
+      "Regulatory framework": {
+        "value": 77.6354094747845,
+        "rank": 13,
+        "n": 100,
+        "region_rank": 2,
+        "region_n": 15,
+        "peers": {
+          "SGP": 77.6354094747845,
+          "MYS": 65.606583790438,
+          "HKG": 71.025214291881,
+          "VNM": 67.0289581003145
+        }
+      },
+      "Public services": {
+        "value": 75.2661946849447,
+        "rank": 7,
+        "n": 100,
+        "region_rank": 2,
+        "region_n": 15,
+        "peers": {
+          "SGP": 75.2661946849447,
+          "MYS": 63.4079794973545,
+          "HKG": 65.3234814413981,
+          "VNM": 53.929280703864
+        }
+      },
+      "Operational efficiency": {
+        "value": 79.250154949545,
+        "rank": 1,
+        "n": 100,
+        "region_rank": 1,
+        "region_n": 15,
+        "peers": {
+          "SGP": 79.250154949545,
+          "MYS": 67.9945185938473,
+          "HKG": 71.5431194995295,
+          "VNM": 70.4398739082282
+        }
+      }
+    }
+  },
+  "lpi": {
+    "value": 4.3,
+    "rank": 1,
+    "n": 138,
+    "region_rank": 1,
+    "region_n": 18,
+    "year": 2022
+  },
+  "inflation_2024": {
+    "value": 2.38951123595017,
+    "rank": 65,
+    "n": 176,
+    "region_rank": 15,
+    "region_n": 26,
+    "year": 2024
+  },
+  "current_account_2024": {
+    "value": 17.2010838902762,
+    "rank": 6,
+    "n": 168,
+    "region_rank": 3,
+    "region_n": 26,
+    "year": 2024
+  }
+}

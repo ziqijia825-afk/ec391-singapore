@@ -1,0 +1,68 @@
+{
+  "TM.TAX.MRCH.SM.FN.ZS": {
+    "value": 0.07,
+    "year": 2022,
+    "rank": 3,
+    "n": 143,
+    "region_rank": 3,
+    "region_n": 21
+  },
+  "TM.TAX.MRCH.WM.FN.ZS": {
+    "value": 0.11,
+    "year": 2022,
+    "rank": 4,
+    "n": 143,
+    "region_rank": 4,
+    "region_n": 21
+  },
+  "TM.TAX.MRCH.SM.AR.ZS": {
+    "value": 0.05,
+    "year": 2022,
+    "rank": 3,
+    "n": 143,
+    "region_rank": 3,
+    "region_n": 21
+  },
+  "TM.TAX.MRCH.WM.AR.ZS": {
+    "value": 0.0,
+    "year": 2022,
+    "rank": 1,
+    "n": 143,
+    "region_rank": 1,
+    "region_n": 21
+  },
+  "mfn_last": {
+    "SGP": [
+      2022,
+      0.07
+    ],
+    "MYS": [
+      2022,
+      5.51
+    ],
+    "HKG": [
+      2022,
+      0.0
+    ],
+    "VNM": [
+      2022,
+      9.65
+    ],
+    "Median": [
+      2022,
+      7.64
+    ]
+  },
+  "fta": {
+    "n": 29,
+    "by_type": {
+      "Bilateral": 15,
+      "ASEAN+1": 6,
+      "Plurilateral": 5,
+      "Mega-regional": 2,
+      "Regional (ASEAN)": 1
+    },
+    "count_2004": 6,
+    "count_2014": 20
+  }
+}

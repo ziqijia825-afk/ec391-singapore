@@ -1,0 +1,504 @@
+{
+  "year": 2022,
+  "n_economies": 80,
+  "backward": {
+    "sgp": 46.120723693328856,
+    "rank": 7,
+    "n": 80,
+    "region_rank": 2,
+    "region_n": 17,
+    "peers": {
+      "SGP": 46.120723693328856,
+      "MYS": 34.15913191571362,
+      "HKG": 17.99231038616789,
+      "VNM": 48.5009599973343
+    },
+    "sgp_2004": 43.26092105288434
+  },
+  "forward": {
+    "sgp": 17.29201090130371,
+    "rank": 53,
+    "n": 80,
+    "region_rank": 12,
+    "region_n": 17,
+    "peers": {
+      "SGP": 17.29201090130371,
+      "MYS": 20.848734017488937,
+      "HKG": 15.640887170451826,
+      "VNM": 11.610025553185881
+    },
+    "sgp_2004": 15.04251592929003
+  },
+  "participation": {
+    "sgp": 63.41273459463257,
+    "rank": 5,
+    "n": 80,
+    "region_rank": 1,
+    "region_n": 17,
+    "peers": {
+      "SGP": 63.41273459463257,
+      "MYS": 55.00786593320256,
+      "HKG": 33.63319755661972,
+      "VNM": 60.11098555052018
+    },
+    "sgp_2004": 58.303436982174375
+  },
+  "position": {
+    "sgp": -0.21976650956602337,
+    "rank": 73,
+    "n": 80,
+    "region_rank": 16,
+    "region_n": 17,
+    "peers": {
+      "SGP": -0.21976650956602337,
+      "MYS": -0.10448701553616824,
+      "HKG": -0.02012986717435647,
+      "VNM": -0.28558054223209073
+    },
+    "sgp_2004": -0.21936582663275114
+  },
+  "reii": {
+    "sgp": 47.1005420105713,
+    "rank": 7,
+    "n": 80,
+    "region_rank": 2,
+    "region_n": 17,
+    "peers": {
+      "SGP": 47.1005420105713,
+      "MYS": 34.39847717226577,
+      "HKG": 18.04801518517156,
+      "VNM": 49.02775426906194
+    },
+    "sgp_2004": 43.59863214862359
+  },
+  "sectors": [
+    {
+      "sector": "Electronics & instruments",
+      "iso": "SGP",
+      "EXGR": 109100.31,
+      "FVA": 50305.66,
+      "fva_share": 46.11,
+      "export_share": 17.85
+    },
+    {
+      "sector": "Electronics & instruments",
+      "iso": "MYS",
+      "EXGR": 62197.38,
+      "FVA": 29113.21,
+      "fva_share": 46.81,
+      "export_share": 24.75
+    },
+    {
+      "sector": "Electronics & instruments",
+      "iso": "HKG",
+      "EXGR": 816.32,
+      "FVA": 193.14,
+      "fva_share": 23.66,
+      "export_share": 0.77
+    },
+    {
+      "sector": "Electronics & instruments",
+      "iso": "VNM",
+      "EXGR": 152162.07,
+      "FVA": 85097.02,
+      "fva_share": 55.93,
+      "export_share": 40.3
+    },
+    {
+      "sector": "Machinery incl. computers",
+      "iso": "SGP",
+      "EXGR": 21697.58,
+      "FVA": 9829.54,
+      "fva_share": 45.3,
+      "export_share": 3.55
+    },
+    {
+      "sector": "Machinery incl. computers",
+      "iso": "MYS",
+      "EXGR": 7060.07,
+      "FVA": 3242.45,
+      "fva_share": 45.93,
+      "export_share": 2.81
+    },
+    {
+      "sector": "Machinery incl. computers",
+      "iso": "HKG",
+      "EXGR": 618.69,
+      "FVA": 170.94,
+      "fva_share": 27.63,
+      "export_share": 0.58
+    },
+    {
+      "sector": "Machinery incl. computers",
+      "iso": "VNM",
+      "EXGR": 7822.84,
+      "FVA": 4124.95,
+      "fva_share": 52.73,
+      "export_share": 2.07
+    },
+    {
+      "sector": "Refined petroleum",
+      "iso": "SGP",
+      "EXGR": 15181.29,
+      "FVA": 10915.93,
+      "fva_share": 71.9,
+      "export_share": 2.48
+    },
+    {
+      "sector": "Refined petroleum",
+      "iso": "MYS",
+      "EXGR": 6152.32,
+      "FVA": 2120.02,
+      "fva_share": 34.46,
+      "export_share": 2.45
+    },
+    {
+      "sector": "Refined petroleum",
+      "iso": "HKG",
+      "EXGR": 13.49,
+      "FVA": 7.78,
+      "fva_share": 57.68,
+      "export_share": 0.01
+    },
+    {
+      "sector": "Refined petroleum",
+      "iso": "VNM",
+      "EXGR": 1886.45,
+      "FVA": 1042.44,
+      "fva_share": 55.26,
+      "export_share": 0.5
+    },
+    {
+      "sector": "Chemicals & plastics",
+      "iso": "SGP",
+      "EXGR": 30578.53,
+      "FVA": 14034.13,
+      "fva_share": 45.9,
+      "export_share": 5.0
+    },
+    {
+      "sector": "Chemicals & plastics",
+      "iso": "MYS",
+      "EXGR": 29334.14,
+      "FVA": 11847.53,
+      "fva_share": 40.39,
+      "export_share": 11.67
+    },
+    {
+      "sector": "Chemicals & plastics",
+      "iso": "HKG",
+      "EXGR": 396.98,
+      "FVA": 110.45,
+      "fva_share": 27.82,
+      "export_share": 0.37
+    },
+    {
+      "sector": "Chemicals & plastics",
+      "iso": "VNM",
+      "EXGR": 20678.76,
+      "FVA": 11463.19,
+      "fva_share": 55.43,
+      "export_share": 5.48
+    },
+    {
+      "sector": "Pharmaceuticals",
+      "iso": "SGP",
+      "EXGR": 10179.96,
+      "FVA": 3422.38,
+      "fva_share": 33.62,
+      "export_share": 1.67
+    },
+    {
+      "sector": "Pharmaceuticals",
+      "iso": "MYS",
+      "EXGR": 457.54,
+      "FVA": 156.3,
+      "fva_share": 34.16,
+      "export_share": 0.18
+    },
+    {
+      "sector": "Pharmaceuticals",
+      "iso": "HKG",
+      "EXGR": 50.18,
+      "FVA": 7.28,
+      "fva_share": 14.52,
+      "export_share": 0.05
+    },
+    {
+      "sector": "Pharmaceuticals",
+      "iso": "VNM",
+      "EXGR": 247.58,
+      "FVA": 123.04,
+      "fva_share": 49.7,
+      "export_share": 0.07
+    },
+    {
+      "sector": "Gold & metals",
+      "iso": "SGP",
+      "EXGR": 3761.73,
+      "FVA": 1701.9,
+      "fva_share": 45.24,
+      "export_share": 0.62
+    },
+    {
+      "sector": "Gold & metals",
+      "iso": "MYS",
+      "EXGR": 14570.17,
+      "FVA": 7588.55,
+      "fva_share": 52.08,
+      "export_share": 5.8
+    },
+    {
+      "sector": "Gold & metals",
+      "iso": "HKG",
+      "EXGR": 439.55,
+      "FVA": 117.05,
+      "fva_share": 26.63,
+      "export_share": 0.41
+    },
+    {
+      "sector": "Gold & metals",
+      "iso": "VNM",
+      "EXGR": 18876.79,
+      "FVA": 6737.07,
+      "fva_share": 35.69,
+      "export_share": 5.0
+    },
+    {
+      "sector": "Food & agriculture",
+      "iso": "SGP",
+      "EXGR": 5545.39,
+      "FVA": 2677.1,
+      "fva_share": 48.28,
+      "export_share": 0.91
+    },
+    {
+      "sector": "Food & agriculture",
+      "iso": "MYS",
+      "EXGR": 31974.66,
+      "FVA": 8872.69,
+      "fva_share": 27.75,
+      "export_share": 12.72
+    },
+    {
+      "sector": "Food & agriculture",
+      "iso": "HKG",
+      "EXGR": 3369.45,
+      "FVA": 739.36,
+      "fva_share": 21.94,
+      "export_share": 3.16
+    },
+    {
+      "sector": "Food & agriculture",
+      "iso": "VNM",
+      "EXGR": 31364.45,
+      "FVA": 12016.12,
+      "fva_share": 38.31,
+      "export_share": 8.31
+    },
+    {
+      "sector": "Transport equipment",
+      "iso": "SGP",
+      "EXGR": 9524.67,
+      "FVA": 4821.98,
+      "fva_share": 50.63,
+      "export_share": 1.56
+    },
+    {
+      "sector": "Transport equipment",
+      "iso": "MYS",
+      "EXGR": 3281.64,
+      "FVA": 1292.7,
+      "fva_share": 39.39,
+      "export_share": 1.31
+    },
+    {
+      "sector": "Transport equipment",
+      "iso": "HKG",
+      "EXGR": 564.66,
+      "FVA": 158.21,
+      "fva_share": 28.02,
+      "export_share": 0.53
+    },
+    {
+      "sector": "Transport equipment",
+      "iso": "VNM",
+      "EXGR": 9523.26,
+      "FVA": 5302.11,
+      "fva_share": 55.68,
+      "export_share": 2.52
+    },
+    {
+      "sector": "Wholesale trade",
+      "iso": "SGP",
+      "EXGR": 90286.42,
+      "FVA": 30852.21,
+      "fva_share": 34.17,
+      "export_share": 14.77
+    },
+    {
+      "sector": "Wholesale trade",
+      "iso": "MYS",
+      "EXGR": 22992.55,
+      "FVA": 2378.37,
+      "fva_share": 10.34,
+      "export_share": 9.15
+    },
+    {
+      "sector": "Wholesale trade",
+      "iso": "HKG",
+      "EXGR": 13191.6,
+      "FVA": 2394.58,
+      "fva_share": 18.15,
+      "export_share": 12.38
+    },
+    {
+      "sector": "Wholesale trade",
+      "iso": "VNM",
+      "EXGR": 22671.91,
+      "FVA": 7513.25,
+      "fva_share": 33.14,
+      "export_share": 6.0
+    },
+    {
+      "sector": "Transport & logistics",
+      "iso": "SGP",
+      "EXGR": 126140.56,
+      "FVA": 75675.96,
+      "fva_share": 59.99,
+      "export_share": 20.63
+    },
+    {
+      "sector": "Transport & logistics",
+      "iso": "MYS",
+      "EXGR": 11335.28,
+      "FVA": 3066.81,
+      "fva_share": 27.06,
+      "export_share": 4.51
+    },
+    {
+      "sector": "Transport & logistics",
+      "iso": "HKG",
+      "EXGR": 26829.52,
+      "FVA": 9716.4,
+      "fva_share": 36.22,
+      "export_share": 25.18
+    },
+    {
+      "sector": "Transport & logistics",
+      "iso": "VNM",
+      "EXGR": 6800.67,
+      "FVA": 3047.1,
+      "fva_share": 44.81,
+      "export_share": 1.8
+    },
+    {
+      "sector": "Finance & insurance",
+      "iso": "SGP",
+      "EXGR": 53284.8,
+      "FVA": 14949.27,
+      "fva_share": 28.06,
+      "export_share": 8.72
+    },
+    {
+      "sector": "Finance & insurance",
+      "iso": "MYS",
+      "EXGR": 4277.65,
+      "FVA": 729.87,
+      "fva_share": 17.06,
+      "export_share": 1.7
+    },
+    {
+      "sector": "Finance & insurance",
+      "iso": "HKG",
+      "EXGR": 46844.16,
+      "FVA": 3297.9,
+      "fva_share": 7.04,
+      "export_share": 43.96
+    },
+    {
+      "sector": "Finance & insurance",
+      "iso": "VNM",
+      "EXGR": 363.0,
+      "FVA": 92.8,
+      "fva_share": 25.56,
+      "export_share": 0.1
+    },
+    {
+      "sector": "ICT & business services",
+      "iso": "SGP",
+      "EXGR": 114395.3,
+      "FVA": 54514.34,
+      "fva_share": 47.65,
+      "export_share": 18.71
+    },
+    {
+      "sector": "ICT & business services",
+      "iso": "MYS",
+      "EXGR": 14097.1,
+      "FVA": 3200.25,
+      "fva_share": 22.7,
+      "export_share": 5.61
+    },
+    {
+      "sector": "ICT & business services",
+      "iso": "HKG",
+      "EXGR": 9485.03,
+      "FVA": 1575.61,
+      "fva_share": 16.61,
+      "export_share": 8.9
+    },
+    {
+      "sector": "ICT & business services",
+      "iso": "VNM",
+      "EXGR": 1834.3,
+      "FVA": 669.0,
+      "fva_share": 36.47,
+      "export_share": 0.49
+    },
+    {
+      "sector": "Travel & tourism",
+      "iso": "SGP",
+      "EXGR": 3883.73,
+      "FVA": 1450.53,
+      "fva_share": 37.35,
+      "export_share": 0.64
+    },
+    {
+      "sector": "Travel & tourism",
+      "iso": "MYS",
+      "EXGR": 2343.3,
+      "FVA": 496.94,
+      "fva_share": 21.21,
+      "export_share": 0.93
+    },
+    {
+      "sector": "Travel & tourism",
+      "iso": "HKG",
+      "EXGR": 1013.61,
+      "FVA": 194.37,
+      "fva_share": 19.18,
+      "export_share": 0.95
+    },
+    {
+      "sector": "Travel & tourism",
+      "iso": "VNM",
+      "EXGR": 355.38,
+      "FVA": 118.35,
+      "fva_share": 33.3,
+      "export_share": 0.09
+    }
+  ],
+  "fva_origin_top10": {
+    "USA": 13.7,
+    "CHN": 13.7,
+    "JPN": 7.1,
+    "IND": 5.4,
+    "TWN": 5.1,
+    "DEU": 4.2,
+    "KOR": 4.1,
+    "GBR": 3.4,
+    "DNK": 2.9,
+    "MYS": 2.6
+  }
+}

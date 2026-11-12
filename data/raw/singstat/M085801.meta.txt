@@ -1,0 +1,7 @@
+Foreign Direct Investment In Singapore By Component (Flows), Annual
+Source: SINGAPORE DEPARTMENT OF STATISTICS
+Last updated: 28/04/2026
+Downloaded: 12/11/2026
+https://tablebuilder.singstat.gov.sg/table/TS/M085801
+
+'na' denotes 'not available' or 'not applicable'.  '-' denotes 'nil' or 'negligible' or 'not significant'.

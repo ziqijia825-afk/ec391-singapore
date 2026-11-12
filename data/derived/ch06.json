@@ -1,0 +1,161 @@
+{
+  "inflows_gdp": {
+    "avg": {
+      "SGP": 22.1,
+      "MYS": 3.3,
+      "HKG": 31.8,
+      "VNM": 5.0,
+      "WLD": 2.6
+    },
+    "2024": {
+      "SGP": 23.6,
+      "MYS": 4.2,
+      "HKG": 30.8,
+      "VNM": 4.2,
+      "WLD": 1.2
+    },
+    "rank_2024": {
+      "value": 23.5787255966584,
+      "rank": 6,
+      "n": 194,
+      "region_rank": 2,
+      "region_n": 32,
+      "year": 2024
+    },
+    "outflows_2024": {
+      "value": 11.1035867258472,
+      "rank": 5,
+      "n": 173,
+      "region_rank": 2,
+      "region_n": 27,
+      "year": 2024
+    },
+    "inflows_usd_rank_2024": {
+      "value": 135077157183.126,
+      "rank": 2,
+      "n": 201,
+      "region_rank": 1,
+      "region_n": 33,
+      "year": 2024
+    }
+  },
+  "stocks": {
+    "inward_sgd_bn": {
+      "2004": 276.8192,
+      "2014": 1112.3481000000002,
+      "2024": 3130.4458
+    },
+    "outward_sgd_bn": {
+      "2004": 179.63389999999998,
+      "2014": 651.222,
+      "2024": 1652.7955
+    },
+    "pct_gdp": {
+      "Inward FDI stock": {
+        "2004": 142.0,
+        "2014": 279.0,
+        "2024": 409.0
+      },
+      "Outward FDI stock": {
+        "2004": 92.0,
+        "2014": 163.0,
+        "2024": 216.0
+      }
+    }
+  },
+  "entry_mode": {
+    "SGP": {
+      "inflow": 150897.70163294964,
+      "gf_n": 354.0,
+      "gf_v": 17512.029960000018,
+      "ma_n": 100.0,
+      "ma_v": 3990.40059,
+      "ratio_10y": 1.336185486557335
+    },
+    "MYS": {
+      "inflow": 15389.654712045307,
+      "gf_n": 236.0,
+      "gf_v": 22155.712219999987,
+      "ma_n": 48.0,
+      "ma_v": 2301.0029099999997,
+      "ratio_10y": 14.770959666656049
+    },
+    "HKG": {
+      "inflow": 116474.96890824428,
+      "gf_n": 147.0,
+      "gf_v": 4953.320009999999,
+      "ma_n": 45.0,
+      "ma_v": 2584.6615100000004,
+      "ratio_10y": 0.5880170694901955
+    },
+    "VNM": {
+      "inflow": 20350.0,
+      "gf_n": 249.0,
+      "gf_v": 24304.183569999994,
+      "ma_n": 33.0,
+      "ma_v": 854.34305,
+      "ratio_10y": 7.836650122569779
+    }
+  },
+  "unctad_inflows": {
+    "2004": 22324.89069528999,
+    "2014": 73286.61063099325,
+    "2024": 136199.07605933995,
+    "2025": 150897.70163294964
+  },
+  "sources_2024": {
+    "United States Of America": 24.9,
+    "Cayman Islands": 11.0,
+    "British Virgin Islands": 6.5,
+    "Japan": 6.3,
+    "United Kingdom": 5.6,
+    "Luxembourg": 4.6,
+    "Bermuda": 3.9,
+    "Hong Kong": 3.6,
+    "Canada": 3.1,
+    "Netherlands": 2.9,
+    "Mainland China": 2.8,
+    "Taiwan": 2.0,
+    "Ireland": 1.9,
+    "Switzerland": 1.8,
+    "Republic Of Korea": 1.7
+  },
+  "caribbean_share": 22.352116749633552,
+  "inward_total_sgd_bn_2024": 3130.4458,
+  "industries_2024": {
+    "Finance: holding companies": 55.4,
+    "Finance: banks, insurance, other": 10.1,
+    "Wholesale & retail trade": 13.4,
+    "Manufacturing": 8.0,
+    "Professional & admin services": 4.9,
+    "Transportation & storage": 3.7,
+    "Information & communications": 2.0,
+    "Real estate": 1.5
+  },
+  "manufacturing_detail_2024": {
+    "electronics": 2.8258946377541503,
+    "semiconductors": 2.214464150760892,
+    "pharma": 0.31239001167182007,
+    "chemicals": 0.6863271678429953,
+    "refining": 1.2696881702919118
+  },
+  "outward_2024": {
+    "total_sgd_bn": 1652.7955,
+    "asia_share": 52.369201150414554,
+    "asean_share": 18.20293557188412,
+    "top": {
+      "Mainland China": 13.8,
+      "India": 7.4,
+      "United Kingdom": 6.6,
+      "Indonesia": 6.3,
+      "Netherlands": 6.2,
+      "Luxembourg": 5.9,
+      "Hong Kong": 5.5,
+      "Cayman Islands": 5.3,
+      "Australia": 4.9,
+      "Malaysia": 4.6,
+      "United States Of America": 4.0,
+      "Bermuda": 3.3
+    }
+  }
+}

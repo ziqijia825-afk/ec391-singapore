@@ -1,0 +1,351 @@
+{
+  "rca_sector": {
+    "2004": {
+      "SGP": {
+        "Electronics & instruments": 2.93,
+        "Machinery incl. computers": 1.8,
+        "Refined petroleum": 1.26,
+        "Chemicals & plastics": 1.5,
+        "Pharmaceuticals": 0.21,
+        "Gold & metals": 0.49,
+        "Food & agriculture": 0.33,
+        "Transport equipment": 0.23,
+        "Transport & logistics": 1.17,
+        "Finance & insurance": 0.77,
+        "ICT & business services": 0.37,
+        "Travel & tourism": 0.32,
+        "Other goods": 0.42
+      },
+      "MYS": {
+        "Electronics & instruments": 2.85,
+        "Machinery incl. computers": 1.78,
+        "Refined petroleum": 1.42,
+        "Chemicals & plastics": 1.02,
+        "Pharmaceuticals": 0.04,
+        "Gold & metals": 0.63,
+        "Food & agriculture": 1.44,
+        "Transport equipment": 0.12,
+        "Transport & logistics": 0.27,
+        "Finance & insurance": 0.08,
+        "ICT & business services": 0.32,
+        "Travel & tourism": 0.6,
+        "Other goods": 1.06
+      },
+      "HKG": {
+        "Electronics & instruments": 2.69,
+        "Machinery incl. computers": 1.18,
+        "Refined petroleum": 0.04,
+        "Chemicals & plastics": 0.66,
+        "Pharmaceuticals": 0.12,
+        "Gold & metals": 1.17,
+        "Food & agriculture": 0.22,
+        "Transport equipment": 0.1,
+        "Transport & logistics": 1.43,
+        "Finance & insurance": 1.07,
+        "ICT & business services": 0.53,
+        "Travel & tourism": 0.65,
+        "Other goods": 1.55
+      },
+      "VNM": {
+        "Electronics & instruments": 0.46,
+        "Machinery incl. computers": 0.31,
+        "Refined petroleum": 2.92,
+        "Chemicals & plastics": 0.56,
+        "Pharmaceuticals": 0.03,
+        "Gold & metals": 0.36,
+        "Food & agriculture": 3.7,
+        "Transport equipment": 0.17,
+        "Transport & logistics": NaN,
+        "Finance & insurance": NaN,
+        "ICT & business services": NaN,
+        "Travel & tourism": NaN,
+        "Other goods": 2.79
+      }
+    },
+    "2014": {
+      "SGP": {
+        "Electronics & instruments": 2.36,
+        "Machinery incl. computers": 1.11,
+        "Refined petroleum": 1.19,
+        "Chemicals & plastics": 1.14,
+        "Pharmaceuticals": 0.65,
+        "Gold & metals": 0.7,
+        "Food & agriculture": 0.34,
+        "Transport equipment": 0.36,
+        "Transport & logistics": 1.51,
+        "Finance & insurance": 1.44,
+        "ICT & business services": 0.56,
+        "Travel & tourism": 0.48,
+        "Other goods": 0.7
+      },
+      "MYS": {
+        "Electronics & instruments": 2.57,
+        "Machinery incl. computers": 1.11,
+        "Refined petroleum": 1.86,
+        "Chemicals & plastics": 1.28,
+        "Pharmaceuticals": 0.05,
+        "Gold & metals": 0.73,
+        "Food & agriculture": 1.67,
+        "Transport equipment": 0.19,
+        "Transport & logistics": 0.22,
+        "Finance & insurance": 0.07,
+        "ICT & business services": 0.29,
+        "Travel & tourism": 0.86,
+        "Other goods": 1.2
+      },
+      "HKG": {
+        "Electronics & instruments": 2.78,
+        "Machinery incl. computers": 1.06,
+        "Refined petroleum": 0.01,
+        "Chemicals & plastics": 0.33,
+        "Pharmaceuticals": 0.12,
+        "Gold & metals": 1.54,
+        "Food & agriculture": 0.31,
+        "Transport equipment": 0.09,
+        "Transport & logistics": 1.76,
+        "Finance & insurance": 2.04,
+        "ICT & business services": 0.52,
+        "Travel & tourism": 1.76,
+        "Other goods": 0.72
+      },
+      "VNM": {
+        "Electronics & instruments": 2.44,
+        "Machinery incl. computers": 0.73,
+        "Refined petroleum": 0.6,
+        "Chemicals & plastics": 0.77,
+        "Pharmaceuticals": 0.04,
+        "Gold & metals": 0.59,
+        "Food & agriculture": 2.46,
+        "Transport equipment": 0.32,
+        "Transport & logistics": NaN,
+        "Finance & insurance": NaN,
+        "ICT & business services": NaN,
+        "Travel & tourism": NaN,
+        "Other goods": 3.2
+      }
+    },
+    "2024": {
+      "SGP": {
+        "Electronics & instruments": 2.0,
+        "Machinery incl. computers": 1.13,
+        "Refined petroleum": 0.86,
+        "Chemicals & plastics": 0.7,
+        "Pharmaceuticals": 0.39,
+        "Gold & metals": 0.52,
+        "Food & agriculture": 0.28,
+        "Transport equipment": 0.19,
+        "Transport & logistics": 2.23,
+        "Finance & insurance": 1.79,
+        "ICT & business services": 0.65,
+        "Travel & tourism": 0.37,
+        "Other goods": 0.49
+      },
+      "MYS": {
+        "Electronics & instruments": 3.29,
+        "Machinery incl. computers": 1.11,
+        "Refined petroleum": 1.74,
+        "Chemicals & plastics": 1.23,
+        "Pharmaceuticals": 0.05,
+        "Gold & metals": 0.99,
+        "Food & agriculture": 1.57,
+        "Transport equipment": 0.19,
+        "Transport & logistics": 0.23,
+        "Finance & insurance": 0.07,
+        "ICT & business services": 0.24,
+        "Travel & tourism": 0.58,
+        "Other goods": 1.46
+      },
+      "HKG": {
+        "Electronics & instruments": 3.57,
+        "Machinery incl. computers": 1.53,
+        "Refined petroleum": 0.01,
+        "Chemicals & plastics": 0.31,
+        "Pharmaceuticals": 0.12,
+        "Gold & metals": 1.92,
+        "Food & agriculture": 0.26,
+        "Transport equipment": 0.1,
+        "Transport & logistics": 1.45,
+        "Finance & insurance": 2.2,
+        "ICT & business services": NaN,
+        "Travel & tourism": 0.86,
+        "Other goods": 0.38
+      },
+      "VNM": {
+        "Electronics & instruments": 3.57,
+        "Machinery incl. computers": 2.64,
+        "Refined petroleum": 0.1,
+        "Chemicals & plastics": 0.79,
+        "Pharmaceuticals": 0.03,
+        "Gold & metals": 0.61,
+        "Food & agriculture": 1.27,
+        "Transport equipment": 0.21,
+        "Transport & logistics": NaN,
+        "Finance & insurance": NaN,
+        "ICT & business services": NaN,
+        "Travel & tourism": NaN,
+        "Other goods": 2.63
+      }
+    }
+  },
+  "rca_sgp_n_above1_2024": 4,
+  "rca_hs_top": [
+    [
+      "85",
+      "Electrical machinery and equipment",
+      34.2,
+      2.84,
+      2.54,
+      2.49
+    ],
+    [
+      "84",
+      "Industrial Machinery",
+      15.4,
+      1.5,
+      1.05,
+      1.35
+    ],
+    [
+      "27",
+      "Mineral fuels, oils and waxes",
+      11.5,
+      1.05,
+      1.13,
+      1.02
+    ],
+    [
+      "99",
+      "Other",
+      8.2,
+      0.63,
+      2.01,
+      1.6
+    ],
+    [
+      "90",
+      "Apparatuses (optical, medical, etc.)",
+      6.6,
+      0.94,
+      1.27,
+      1.97
+    ],
+    [
+      "71",
+      "Precious metals and stones",
+      4.7,
+      0.57,
+      1.22,
+      1.2
+    ],
+    [
+      "29",
+      "Organic chemicals",
+      2.3,
+      2.54,
+      1.91,
+      1.16
+    ],
+    [
+      "39",
+      "Plastics",
+      2.3,
+      0.92,
+      1.12,
+      0.74
+    ],
+    [
+      "30",
+      "Pharmaceutical products",
+      1.7,
+      0.18,
+      0.62,
+      0.47
+    ],
+    [
+      "33",
+      "Essential oils",
+      1.7,
+      0.95,
+      1.73,
+      2.16
+    ],
+    [
+      "21",
+      "Miscellaneous edible preparations",
+      1.4,
+      0.56,
+      1.29,
+      3.06
+    ],
+    [
+      "88",
+      "Aircraft",
+      1.1,
+      0.53,
+      0.99,
+      1.24
+    ],
+    [
+      "38",
+      "Miscellaneous chemical products",
+      1.1,
+      1.04,
+      1.11,
+      1.04
+    ],
+    [
+      "87",
+      "Vehicles",
+      0.6,
+      0.12,
+      0.14,
+      0.08
+    ],
+    [
+      "22",
+      "Beverages",
+      0.6,
+      0.54,
+      1.09,
+      0.92
+    ]
+  ],
+  "n_chapters_rca_ge1_2024": {
+    "SGP": 15,
+    "MYS": 16,
+    "HKG": 11,
+    "VNM": 28
+  },
+  "endowments": {
+    "pwt_year": 2023,
+    "kl_sgp": 657479.5,
+    "kl_rank": 14,
+    "kl_n": 173,
+    "kl_peers": {
+      "SGP": 657479.5,
+      "MYS": 277973.3125,
+      "HKG": 667519.8125,
+      "VNM": 87871.046875,
+      "USA": 482410.40625,
+      "JPN": 441597.8125,
+      "KOR": 523109.25,
+      "CHN": 227766.953125,
+      "DEU": 456113.46875,
+      "IDN": 182849.84375,
+      "THA": 154354.484375,
+      "PHL": 96367.5546875,
+      "IND": 76823.5234375,
+      "AUS": 584864.625,
+      "CHE": 715705.5625
+    },
+    "hc_sgp": 3.3993420600891113,
+    "hc_rank": 28,
+    "hc_n": 143,
+    "hc_peers": {
+      "SGP": 3.3993420600891113,
+      "MYS": 3.205732822418213,
+      "HKG": 3.36037015914917,
+      "VNM": 2.7444472312927246
+    }
+  }
+}

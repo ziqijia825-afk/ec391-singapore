@@ -1,0 +1,7 @@
+Principal Statistics Of Manufacturing By Industry Cluster - Total Output, Annual
+Source: ECONOMIC DEVELOPMENT BOARD
+Last updated: 16/06/2026
+Downloaded: 12/11/2026
+https://tablebuilder.singstat.gov.sg/table/TS/M355171
+
+Data include all manufacturing establishments.  The industries are classified according to Singapore Standard Industrial Classification (SSIC) 2025.  Year 2025 data are preliminary estimates.

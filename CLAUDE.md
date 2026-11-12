@@ -94,31 +94,35 @@ structure, data routes and methods only; never their text, charts or numbers (th
 - **Do not copy:** their GDP chart uses bars + line on two y-axes (our rule: single y-axis); their map hero and
   game-style design. TiVA, UNCTAD NTM counts and IIA BIT counts blocked their automated download: plan manual exports.
 
-- `scripts/fetch_worldbank.py`: downloads WDI + WGI for all economies into `data/raw/wdi/` (run locally or via the
-  "Fetch data" workflow). WGI codes are tried as `XX.EST` and `GOV_WGI_XX.EST`.
-- `site/build.py`: builds `_site/` from `text/*.md` + `figures/`; `.github/workflows/pages.yml` publishes it
-  (one-time: Settings → Pages → Source: GitHub Actions). `.github/workflows/fetch-data.yml` runs the fetch on GitHub.
+## Repo
 
-## Status (Nov 11, 2026)
+- Download: `scripts/fetch_worldbank.py` (WDI, WGI, B-READY; also the "Fetch data" workflow), `fetch_singstat.py`,
+  `fetch_tiva.py` (OECD SDMX, sti-public endpoint), `fetch_comtrade.py` (public preview API), `fetch_atlas.py`
+  (Harvard Dataverse, ~500 MB, git-ignored), `fetch_other.py` (CPI via OWID, UNDP HDI, PWT 11.0, UNCTAD WIR 2026).
+  SingStat and Dataverse reject python-requests' default User-Agent: the scripts send an honest project UA. Never spoof
+  a browser UA (Transparency International's own CPI file needs a browser, so CPI comes from Our World in Data).
+  Network from Estella's Mac is intermittent for some hosts (World Bank API, objectstore.surf.nl): retry, or use the
+  GitHub workflow.
+- Analysis: one script per chapter (`scripts/ch01_profile.py` … `ch09_case.py`) writes `figures/chNN_*.png`,
+  `data/derived/chNN.json` (numbers quoted in the text) and `data/derived/*.md` tables. Shared helpers in
+  `chart_style.py` (`line_chart`, `bar_rank`, `grouped_bars`, `stacked_shares`, `radar`, `scatter`, `rank_table`,
+  `wdi_rank`); shared sector table in `sectors.py`. `scripts/run_all.py` reruns everything and builds the site.
+- Site: `site/build.py` builds `_site/` from `text/*.md` (+ `<!-- include: data/derived/X.md -->` tables) and writes the
+  single-Markdown deliverable `report/EC391_Singapore.md`. Pages publish on every push (`pages.yml`).
+- Local preview: `ec391-site` in `~/.claude/launch.json` (builds, then serves `_site` on :8391).
 
-- Done: project scaffold; WDI + WGI fetched by the Fetch data workflow (Nov 12, `data/raw/wdi/`); first Ch. 2 chart
-  (GDP current US$, SGP vs peers) redrawn from the official CSV by `scripts/ch02_gdp.py` (SGP 2024 = $572.9bn).
-- Charts: shared style in `scripts/chart_style.py` (`line_chart`, `wide`, `load`, `countries`, `retrieved`); one script per
-  figure, `scripts/chNN_topic.py`. Local setup: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`.
-  The World Bank API is not reachable from Estella's Mac (times out): fetch via the GitHub workflow, then `git pull`.
-- Fetch covers 2004–2025 (Nov 12 re-run). Charts stay on 2004–2024 (sliced in each script) unless the team switches;
-  WDI already has 2025 GDP for 234 economies (SGP $603.9bn).
-- WGI: the API serves `GOV_WGI_XX.EST` (estimate) and `GOV_WGI_XX.SC` (governance score 0–100, 2025 edition), saved as
-  `XX.EST.csv` / `XX.SC.csv`. Percentile ranks (`PER.RNK`) are not served: compute global/regional ranks from the scores.
-- B-READY: all 43 `IC.BRE.*` indicators (10 topics × 3 pillars + overall pillars) are in `data/raw/wdi/`; one edition,
-  dated 2025 in the API, 100 economies (SGP Business Location 80.8, 2nd of 100). Rank only among covered economies.
-- Ch. 7 tariffs: `TM.TAX.MRCH.{SM,WM}.{AR,FN}.ZS` downloaded (SGP data ends 2022). Tariff peaks are not in the API.
-- Notes found during planning: World Bank WDI likely has no $2.15 poverty or Gini data for Singapore; Singapore's official
-  Gini is published by SingStat (household income from work, before/after taxes and transfers): ask the professor
-  whether SingStat is acceptable. OECD TiVA 2025 edition covers Singapore.
-  Much of Singapore's exports are re-exports: use SingStat's domestic exports vs re-exports split in Ch. 3–4.
-  A lot of Singapore's FDI passes through regional HQ / holding companies: mention in Ch. 6.
-- Next for Member A: Ch. 2 charts (GDP per capita incl. PPP, growth, WGI radar, CPI/LPI/B-READY rank
-  tables with global + regional rank); then Ch. 5 from TiVA (download from data-explorer.oecd.org if no API route works).
-- Open questions for the professor: SingStat OK as a source? Compute RCA ourselves or OEC values OK? Required
-  platform/format for the site? Is a class presentation required? Is AI-drafted text OK?
+## Status (Nov 12, 2026)
+
+- All chapters drafted (Nov 12): 34 charts, generated tables and text for Ch. 1–7, 9, conclusion (SWOT + investment
+  recommendation) and appendix (sources, methods, sector table, questions for the professor). Case study topic chosen by
+  the AI hub: semiconductors vs pharmaceuticals under the EDB's FDI-led policy (team to confirm).
+- Writing rules for text and chart titles: connected paragraphs, no bullet lists, no en/em dashes (ranges as "2004 to
+  2024"), no semicolon pivots or "not X but Y" lead-ins; every number must come from `data/derived/*.json`.
+- Data caveats: Atlas goods exports for SGP are ~27% below SGP's Comtrade figure; Atlas services categories with 0
+  mean "not reported" (VNM reports only unspecified services); FDI is by immediate investor (55% holding companies);
+  WB has no SGP poverty/Gini (use SingStat 17892, not ranked); TiVA ends 2022; tariffs end 2022; B-READY ranks among 100.
+- Still to do by members: check 2–3 numbers per chart against the source; rewrite text in own words; link each chapter
+  to specific lectures/readings (e.g. class gravity estimate, Ch. 8 infant industry); confirm case topic; answer the
+  open questions for the professor (SingStat OK? Atlas RCA OK? AI-assisted drafting OK? presentation?).
+- Unverified items flagged in the research notes: UNCTAD BIT count (METI's 45 used), exact TPSEP/UKSFTA/DEPA dates,
+  official excise rates, why the Atlas chip RCA dips in 2005–06.

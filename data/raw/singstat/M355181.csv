@@ -1,0 +1,651 @@
+series_no,series,unit,period,value
+1,Total Manufacturing,Million Dollars,2000,38308.9
+1,Total Manufacturing,Million Dollars,2001,31449.7
+1,Total Manufacturing,Million Dollars,2002,35881.6
+1,Total Manufacturing,Million Dollars,2003,36587.5
+1,Total Manufacturing,Million Dollars,2004,45802
+1,Total Manufacturing,Million Dollars,2005,48445.4
+1,Total Manufacturing,Million Dollars,2006,54771.8
+1,Total Manufacturing,Million Dollars,2007,56546.8
+1,Total Manufacturing,Million Dollars,2008,48087.5
+1,Total Manufacturing,Million Dollars,2009,49525.2
+1,Total Manufacturing,Million Dollars,2010,59557.4
+1,Total Manufacturing,Million Dollars,2011,60303
+1,Total Manufacturing,Million Dollars,2012,61538.2
+1,Total Manufacturing,Million Dollars,2013,59446.7
+1,Total Manufacturing,Million Dollars,2014,63171.9
+1,Total Manufacturing,Million Dollars,2015,68446.3
+1,Total Manufacturing,Million Dollars,2016,69549.6
+1,Total Manufacturing,Million Dollars,2017,78644.2
+1,Total Manufacturing,Million Dollars,2018,99155.9
+1,Total Manufacturing,Million Dollars,2019,92204.3
+1,Total Manufacturing,Million Dollars,2020,88614.6
+1,Total Manufacturing,Million Dollars,2021,115076.2
+1,Total Manufacturing,Million Dollars,2022,135951.6
+1,Total Manufacturing,Million Dollars,2023,108605.9
+1,Total Manufacturing,Million Dollars,2024,116595.3
+1,Total Manufacturing,Million Dollars,2025,132813.8
+1.1,Electronics,Million Dollars,2000,17257.7
+1.1,Electronics,Million Dollars,2001,11663.1
+1.1,Electronics,Million Dollars,2002,12215.2
+1.1,Electronics,Million Dollars,2003,11681.6
+1.1,Electronics,Million Dollars,2004,14524.2
+1.1,Electronics,Million Dollars,2005,16665.5
+1.1,Electronics,Million Dollars,2006,17802.8
+1.1,Electronics,Million Dollars,2007,16143.9
+1.1,Electronics,Million Dollars,2008,14780.4
+1.1,Electronics,Million Dollars,2009,13744.8
+1.1,Electronics,Million Dollars,2010,21024
+1.1,Electronics,Million Dollars,2011,16892.7
+1.1,Electronics,Million Dollars,2012,16788.2
+1.1,Electronics,Million Dollars,2013,17153.1
+1.1,Electronics,Million Dollars,2014,17820.7
+1.1,Electronics,Million Dollars,2015,18960
+1.1,Electronics,Million Dollars,2016,15538
+1.1,Electronics,Million Dollars,2017,24846.4
+1.1,Electronics,Million Dollars,2018,39071.2
+1.1,Electronics,Million Dollars,2019,39374.1
+1.1,Electronics,Million Dollars,2020,34740
+1.1,Electronics,Million Dollars,2021,51209.9
+1.1,Electronics,Million Dollars,2022,63901.4
+1.1,Electronics,Million Dollars,2023,39761.6
+1.1,Electronics,Million Dollars,2024,46812.6
+1.1,Electronics,Million Dollars,2025,57361.4
+1.1.1,Semiconductors,Million Dollars,2000,7864.8
+1.1.1,Semiconductors,Million Dollars,2001,4292.7
+1.1.1,Semiconductors,Million Dollars,2002,4447.4
+1.1.1,Semiconductors,Million Dollars,2003,5363.1
+1.1.1,Semiconductors,Million Dollars,2004,7169.8
+1.1.1,Semiconductors,Million Dollars,2005,7426.3
+1.1.1,Semiconductors,Million Dollars,2006,9773.5
+1.1.1,Semiconductors,Million Dollars,2007,9898.8
+1.1.1,Semiconductors,Million Dollars,2008,8888.7
+1.1.1,Semiconductors,Million Dollars,2009,8088.7
+1.1.1,Semiconductors,Million Dollars,2010,12487.3
+1.1.1,Semiconductors,Million Dollars,2011,9452.9
+1.1.1,Semiconductors,Million Dollars,2012,9177.7
+1.1.1,Semiconductors,Million Dollars,2013,10305.5
+1.1.1,Semiconductors,Million Dollars,2014,11214.3
+1.1.1,Semiconductors,Million Dollars,2015,12664.1
+1.1.1,Semiconductors,Million Dollars,2016,9757.6
+1.1.1,Semiconductors,Million Dollars,2017,18801.7
+1.1.1,Semiconductors,Million Dollars,2018,33396.9
+1.1.1,Semiconductors,Million Dollars,2019,32368.8
+1.1.1,Semiconductors,Million Dollars,2020,27512.7
+1.1.1,Semiconductors,Million Dollars,2021,43229.3
+1.1.1,Semiconductors,Million Dollars,2022,55194.8
+1.1.1,Semiconductors,Million Dollars,2023,32474.5
+1.1.1,Semiconductors,Million Dollars,2024,38195
+1.1.1,Semiconductors,Million Dollars,2025,45992.6
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2000,5291
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2001,3923.8
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2002,4578.2
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2003,3731.9
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2004,4081.8
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2005,4926.2
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2006,4502.1
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2007,3495.9
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2008,3661.9
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2009,4097.1
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2010,5038.3
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2011,4545.8
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2012,4561.5
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2013,4219.1
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2014,3565.2
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2015,4269.8
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2016,2810.4
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2017,2837.4
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2018,2731.6
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2019,3211.9
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2020,2574.2
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2021,3053.1
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2022,2975.7
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2023,2241.7
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2024,2627.2
+1.1.4,Computer Peripherals & Data Storage,Million Dollars,2025,2099.7
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2000,2591.2
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2001,2244.2
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2002,2138.1
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2003,1470.2
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2004,2037.9
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2005,3192.5
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2006,2424.3
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2007,1792.8
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2008,1581.1
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2009,988.8
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2010,2903.5
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2011,2448
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2012,2499.7
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2013,1907.9
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2014,2088.4
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2015,968.2
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2016,1739
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2017,1969.1
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2018,1837.5
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2019,2642.9
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2020,3403.8
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2021,3332
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2022,4230.2
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2023,3990.8
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2024,4601.7
+1.1.5,Infocomms & Consumer Electronics,Million Dollars,2025,7643.5
+1.1.6,Other Electronic Modules & Components,Million Dollars,2000,1510.7
+1.1.6,Other Electronic Modules & Components,Million Dollars,2001,1202.3
+1.1.6,Other Electronic Modules & Components,Million Dollars,2002,1051.4
+1.1.6,Other Electronic Modules & Components,Million Dollars,2003,1116.4
+1.1.6,Other Electronic Modules & Components,Million Dollars,2004,1234.7
+1.1.6,Other Electronic Modules & Components,Million Dollars,2005,1120.5
+1.1.6,Other Electronic Modules & Components,Million Dollars,2006,1102.9
+1.1.6,Other Electronic Modules & Components,Million Dollars,2007,956.4
+1.1.6,Other Electronic Modules & Components,Million Dollars,2008,648.8
+1.1.6,Other Electronic Modules & Components,Million Dollars,2009,570.2
+1.1.6,Other Electronic Modules & Components,Million Dollars,2010,594.8
+1.1.6,Other Electronic Modules & Components,Million Dollars,2011,446
+1.1.6,Other Electronic Modules & Components,Million Dollars,2012,549.3
+1.1.6,Other Electronic Modules & Components,Million Dollars,2013,720.6
+1.1.6,Other Electronic Modules & Components,Million Dollars,2014,952.8
+1.1.6,Other Electronic Modules & Components,Million Dollars,2015,1057.9
+1.1.6,Other Electronic Modules & Components,Million Dollars,2016,1230.9
+1.1.6,Other Electronic Modules & Components,Million Dollars,2017,1238.1
+1.1.6,Other Electronic Modules & Components,Million Dollars,2018,1105.1
+1.1.6,Other Electronic Modules & Components,Million Dollars,2019,1150.5
+1.1.6,Other Electronic Modules & Components,Million Dollars,2020,1249.4
+1.1.6,Other Electronic Modules & Components,Million Dollars,2021,1595.5
+1.1.6,Other Electronic Modules & Components,Million Dollars,2022,1500.8
+1.1.6,Other Electronic Modules & Components,Million Dollars,2023,1054.6
+1.1.6,Other Electronic Modules & Components,Million Dollars,2024,1388.7
+1.1.6,Other Electronic Modules & Components,Million Dollars,2025,1625.6
+1.2,Chemicals,Million Dollars,2000,4610.3
+1.2,Chemicals,Million Dollars,2001,4023.7
+1.2,Chemicals,Million Dollars,2002,4796.3
+1.2,Chemicals,Million Dollars,2003,5146.9
+1.2,Chemicals,Million Dollars,2004,7353.5
+1.2,Chemicals,Million Dollars,2005,7246.2
+1.2,Chemicals,Million Dollars,2006,6834.1
+1.2,Chemicals,Million Dollars,2007,7129.2
+1.2,Chemicals,Million Dollars,2008,3095.6
+1.2,Chemicals,Million Dollars,2009,4839.1
+1.2,Chemicals,Million Dollars,2010,6266.2
+1.2,Chemicals,Million Dollars,2011,5556.9
+1.2,Chemicals,Million Dollars,2012,4224.3
+1.2,Chemicals,Million Dollars,2013,5432.5
+1.2,Chemicals,Million Dollars,2014,5820.7
+1.2,Chemicals,Million Dollars,2015,10565.4
+1.2,Chemicals,Million Dollars,2016,14601
+1.2,Chemicals,Million Dollars,2017,14251.9
+1.2,Chemicals,Million Dollars,2018,12896.1
+1.2,Chemicals,Million Dollars,2019,11869.9
+1.2,Chemicals,Million Dollars,2020,12553.6
+1.2,Chemicals,Million Dollars,2021,20204.4
+1.2,Chemicals,Million Dollars,2022,21670
+1.2,Chemicals,Million Dollars,2023,20285.2
+1.2,Chemicals,Million Dollars,2024,17511.6
+1.2,Chemicals,Million Dollars,2025,15282.1
+1.2.1,Petroleum,Million Dollars,2000,1747.8
+1.2.1,Petroleum,Million Dollars,2001,1291.4
+1.2.1,Petroleum,Million Dollars,2002,1472.3
+1.2.1,Petroleum,Million Dollars,2003,1523.1
+1.2.1,Petroleum,Million Dollars,2004,2551
+1.2.1,Petroleum,Million Dollars,2005,2662.9
+1.2.1,Petroleum,Million Dollars,2006,2623.8
+1.2.1,Petroleum,Million Dollars,2007,1769.6
+1.2.1,Petroleum,Million Dollars,2008,743
+1.2.1,Petroleum,Million Dollars,2009,1116.1
+1.2.1,Petroleum,Million Dollars,2010,1271.5
+1.2.1,Petroleum,Million Dollars,2011,285.1
+1.2.1,Petroleum,Million Dollars,2012,725.9
+1.2.1,Petroleum,Million Dollars,2013,57.1
+1.2.1,Petroleum,Million Dollars,2014,32.6
+1.2.1,Petroleum,Million Dollars,2015,2412
+1.2.1,Petroleum,Million Dollars,2016,2034.3
+1.2.1,Petroleum,Million Dollars,2017,1874.1
+1.2.1,Petroleum,Million Dollars,2018,1119.3
+1.2.1,Petroleum,Million Dollars,2019,787.5
+1.2.1,Petroleum,Million Dollars,2020,1586.2
+1.2.1,Petroleum,Million Dollars,2021,5106.8
+1.2.1,Petroleum,Million Dollars,2022,7350.8
+1.2.1,Petroleum,Million Dollars,2023,9517.2
+1.2.1,Petroleum,Million Dollars,2024,7209.9
+1.2.1,Petroleum,Million Dollars,2025,4887.9
+1.2.2,Petrochemicals,Million Dollars,2000,894.1
+1.2.2,Petrochemicals,Million Dollars,2001,932
+1.2.2,Petrochemicals,Million Dollars,2002,1132
+1.2.2,Petrochemicals,Million Dollars,2003,1507.7
+1.2.2,Petrochemicals,Million Dollars,2004,2638.4
+1.2.2,Petrochemicals,Million Dollars,2005,2529.7
+1.2.2,Petrochemicals,Million Dollars,2006,2041.1
+1.2.2,Petrochemicals,Million Dollars,2007,3093.3
+1.2.2,Petrochemicals,Million Dollars,2008,145.5
+1.2.2,Petrochemicals,Million Dollars,2009,1240.7
+1.2.2,Petrochemicals,Million Dollars,2010,2098.5
+1.2.2,Petrochemicals,Million Dollars,2011,2617.1
+1.2.2,Petrochemicals,Million Dollars,2012,773.3
+1.2.2,Petrochemicals,Million Dollars,2013,1053.3
+1.2.2,Petrochemicals,Million Dollars,2014,1965.5
+1.2.2,Petrochemicals,Million Dollars,2015,3725.2
+1.2.2,Petrochemicals,Million Dollars,2016,7353.6
+1.2.2,Petrochemicals,Million Dollars,2017,7410.1
+1.2.2,Petrochemicals,Million Dollars,2018,6535.3
+1.2.2,Petrochemicals,Million Dollars,2019,4387.2
+1.2.2,Petrochemicals,Million Dollars,2020,4622.2
+1.2.2,Petrochemicals,Million Dollars,2021,7610.5
+1.2.2,Petrochemicals,Million Dollars,2022,6448.3
+1.2.2,Petrochemicals,Million Dollars,2023,3160.3
+1.2.2,Petrochemicals,Million Dollars,2024,3402
+1.2.2,Petrochemicals,Million Dollars,2025,3696.7
+1.2.3,Specialty Chemicals,Million Dollars,2000,1286.3
+1.2.3,Specialty Chemicals,Million Dollars,2001,1258.5
+1.2.3,Specialty Chemicals,Million Dollars,2002,1442
+1.2.3,Specialty Chemicals,Million Dollars,2003,1487.4
+1.2.3,Specialty Chemicals,Million Dollars,2004,1519.1
+1.2.3,Specialty Chemicals,Million Dollars,2005,1478.9
+1.2.3,Specialty Chemicals,Million Dollars,2006,1615.5
+1.2.3,Specialty Chemicals,Million Dollars,2007,1674.7
+1.2.3,Specialty Chemicals,Million Dollars,2008,1674.8
+1.2.3,Specialty Chemicals,Million Dollars,2009,1913.8
+1.2.3,Specialty Chemicals,Million Dollars,2010,2293.9
+1.2.3,Specialty Chemicals,Million Dollars,2011,2079.4
+1.2.3,Specialty Chemicals,Million Dollars,2012,2238.6
+1.2.3,Specialty Chemicals,Million Dollars,2013,2694.8
+1.2.3,Specialty Chemicals,Million Dollars,2014,2378.6
+1.2.3,Specialty Chemicals,Million Dollars,2015,2877
+1.2.3,Specialty Chemicals,Million Dollars,2016,3300.9
+1.2.3,Specialty Chemicals,Million Dollars,2017,3120.7
+1.2.3,Specialty Chemicals,Million Dollars,2018,3117.8
+1.2.3,Specialty Chemicals,Million Dollars,2019,4561.5
+1.2.3,Specialty Chemicals,Million Dollars,2020,4092.5
+1.2.3,Specialty Chemicals,Million Dollars,2021,4654.1
+1.2.3,Specialty Chemicals,Million Dollars,2022,4866.9
+1.2.3,Specialty Chemicals,Million Dollars,2023,4737.4
+1.2.3,Specialty Chemicals,Million Dollars,2024,3258.8
+1.2.3,Specialty Chemicals,Million Dollars,2025,3222
+1.2.4,Others,Million Dollars,2000,682.2
+1.2.4,Others,Million Dollars,2001,541.8
+1.2.4,Others,Million Dollars,2002,750.1
+1.2.4,Others,Million Dollars,2003,628.7
+1.2.4,Others,Million Dollars,2004,644.9
+1.2.4,Others,Million Dollars,2005,574.6
+1.2.4,Others,Million Dollars,2006,553.6
+1.2.4,Others,Million Dollars,2007,591.5
+1.2.4,Others,Million Dollars,2008,532.3
+1.2.4,Others,Million Dollars,2009,568.6
+1.2.4,Others,Million Dollars,2010,602.3
+1.2.4,Others,Million Dollars,2011,575.2
+1.2.4,Others,Million Dollars,2012,486.5
+1.2.4,Others,Million Dollars,2013,1627.2
+1.2.4,Others,Million Dollars,2014,1444
+1.2.4,Others,Million Dollars,2015,1551.2
+1.2.4,Others,Million Dollars,2016,1912.1
+1.2.4,Others,Million Dollars,2017,1847
+1.2.4,Others,Million Dollars,2018,2123.7
+1.2.4,Others,Million Dollars,2019,2133.7
+1.2.4,Others,Million Dollars,2020,2252.7
+1.2.4,Others,Million Dollars,2021,2833
+1.2.4,Others,Million Dollars,2022,3003.9
+1.2.4,Others,Million Dollars,2023,2870.3
+1.2.4,Others,Million Dollars,2024,3640.9
+1.2.4,Others,Million Dollars,2025,3475.5
+1.3,Biomedical Manufacturing,Million Dollars,2000,3819.8
+1.3,Biomedical Manufacturing,Million Dollars,2001,3701.9
+1.3,Biomedical Manufacturing,Million Dollars,2002,5860.2
+1.3,Biomedical Manufacturing,Million Dollars,2003,6765.1
+1.3,Biomedical Manufacturing,Million Dollars,2004,9720.3
+1.3,Biomedical Manufacturing,Million Dollars,2005,9065.9
+1.3,Biomedical Manufacturing,Million Dollars,2006,13237.2
+1.3,Biomedical Manufacturing,Million Dollars,2007,14441.5
+1.3,Biomedical Manufacturing,Million Dollars,2008,9620.4
+1.3,Biomedical Manufacturing,Million Dollars,2009,10709.3
+1.3,Biomedical Manufacturing,Million Dollars,2010,10320.5
+1.3,Biomedical Manufacturing,Million Dollars,2011,13603.3
+1.3,Biomedical Manufacturing,Million Dollars,2012,16332.4
+1.3,Biomedical Manufacturing,Million Dollars,2013,11251.9
+1.3,Biomedical Manufacturing,Million Dollars,2014,12252.4
+1.3,Biomedical Manufacturing,Million Dollars,2015,13270.9
+1.3,Biomedical Manufacturing,Million Dollars,2016,14858.8
+1.3,Biomedical Manufacturing,Million Dollars,2017,13550.7
+1.3,Biomedical Manufacturing,Million Dollars,2018,17672.5
+1.3,Biomedical Manufacturing,Million Dollars,2019,12362.7
+1.3,Biomedical Manufacturing,Million Dollars,2020,14654.4
+1.3,Biomedical Manufacturing,Million Dollars,2021,13975
+1.3,Biomedical Manufacturing,Million Dollars,2022,14693.9
+1.3,Biomedical Manufacturing,Million Dollars,2023,14978.2
+1.3,Biomedical Manufacturing,Million Dollars,2024,12963.8
+1.3,Biomedical Manufacturing,Million Dollars,2025,16390.2
+1.3.1,Pharmaceuticals,Million Dollars,2000,2999
+1.3.1,Pharmaceuticals,Million Dollars,2001,2797
+1.3.1,Pharmaceuticals,Million Dollars,2002,4867.9
+1.3.1,Pharmaceuticals,Million Dollars,2003,5703.3
+1.3.1,Pharmaceuticals,Million Dollars,2004,8836.2
+1.3.1,Pharmaceuticals,Million Dollars,2005,7950.3
+1.3.1,Pharmaceuticals,Million Dollars,2006,11857
+1.3.1,Pharmaceuticals,Million Dollars,2007,12819.6
+1.3.1,Pharmaceuticals,Million Dollars,2008,8084.8
+1.3.1,Pharmaceuticals,Million Dollars,2009,9071.3
+1.3.1,Pharmaceuticals,Million Dollars,2010,8460.4
+1.3.1,Pharmaceuticals,Million Dollars,2011,11694.4
+1.3.1,Pharmaceuticals,Million Dollars,2012,14235.6
+1.3.1,Pharmaceuticals,Million Dollars,2013,9031.9
+1.3.1,Pharmaceuticals,Million Dollars,2014,9506.2
+1.3.1,Pharmaceuticals,Million Dollars,2015,10417.2
+1.3.1,Pharmaceuticals,Million Dollars,2016,11051.7
+1.3.1,Pharmaceuticals,Million Dollars,2017,9442.7
+1.3.1,Pharmaceuticals,Million Dollars,2018,13069.4
+1.3.1,Pharmaceuticals,Million Dollars,2019,6185.8
+1.3.1,Pharmaceuticals,Million Dollars,2020,8771.4
+1.3.1,Pharmaceuticals,Million Dollars,2021,8188.3
+1.3.1,Pharmaceuticals,Million Dollars,2022,8841.1
+1.3.1,Pharmaceuticals,Million Dollars,2023,8766.7
+1.3.1,Pharmaceuticals,Million Dollars,2024,4288
+1.3.1,Pharmaceuticals,Million Dollars,2025,7338.5
+1.3.2,Medical Technology,Million Dollars,2000,820.9
+1.3.2,Medical Technology,Million Dollars,2001,904.9
+1.3.2,Medical Technology,Million Dollars,2002,992.3
+1.3.2,Medical Technology,Million Dollars,2003,1061.7
+1.3.2,Medical Technology,Million Dollars,2004,884.2
+1.3.2,Medical Technology,Million Dollars,2005,1115.6
+1.3.2,Medical Technology,Million Dollars,2006,1380.2
+1.3.2,Medical Technology,Million Dollars,2007,1622
+1.3.2,Medical Technology,Million Dollars,2008,1535.6
+1.3.2,Medical Technology,Million Dollars,2009,1638
+1.3.2,Medical Technology,Million Dollars,2010,1860.1
+1.3.2,Medical Technology,Million Dollars,2011,1908.9
+1.3.2,Medical Technology,Million Dollars,2012,2096.8
+1.3.2,Medical Technology,Million Dollars,2013,2220.1
+1.3.2,Medical Technology,Million Dollars,2014,2746.2
+1.3.2,Medical Technology,Million Dollars,2015,2853.8
+1.3.2,Medical Technology,Million Dollars,2016,3807.1
+1.3.2,Medical Technology,Million Dollars,2017,4108
+1.3.2,Medical Technology,Million Dollars,2018,4603.1
+1.3.2,Medical Technology,Million Dollars,2019,6176.9
+1.3.2,Medical Technology,Million Dollars,2020,5883
+1.3.2,Medical Technology,Million Dollars,2021,5786.7
+1.3.2,Medical Technology,Million Dollars,2022,5852.8
+1.3.2,Medical Technology,Million Dollars,2023,6211.6
+1.3.2,Medical Technology,Million Dollars,2024,8675.8
+1.3.2,Medical Technology,Million Dollars,2025,9051.7
+1.4,Precision Engineering,Million Dollars,2000,5816.4
+1.4,Precision Engineering,Million Dollars,2001,5014.9
+1.4,Precision Engineering,Million Dollars,2002,5460.2
+1.4,Precision Engineering,Million Dollars,2003,5621.6
+1.4,Precision Engineering,Million Dollars,2004,6010.5
+1.4,Precision Engineering,Million Dollars,2005,6293.1
+1.4,Precision Engineering,Million Dollars,2006,6780.7
+1.4,Precision Engineering,Million Dollars,2007,7166.9
+1.4,Precision Engineering,Million Dollars,2008,6790.9
+1.4,Precision Engineering,Million Dollars,2009,6005.7
+1.4,Precision Engineering,Million Dollars,2010,7011.9
+1.4,Precision Engineering,Million Dollars,2011,8850.4
+1.4,Precision Engineering,Million Dollars,2012,8066
+1.4,Precision Engineering,Million Dollars,2013,8442.4
+1.4,Precision Engineering,Million Dollars,2014,8894
+1.4,Precision Engineering,Million Dollars,2015,9064.8
+1.4,Precision Engineering,Million Dollars,2016,9200.3
+1.4,Precision Engineering,Million Dollars,2017,10845.3
+1.4,Precision Engineering,Million Dollars,2018,13826.6
+1.4,Precision Engineering,Million Dollars,2019,12406
+1.4,Precision Engineering,Million Dollars,2020,13275.5
+1.4,Precision Engineering,Million Dollars,2021,15652.8
+1.4,Precision Engineering,Million Dollars,2022,19392.5
+1.4,Precision Engineering,Million Dollars,2023,17307
+1.4,Precision Engineering,Million Dollars,2024,17750.4
+1.4,Precision Engineering,Million Dollars,2025,20627.9
+1.4.1,Machinery & Systems,Million Dollars,2000,1814.1
+1.4.1,Machinery & Systems,Million Dollars,2001,1580.6
+1.4.1,Machinery & Systems,Million Dollars,2002,1769.7
+1.4.1,Machinery & Systems,Million Dollars,2003,1900.1
+1.4.1,Machinery & Systems,Million Dollars,2004,2252.7
+1.4.1,Machinery & Systems,Million Dollars,2005,2435.5
+1.4.1,Machinery & Systems,Million Dollars,2006,2708.4
+1.4.1,Machinery & Systems,Million Dollars,2007,3190.8
+1.4.1,Machinery & Systems,Million Dollars,2008,3186.5
+1.4.1,Machinery & Systems,Million Dollars,2009,2893.7
+1.4.1,Machinery & Systems,Million Dollars,2010,3668
+1.4.1,Machinery & Systems,Million Dollars,2011,5477.5
+1.4.1,Machinery & Systems,Million Dollars,2012,4597.2
+1.4.1,Machinery & Systems,Million Dollars,2013,4972.8
+1.4.1,Machinery & Systems,Million Dollars,2014,5399.1
+1.4.1,Machinery & Systems,Million Dollars,2015,5605.8
+1.4.1,Machinery & Systems,Million Dollars,2016,5798.9
+1.4.1,Machinery & Systems,Million Dollars,2017,7105.4
+1.4.1,Machinery & Systems,Million Dollars,2018,9664.8
+1.4.1,Machinery & Systems,Million Dollars,2019,8042.8
+1.4.1,Machinery & Systems,Million Dollars,2020,8819.5
+1.4.1,Machinery & Systems,Million Dollars,2021,11277.2
+1.4.1,Machinery & Systems,Million Dollars,2022,15269.6
+1.4.1,Machinery & Systems,Million Dollars,2023,13646.9
+1.4.1,Machinery & Systems,Million Dollars,2024,14452.1
+1.4.1,Machinery & Systems,Million Dollars,2025,17245.6
+1.4.2,Precision Modules & Components,Million Dollars,2000,4002.3
+1.4.2,Precision Modules & Components,Million Dollars,2001,3434.3
+1.4.2,Precision Modules & Components,Million Dollars,2002,3690.5
+1.4.2,Precision Modules & Components,Million Dollars,2003,3721.5
+1.4.2,Precision Modules & Components,Million Dollars,2004,3757.9
+1.4.2,Precision Modules & Components,Million Dollars,2005,3857.5
+1.4.2,Precision Modules & Components,Million Dollars,2006,4072.3
+1.4.2,Precision Modules & Components,Million Dollars,2007,3976.1
+1.4.2,Precision Modules & Components,Million Dollars,2008,3604.4
+1.4.2,Precision Modules & Components,Million Dollars,2009,3112
+1.4.2,Precision Modules & Components,Million Dollars,2010,3343.9
+1.4.2,Precision Modules & Components,Million Dollars,2011,3372.9
+1.4.2,Precision Modules & Components,Million Dollars,2012,3468.8
+1.4.2,Precision Modules & Components,Million Dollars,2013,3469.6
+1.4.2,Precision Modules & Components,Million Dollars,2014,3494.8
+1.4.2,Precision Modules & Components,Million Dollars,2015,3459
+1.4.2,Precision Modules & Components,Million Dollars,2016,3401.3
+1.4.2,Precision Modules & Components,Million Dollars,2017,3739.8
+1.4.2,Precision Modules & Components,Million Dollars,2018,4161.8
+1.4.2,Precision Modules & Components,Million Dollars,2019,4363.1
+1.4.2,Precision Modules & Components,Million Dollars,2020,4456
+1.4.2,Precision Modules & Components,Million Dollars,2021,4375.6
+1.4.2,Precision Modules & Components,Million Dollars,2022,4122.9
+1.4.2,Precision Modules & Components,Million Dollars,2023,3660.1
+1.4.2,Precision Modules & Components,Million Dollars,2024,3298.3
+1.4.2,Precision Modules & Components,Million Dollars,2025,3382.3
+1.5,Transport Engineering,Million Dollars,2000,2894.7
+1.5,Transport Engineering,Million Dollars,2001,3572.4
+1.5,Transport Engineering,Million Dollars,2002,3865.4
+1.5,Transport Engineering,Million Dollars,2003,3690
+1.5,Transport Engineering,Million Dollars,2004,4373.4
+1.5,Transport Engineering,Million Dollars,2005,5101.4
+1.5,Transport Engineering,Million Dollars,2006,5848.4
+1.5,Transport Engineering,Million Dollars,2007,7045.4
+1.5,Transport Engineering,Million Dollars,2008,8785.6
+1.5,Transport Engineering,Million Dollars,2009,8934.7
+1.5,Transport Engineering,Million Dollars,2010,9153
+1.5,Transport Engineering,Million Dollars,2011,9067.9
+1.5,Transport Engineering,Million Dollars,2012,9359
+1.5,Transport Engineering,Million Dollars,2013,10187.4
+1.5,Transport Engineering,Million Dollars,2014,11038.6
+1.5,Transport Engineering,Million Dollars,2015,8999.8
+1.5,Transport Engineering,Million Dollars,2016,7819.1
+1.5,Transport Engineering,Million Dollars,2017,7536.2
+1.5,Transport Engineering,Million Dollars,2018,8204.5
+1.5,Transport Engineering,Million Dollars,2019,8262.9
+1.5,Transport Engineering,Million Dollars,2020,6313.1
+1.5,Transport Engineering,Million Dollars,2021,6245.5
+1.5,Transport Engineering,Million Dollars,2022,7913.8
+1.5,Transport Engineering,Million Dollars,2023,8833.1
+1.5,Transport Engineering,Million Dollars,2024,11174.9
+1.5,Transport Engineering,Million Dollars,2025,13221.5
+1.5.1,Marine & Offshore Engineering,Million Dollars,2000,1392.1
+1.5.1,Marine & Offshore Engineering,Million Dollars,2001,1695.2
+1.5.1,Marine & Offshore Engineering,Million Dollars,2002,1826.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2003,1647.1
+1.5.1,Marine & Offshore Engineering,Million Dollars,2004,2089
+1.5.1,Marine & Offshore Engineering,Million Dollars,2005,2454.8
+1.5.1,Marine & Offshore Engineering,Million Dollars,2006,2931.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2007,3836.8
+1.5.1,Marine & Offshore Engineering,Million Dollars,2008,5430.7
+1.5.1,Marine & Offshore Engineering,Million Dollars,2009,5673.1
+1.5.1,Marine & Offshore Engineering,Million Dollars,2010,5710
+1.5.1,Marine & Offshore Engineering,Million Dollars,2011,5478.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2012,5727.1
+1.5.1,Marine & Offshore Engineering,Million Dollars,2013,6279.4
+1.5.1,Marine & Offshore Engineering,Million Dollars,2014,7148.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2015,4953.5
+1.5.1,Marine & Offshore Engineering,Million Dollars,2016,3643.7
+1.5.1,Marine & Offshore Engineering,Million Dollars,2017,2826.6
+1.5.1,Marine & Offshore Engineering,Million Dollars,2018,3091.6
+1.5.1,Marine & Offshore Engineering,Million Dollars,2019,2774.8
+1.5.1,Marine & Offshore Engineering,Million Dollars,2020,2225.9
+1.5.1,Marine & Offshore Engineering,Million Dollars,2021,1846.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2022,2777.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2023,3173.8
+1.5.1,Marine & Offshore Engineering,Million Dollars,2024,3862.3
+1.5.1,Marine & Offshore Engineering,Million Dollars,2025,5251.5
+1.5.2,Aerospace,Million Dollars,2000,1242.9
+1.5.2,Aerospace,Million Dollars,2001,1614.4
+1.5.2,Aerospace,Million Dollars,2002,1763.2
+1.5.2,Aerospace,Million Dollars,2003,1639.3
+1.5.2,Aerospace,Million Dollars,2004,1928.1
+1.5.2,Aerospace,Million Dollars,2005,2229.1
+1.5.2,Aerospace,Million Dollars,2006,2481.5
+1.5.2,Aerospace,Million Dollars,2007,2720
+1.5.2,Aerospace,Million Dollars,2008,2805.6
+1.5.2,Aerospace,Million Dollars,2009,2705.1
+1.5.2,Aerospace,Million Dollars,2010,2793.8
+1.5.2,Aerospace,Million Dollars,2011,2872.1
+1.5.2,Aerospace,Million Dollars,2012,2955.9
+1.5.2,Aerospace,Million Dollars,2013,3087.2
+1.5.2,Aerospace,Million Dollars,2014,2988.7
+1.5.2,Aerospace,Million Dollars,2015,3175.2
+1.5.2,Aerospace,Million Dollars,2016,3339.7
+1.5.2,Aerospace,Million Dollars,2017,3759.6
+1.5.2,Aerospace,Million Dollars,2018,4244.4
+1.5.2,Aerospace,Million Dollars,2019,4584.9
+1.5.2,Aerospace,Million Dollars,2020,3119
+1.5.2,Aerospace,Million Dollars,2021,3349.9
+1.5.2,Aerospace,Million Dollars,2022,4142.3
+1.5.2,Aerospace,Million Dollars,2023,4845.6
+1.5.2,Aerospace,Million Dollars,2024,6406.5
+1.5.2,Aerospace,Million Dollars,2025,7177.8
+1.5.3,Land,Million Dollars,2000,259.7
+1.5.3,Land,Million Dollars,2001,262.9
+1.5.3,Land,Million Dollars,2002,275.9
+1.5.3,Land,Million Dollars,2003,403.7
+1.5.3,Land,Million Dollars,2004,356.3
+1.5.3,Land,Million Dollars,2005,417.5
+1.5.3,Land,Million Dollars,2006,435.7
+1.5.3,Land,Million Dollars,2007,488.5
+1.5.3,Land,Million Dollars,2008,549.3
+1.5.3,Land,Million Dollars,2009,556.4
+1.5.3,Land,Million Dollars,2010,649.2
+1.5.3,Land,Million Dollars,2011,717.6
+1.5.3,Land,Million Dollars,2012,676
+1.5.3,Land,Million Dollars,2013,820.8
+1.5.3,Land,Million Dollars,2014,901.6
+1.5.3,Land,Million Dollars,2015,871.1
+1.5.3,Land,Million Dollars,2016,835.7
+1.5.3,Land,Million Dollars,2017,950
+1.5.3,Land,Million Dollars,2018,868.5
+1.5.3,Land,Million Dollars,2019,903.2
+1.5.3,Land,Million Dollars,2020,968.2
+1.5.3,Land,Million Dollars,2021,1049.3
+1.5.3,Land,Million Dollars,2022,994.2
+1.5.3,Land,Million Dollars,2023,813.7
+1.5.3,Land,Million Dollars,2024,906.1
+1.5.3,Land,Million Dollars,2025,792.3
+1.6,General Manufacturing Industries,Million Dollars,2000,3910
+1.6,General Manufacturing Industries,Million Dollars,2001,3473.7
+1.6,General Manufacturing Industries,Million Dollars,2002,3684.4
+1.6,General Manufacturing Industries,Million Dollars,2003,3682.3
+1.6,General Manufacturing Industries,Million Dollars,2004,3820.1
+1.6,General Manufacturing Industries,Million Dollars,2005,4073.3
+1.6,General Manufacturing Industries,Million Dollars,2006,4268.5
+1.6,General Manufacturing Industries,Million Dollars,2007,4619.9
+1.6,General Manufacturing Industries,Million Dollars,2008,5014.6
+1.6,General Manufacturing Industries,Million Dollars,2009,5291.6
+1.6,General Manufacturing Industries,Million Dollars,2010,5781.8
+1.6,General Manufacturing Industries,Million Dollars,2011,6331.8
+1.6,General Manufacturing Industries,Million Dollars,2012,6768.4
+1.6,General Manufacturing Industries,Million Dollars,2013,6979.4
+1.6,General Manufacturing Industries,Million Dollars,2014,7345.7
+1.6,General Manufacturing Industries,Million Dollars,2015,7585.4
+1.6,General Manufacturing Industries,Million Dollars,2016,7532.5
+1.6,General Manufacturing Industries,Million Dollars,2017,7613.8
+1.6,General Manufacturing Industries,Million Dollars,2018,7485
+1.6,General Manufacturing Industries,Million Dollars,2019,7928.7
+1.6,General Manufacturing Industries,Million Dollars,2020,7078
+1.6,General Manufacturing Industries,Million Dollars,2021,7788.5
+1.6,General Manufacturing Industries,Million Dollars,2022,8380.1
+1.6,General Manufacturing Industries,Million Dollars,2023,7440.8
+1.6,General Manufacturing Industries,Million Dollars,2024,10382
+1.6,General Manufacturing Industries,Million Dollars,2025,9930.7
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2000,1018.4
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2001,1018.5
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2002,1053.7
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2003,1064.8
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2004,1281.2
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2005,1302.9
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2006,1432.6
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2007,1446.7
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2008,1710.4
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2009,2110.9
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2010,2326.3
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2011,2657.4
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2012,2946
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2013,2877.5
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2014,3413.6
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2015,3763
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2016,3780.2
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2017,3987.3
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2018,3933
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2019,4415.4
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2020,3962
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2021,4182.4
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2022,4613.3
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2023,4067.1
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2024,6790.1
+1.6.1,"Food, Beverages & Tobacco",Million Dollars,2025,6551.7
+1.6.2,Printing,Million Dollars,2000,787.9
+1.6.2,Printing,Million Dollars,2001,691.9
+1.6.2,Printing,Million Dollars,2002,703.2
+1.6.2,Printing,Million Dollars,2003,719.6
+1.6.2,Printing,Million Dollars,2004,714.8
+1.6.2,Printing,Million Dollars,2005,706.4
+1.6.2,Printing,Million Dollars,2006,731.8
+1.6.2,Printing,Million Dollars,2007,756.7
+1.6.2,Printing,Million Dollars,2008,757.5
+1.6.2,Printing,Million Dollars,2009,679.5
+1.6.2,Printing,Million Dollars,2010,671.5
+1.6.2,Printing,Million Dollars,2011,663
+1.6.2,Printing,Million Dollars,2012,585.3
+1.6.2,Printing,Million Dollars,2013,601.1
+1.6.2,Printing,Million Dollars,2014,631.3
+1.6.2,Printing,Million Dollars,2015,578
+1.6.2,Printing,Million Dollars,2016,506.1
+1.6.2,Printing,Million Dollars,2017,486.2
+1.6.2,Printing,Million Dollars,2018,449.7
+1.6.2,Printing,Million Dollars,2019,475.2
+1.6.2,Printing,Million Dollars,2020,331.3
+1.6.2,Printing,Million Dollars,2021,323.1
+1.6.2,Printing,Million Dollars,2022,338
+1.6.2,Printing,Million Dollars,2023,340.2
+1.6.2,Printing,Million Dollars,2024,341.2
+1.6.2,Printing,Million Dollars,2025,375.2
+1.6.3,Miscellaneous Industries,Million Dollars,2000,2103.7
+1.6.3,Miscellaneous Industries,Million Dollars,2001,1763.3
+1.6.3,Miscellaneous Industries,Million Dollars,2002,1927.4
+1.6.3,Miscellaneous Industries,Million Dollars,2003,1897.9
+1.6.3,Miscellaneous Industries,Million Dollars,2004,1824
+1.6.3,Miscellaneous Industries,Million Dollars,2005,2064
+1.6.3,Miscellaneous Industries,Million Dollars,2006,2104.1
+1.6.3,Miscellaneous Industries,Million Dollars,2007,2416.5
+1.6.3,Miscellaneous Industries,Million Dollars,2008,2546.7
+1.6.3,Miscellaneous Industries,Million Dollars,2009,2501.2
+1.6.3,Miscellaneous Industries,Million Dollars,2010,2783.9
+1.6.3,Miscellaneous Industries,Million Dollars,2011,3011.4
+1.6.3,Miscellaneous Industries,Million Dollars,2012,3237.1
+1.6.3,Miscellaneous Industries,Million Dollars,2013,3500.8
+1.6.3,Miscellaneous Industries,Million Dollars,2014,3300.7
+1.6.3,Miscellaneous Industries,Million Dollars,2015,3244.4
+1.6.3,Miscellaneous Industries,Million Dollars,2016,3246.2
+1.6.3,Miscellaneous Industries,Million Dollars,2017,3140.3
+1.6.3,Miscellaneous Industries,Million Dollars,2018,3102.4
+1.6.3,Miscellaneous Industries,Million Dollars,2019,3038.1
+1.6.3,Miscellaneous Industries,Million Dollars,2020,2784.7
+1.6.3,Miscellaneous Industries,Million Dollars,2021,3283
+1.6.3,Miscellaneous Industries,Million Dollars,2022,3428.9
+1.6.3,Miscellaneous Industries,Million Dollars,2023,3033.4
+1.6.3,Miscellaneous Industries,Million Dollars,2024,3250.7
+1.6.3,Miscellaneous Industries,Million Dollars,2025,3003.8
