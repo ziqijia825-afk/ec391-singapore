@@ -98,37 +98,53 @@ export async function coverMap(el, kpiEl) {
 }
 
 // ---------- country profile: a data atlas of places and partners, each linked to a course idea and a chapter ----------
-const LABEL_POS = { onenorth: 'top', port: 'bottom', jurong: 'left', cbd: 'right', tuas: 'top', changi: 'top', fabs: 'right' };
+const LABEL_POS = { onenorth: 'top', port: 'bottom', jurong: 'left', cbd: 'right', tuas: 'top', changi: 'top', fabs: 'right',
+  capital: 'right', land: 'right', people: 'top', link: 'right' };
 const SHORT_LABEL = { port: 'Port', jurong: 'Jurong Island', fabs: 'Wafer fabs', tuas: 'Biomedical Park', onenorth: 'one-north',
-  cbd: 'CBD', changi: 'Changi Airport' };
+  cbd: 'CBD', changi: 'Changi Airport', capital: 'Parliament', land: 'Reclaimed coast', people: 'Heartland', link: 'Causeway to Johor' };
 const SITE_COLORS = ['#5aa9ef', '#eb6834', '#8f7ff0', '#f08cb3', '#2fc48f', '#f2b84b', '#7fd36a'];
+const COUNTRY_COLORS = ['#f2b84b', '#2fc48f', '#f08cb3', '#5aa9ef'];
 export async function sgMap(el) {
   const [geoS, geoR, k, a] = await Promise.all([getJSON('data/geo_sgp.json'), getJSON('data/geo_sea.json'),
     getJSON('data/kpis.json'), getJSON('data/atlas.json')]);
   if (!echarts.getMap('sgp')) echarts.registerMap('sgp', geoS);
   if (!echarts.getMap('sea')) echarts.registerMap('sea', geoR);
   const f = k.facts;
-  const spec = { title: `An atlas of Singapore's trade: ${a.sites.length} places and ${a.partners.length} partners`,
-    subtitle: 'Click a place or a partner for its numbers, the course idea it illustrates and the chapter that tests it.',
-    source: `${a.source} Boundaries from geoBoundaries (CC BY 4.0) and Natural Earth, locations approximate. Facts from SingStat (Population Trends 2026).` };
+  const spec = { title: 'An atlas of Singapore: the country, its places of trade and its partners',
+    subtitle: 'Click a point for its numbers and ranks, the idea it illustrates and the chapter that tests it.',
+    source: `${a.source} Boundaries from geoBoundaries (CC BY 4.0) and Natural Earth, locations approximate. Facts from SingStat (Population Trends 2026), the World Bank WDI and WGI, and AP via PBS for the 2025 election.` };
   const chart = cardShell(el, spec, {});
   el.classList.add('atlas');
-  el.querySelector('.controls').innerHTML = '<div class="seg"><button type="button" data-v="sites" class="on">Places in Singapore</button>'
-    + '<button type="button" data-v="partners">Trading partners</button></div>';
+  el.querySelector('.controls').innerHTML = '<div class="seg"><button type="button" data-v="country" class="on">The country</button>'
+    + `<button type="button" data-v="sites">${a.sites.length} places of trade</button><button type="button" data-v="partners">${a.partners.length} trading partners</button></div>`;
   const panel = el.querySelector('.extra');
-  let mode = 'sites', sel = null;
-  const items = () => (mode === 'sites' ? a.sites : a.partners);
-  const colorOf = (x) => (mode === 'sites' ? SITE_COLORS[a.sites.indexOf(x) % SITE_COLORS.length] : partnerColor(x.id));
-  const badge = (x) => (mode === 'sites' ? `<i class="ab" style="--k:${colorOf(x)}">${ICON[x.id] || ICON.globe}</i>`
+  let mode = 'country', sel = null;
+  const SETS = { country: a.country || [], sites: a.sites, partners: a.partners };
+  const island = () => mode !== 'partners';
+  const items = () => SETS[mode];
+  const colorOf = (x) => {
+    if (mode === 'partners') return partnerColor(x.id);
+    const pal = mode === 'country' ? COUNTRY_COLORS : SITE_COLORS;
+    return pal[items().indexOf(x) % pal.length];
+  };
+  const badge = (x) => (island() ? `<i class="ab" style="--k:${colorOf(x)}">${ICON[x.id] || ICON.globe}</i>`
     : `<i class="ab iso" style="--k:${colorOf(x)}">${esc(x.id)}</i>`);
-  const sub = (x) => (mode === 'sites' ? `${x.tag} · ${x.chapter_label}` : `${x.share_x != null ? `${x.share_x.toFixed(1)}% of exports` : 'largest import source'} · ${x.edge ? 'off map' : `${Math.round(x.km || 0).toLocaleString()} km`}`);
-  const list = () => `<div class="panel atlas-card atlas-list"><p class="al-h">${mode === 'sites' ? 'Places that matter for trade' : 'Twelve largest partners'}</p>
+  const sub = (x) => {
+    if (mode === 'country') return `${x.rows[0][0]} ${x.rows[0][1]}`;
+    if (mode === 'sites') return `${x.tag} · ${x.chapter_label}`;
+    const share = x.share_x != null ? `${x.share_x.toFixed(1)}% of exports` : 'largest import source';
+    return [share, x.km ? `${Math.round(x.km).toLocaleString()} km` : '', x.edge ? 'off map' : ''].filter(Boolean).join(' · ');
+  };
+  const HEAD = { country: 'The country at a glance', sites: 'Places that matter for trade', partners: 'Twelve largest partners' };
+  const HINT = { country: 'Capital and politics, land, people and the link to Malaysia. Pick one here or on the map.',
+    sites: 'Pick a place here or on the map.', partners: 'Line width is the share of Singapore’s exports. Each card compares actual exports with the gravity prediction of Chapter 3.' };
+  const list = () => `<div class="panel atlas-card atlas-list"><p class="al-h">${HEAD[mode]}</p>
     <ul>${items().map((x) => `<li><button type="button" data-id="${x.id}">${badge(x)}<span><b>${esc(x.name)}</b><small>${esc(sub(x))}</small></span></button></li>`).join('')}</ul>
-    <p class="hint">${mode === 'sites' ? 'Pick a place here or on the map.' : 'Line width is the share of Singapore’s exports. Each card compares actual exports with the gravity prediction of Chapter 3.'}</p></div>`;
+    <p class="hint">${HINT[mode]}</p></div>`;
   const card = (x) => {
     const [hero, ...rest] = x.rows;
     return `<div class="panel atlas-card" style="--k:${colorOf(x)}">
-    <div class="ac-top">${badge(x)}<div><h5>${esc(x.name)}</h5><p class="ac-sub">${x.km ? `${Math.round(x.km).toLocaleString()} km from Singapore · ${esc(x.fta || 'no trade agreement')}` : esc(x.fta || sub(x))}</p></div>
+    <div class="ac-top">${badge(x)}<div><h5>${esc(x.name)}</h5><p class="ac-sub">${mode !== 'partners' ? `${esc(x.tag)} · ${esc(x.chapter_label)}` : x.km ? `${Math.round(x.km).toLocaleString()} km from Singapore · ${esc(x.fta || 'no trade agreement')}` : esc(x.fta || sub(x))}</p></div>
       <button type="button" class="ac-x" aria-label="Back to the list">${ICON.close}</button></div>
     ${hero ? `<div class="ac-hero"><b>${esc(hero[0])}</b><span>${esc(hero[1])} <small>${esc(hero[2])}</small></span></div>` : ''}
     <dl class="ac-rows">${rest.map((r) => `<div><dt>${esc(r[1])}<small>${esc(r[2])}</small></dt><dd>${esc(r[0])}</dd></div>`).join('')}</dl>
@@ -169,18 +185,18 @@ export async function sgMap(el) {
     o.tooltip.trigger = 'item';
     o.tooltip.formatter = (p) => (p.seriesType === 'scatter' && p.data?.id ? `<b>${esc(p.data.full || p.data.name)}</b><br><span style="color:${MUTED}">Click for its card</span>` : '');
     o.series = [];
-    if (mode === 'sites') {
+    if (island()) {
       o.geo = { map: 'sgp_region', roam: false, boundingCoords: [[103.56, 1.515], [104.11, 1.165]], left: 6, right: 6, top: 6, bottom: 6,
         zoom, center: zoom > 1 ? (items().find((i) => i.id === sel)?.coord || [103.83, 1.35]) : undefined,
         itemStyle: LAND, emphasis: { disabled: true }, silent: true,
         regions: [{ name: 'Singapore', itemStyle: { areaColor: '#24507a', borderColor: '#9cc0e0', borderWidth: 1.3 } }] };
       o.series.push(water([{ name: 'SINGAPORE STRAIT', value: [103.86, 1.205] }, { name: 'JOHOR, MALAYSIA', value: [103.78, 1.497] },
         { name: 'BATAM, INDONESIA', value: [104.0, 1.178] }]));
-      const cur = a.sites.find((x) => x.id === sel);
+      const cur = items().find((x) => x.id === sel);
       if (cur) o.series.push({ type: 'effectScatter', coordinateSystem: 'geo', z: 3, silent: true, symbolSize: 18,
         data: [{ value: cur.coord }], rippleEffect: { scale: 3.2, brushType: 'stroke' }, itemStyle: { color: colorOf(cur) } });
       o.series.push({ type: 'scatter', coordinateSystem: 'geo', z: 4, labelLayout: { moveOverlap: 'shiftY' },
-        data: a.sites.map((x) => ({ name: SHORT_LABEL[x.id] || x.name, full: x.name, value: x.coord, id: x.id,
+        data: items().map((x) => ({ name: SHORT_LABEL[x.id] || x.name, full: x.name, value: x.coord, id: x.id,
           symbolSize: sel === x.id ? 20 : 13, itemStyle: { color: colorOf(x), borderColor: '#ffffff', borderWidth: 2 },
           label: { show: !narrow() || sel === x.id, position: LABEL_POS[x.id] || (x.coord[0] > 103.9 ? 'left' : 'right'),
             ...(sel === x.id ? { color: '#f2b84b', fontSize: 13.5 } : {}) } })),

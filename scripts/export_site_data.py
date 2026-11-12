@@ -58,6 +58,7 @@ kpis = [
      "rank": d2["wgi"]["ranks"]["GE"], "source": "World Bank WGI"},
 ]
 dump("kpis", {"kpis": kpis, "facts": {"capital": "Singapore", "area_km2": 745.1, "population_m": 6.21,
+                                      "residents_m": 4.23, "nonresidents_m": 1.98,  # SingStat, Population Trends 2026
                                       "languages": "Malay (national), English, Mandarin, Tamil",
                                       "system": "Parliamentary republic", "coords": [103.82, 1.35]}})
 
@@ -447,7 +448,57 @@ for iso, (pos, edge) in partner_pos.items():
                      "km": p.get("km"), "fta": p.get("fta"), "rows": rows[:5], "note": pnotes[iso],
                      "share_x": p.get("share_x", {}).get("2024"), "chapter": "ch03_trade", "chapter_label": "Chapter 3",
                      "section": "Does its trade follow gravity?", "tag": "Gravity model"})
-dump("atlas", {"sites": sites, "partners": partners,
+# the country itself: capital and politics, land, people and the link to Malaysia (Chapter 1's profile on the map)
+kf = json.loads((OUT / "kpis.json").read_text())["facts"]
+f1 = c1["facts"]
+wr = c2["wgi"]["ranks"]
+reg = lambda r: f"{ordinal(r['region_rank'])} of {r['region_n']} in East Asia & Pacific"
+mys = sk.get("MYS", {})
+country = [
+    {"id": "capital", "section": "How good is its government?", "name": "Parliament House, Civic District", "coord": [103.8505, 1.2895],
+     "chapter": "ch02_macro", "chapter_label": "Chapter 2", "tag": "Political system", "rows": [
+        [ordinal(wr["GE"]["rank"]), f"of {wr['GE']['n']} on government effectiveness, {c2['wgi']['year']}", f"{reg(wr['GE'])}, World Bank WGI"],
+        [ordinal(wr["RQ"]["rank"]), f"of {wr['RQ']['n']} on regulatory quality", f"{reg(wr['RQ'])}, WGI"],
+        [ordinal(wr["VA"]["rank"]), f"of {wr['VA']['n']} on voice and accountability", f"{reg(wr['VA'])}, WGI"],
+        ["87 of 97", "seats won by the People's Action Party, May 2025", "about 65.6% of the vote, AP via PBS"]],
+     "note": "A city state, so the capital is the country itself. The prime minister and cabinet answer to an elected parliament, "
+             "the People's Action Party has governed since 1959 and Lawrence Wong has been prime minister since May 2024. "
+             "Investors read this continuity as predictable policy, which Chapter 2 tests with the governance indicators."},
+    {"id": "land", "section": "What kind of country is it?", "name": "Tuas and the reclaimed coast", "coord": [103.64, 1.30],
+     "chapter": "ch01_profile", "chapter_label": "Chapter 1", "tag": "Geography", "rows": [
+        [f"{kf['area_km2']} km²", "of land, June 2026", "SingStat, Population Trends 2026"],
+        ["+28%", "since 1965, when it was 581.5 km²", "mostly reclamation, SingStat"],
+        [f"{ordinal(f1['AG.LND.TOTL.K2']['rank'])} of {f1['AG.LND.TOTL.K2']['n']}", "by land area",
+         f"World Bank, {f1['AG.LND.TOTL.K2']['value']:.0f} km² in {f1['AG.LND.TOTL.K2']['year']}, {reg(f1['AG.LND.TOTL.K2'])}"],
+        [f"{f1['SP.URB.TOTL.IN.ZS']['value']:.0f}%", "of people live in urban areas",
+         f"{ordinal(f1['SP.URB.TOTL.IN.ZS']['rank'])} of {f1['SP.URB.TOTL.IN.ZS']['n']}, World Bank"]],
+     "note": "An island on the Strait of Malacca that adds land by filling in the sea. The new coast at Tuas, Jurong Island and "
+             "Marina Bay holds ports, refineries and offices, yet land stays the scarcest input, which is why land intensive "
+             "production moves to the neighbours (Chapter 4)."},
+    {"id": "people", "section": "How does it compare with the region?", "name": "The heartland housing towns", "coord": [103.848, 1.334],
+     "chapter": "ch01_profile", "chapter_label": "Chapter 1", "tag": "Population", "rows": [
+        [f"{kf['population_m']}m", "people, June 2026",
+         f"{kf['residents_m']}m residents and {kf['nonresidents_m']}m foreign workers, students and dependants, SingStat"],
+        [f"{f1['EN.POP.DNST']['value']:,.0f}", f"people per km², {f1['EN.POP.DNST']['year']}",
+         f"{ordinal(f1['EN.POP.DNST']['rank'])} of {f1['EN.POP.DNST']['n']}, {reg(f1['EN.POP.DNST'])}, World Bank"],
+        [f"{f1['SP.DYN.LE00.IN']['value']:.1f}", f"years of life expectancy, {f1['SP.DYN.LE00.IN']['year']}",
+         f"{ordinal(f1['SP.DYN.LE00.IN']['rank'])} of {f1['SP.DYN.LE00.IN']['n']}, {reg(f1['SP.DYN.LE00.IN'])}"],
+        [f"{f1['SP.POP.65UP.TO.ZS']['value']:.1f}%", f"aged 65 or older, {f1['SP.POP.65UP.TO.ZS']['year']}",
+         f"{ordinal(f1['SP.POP.65UP.TO.ZS']['rank'])} of {f1['SP.POP.65UP.TO.ZS']['n']}, World Bank"]],
+     "note": "Four official languages, Malay, English, Mandarin and Tamil, with English for business, connect Singapore to "
+             "China, India and the Malay world. A third of the people are foreign workers, students and dependants, so the "
+             "labour force can grow with demand."},
+    {"id": "link", "section": "Does Singapore invest abroad?", "name": "Woodlands Causeway to Johor", "coord": [103.769, 1.452],
+     "chapter": "ch06_fdi", "chapter_label": "Chapter 6", "tag": "Neighbours", "rows": [
+        [f"{mys['share_x']['2024']:.1f}%", "of Singapore's exports go to Malaysia, 2024", "UN Comtrade"],
+        [f"{mys['share_m']['2024']:.1f}%", "of its imports come from Malaysia, 2024", "UN Comtrade"],
+        [f"{c3['gravity_ratio']['MYS']:.2f}×", "Malaysia's purchases over the gravity prediction", "team regression, Chapter 3"],
+        [f"{mys['km']:,.0f} km", "from Singapore to Kuala Lumpur", "World Bank capital coordinates"]],
+     "note": "The road and rail link across the Johor Strait to Malaysia, the federation Singapore left in 1965. Firms "
+             "increasingly pair a Singapore headquarters with land and workers in Johor, the division of labour the Johor "
+             "Singapore Special Economic Zone of January 2025 is designed to support."},
+]
+dump("atlas", {"country": country, "sites": sites, "partners": partners,
                "source": "Team calculations from UN Comtrade, CEPII BACI, OECD TiVA, SingStat, World Bank WDI and LPI, PWT, UNDP, "
                          "WITS and METI; numbers as in the chapters."})
 

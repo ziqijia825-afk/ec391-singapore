@@ -8,7 +8,7 @@ Singapore is a city state with the land of a small county and the human developm
 
 <!-- interactive: sgmap -->
 
-**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and four official languages, with English for business, connect it to China, India and the Malay world. The atlas links seven places on the island and twelve trading partners to the chapters that test them.
+**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and four official languages, with English for business, connect it to China, India and the Malay world. The atlas opens on the country itself, its capital, land, people and link to Malaysia, then shows seven places of trade on the island and twelve trading partners, each tied to the chapter that tests it.
 
 <!-- include: data/derived/ch01_facts.md -->
 
