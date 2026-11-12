@@ -6,7 +6,7 @@ Singapore twice tried to grow a high technology industry by courting foreign fir
 
 ## The course argument {Module 9 · Infant industry · Juhász 2015}
 
-**Comparative advantage can be learned, if support stops once the learning is done.** In the infant industry model a new industry's productivity rises with experience, so temporary help lets it ride down the learning curve until it can compete and export on its own. Juhász (2015) finds the historical version in the Napoleonic blockade, which shielded parts of France from British cotton and left them with mechanized spinning that outlasted the blockade. Most countries gave that help with tariffs. Singapore could not, with a tiny home market and zero tariffs (Chapter 7), so the Economic Development Board offered foreign firms tax holidays, ready built estates, training and research money instead, with pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
+**Comparative advantage can be learned, if support stops once the learning is done.** In the infant industry model a new industry's productivity rises with experience, so temporary help lets it ride down the learning curve until it can compete and export on its own. Juhász (2015) finds the historical version in the Napoleonic blockade. French regions better shielded from trade with Britain built more mechanized cotton spinning, and they kept more of it after the blockade ended. Most countries gave that help with tariffs. Singapore could not, with a tiny home market and zero tariffs (Chapter 7), so the Economic Development Board offered foreign firms tax holidays, ready built estates, training and research money instead, with pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
 
 <!-- interactive: learncurve -->
 
@@ -51,9 +51,13 @@ BACI records Singapore's chip exports at $125 billion in 2017, more than twice t
 
 **Chips learned, and pills learned only to export.** In the model's terms chips are a successful infant industry raised without a tariff. Support attracted firms, the industry climbed from assembly to fabrication, and the advantage has survived decades of rising wages because Singapore's capital, skills and suppliers now carry it (Chapter 4). Pharmaceuticals took almost two decades to turn export capacity into a stable advantage, while value added and foreign capital moved the other way. That fits Young's (1992) finding that Singapore grew mainly by accumulating capital and labour and only a little through productivity.
 
-## How we would test it properly
+## The difference in differences test
 
-**Compare targeted and untargeted products before and after the Biomedical Sciences Initiative.** A difference in differences on BACI data would estimate ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>t</sub> + β (Singapore<sub>c</sub> × Targeted<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub>, with pharmaceutical products as the targeted group, other chemicals as the control and Malaysia and Hong Kong SAR as comparison economies. A positive β in exports with no rise in local value added or local suppliers would confirm export capacity without learning. This needs all four digit products for the comparison economies, SingStat's investment commitments by industry and plant level data on local suppliers, which we have not collected.
+![Against its other chemicals and its peers, Singapore's pharma RCA rose 4.8 times after 2000](../figures/ch09_did.png)
+
+**Pharmaceuticals gained an advantage that Singapore's other chemicals and its neighbours did not.** We compared Singapore's RCA in pharmaceuticals (HS 30) with its other chemical chapters (HS 28 to 38) and with the same chapters in Malaysia and Hong Kong SAR, before and after the Biomedical Sciences Initiative of 2000, estimating ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>kt</sub> + g<sub>ct</sub> + β (Singapore<sub>c</sub> × Pharma<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub> on 990 observations. The estimate β = 1.57 (robust s.e. 0.27) means the pharmaceutical advantage rose 4.8 times relative to the comparison. The event study shows no gap in the four years before 2000 and a jump from 2005 that has held since.
+
+**What it does not show.** The test confirms that the policy built export capacity. The scorecard shows that the industry's local value added and foreign capital fell at the same time, so together they fit export capacity without deep learning. With three economies and four years before the policy the bands are a guide, and a stronger test would add more comparison economies and plant level data on local suppliers, which we have not collected.
 
 ## The next test
 

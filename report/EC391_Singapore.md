@@ -30,7 +30,7 @@ Singapore is a city state with the land of a small county and the human developm
 
 ## What kind of country is it?
 
-
+*Interactive figure on the website: [An atlas of Singapore: the country, its places of trade and its partners](https://ziqijia825-afk.github.io/ec391-singapore/)*
 
 **A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and four official languages, with English for business, connect it to China, India and the Malay world. The atlas opens on the country itself, its capital, land, people and link to Malaysia, then shows seven places of trade on the island and twelve trading partners, each tied to the chapter that tests it.
 
@@ -282,7 +282,7 @@ Imports mirror exports. Electronics and instruments were 34.8 percent of goods i
 
 ## Who does it trade with?
 
-
+*Interactive figure on the website: [Where Singapore's goods come from and go to](https://ziqijia825-afk.github.io/ec391-singapore/)*
 
 ![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
 
@@ -351,7 +351,7 @@ Singapore's comparative advantage has moved from factories to services, and tran
 
 <p class="equation">RCA<sub>ik</sub> = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>)<span>X = exports · i = Singapore · k = sector · w = world · above 1 = comparative advantage</span></p>
 
-
+*Interactive figure on the website: [Revealed comparative advantage by sector](https://ziqijia825-afk.github.io/ec391-singapore/)*
 
 ## What is Singapore good at?
 
@@ -422,6 +422,10 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 **Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143, the least arable land per person of 205 and almost no natural resource rents (178th of 197), so it is capital and skill abundant and resource poor. It exports capital and skill intensive services and goods and imports food (RCA 0.3).
 
+![Capital rich economies export capital intensive goods, and Singapore sits above the line](../figures/ch04_ho_test.png)
+
+**A cross-country check.** Across 154 economies in 2023, a 1 percent higher capital per worker goes with a 0.43 percent higher ratio of capital intensive to labour intensive RCA (robust s.e. 0.16), the direction Heckscher and Ohlin predict, but capital explains only 7 percent of the variation. Singapore's ratio of 9.6 sits far above the line and above 92 percent of economies, so its specialisation goes further than its capital alone predicts.
+
 **The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law, and its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, while the sectors it lost, refining and plastics, sit among his least. Those industries are skill intensive and less capital intensive than average, so Singapore's skills and courts appear to matter more than its capital.
 
 <details class="more" markdown="1">
@@ -436,7 +440,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 *Rank 1st = most abundant. Sources: Penn World Table 11.0; World Bank WDI (AG.LND.ARBL.HA.PC, NY.GDP.TOTL.RT.ZS), retrieved Nov 12, 2026.*
 
-Two caveats apply. Factor intensities are not observed in these data, so the test is a qualitative comparison. And much of the capital was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore grew mainly by accumulating factors, so its abundance of capital is partly the result of the FDI analysed in Chapter 6.
+Two caveats apply. Factor intensities are not observed in these data, so the grouping of HS chapters into capital and labour intensive goods follows textbook examples. And much of the capital was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore grew mainly by accumulating factors, so its abundance of capital is partly the result of the FDI analysed in Chapter 6.
 
 </details>
 
@@ -462,7 +466,7 @@ Almost half the value of Singapore's exports is created abroad, which makes it o
 
 ## How much of its exports is foreign?
 
-
+*Interactive figure on the website: [Value added links between Singapore and its partners](https://ziqijia825-afk.github.io/ec391-singapore/)*
 
 ![46% of the value of Singapore's exports is foreign](../figures/ch05_backward.png)
 
@@ -572,7 +576,7 @@ Inward FDI rose from 142 percent of GDP at the end of 2004 to 409 percent (S$3,1
 </details>
 
 ## Who invests, and in what?
-
+*Interactive figure on the website: [Foreign direct investment explorer](https://ziqijia825-afk.github.io/ec391-singapore/)*
 
 ![Holding companies hold 55% of foreign investment in Singapore](../figures/ch06_industries.png)
 
@@ -807,9 +811,9 @@ WTO tariff profiles and member page; World Bank WDI (WITS/UNCTAD TRAINS); UNCTAD
 Singapore twice tried to grow a high technology industry by courting foreign firms instead of raising tariffs. Chips learned, keeping a strong advantage while value added and investment grew, and pharmaceuticals learned only to export, building an advantage abroad while their weight at home shrank.
 
 ## The course argument
-**Comparative advantage can be learned, if support stops once the learning is done.** In the infant industry model a new industry's productivity rises with experience, so temporary help lets it ride down the learning curve until it can compete and export on its own. Juhász (2015) finds the historical version in the Napoleonic blockade, which shielded parts of France from British cotton and left them with mechanized spinning that outlasted the blockade. Most countries gave that help with tariffs. Singapore could not, with a tiny home market and zero tariffs (Chapter 7), so the Economic Development Board offered foreign firms tax holidays, ready built estates, training and research money instead, with pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
+**Comparative advantage can be learned, if support stops once the learning is done.** In the infant industry model a new industry's productivity rises with experience, so temporary help lets it ride down the learning curve until it can compete and export on its own. Juhász (2015) finds the historical version in the Napoleonic blockade. French regions better shielded from trade with Britain built more mechanized cotton spinning, and they kept more of it after the blockade ended. Most countries gave that help with tariffs. Singapore could not, with a tiny home market and zero tariffs (Chapter 7), so the Economic Development Board offered foreign firms tax holidays, ready built estates, training and research money instead, with pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
 
-
+*Interactive figure on the website: [Try it: when should support have stopped? (learning curve model)](https://ziqijia825-afk.github.io/ec391-singapore/)*
 
 ## The two bets
 
@@ -858,9 +862,13 @@ BACI records Singapore's chip exports at $125 billion in 2017, more than twice t
 ## The verdict
 **Chips learned, and pills learned only to export.** In the model's terms chips are a successful infant industry raised without a tariff. Support attracted firms, the industry climbed from assembly to fabrication, and the advantage has survived decades of rising wages because Singapore's capital, skills and suppliers now carry it (Chapter 4). Pharmaceuticals took almost two decades to turn export capacity into a stable advantage, while value added and foreign capital moved the other way. That fits Young's (1992) finding that Singapore grew mainly by accumulating capital and labour and only a little through productivity.
 
-## How we would test it properly
+## The difference in differences test
 
-**Compare targeted and untargeted products before and after the Biomedical Sciences Initiative.** A difference in differences on BACI data would estimate ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>t</sub> + β (Singapore<sub>c</sub> × Targeted<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub>, with pharmaceutical products as the targeted group, other chemicals as the control and Malaysia and Hong Kong SAR as comparison economies. A positive β in exports with no rise in local value added or local suppliers would confirm export capacity without learning. This needs all four digit products for the comparison economies, SingStat's investment commitments by industry and plant level data on local suppliers, which we have not collected.
+![Against its other chemicals and its peers, Singapore's pharma RCA rose 4.8 times after 2000](../figures/ch09_did.png)
+
+**Pharmaceuticals gained an advantage that Singapore's other chemicals and its neighbours did not.** We compared Singapore's RCA in pharmaceuticals (HS 30) with its other chemical chapters (HS 28 to 38) and with the same chapters in Malaysia and Hong Kong SAR, before and after the Biomedical Sciences Initiative of 2000, estimating ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>kt</sub> + g<sub>ct</sub> + β (Singapore<sub>c</sub> × Pharma<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub> on 990 observations. The estimate β = 1.57 (robust s.e. 0.27) means the pharmaceutical advantage rose 4.8 times relative to the comparison. The event study shows no gap in the four years before 2000 and a jump from 2005 that has held since.
+
+**What it does not show.** The test confirms that the policy built export capacity. The scorecard shows that the industry's local value added and foreign capital fell at the same time, so together they fit export capacity without deep learning. With three economies and four years before the policy the bands are a guide, and a stronger test would add more comparison economies and plant level data on local suppliers, which we have not collected.
 
 ## The next test
 
@@ -946,6 +954,10 @@ Every chart and table on this site was built by the team from raw files download
 
 **Value chains.** Backward participation = foreign value added in gross exports ÷ gross exports. Forward participation = the economy's value added contained in other economies' gross exports ÷ its own gross exports. Position index = ln(1 + forward) − ln(1 + backward), following Koopman and coauthors (2010).
 
+**Heckscher Ohlin check.** For 154 economies exporting over $1bn in 2023, OLS of ln(RCA in HS 28, 29, 30, 84, 85, 87, 88 and 90 ÷ RCA in HS 42, 61, 62, 64, 94 and 95) on ln(capital per worker, PWT rnna ÷ emp), with robust (HC1) standard errors. The split of chapters by factor intensity is the team's.
+
+**Difference in differences.** ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>kt</sub> + g<sub>ct</sub> + β (Singapore<sub>c</sub> × Pharma<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub>, where c is Singapore, Malaysia or Hong Kong SAR, k a chemical chapter HS 28 to 38 and t a year from 1995 to 2024, estimated by OLS with heteroskedasticity robust (HC1) standard errors. The event study replaces Post2000 with one dummy per year, 1999 = 0.
+
 **Shared sector table.** Chapters 3 to 6 use one table of sectors so that trade, value added and FDI data refer to the same industries. The mapping between classifications is approximate.
 
 | Sector | HS 1992 chapters (BACI) | WDI services exports | OECD TiVA (ISIC rev.4) | SingStat FDI series |
@@ -973,7 +985,7 @@ Singapore's role as an entrepôt and financial centre complicates almost every s
 
 ## Still to collect
 
-Three gaps remain, and each would sharpen a finding. Transparency International blocks automated downloads, so the corruption scores still come through Our World in Data until a member downloads the 2025 results file by hand. FDI by ultimate investor would show who stands behind the holding companies of Chapter 6, but Singapore publishes only immediate investors. The difference in differences test of Chapter 9 needs every four digit product for Malaysia and Hong Kong SAR, the Economic Development Board's investment commitments by industry and plant level data on local suppliers.
+Three gaps remain, and each would sharpen a finding. Transparency International blocks automated downloads, so the corruption scores still come through Our World in Data until a member downloads the 2025 results file by hand. FDI by ultimate investor would show who stands behind the holding companies of Chapter 6, but Singapore publishes only immediate investors. The difference in differences test of Chapter 9 would be stronger with more comparison economies, the Economic Development Board's investment commitments by industry and plant level data on local suppliers.
 
 ## Questions for the professor
 
@@ -981,9 +993,9 @@ Is the Singapore Department of Statistics acceptable as a source for inequality 
 
 ## Course readings
 
-Each analytical chapter tests its findings against a module of the EC 391 syllabus, and the tag beside a question names the module. Chapter 2 and Chapter 4 use Nunn's evidence from Module 9 that contract enforcement is a source of comparative advantage, and Chapter 4 measures revealed comparative advantage as in Module 3 and tests endowments as in Module 4. Chapter 3 reads the goods and services balances with the balance of payments accounts of Module 2, compares our gravity estimate with the class estimate of −1.46 from Module 8, adds the lecture's shared trade agreement factor as a dummy and sets both against Feyrer's Suez Canal experiment. Chapter 5 uses Module 6, Fort's evidence that fragmentation moves toward high human capital locations and Boehm and coauthors on how the Tohoku earthquake travelled along supply chains. Chapter 6 uses Module 2 on how multinationals blur the national accounts and Module 6 on why firms invest abroad. Chapter 7 uses Module 7 on the MFN rule, rules of origin (Conconi and coauthors) and the US China trade war. Chapter 9 tests the infant industry argument of Module 9 and compares Singapore's subsidies with the temporary protection Juhász studies.
+Each analytical chapter tests its findings against a module of the EC 391 syllabus, and the tag beside a question names the module. Chapter 2 and Chapter 4 use Nunn's evidence from Module 9 that contract enforcement is a source of comparative advantage, and Chapter 4 measures revealed comparative advantage as in Module 3 and tests endowments as in Module 4. Chapter 3 reads the goods and services balances with the balance of payments accounts of Module 2, compares our gravity estimate with the class estimate of −1.46 from Module 8, adds the lecture's shared trade agreement factor as a dummy and sets both against Feyrer's Suez Canal experiment. Chapter 5 uses Module 6, Fort's evidence that fragmentation moves toward high human capital locations and Boehm and coauthors on how the Tohoku earthquake travelled along supply chains. Chapter 6 uses Module 2 on how multinationals blur the national accounts and Module 6 on why firms invest abroad. Chapter 7 uses Module 7 on the MFN rule, rules of origin (Conconi and coauthors) and the US China trade war. Chapter 9 tests the infant industry argument of Module 9 with a difference in differences on BACI data and compares Singapore's subsidies with the temporary protection Juhász studies.
 
 ## References
 
-Boehm, C.E., A. Flaaen and N. Pandalai Nayar (2015), "The role of global supply chains in the transmission of shocks: firm-level evidence from the 2011 Tohoku earthquake", VoxEU, CEPR, 9 January. Conconi, P., M. García Santana, L. Puccio and R. Venturini (2016), "The perverse effect of preferential rules of origins", VoxEU, CEPR, 16 March. Damgaard, J., T. Elkjaer and N. Johannesen (2019), "The rise of phantom investments", IMF *Finance and Development*, September. Ekholm, K., R. Forslid and J. Markusen (2007), "Export-platform foreign direct investment", *Journal of the European Economic Association* 5(4), 776 to 795. Feyrer, J. (2009), "The 1967 to 1975 Suez Canal closure: lessons for trade and the trade income link", VoxEU, CEPR, 23 December. Fort, T.C. (2017), "Technology and production fragmentation: domestic versus foreign sourcing", *Review of Economic Studies* 84(2), 650 to 687. Head, K. and T. Mayer (2014), "Gravity equations: workhorse, toolkit, and cookbook", *Handbook of International Economics* 4. Juhász, R. (2015), "Temporary protection and technology adoption: evidence from the Napoleonic blockade", VoxEU, CEPR, 15 January. Koopman, R., W. Powers, Z. Wang and S.J. Wei (2010), "Give credit where credit is due", NBER Working Paper 16426. Nunn, N. (2007), "Relationship-specificity, incomplete contracts, and the pattern of trade", *Quarterly Journal of Economics* 122(2), 569 to 600. Young, A. (1992), "A tale of two cities: factor accumulation and technical change in Hong Kong and Singapore", *NBER Macroeconomics Annual* 7, 13 to 54. Ramondo, N. (2026), CAS EC 391 International Trade, syllabus and lecture notes, Boston University, Fall 2026.
+Boehm, C.E., A. Flaaen and N. Pandalai Nayar (2015), "The role of global supply chains in the transmission of shocks: firm-level evidence from the 2011 Tohoku earthquake", VoxEU, CEPR, 9 January, published as "Input linkages and the transmission of shocks", *Review of Economics and Statistics* 101(1), 2019, 60 to 75. Conconi, P., M. García Santana, L. Puccio and R. Venturini (2016), "The perverse effect of preferential rules of origins", VoxEU, CEPR, 16 March. Damgaard, J., T. Elkjaer and N. Johannesen (2019), "The rise of phantom investments", IMF *Finance and Development*, September. Ekholm, K., R. Forslid and J. Markusen (2007), "Export-platform foreign direct investment", *Journal of the European Economic Association* 5(4), 776 to 795. Feyrer, J. (2009), "The 1967 to 1975 Suez Canal closure: lessons for trade and the trade income link", VoxEU, CEPR, 23 December. Fort, T.C. (2017), "Technology and production fragmentation: domestic versus foreign sourcing", *Review of Economic Studies* 84(2), 650 to 687. Head, K. and T. Mayer (2014), "Gravity equations: workhorse, toolkit, and cookbook", *Handbook of International Economics* 4. Juhász, R. (2015), "Temporary protection and technology adoption: evidence from the Napoleonic blockade", VoxEU, CEPR, 15 January, published in the *American Economic Review* 108(11), 2018, 3339 to 3376. Koopman, R., W. Powers, Z. Wang and S.J. Wei (2010), "Give credit where credit is due", NBER Working Paper 16426. Nunn, N. (2007), "Relationship-specificity, incomplete contracts, and the pattern of trade", *Quarterly Journal of Economics* 122(2), 569 to 600. Young, A. (1992), "A tale of two cities: factor accumulation and technical change in Hong Kong and Singapore", *NBER Macroeconomics Annual* 7, 13 to 54. Ramondo, N. (2026), CAS EC 391 International Trade, syllabus and lecture notes, Boston University, Fall 2026.
 

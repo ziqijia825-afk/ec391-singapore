@@ -425,7 +425,13 @@ def main():
             body = f"<h1>{label}</h1><p class=soon>Coming soon.</p>"
         (OUT / "article" / f"{stem}.html").write_text(page(stem, label, body, prev, nxt), encoding="utf-8")
     REPORT.parent.mkdir(exist_ok=True)
-    text = MARK.sub("", "\n\n---\n\n".join(report))
+    site = "https://ziqijia825-afk.github.io/ec391-singapore/"
+    names = {"sgmap": "An atlas of Singapore: the country, its places of trade and its partners",
+             "sankey": "Where Singapore's goods come from and go to", "treemap": "Revealed comparative advantage by sector",
+             "gvc": "Value added links between Singapore and its partners", "fdi": "Foreign direct investment explorer",
+             "learncurve": "Try it: when should support have stopped? (learning curve model)"}
+    text = MARK.sub(lambda m: f"*Interactive figure on the website: [{names.get(m.group(1), m.group(1))}]({site})*",
+                    "\n\n---\n\n".join(report))
     REPORT.write_text(text.replace("](figures/", "](../figures/") + "\n", encoding="utf-8")
     (OUT / "EC391_Singapore.md").write_text(text + "\n", encoding="utf-8")
     build_interactive(texts)

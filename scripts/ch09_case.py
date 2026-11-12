@@ -123,6 +123,73 @@ line_chart(
 )
 N["fdi_stock_sgd_bn"] = {c: {int(y): round(float(v), 1) for y, v in fd[c].dropna().items()
                              if int(y) in (2004, 2010, 2014, 2020, 2024)} for c in fd.columns}
+# ---- The test the case calls for: difference in differences on BACI (HS 2 digit chemicals, 1995 to latest)
+# ln RCA_ckt = a_ck + b_kt + g_ct + beta (Singapore x Pharma x Post2000) + e_ckt, with Malaysia and Hong Kong SAR as
+# comparison economies and the other chemical chapters (HS 28 to 38 except 30) as the comparison products.
+import numpy as np  # noqa: E402
+
+CHEM = [f"{k:02d}" for k in range(28, 39)]
+DID_C = ["SGP", "MYS", "HKG"]
+h = hs2.rename(columns={"export_value": "v"})
+h = h[h.hs2.isin(CHEM)].copy()
+wk = h.groupby(["hs2", "year"]).v.sum()
+h = h[h.country_iso3_code.isin(DID_C)].copy()
+cty_tot = h.apply(lambda r: tot.loc[(r.country_iso3_code, r.year)], axis=1)
+h["rca"] = (h.v / cty_tot) / (h.apply(lambda r: wk.loc[(r.hs2, r.year)], axis=1) / h.year.map(wtot))
+h = h[h.rca > 0].assign(y=lambda d: np.log(d.rca))
+h["treat"] = (h.country_iso3_code == "SGP") & (h.hs2 == "30")
+
+
+def ols_fe(df, regs):
+    """OLS of y on regs plus country-product, product-year and country-year fixed effects; HC1 standard errors."""
+    fe = pd.get_dummies(df.country_iso3_code + "_" + df.hs2, drop_first=True, dtype=float)
+    fe2 = pd.get_dummies(df.hs2 + "_" + df.year.astype(str), drop_first=True, dtype=float)
+    fe3 = pd.get_dummies(df.country_iso3_code + "_" + df.year.astype(str), drop_first=True, dtype=float)
+    X = pd.concat([regs, fe, fe2, fe3], axis=1)
+    X.insert(0, "const", 1.0)
+    Xv, yv = X.values, df.y.values
+    beta, *_ = np.linalg.lstsq(Xv, yv, rcond=None)
+    e = yv - Xv @ beta
+    n, k = Xv.shape[0], np.linalg.matrix_rank(Xv)
+    XtXi = np.linalg.pinv(Xv.T @ Xv)
+    V = XtXi @ (Xv.T * e ** 2) @ Xv @ XtXi * n / (n - k)
+    se = np.sqrt(np.diag(V))
+    return {c: (float(beta[i]), float(se[i])) for i, c in enumerate(X.columns) if c in regs.columns}, n
+
+
+post = pd.DataFrame({"sgp_pharma_post": (h.treat & (h.year >= 2000)).astype(float)}, index=h.index)
+did, n_did = ols_fe(h, post)
+b, se = did["sgp_pharma_post"]
+# event study: one coefficient per year, 1999 = 0 (the year before the Biomedical Sciences Initiative)
+ev_years = [int(y) for y in sorted(h.year.unique()) if y != 1999]
+ev = pd.DataFrame({f"y{y}": (h.treat & (h.year == y)).astype(float) for y in ev_years}, index=h.index)
+es, _ = ols_fe(h, ev)
+est = pd.DataFrame({"Estimate": {y: es[f"y{y}"][0] for y in ev_years}, "se": {y: es[f"y{y}"][1] for y in ev_years}})
+est.loc[1999] = [0.0, 0.0]
+est = est.sort_index()
+# keys SGP / EAS / WLD only borrow the house colours: the estimate in Singapore red, the 95% band in neutral dashes
+band = pd.DataFrame({"SGP": est.Estimate, "EAS": est.Estimate + 1.96 * est.se, "WLD": est.Estimate - 1.96 * est.se})
+BAND_LABELS = {"SGP": "Estimate", "EAS": "Upper 95%", "WLD": "Lower 95%"}
+pre = est.loc[:1998, "Estimate"]
+N["did"] = {"beta": round(b, 3), "se": round(se, 3), "pct": round(float(np.exp(b) - 1) * 100, 0), "n": n_did,
+            "pre_mean": round(float(pre.mean()), 2), "pre_max_abs": round(float(pre.abs().max()), 2),
+            "last": int(h.year.max()), "est_last": round(float(est.Estimate.iloc[-1]), 2),
+            "est_2010": round(float(est.loc[2010, "Estimate"]), 2), "est_2018": round(float(est.loc[2018, "Estimate"]), 2)}
+line_chart(
+    band,
+    title=f"Against its other chemicals and its peers, Singapore's pharma RCA rose {np.exp(b):.1f} times after 2000",
+    subtitle=f"Event study, ln RCA of pharma (HS 30) vs. other chemicals and vs. Malaysia and Hong Kong SAR, 1999 = 0, "
+             f"1995 to {int(h.year.max())}",
+    ylabel="Difference in ln RCA relative to 1999", fmt=lambda v: f"{v:.2f}", ymin=None, zero_line=True,
+    labels=BAND_LABELS,
+    events=((2000, "Biomedical Sciences Initiative"),),
+    source=f"Source: {BACI_SRC}. OLS with country-product, product-year and country-year fixed effects; "
+           f"bands are 95% intervals from heteroskedasticity robust (HC1) errors; {n_did} observations. With three "
+           "economies and four pre-years the test is suggestive, not conclusive.",
+    out="ch09_did.png",
+)
+print("DID", N["did"])
+print(est.round(2).T.to_string())
 save_numbers("ch09", N)
 print(rca.round(2).loc[[1995, 2000, 2004, 2010, 2014, 2020, LASTC]])
 print(peer.round(2).loc[[2004, 2014, LASTC]])

@@ -46,6 +46,10 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 **Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143, the least arable land per person of 205 and almost no natural resource rents (178th of 197), so it is capital and skill abundant and resource poor. It exports capital and skill intensive services and goods and imports food (RCA 0.3).
 
+![Capital rich economies export capital intensive goods, and Singapore sits above the line](../figures/ch04_ho_test.png)
+
+**A cross-country check.** Across 154 economies in 2023, a 1 percent higher capital per worker goes with a 0.43 percent higher ratio of capital intensive to labour intensive RCA (robust s.e. 0.16), the direction Heckscher and Ohlin predict, but capital explains only 7 percent of the variation. Singapore's ratio of 9.6 sits far above the line and above 92 percent of economies, so its specialisation goes further than its capital alone predicts.
+
 **The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law, and its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, while the sectors it lost, refining and plastics, sit among his least. Those industries are skill intensive and less capital intensive than average, so Singapore's skills and courts appear to matter more than its capital.
 
 <details class="more" markdown="1">
@@ -53,7 +57,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 <!-- include: data/derived/ch04_endowments.md -->
 
-Two caveats apply. Factor intensities are not observed in these data, so the test is a qualitative comparison. And much of the capital was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore grew mainly by accumulating factors, so its abundance of capital is partly the result of the FDI analysed in Chapter 6.
+Two caveats apply. Factor intensities are not observed in these data, so the grouping of HS chapters into capital and labour intensive goods follows textbook examples. And much of the capital was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore grew mainly by accumulating factors, so its abundance of capital is partly the result of the FDI analysed in Chapter 6.
 
 </details>
 

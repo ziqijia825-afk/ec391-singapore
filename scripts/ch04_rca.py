@@ -188,6 +188,52 @@ print("wrote data/derived/ch04_endowments.md")
 N["endowments"] = {"pwt_year": pyear, "kl_sgp": float(kl[FOCUS]), "kl_rank": int(klr["rank"]), "kl_n": int(klr.n),
                    "kl_peers": {k: float(kl.get(k, float("nan"))) for k in sel},
                    "hc_sgp": float(p.hc[FOCUS]), "hc_rank": int(hcr["rank"]), "hc_n": int(hcr.n)}
+# ---- A cross-country test of Heckscher Ohlin: do capital rich economies specialise in capital intensive goods?
+# y = ln(RCA in capital and skill intensive chapters / RCA in labour intensive chapters), x = ln capital per worker.
+# The grouping of HS chapters by factor intensity is the team's, following the textbook examples.
+import numpy as np  # noqa: E402
+from chart_style import scatter  # noqa: E402
+
+K_CH = ["28", "29", "30", "84", "85", "87", "88", "90"]  # chemicals, pharma, machinery, electronics, vehicles, aircraft, instruments
+L_CH = ["42", "61", "62", "64", "94", "95"]              # leather goods, apparel, footwear, furniture, toys
+hb = pd.read_csv(DERIVED / "baci_hs2.csv", dtype={"hs2": str})
+hb = hb[hb.year == pyear]
+tot_c = hb.groupby("exp").v.sum()
+tot_w = hb.v.sum()
+grp = lambda ch: hb[hb.hs2.isin(ch)].groupby("exp").v.sum()
+rca_k = (grp(K_CH) / tot_c) / (grp(K_CH).sum() / tot_w)
+rca_l = (grp(L_CH) / tot_c) / (grp(L_CH).sum() / tot_w)
+econ_set, _ = economies()
+ho = pd.DataFrame({"y": np.log(rca_k / rca_l), "kl": kl / 1e3, "exports": tot_c}).dropna()
+ho = ho[ho.index.isin(econ_set) & np.isfinite(ho.y) & (ho.exports > 1e9)]
+ho["x"] = np.log(ho.kl)
+Xm = np.column_stack([np.ones(len(ho)), ho.x.values])
+bh, *_ = np.linalg.lstsq(Xm, ho.y.values, rcond=None)
+eh = ho.y.values - Xm @ bh
+XtXi = np.linalg.inv(Xm.T @ Xm)
+Vh = XtXi @ (Xm.T * eh ** 2) @ Xm @ XtXi * len(ho) / (len(ho) - 2)
+r2 = 1 - (eh ** 2).sum() / ((ho.y - ho.y.mean()) ** 2).sum()
+pred_sg = bh[0] + bh[1] * ho.loc[FOCUS, "x"]
+ho = ho.reset_index(names="iso3")
+scatter(
+    ho, x="x", y="y", label_col="iso3", highlight=[FOCUS], annotate=[FOCUS, "MYS", "HKG", "VNM", "CHN", "USA", "JPN"],
+    fit=(bh[0], bh[1]),
+    title=f"Capital rich economies export capital intensive goods, and Singapore sits {'above' if ho.loc[ho.iso3 == FOCUS, 'y'].iloc[0] > pred_sg else 'below'} the line",
+    subtitle=f"ln(RCA in capital and skill intensive goods / RCA in labour intensive goods) against ln capital per worker, "
+             f"{len(ho)} economies, {pyear}",
+    xlabel="ln capital per worker (thousand 2021 US$)", ylabel="ln(RCA capital intensive / RCA labour intensive)",
+    source=f"Source: team calculation from CEPII BACI (HS 1992, V202601) and Penn World Table 11.0 (rnna / emp), "
+           f"downloaded {retrieved(path=PWT)}. Capital and skill intensive: HS {', '.join(K_CH)}; labour intensive: "
+           f"HS {', '.join(L_CH)}. Economies exporting over $1bn. OLS slope {bh[1]:.2f} (robust s.e. "
+           f"{np.sqrt(Vh[1, 1]):.2f}), R² {r2:.2f}.",
+    out="ch04_ho_test.png",
+)
+N["ho_test"] = {"slope": round(float(bh[1]), 2), "se": round(float(np.sqrt(Vh[1, 1])), 2), "r2": round(float(r2), 2),
+                "n": int(len(ho)), "year": pyear, "y_sgp": round(float(ho.loc[ho.iso3 == FOCUS, "y"].iloc[0]), 2),
+                "pred_sgp": round(float(pred_sg), 2),
+                "ratio_sgp": round(float(np.exp(ho.loc[ho.iso3 == FOCUS, "y"].iloc[0])), 1),
+                "pct_above": round(float((ho.y < ho.loc[ho.iso3 == FOCUS, "y"].iloc[0]).mean() * 100), 0)}
+print("HO", N["ho_test"])
 save_numbers("ch04", N)
 print(heat.round(2).to_string())
 print(sg.round(2).to_string())
