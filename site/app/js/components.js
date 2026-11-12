@@ -43,6 +43,7 @@ export async function coverMap(el, kpiEl) {
       });
     }
   }
+  if (!el) return;  // the cover now shows the atlas; only the key numbers come from here
   const SG = [103.82, 1.35];
   const narrow = () => el.clientWidth < 760;
   const SERIF = '"Source Serif 4", Georgia, serif';
@@ -104,7 +105,7 @@ const SHORT_LABEL = { port: 'Port', jurong: 'Jurong Island', fabs: 'Wafer fabs',
   cbd: 'CBD', changi: 'Changi Airport', capital: 'Parliament', land: 'Reclaimed coast', people: 'Heartland', link: 'Causeway to Johor' };
 const SITE_COLORS = ['#5aa9ef', '#eb6834', '#8f7ff0', '#f08cb3', '#2fc48f', '#f2b84b', '#7fd36a'];
 const COUNTRY_COLORS = ['#f2b84b', '#2fc48f', '#f08cb3', '#5aa9ef'];
-export async function sgMap(el) {
+export async function sgMap(el, { start = 'country' } = {}) {
   const [geoS, geoR, k, a] = await Promise.all([getJSON('data/geo_sgp.json'), getJSON('data/geo_sea.json'),
     getJSON('data/kpis.json'), getJSON('data/atlas.json')]);
   if (!echarts.getMap('sgp')) echarts.registerMap('sgp', geoS);
@@ -115,10 +116,11 @@ export async function sgMap(el) {
     source: `${a.source} Boundaries from geoBoundaries (CC BY 4.0) and Natural Earth, locations approximate. Facts from SingStat (Population Trends 2026), the World Bank WDI and WGI, and AP via PBS for the 2025 election.` };
   const chart = cardShell(el, spec, {});
   el.classList.add('atlas');
-  el.querySelector('.controls').innerHTML = '<div class="seg"><button type="button" data-v="country" class="on">The country</button>'
-    + `<button type="button" data-v="sites">${a.sites.length} places of trade</button><button type="button" data-v="partners">${a.partners.length} trading partners</button></div>`;
+  const segBtn = (v, label) => `<button type="button" data-v="${v}"${v === start ? ' class="on"' : ''}>${label}</button>`;
+  el.querySelector('.controls').innerHTML = `<div class="seg">${segBtn('country', 'The country')}`
+    + `${segBtn('sites', `${a.sites.length} places of trade`)}${segBtn('partners', `${a.partners.length} trading partners`)}</div>`;
   const panel = el.querySelector('.extra');
-  let mode = 'country', sel = null;
+  let mode = start, sel = null;
   const SETS = { country: a.country || [], sites: a.sites, partners: a.partners };
   const island = () => mode !== 'partners';
   const items = () => SETS[mode];

@@ -18,9 +18,7 @@ Singapore is a city state with the land of a small county and the human developm
 
 ## What kind of country is it?
 
-*Interactive figure on the website: [An atlas of Singapore: the country, its places of trade and its partners](https://ziqijia825-afk.github.io/ec391-singapore/)*
-
-**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and English as the language of business connects it to China, India and the Malay world. The atlas shows the country, its places of trade and its partners.
+**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and English as the language of business connects it to China, India and the Malay world. The atlas on the opening screen of the website maps the country, its places of trade and its partners.
 
 <section class="facts"><div><span>Capital</span><b>Singapore (city state)</b></div><div><span>Official languages</span><b>Malay (national), English, Mandarin, Tamil</b></div><div><span>Land area</span><b>745.1 km² (June 2026), +28% since 1965</b></div><div><span>Population</span><b>6.21 million (June 2026)</b></div><div><span>Political system</span><b>Parliamentary republic, PAP in government since 1959</b></div><div><span>Prime minister</span><b>Lawrence Wong, since May 2024</b></div><div><span>Currency</span><b>Singapore dollar (S$)</b></div><div><span>Memberships</span><b>ASEAN (1967), APEC (1989), WTO (1995), CPTPP, RCEP</b></div><p class="facts-src">SingStat Population Trends 2026 and land area series, Constitution of Singapore, Prime Minister's Office, WTO.</p></section>
 

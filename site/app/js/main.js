@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const setTb = () => document.documentElement.style.setProperty('--tb', `${topbar.offsetHeight}px`);
   setTb();
   new ResizeObserver(setTb).observe(topbar);
-  coverMap(document.getElementById('cover-map'), document.getElementById('cover-kpis')).then(() => sleepWhenHidden(document.getElementById('cover'))).catch(console.error);
+  coverMap(null, document.getElementById('cover-kpis')).catch(console.error);  // key numbers on the cover
+  // the cover is the atlas: trade lanes to the twelve largest partners first, then the country and its places
+  sgMap(document.getElementById('cover-atlas'), { start: 'partners' })
+    .then(() => sleepWhenHidden(document.getElementById('cover'))).catch(console.error);
   // key numbers that stay in view under the top bar, each with its own icon
   const icons = [ICON.gdp, ICON.income, ICON.trade, ICON.fdi, ICON.hdi, ICON.gov];
   getJSON('data/kpis.json').then((k) => {

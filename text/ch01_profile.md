@@ -6,9 +6,7 @@ Singapore is a city state with the land of a small county and the human developm
 
 ## What kind of country is it?
 
-<!-- interactive: sgmap -->
-
-**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and English as the language of business connects it to China, India and the Malay world. The atlas shows the country, its places of trade and its partners.
+**A crowded island republic on one of the world's busiest sea lanes.** A third of its 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and English as the language of business connects it to China, India and the Malay world. The atlas on the opening screen of the website maps the country, its places of trade and its partners.
 
 <!-- include: data/derived/ch01_facts.md -->
 

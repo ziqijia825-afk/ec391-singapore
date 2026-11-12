@@ -532,3 +532,35 @@ body.past-cover #cover *, body.past-cover #cover *::after { animation-play-state
   .page.left, .page.prose { padding-top: 34px; padding-bottom: 30px; }
 }
 @media (min-width: 1000px) { .spread { grid-template-columns: minmax(360px, 40%) minmax(0, 1fr); } }
+
+/* ---------- the cover is the atlas: title and key numbers on the left, the interactive map on the right ---------- */
+#cover::after { display: none; }
+#cover .page.full.cover-atlas { position: relative; z-index: 1; padding: 22px 22px 22px 0; }
+#cover .cover-atlas .card { background: transparent; border: 0; box-shadow: none; padding: 0; color: #fff; }
+#cover .cover-atlas .card > h4, #cover .cover-atlas .card > .sub { display: none; }
+#cover .cover-atlas .card .seg { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
+#cover .cover-atlas .card .seg button { background: transparent; color: #d3dfeb; border-right-color: rgba(255,255,255,.22); }
+#cover .cover-atlas .card .seg button.on { background: #ffcf7a; color: #0b2239; }
+#cover .cover-atlas .card .foot .src { color: rgba(211,223,235,.7); }
+#cover .cover-atlas .card .foot { border-top-color: rgba(255,255,255,.14); }
+#cover .cover-atlas .card .foot .actions { display: none; }
+#cover .cover-atlas .card.atlas .plot { background: rgba(4,20,32,.35); }
+@media (min-width: 1000px) {
+  #cover { display: grid; grid-template-columns: minmax(380px, 33%) minmax(0, 1fr); height: 100vh; min-height: 680px; }
+  #cover .cover-text { position: relative; left: auto; top: auto; transform: none; width: auto; align-self: center;
+    padding: 40px clamp(24px, 3.4vw, 60px); }
+  #cover .cover-text h1 { font-size: clamp(56px, 6.2vw, 96px); }
+  #cover .cover-text .dek { margin-bottom: 24px; }
+  #cover .page.full.cover-atlas { grid-column: 2; height: 100vh; min-height: 680px; }
+  #cover .scroll-cue { left: 16.5%; }
+}
+@media (max-width: 999px) {
+  #cover .page.full.cover-atlas { padding: 0 12px 40px; }
+  #cover .cover-text { padding-top: 40px; }
+}
+#cover .cover-atlas .card > .controls { grid-row: 1; }
+#cover .cover-atlas .card > .foot { grid-row: 5; }
+#cover .cover-atlas .card > .data { grid-row: 6; }
+#cover .cover-atlas .card .foot .src { font-size: 11px; line-height: 1.4; }
+@media (min-width: 1000px) { #cover .cover-text h1 { white-space: nowrap; font-size: clamp(52px, 5.4vw, 86px); } }
+@media (max-width: 999px) { #cover .cover-atlas .card > .extra { max-height: 340px; overflow-y: auto; } }

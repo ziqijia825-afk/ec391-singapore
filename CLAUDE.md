@@ -114,8 +114,8 @@ structure, data routes and methods only; never their text, charts or numbers (th
   `export_site_data.py` writes the interactive datasets (KPIs, Sankey, GVC network, FDI explorer, WGI by year, RCA by
   year). `run_all.py` reruns everything and builds the site.
 - Site: `site/build.py` builds `_site/index.html`, an editorial country profile modelled on the Growth Lab and OEC
-  profiles (Nov 13, after the picture book was dropped): a dark nautical cover map of Singapore's export lanes with six
-  ranked KPIs, then one screen per question, made by `paginate()`: text column on the left (question, bold answer,
+  profiles (Nov 13, after the picture book was dropped): a cover that is the interactive atlas (title and six ranked
+  KPIs on the left, `sgMap` on the right opening on the twelve partners' trade lanes, with the country and places views), then one screen per question, made by `paginate()`: text column on the left (question, bold answer,
   short paragraphs, expandable details, previous/next section links), a sticky full-height chart on the right,
   full-width screens for interactive components, single-column prose screens, navy chapter openers with contents and
   three number cards. `js/story.js` renders charts lazily, follows the reader (chapter tab, address, progress bar) and
@@ -149,7 +149,7 @@ structure, data routes and methods only; never their text, charts or numbers (th
   HS table a goods-only base; both are labelled.
 - UI restyled as an illustrated poster (hero.svg 1965 vs 2024, Chewy / Patrick Hand SC / Nunito, ink outlines, chapter
   banners with icons in site/app/icons/).
-- Length (Nov 13): cut from 80 screens / 9,000 words to 43 screens, about 30 screen heights at 1440 x 900 (27,400 px)
+- Length (Nov 13): cut from 80 screens / 9,000 words to 43 screens, about 30 screen heights at 1440 x 900 (26,700 px after the atlas moved to the cover)
   and 5,300 words; the Argentina page is about 21. Openers and full-width screens are compact, chart screens cap at
   680 px, the text column is 40% wide and holds up to 1,500 characters before a continuation screen. No separate "Implications"
   sections (the bridge sentence ends each chapter's last section), secondary charts live in "More" toggles, the GVC
