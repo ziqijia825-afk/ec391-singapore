@@ -2,7 +2,7 @@
 
 ## Data sources
 
-Every chart and table on this site was built by the team from raw files downloaded by the scripts in the project repository (`scripts/fetch_*.py`). Downloaded files are stored in `data/raw/`, and derived numbers used in the text are saved in `data/derived/`. All data were accessed between 11 and 12 November 2026.
+Every chart and table was built by the team from raw files downloaded by the scripts in the repository (`scripts/fetch_*.py`) and logged in `data/SOURCES.md`, accessed in November 2026.
 
 | Source | Type | Used for | Access |
 | --- | --- | --- | --- |
@@ -26,42 +26,42 @@ Every chart and table on this site was built by the team from raw files download
 | SingStat Population Trends 2026; data.gov.sg land area series | Government | Population by residency, land area in 1965 and 2026 | linked in Chapter 1 |
 | Associated Press via PBS | News | Result of the general election of May 2025 | linked in Chapter 1 |
 
+**Limitations.** Singapore's role as an entrepôt and financial centre complicates almost every statistic, so we pair reported exports with BACI and value added data and read FDI as recorded by immediate investor. There are no World Bank poverty or Gini data for Singapore, and TiVA and tariff data end in 2022.
+
+Three gaps remain. Transparency International's 2025 results file must be downloaded by hand to replace the Our World in Data copy, Singapore publishes no FDI by ultimate investor, and the Chapter 9 test would be firmer with plant level data on local suppliers.
+
 ## Methods
 
-**Global and regional ranks.** For every indicator we rank all economies with data in the same year, excluding the World Bank's regional and income aggregates. Rank 1 is the highest value unless stated otherwise (for inflation and tariffs, 1 is the lowest). Ties share the best rank. The regional rank is among economies in the World Bank's East Asia and Pacific region. B-READY ranks are among the 100 economies it covers, and TiVA ranks among its 80 economies.
+**Every method in one place.** Ranks, RCA, gravity, concentration, value chains, the Heckscher Ohlin check and the difference in differences are defined below.
 
-**Revealed comparative advantage.** Balassa's index for country *i* and sector *k* is RCA = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>), where X is exports and *w* is the world, here the sum of all economies in the data. Goods exports come from CEPII BACI and services exports from the World Bank's balance of payments data (transport, travel, insurance and financial, and computer, communications and other services). Sector RCAs in Chapter 4 use exports of goods and services, while HS chapter and product RCAs in Chapters 4 and 9 use goods only.
+<details class="more" markdown="1">
+<summary>The formulas and estimation details</summary>
 
-**Gravity.** Ordinary least squares of ln(Singapore's exports to partner *j*, 2024) on ln(GDP of *j*, 2024, current US$) and ln(great circle distance between capitals), with heteroskedasticity robust (HC1) standard errors. Capital coordinates come from the World Bank's country metadata.
+**Ranks.** For every indicator we rank all economies with data in the same year, excluding the World Bank's aggregates. Rank 1 is the highest value unless stated (for inflation and tariffs the lowest), and the regional rank is within the World Bank's East Asia and Pacific region.
+
+**Revealed comparative advantage.** RCA = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>), with goods from CEPII BACI and services from the World Bank's balance of payments. Sector RCAs use goods and services, HS chapter and product RCAs goods only.
+
+**Gravity.** OLS of ln(Singapore's exports to partner *j*, 2024) on ln(GDP of *j*) and ln(distance between capitals), with robust (HC1) standard errors.
 
 **Concentration.** Herfindahl Hirschman index HHI = Σ s<sub>j</sub><sup>2</sup>, where s<sub>j</sub> is partner *j*'s share of exports.
 
-**Value chains.** Backward participation = foreign value added in gross exports ÷ gross exports. Forward participation = the economy's value added contained in other economies' gross exports ÷ its own gross exports. Position index = ln(1 + forward) − ln(1 + backward), following Koopman and coauthors (2010).
+**Value chains.** Backward participation = foreign value added in gross exports ÷ gross exports. Forward participation = value added in other economies' exports ÷ own gross exports. Position = ln(1 + forward) − ln(1 + backward) (Koopman and coauthors, 2010).
 
-**Heckscher Ohlin check.** For 154 economies exporting over $1bn in 2023, OLS of ln(RCA in HS 28, 29, 30, 84, 85, 87, 88 and 90 ÷ RCA in HS 42, 61, 62, 64, 94 and 95) on ln(capital per worker, PWT rnna ÷ emp), with robust (HC1) standard errors. The split of chapters by factor intensity is the team's.
+**Heckscher Ohlin check.** For 154 economies exporting over $1bn in 2023, OLS of ln(RCA in HS 28 to 30, 84, 85, 87, 88 and 90 ÷ RCA in HS 42, 61, 62, 64, 94 and 95) on ln(capital per worker, PWT), robust errors.
 
-**Difference in differences.** ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>kt</sub> + g<sub>ct</sub> + β (Singapore<sub>c</sub> × Pharma<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub>, where c is Singapore, Malaysia or Hong Kong SAR, k a chemical chapter HS 28 to 38 and t a year from 1995 to 2024, estimated by OLS with heteroskedasticity robust (HC1) standard errors. The event study replaces Post2000 with one dummy per year, 1999 = 0.
+**Difference in differences.** The Chapter 9 equation for Singapore, Malaysia and Hong Kong SAR, chemical chapters HS 28 to 38, 1995 to 2024, with robust errors; the event study uses one dummy per year, 1999 = 0.
 
-**Shared sector table.** Chapters 3 to 6 use one table of sectors so that trade, value added and FDI data refer to the same industries. The mapping between classifications is approximate.
+**Shared sector table.** Chapters 3 to 6 map trade, value added and FDI data to one approximate set of sectors.
 
 <!-- include: data/derived/sector_table.md -->
 
-## Limitations
-
-Singapore's role as an entrepôt and financial centre complicates almost every statistic in this report. Reported exports include re-exports, so we use domestic export data, BACI reconciled data and value added data alongside them. FDI is recorded by immediate investor and includes large pass through investment by holding companies. The World Bank publishes no poverty or survey based Gini data for Singapore, so we use the national Gini series, which is not comparable across countries. TiVA ends in 2022, and the World Bank's latest tariff data for these economies are for 2022.
-
-## Still to collect
-
-Three gaps remain, and each would sharpen a finding. Transparency International blocks automated downloads, so the corruption scores still come through Our World in Data until a member downloads the 2025 results file by hand. FDI by ultimate investor would show who stands behind the holding companies of Chapter 6, but Singapore publishes only immediate investors. The difference in differences test of Chapter 9 would be stronger with more comparison economies, the Economic Development Board's investment commitments by industry and plant level data on local suppliers.
-
-## Questions for the professor
-
-Is the Singapore Department of Statistics acceptable as a source for inequality and FDI? Is AI-assisted drafting acceptable if every number is generated from raw data and each owner rewrites the text? Is a class presentation required?
-
-## Course readings
-
-Each analytical chapter tests its findings against a module of the EC 391 syllabus, and the tag beside a question names the module. Chapter 2 and Chapter 4 use Nunn's evidence from Module 9 that contract enforcement is a source of comparative advantage, and Chapter 4 measures revealed comparative advantage as in Module 3 and tests endowments as in Module 4. Chapter 3 reads the goods and services balances with the balance of payments accounts of Module 2, compares our gravity estimate with the class estimate of −1.46 from Module 8, adds the lecture's shared trade agreement factor as a dummy and sets both against Feyrer's Suez Canal experiment. Chapter 5 uses Module 6, Fort's evidence that fragmentation moves toward high human capital locations and Boehm and coauthors on how the Tohoku earthquake travelled along supply chains. Chapter 6 uses Module 2 on how multinationals blur the national accounts and Module 6 on why firms invest abroad. Chapter 7 uses Module 7 on the MFN rule, rules of origin (Conconi and coauthors) and the US China trade war. Chapter 9 tests the infant industry argument of Module 9 with a difference in differences on BACI data and compares Singapore's subsidies with the temporary protection Juhász studies.
+</details>
 
 ## References
 
+<details class="more" markdown="1">
+<summary>Full reference list</summary>
+
 Boehm, C.E., A. Flaaen and N. Pandalai Nayar (2015), "The role of global supply chains in the transmission of shocks: firm-level evidence from the 2011 Tohoku earthquake", VoxEU, CEPR, 9 January, published as "Input linkages and the transmission of shocks", *Review of Economics and Statistics* 101(1), 2019, 60 to 75. Conconi, P., M. García Santana, L. Puccio and R. Venturini (2016), "The perverse effect of preferential rules of origins", VoxEU, CEPR, 16 March. Damgaard, J., T. Elkjaer and N. Johannesen (2019), "The rise of phantom investments", IMF *Finance and Development*, September. Ekholm, K., R. Forslid and J. Markusen (2007), "Export-platform foreign direct investment", *Journal of the European Economic Association* 5(4), 776 to 795. Feyrer, J. (2009), "The 1967 to 1975 Suez Canal closure: lessons for trade and the trade income link", VoxEU, CEPR, 23 December. Fort, T.C. (2017), "Technology and production fragmentation: domestic versus foreign sourcing", *Review of Economic Studies* 84(2), 650 to 687. Head, K. and T. Mayer (2014), "Gravity equations: workhorse, toolkit, and cookbook", *Handbook of International Economics* 4. Juhász, R. (2015), "Temporary protection and technology adoption: evidence from the Napoleonic blockade", VoxEU, CEPR, 15 January, published in the *American Economic Review* 108(11), 2018, 3339 to 3376. Koopman, R., W. Powers, Z. Wang and S.J. Wei (2010), "Give credit where credit is due", NBER Working Paper 16426. Nunn, N. (2007), "Relationship-specificity, incomplete contracts, and the pattern of trade", *Quarterly Journal of Economics* 122(2), 569 to 600. Young, A. (1992), "A tale of two cities: factor accumulation and technical change in Hong Kong and Singapore", *NBER Macroeconomics Annual* 7, 13 to 54. Ramondo, N. (2026), CAS EC 391 International Trade, syllabus and lecture notes, Boston University, Fall 2026.
+
+</details>

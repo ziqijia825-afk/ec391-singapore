@@ -277,6 +277,38 @@ tiles = {
         {"value": ordinal(ge["rank"]), "label": "Government effectiveness, world rank, 2025 (Chapter 2)", "rank": f"of {ge['n']} economies"}],
 }
 (ROOT / "data" / "derived" / "tiles.json").write_text(json.dumps(tiles, indent=1, ensure_ascii=False))
+
+# ---------------------------------------------------------------- the one-minute summary after the cover (index)
+sr = c6["stock_ranks"]["inward"]
+svc = c3["structure"]["services_share"]
+cards = [
+    ("ch03_trade", "Chapter 3", f"{c3['openness']['2024']['SGP']:.0f}%",
+     f"Trade in goods and services is three times GDP, {ordinal(c3['openness']['rank']['rank'])} of {c3['openness']['rank']['n']} economies."),
+    ("ch04_rca", "Chapter 4", f"{svc['2024']:.0f}%",
+     f"of exports are services, up from {svc['2004']:.0f}% in 2004, led by transport (RCA "
+     f"{c4['rca_sector']['2024']['SGP']['Transport & logistics']:.1f}) and finance "
+     f"({c4['rca_sector']['2024']['SGP']['Finance & insurance']:.1f})."),
+    ("ch02_macro", "Chapter 2", ordinal(ge["rank"]),
+     f"of {ge['n']} on government effectiveness. Courts and regulators work as an export advantage."),
+    ("ch05_gvc", "Chapter 5", f"{c5['backward']['sgp']:.0f}%",
+     "of the value of exports is made abroad. Singapore sits downstream, processing and coordinating Asia's supply chains."),
+    ("ch06_fdi", "Chapter 6", ordinal(sr["rank"]),
+     f"of {sr['n']} for inward FDI stock relative to GDP, much of it passing through holding companies."),
+    ("ch07_policy", "Chapter 7", f"{c7['TM.TAX.MRCH.SM.FN.ZS']['value']:.2f}%",
+     f"average MFN tariff, while {c7['fta']['n']} trade agreements open partners' markets."),
+    ("ch09_case", "Chapter 9", f"{c9['did']['pct'] / 100 + 1:.1f}×",
+     f"rise in the pharmaceutical advantage after the 2000 biomedical push, while chips kept an RCA of "
+     f"{c9['rca_groups']['Chips']['2024']:.1f}."),
+]
+cards.sort(key=lambda c: c[1])  # in chapter order
+summary = ('<section class="summary"><p class="sm-eyebrow">Singapore in one minute</p>'
+           '<h2 class="sm-h">A location turned into an economy by institutions and foreign capital</h2><div class="sm-grid">'
+           + "".join(f'<a class="sm" href="#{ch}"><b>{num}</b><span>{txt}</span><i>{lab} &rarr;</i></a>'
+                     for ch, lab, num, txt in cards)
+           + '<a class="sm sm-verdict" href="#conclusion"><b>Verdict</b><span>The region\'s best base for headquarters and high '
+             'value production, and a costly one for everything else.</span><i>Conclusion &rarr;</i></a></div></section>')
+(ROOT / "data" / "derived" / "summary.md").write_text(summary + "\n", encoding="utf-8")
+print("wrote data/derived/summary.md")
 print("wrote data/derived/tiles.json")
 
 # ---------------------------------------------------------------- Ch. 5 value-chain cards (numbers from ch05/ch09)
@@ -364,7 +396,7 @@ sites = [
          f"S${c9['fdi_stock_sgd_bn']['Pharmaceuticals']['2004']:.0f}bn in 2004, SingStat"]],
      "note": "The second bet of the industrial policy, launched in 2000. Its plants built a real export advantage in biologics, "
              "while the industry's weight in value added and foreign capital at home shrank."},
-    {"id": "onenorth", "section": "Implications for trade and investment", "name": "one-north and Biopolis", "coord": [103.789, 1.299], "chapter": "ch05_gvc", "chapter_label": "Chapter 5",
+    {"id": "onenorth", "section": "Which sectors rely most on foreign inputs?", "name": "one-north and Biopolis", "coord": [103.789, 1.299], "chapter": "ch05_gvc", "chapter_label": "Chapter 5",
      "tag": "Fort 2017", "rows": [
         [f"{c4e['hc_sgp']:.2f}", "human capital index, PWT", f"{ordinal(c4e['hc_rank'])} of {c4e['hc_n']}"],
         [f"{c1['vs_region']['table']['SGP']['Tertiary enrolment, gross (%)']:.0f}%", "tertiary enrolment, gross",
@@ -455,7 +487,7 @@ wr = c2["wgi"]["ranks"]
 reg = lambda r: f"{ordinal(r['region_rank'])} of {r['region_n']} in East Asia & Pacific"
 mys = sk.get("MYS", {})
 country = [
-    {"id": "capital", "section": "How good is its government?", "name": "Parliament House, Civic District", "coord": [103.8505, 1.2895],
+    {"id": "capital", "section": "How good are its institutions?", "name": "Parliament House, Civic District", "coord": [103.8505, 1.2895],
      "chapter": "ch02_macro", "chapter_label": "Chapter 2", "tag": "Political system", "rows": [
         [ordinal(wr["GE"]["rank"]), f"of {wr['GE']['n']} on government effectiveness, {c2['wgi']['year']}", f"{reg(wr['GE'])}, World Bank WGI"],
         [ordinal(wr["RQ"]["rank"]), f"of {wr['RQ']['n']} on regulatory quality", f"{reg(wr['RQ'])}, WGI"],
@@ -475,7 +507,7 @@ country = [
      "note": "An island on the Strait of Malacca that adds land by filling in the sea. The new coast at Tuas, Jurong Island and "
              "Marina Bay holds ports, refineries and offices, yet land stays the scarcest input, which is why land intensive "
              "production moves to the neighbours (Chapter 4)."},
-    {"id": "people", "section": "How does it compare with the region?", "name": "The heartland housing towns", "coord": [103.848, 1.334],
+    {"id": "people", "section": "What kind of country is it?", "name": "The heartland housing towns", "coord": [103.848, 1.334],
      "chapter": "ch01_profile", "chapter_label": "Chapter 1", "tag": "Population", "rows": [
         [f"{kf['population_m']}m", "people, June 2026",
          f"{kf['residents_m']}m residents and {kf['nonresidents_m']}m foreign workers, students and dependants, SingStat"],

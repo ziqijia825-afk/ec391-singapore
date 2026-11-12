@@ -484,3 +484,51 @@ body.past-cover #cover *, body.past-cover #cover *::after { animation-play-state
 
 /* ---------- syllabus module chip beside the reading chip ---------- */
 .tag.mod { color: #fff; background: var(--acc, var(--red)); border-color: var(--acc, var(--red)); margin-right: 4px; }
+
+/* ---------- one-minute summary after the cover ---------- */
+.summary { max-width: 1240px; margin: 0 auto; padding: 8px 0 4px; }
+.summary .sm-eyebrow { font: 600 12px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--acc, var(--red)); margin: 0 0 10px; }
+.summary .sm-h { font: 700 clamp(26px, 2.6vw, 38px)/1.15 var(--serif); letter-spacing: -.01em; color: var(--ink); margin: 0 0 26px; max-width: 900px; }
+.summary .sm-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.summary .sm { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 14px; border: 1px solid var(--line); border-radius: 14px;
+  background: #fff; text-decoration: none; color: var(--ink); transition: transform .15s, box-shadow .15s, border-color .15s; }
+.summary .sm:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(20,33,46,.08); border-color: var(--acc, var(--red)); }
+.summary .sm b { font: 700 clamp(30px, 2.8vw, 42px)/1 var(--serif); color: var(--acc-deep, var(--red)); }
+.summary .sm span { font: 14.5px/1.5 var(--sans); color: var(--ink-2); flex: 1; }
+.summary .sm i { font: 600 12px var(--sans); font-style: normal; color: var(--muted); }
+.summary .sm:hover i { color: var(--acc, var(--red)); }
+.summary .sm.sm-verdict { background: var(--acc, var(--navy)); border-color: transparent; }
+.summary .sm.sm-verdict b { color: #ffcf7a; }
+.summary .sm.sm-verdict span { color: #fff; font-size: 15.5px; }
+.summary .sm.sm-verdict i { color: rgba(255,255,255,.75); }
+.summary .sm.sm-verdict:hover i { color: #fff; }
+@media (max-width: 1100px) { .summary .sm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .summary .sm-grid { grid-template-columns: 1fr; } .summary .sm { padding: 14px; } }
+
+/* ---------- shorter page (Nov 13): openers and full-width screens take only the room they need ---------- */
+@media (min-width: 1000px) {
+  .spread.opener { min-height: min(68vh, 620px); }
+  .spread.opener .page.left, .spread.opener .page.right { padding-top: 40px; padding-bottom: 40px; }
+  .spread.wide { min-height: 0; }
+  .spread.wide .page.full { padding-top: 32px; padding-bottom: 32px; }
+}
+@media (min-width: 1000px) {
+  .spread.opener { min-height: 0; }
+  .spread.opener .page.left, .spread.opener .page.right { padding-top: 30px; padding-bottom: 30px; }
+  .spread.opener .titlepage h1 { margin-bottom: 18px; }
+  .spread:not(.opener):not(.wide):not(.prose) { min-height: min(calc(100vh - var(--tb, 58px)), 740px); }
+  .page.right { height: min(calc(100vh - var(--tb, 58px)), 740px); }
+}
+@media (min-width: 1000px) {
+  .spread:not(.opener):not(.wide):not(.prose) { min-height: min(calc(100vh - var(--tb, 58px)), 680px); }
+  .page.right { height: min(calc(100vh - var(--tb, 58px)), 680px); }
+  .spread.wide .page.full { padding-top: 22px; padding-bottom: 22px; }
+}
+@media (min-width: 1000px) { .page.full { height: min(calc(100vh - var(--tb, 58px)), 700px); } }
+@media (min-width: 1000px) {
+  .pbody h2[data-n]::before, .page.prose .pbody h2[data-n]::before { font-size: 48px; margin-bottom: 6px; -webkit-text-stroke-width: 1.3px; }
+  .page.left .pbody p, .page.prose .pbody p { line-height: 1.58; margin-bottom: .85em; }
+  .page.left .pbody p > strong:first-child { font-size: 1.22em; }
+  .page.left, .page.prose { padding-top: 34px; padding-bottom: 30px; }
+}
+@media (min-width: 1000px) { .spread { grid-template-columns: minmax(360px, 40%) minmax(0, 1fr); } }

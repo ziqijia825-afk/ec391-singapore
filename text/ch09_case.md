@@ -6,62 +6,58 @@ Singapore twice tried to grow a high technology industry by courting foreign fir
 
 ## The course argument {Module 9 · Infant industry · Juhász 2015}
 
-**Comparative advantage can be learned, if support stops once the learning is done.** In the infant industry model a new industry's productivity rises with experience, so temporary help lets it ride down the learning curve until it can compete and export on its own. Juhász (2015) finds the historical version in the Napoleonic blockade. French regions better shielded from trade with Britain built more mechanized cotton spinning, and they kept more of it after the blockade ended. Most countries gave that help with tariffs. Singapore could not, with a tiny home market and zero tariffs (Chapter 7), so the Economic Development Board offered foreign firms tax holidays, ready built estates, training and research money instead, with pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
+**Comparative advantage can be learned, if support stops once the learning is done.** Temporary help lets a new industry ride down its learning curve until it can export alone, as Juhász (2015) shows for French cotton spinning shielded by the Napoleonic blockade. With zero tariffs (Chapter 7), Singapore gave the help through the Economic Development Board instead, with tax holidays, estates and training, and pioneer firms paying 5 to 15 percent or nothing against a headline rate of 17 percent ([EDB](https://www.edb.gov.sg/content/dam/edb-en/how-we-help/incentive-and-schemes/factsheets/DEI(Mfg)%20Factsheet.pdf)).
 
 <!-- interactive: learncurve -->
 
-## The two bets
-
-**Chips from 1968, pills from 2000.** National Semiconductor opened an assembly plant in 1968, followed by Fairchild and Texas Instruments, and the state backed Chartered Semiconductor opened the first wafer fab in 1987, moving the industry from assembly into fabrication ([EDB](https://www.edb.gov.sg/en/business-insights/insights/made-in-singapore-60-years-of-manufacturing.html)). The Biomedical Sciences Initiative of June 2000 made medicines the fourth pillar of manufacturing, with Tuas Biomedical Park, the Biopolis research complex of 2003 and plants from Pfizer, GSK, Novartis, Lonza and others.
+**Two bets, chips from 1968 and pills from 2000.** National Semiconductor opened the first assembly plant in 1968 and Chartered the first wafer fab in 1987 ([EDB](https://www.edb.gov.sg/en/business-insights/insights/made-in-singapore-60-years-of-manufacturing.html)), and the Biomedical Sciences Initiative of 2000 brought plants from Pfizer, GSK and Novartis.
 
 <details class="more" markdown="1">
 <summary>More: the new wave of investment and an evaluation of the pharma cluster</summary>
 
-Chips drew a new wave after 2021, including GlobalFoundries' $4 billion expansion (2023), UMC's $5 billion fab (2025), the $7.8 billion VisionPower fab of Vanguard and NXP and Micron's $7 billion memory packaging plant, and the research budget for 2026 to 2030 of S$37 billion names semiconductors as its first flagship ([EDB](https://www.edb.gov.sg/en/news-and-insights/singapore-invests-s37-billion-in-rie2030-research-plan-semiconductors-ageing-among-focus-areas)). In medicines AstraZeneca announced a $1.5 billion plant for antibody drug conjugates in 2024 ([AstraZeneca](https://www.astrazeneca.com/country-sites/singapore/press-releases/astrazeneca-to-manufacture-adcs-in-singapore.html)), and an evaluation found that the cluster met its output and jobs targets but missed its target for research spending and produced few spin-off firms ([CIIP 2021](https://www.ciip.group.cam.ac.uk/wp-content/uploads/2021/02/2021-02-19-SBS.pdf)).
+Chips drew a new wave of fabs after 2021, and the research budget for 2026 to 2030 of S$37 billion names semiconductors first ([EDB](https://www.edb.gov.sg/en/news-and-insights/singapore-invests-s37-billion-in-rie2030-research-plan-semiconductors-ageing-among-focus-areas)). An evaluation of the biomedical cluster found that it met its output and jobs targets but produced few spin-off firms ([CIIP 2021](https://www.ciip.group.cam.ac.uk/wp-content/uploads/2021/02/2021-02-19-SBS.pdf)).
 
 </details>
 
 ## The scorecard
 
-**Both industries export with an advantage, and only one has deepened at home.** We computed RCAs from four digit BACI data for 1995 to 2024. Chips have stayed far above 1 throughout, at 4.6 in 2024 with $70.7 billion of integrated circuit exports, 7.1 percent of the world. Finished medicines and biologics rose from 0.16 in 2004 to 1.78 in 2024 and have stayed above 1 since 2018, driven by biologics and vaccines (3.06). Yet semiconductors' share of manufacturing value added rose from 16 to 35 percent while pharmaceuticals' fell from 19 to 5.5 percent, and the foreign capital stock in pharmaceuticals shrank from S$32 billion to S$10 billion.
-
-![Chips keep a strong advantage and finished pharma built one](../figures/ch09_rca.png)
+**Both industries export with an advantage, and only one has deepened at home.** On four digit BACI data, chips have stayed far above 1, at 4.6 in 2024 with 7.1 percent of world integrated circuit exports, and finished medicines rose from 0.16 in 2004 to 1.78. Yet semiconductors' share of manufacturing value added rose from 16 to 35 percent while pharmaceuticals' fell from 19 to 5.5 percent, and foreign capital in pharmaceuticals shrank from S$32 billion to S$10 billion.
 
 <!-- include: data/derived/ch09_scorecard.md -->
 
 <details class="more" markdown="1">
-<summary>More: value added and foreign investment over time</summary>
+<summary>More: the RCA chart, and value added and foreign investment over time</summary>
+
+![Chips keep a strong advantage and finished pharma built one](../figures/ch09_rca.png)
 
 ![Semiconductors now make 35% of manufacturing value added](../figures/ch09_manufacturing.png)
 
 ![Foreign investment in chip plants grew while pharma's shrank](../figures/ch09_fdi_stock.png)
 
-The pharmaceutical share swings sharply because a few foreign plants make most of the output and the value booked in Singapore depends on where parents place patents and profits. Part of its fall is mechanical, since chips grew so fast, and the EDB's commitments show a revival, with biomedical manufacturing at 31 percent of fixed asset commitments in 2025 against 33 percent for electronics ([EDB Year in Review 2025](https://www.edb.gov.sg/content/dam/edb-en/about-edb/media-releases/news/edb-year-2025-in-review/EDB%20YIR%202025%20Media%20Release.pdf)).
+The pharmaceutical share swings because a few foreign plants make most of the output and parents decide where patents and profits are booked.
 
 </details>
 
 <details class="more" markdown="1">
 <summary>More: the 2017 outlier and the product detail</summary>
 
-BACI records Singapore's chip exports at $125 billion in 2017, more than twice the neighbouring years, which lifts the RCA to 7.6 for that year only, and we treat it as a reporting anomaly. Integrated circuits alone (HS 8542) had an RCA of 4.9 in 2024 and other semiconductor devices (HS 8541) 2.6. The world share of 7.1 percent counts value, which is why it sits below the EDB's statement that Singapore makes one in ten of the world's chips by units.
+BACI's chip exports for 2017 ($125 billion, twice the neighbouring years) lift that year's RCA to 7.6, and we treat it as a reporting anomaly.
 
 </details>
-
-## The verdict {Young 1992}
-
-**Chips learned, and pills learned only to export.** In the model's terms chips are a successful infant industry raised without a tariff. Support attracted firms, the industry climbed from assembly to fabrication, and the advantage has survived decades of rising wages because Singapore's capital, skills and suppliers now carry it (Chapter 4). Pharmaceuticals took almost two decades to turn export capacity into a stable advantage, while value added and foreign capital moved the other way. That fits Young's (1992) finding that Singapore grew mainly by accumulating capital and labour and only a little through productivity.
 
 ## The difference in differences test
 
 ![Against its other chemicals and its peers, Singapore's pharma RCA rose 4.8 times after 2000](../figures/ch09_did.png)
 
-**Pharmaceuticals gained an advantage that Singapore's other chemicals and its neighbours did not.** We compared Singapore's RCA in pharmaceuticals (HS 30) with its other chemical chapters (HS 28 to 38) and with the same chapters in Malaysia and Hong Kong SAR, before and after the Biomedical Sciences Initiative of 2000, estimating ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>kt</sub> + g<sub>ct</sub> + β (Singapore<sub>c</sub> × Pharma<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub> on 990 observations. The estimate β = 1.57 (robust s.e. 0.27) means the pharmaceutical advantage rose 4.8 times relative to the comparison. The event study shows no gap in the four years before 2000 and a jump from 2005 that has held since.
+**Pharmaceuticals gained an advantage that Singapore's other chemicals and its neighbours did not.** We compared Singapore's RCA in pharmaceuticals (HS 30) with its other chemical chapters (HS 28 to 38) and with the same chapters in Malaysia and Hong Kong SAR, before and after 2000, estimating ln RCA<sub>ckt</sub> = a<sub>ck</sub> + b<sub>kt</sub> + g<sub>ct</sub> + β (Singapore<sub>c</sub> × Pharma<sub>k</sub> × Post2000<sub>t</sub>) + e<sub>ckt</sub>. The estimate β = 1.57 (robust s.e. 0.27) means the advantage rose 4.8 times relative to the comparison, with no gap before 2000 and a jump from 2005.
 
-**What it does not show.** The test confirms that the policy built export capacity. The scorecard shows that the industry's local value added and foreign capital fell at the same time, so together they fit export capacity without deep learning. With three economies and four years before the policy the bands are a guide, and a stronger test would add more comparison economies and plant level data on local suppliers, which we have not collected.
+**What it does not show.** The policy built export capacity, but local value added and foreign capital fell at the same time. With three economies and four years before the policy the test is a guide, and plant level data on local suppliers would make it firmer.
 
-## The next test
+## The verdict {Young 1992}
 
-**A global minimum tax and US trade policy hit both bets at once.** The OECD minimum tax took effect in Singapore on 1 January 2025 and lifts large groups' effective rate to at least 15 percent, which weakens tax holidays ([IRAS](https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/global-anti-base-erosion-(globe)-rules-and-domestic-top-up-tax-(dtt))). Singapore answered with a Refundable Investment Credit that pays up to 50 percent of qualifying spending in cash, a subsidy the global rules allow ([IRAS](https://www.iras.gov.sg/schemes/disbursement-schemes/refundable-investment-credit-(ric))), while US tariffs and export controls (Chapter 7) put both industries at the centre of strategic rivalry.
+**Chips learned, and pills learned only to export.** Chips are a successful infant industry raised without a tariff, whose advantage survived decades of rising wages because Singapore's capital, skills and suppliers now carry it. Pharmaceuticals built an export advantage while value added and foreign capital moved the other way, which fits Young's (1992) finding that Singapore grew mainly by accumulating factors.
+
+**The next test.** The OECD minimum tax weakens tax holidays, which Singapore offsets with a Refundable Investment Credit the global rules allow ([IRAS](https://www.iras.gov.sg/schemes/disbursement-schemes/refundable-investment-credit-(ric))), and US tariffs put both industries at the centre of strategic rivalry (Chapter 7).
 
 ## Sources
 

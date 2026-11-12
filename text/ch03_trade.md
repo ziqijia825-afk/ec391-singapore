@@ -4,52 +4,41 @@
 
 Singapore is the third most open economy in the world, and almost half of what it sells abroad is now services. Its trade is spread across many partners and follows the gravity model, with distance mattering slightly more than in the class estimate.
 
-## How open is it?
+## How open is it? {Module 2 · Balance of payments}
 
 ![Singapore trades 313% of its GDP](../figures/ch03_openness.png)
 
-**Trade is three times GDP, the third highest ratio of 172 economies and second in East Asia and the Pacific.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific. Only Hong Kong SAR (359 percent) and one other economy are higher.
+**Trade is three times GDP, the third highest ratio of 172 economies and second in East Asia and the Pacific.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific.
+
+**Surpluses on goods and on services.** The goods surplus grew from $41 billion in 2004 to $172 billion in 2024, and services swung from a $10 billion deficit to a $34.5 billion surplus. Services exports of $399 billion are 6th in the world and 1st in the region.
 
 <details class="more" markdown="1">
-<summary>More: why openness has fallen since 2008</summary>
-
-The ratio peaked at 437 percent in 2008 and has drifted down as services and domestic activity grew faster than goods trade, so the fall means that more of what Singapore sells is made at home. It can pass 100 percent because trade counts the gross value crossing the border while GDP counts only value added.
-
-</details>
-
-## Does it earn more on goods or on services? {Module 2 · Balance of payments}
+<summary>More: the balances chart, and why openness has fallen since 2008</summary>
 
 ![Singapore earns surpluses on goods and services](../figures/ch03_balances.png)
 
-**It earns surpluses on both, and services are catching up.** The goods surplus grew from $41 billion in 2004 to $172 billion in 2024, and the services account swung from a $10 billion deficit to a $34.5 billion surplus. Services exports of $399 billion are 6th in the world and 1st in East Asia and the Pacific, and goods exports of $601 billion rank 11th.
-
-<details class="more" markdown="1">
-<summary>More: where the services deficit came from and how it closed</summary>
-
-The deficit, still $13 billion in 2014, came from Singaporeans' travel abroad and from payments for foreign transport, insurance and intellectual property. The account has been in surplus every year since 2018.
+Openness peaked at 437 percent in 2008 and has drifted down as services and domestic activity grew faster than goods trade. It can pass 100 percent because trade is counted gross while GDP is value added.
 
 </details>
 
-## How much of what it ships does it make?
-
-![Re-exports grew to 58% of merchandise exports](../figures/ch03_reexports.png)
-
-**Less than half.** Re-exports, goods shipped on with little change, rose from 46.5 to 57.5 percent of merchandise exports between 2004 and 2024, while non oil domestic exports such as chips and medicines fell from 42.4 to 25.7 percent. Gross exports therefore overstate what Singapore produces, which is why we measure its export structure with reconciled data below and turn to value added in Chapter 5.
-
-## What does it sell?
+## What does it sell, and how much does it make?
 
 ![Services rose from 20% to 48% of Singapore's exports](../figures/ch03_export_structure.png)
 
-**More and more services.** Combining goods from CEPII's BACI with services from the World Bank, services rose from 20 to 48 percent of exports between 2004 and 2024, led by transport (21.5 percent) and business and ICT services (13.9 percent). Electronics remain the largest goods group but fell from 26.9 to 18.7 percent, and machinery and computers from 19.1 to 7.3 percent.
+**More and more services.** Combining goods from CEPII's BACI with services from the World Bank, services rose from 20 to 48 percent of exports between 2004 and 2024, led by transport (21.5 percent). Electronics remain the largest goods group but fell from 26.9 to 18.7 percent.
+
+**Less than half of what it ships is made at home.** Re-exports rose from 46.5 to 57.5 percent of merchandise exports, so gross exports overstate what Singapore produces. That is why we use BACI, which assigns re-exports to their origin, and value added in Chapter 5.
 
 <details class="more" markdown="1">
-<summary>More: why BACI counts fewer goods exports, and the import side</summary>
+<summary>More: re-exports, imports and the BACI correction</summary>
 
-BACI reconciles the reports of exporters and importers, and importers record the country where a good was made, so goods that only pass through Singapore are largely attributed to their origin. That is the likely reason BACI's $332 billion of goods exports in 2024 is about a third below the $505 billion Singapore reports to UN Comtrade, and why BACI better describes what Singapore itself sells.
+![Re-exports grew to 58% of merchandise exports](../figures/ch03_reexports.png)
+
+BACI's $332 billion of goods exports in 2024 is about a third below the $505 billion Singapore reports to UN Comtrade.
 
 ![Electronics are also Singapore's largest import](../figures/ch03_import_structure.png)
 
-Imports mirror exports. Electronics and instruments were 34.8 percent of goods imports in 2024, refined petroleum and crude oil 20.4 percent and machinery and computers 15.2 percent. Large two way trade in the same sectors is the signature of an economy that imports inputs, processes them and ships them on.
+Imports mirror exports, with electronics and instruments at 34.8 percent of goods imports, the signature of an economy that processes inputs and ships them on.
 
 </details>
 
@@ -57,16 +46,16 @@ Imports mirror exports. Electronics and instruments were 34.8 percent of goods i
 
 <!-- interactive: sankey -->
 
-![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
-
-**Mostly Asia, and no single market dominates.** On Singapore's own figures mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets on reconciled BACI data, 0.074, is the lowest of the four economies and 45th lowest of 208 exporters (3rd of 37 in East Asia and the Pacific), so a downturn in one market hurts Singapore less than its neighbours.
+**Mostly Asia, and no single market dominates.** On Singapore's own figures mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index on BACI data, 0.074, is 45th lowest of 208 exporters and 3rd of 37 in East Asia and the Pacific, so a downturn in one market hurts Singapore less than its neighbours.
 
 <details class="more" markdown="1">
-<summary>More: partner shares and how concentration changed</summary>
+<summary>More: partner shares and concentration over time</summary>
+
+![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
 
 ![Asia takes most of Singapore's exports](../figures/ch03_partners.png)
 
-Singapore's Herfindahl Hirschman index has barely moved since 2004 (0.060), while Vietnam's rose from 0.077 to 0.125 as exports to the United States grew. Hong Kong SAR's index jumps to 0.311 in 2013 on BACI data and falls back by 2015, a break we treat as a data issue.
+Singapore's index has barely moved since 2004 (0.060), while Vietnam's rose from 0.077 to 0.125 as exports to the United States grew.
 
 </details>
 
@@ -74,28 +63,20 @@ Singapore's Herfindahl Hirschman index has barely moved since 2004 (0.060), whil
 
 ![Trade falls with distance](../figures/ch03_gravity.png)
 
-**Yes, slightly more tightly than world trade as a whole.** We regressed the logarithm of Singapore's 2024 exports to each partner on the partner's GDP and the distance between capitals, both in logarithms.
+**Yes, slightly more tightly than world trade as a whole.** Log exports to each partner in 2024 on log partner GDP and log distance between capitals give:
 
 <!-- include: data/derived/ch03_gravity_eq.md -->
 
-<!-- include: data/derived/ch03_gravity_table.md -->
+**Distance and size.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 (and −1.69 on BACI data), and nearby small economies buy more than their size predicts, as expected of a hub. Agreement partners buy about seven times what size and distance predict.
 
-**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 and above the value of about 1 typical in the literature (Head and Mayer, 2014). On BACI's reconciled data, which assign most re-exports to their origin, it is −1.69, so re-exports do not drive the result. **Size.** The GDP elasticity of 0.79 is below the class value of 1.00, so small nearby economies buy more than their size predicts, as expected of a regional hub.
-
-**Trade agreements.** The 64 partners with an agreement in force in 2024 buy about seven times as much as size and distance predict (coefficient 1.98), and the distance elasticity falls to −1.29 because the nearest partners are mostly agreement partners. This is an association, since Singapore signed first with its largest markets.
-
-**Distance as a cost.** Using the closure of the Suez Canal from 1967 to 1975, Feyrer (2009) finds a sea distance elasticity of −0.46 and that each extra dollar of trade raises income by about 25 cents. Our estimate is more than three times larger because distance between capitals also carries history, language and business networks. Sea distance is the cost Singapore's port exists to lower.
+**Distance as a cost.** Feyrer's (2009) Suez Canal experiment gives a sea distance elasticity of −0.46, less than a third of ours, because distance between capitals also carries history and networks. Chapter 4 asks what Singapore is good at producing.
 
 <details class="more" markdown="1">
-<summary>More: the partners that do not fit</summary>
+<summary>More: the regression table, with BACI, the FTA dummy and the class estimate</summary>
 
-The Marshall Islands, Liberia and Panama buy far more than the model predicts because they register large merchant fleets, and trade statistics place ships and ship supplies under the flag state. Haiti, Afghanistan and Iran buy much less, held back by poverty, conflict and sanctions.
+<!-- include: data/derived/ch03_gravity_table.md -->
 
 </details>
-
-## Implications for trade and investment
-
-Openness on this scale makes Singapore the natural base for serving the region and passes every swing in world demand straight into the economy. Chapter 4 asks what Singapore is actually good at producing.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

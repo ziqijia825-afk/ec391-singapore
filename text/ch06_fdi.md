@@ -8,58 +8,45 @@ Singapore is the world's second largest destination for foreign direct investmen
 
 ![FDI inflows averaged 22% of Singapore's GDP](../figures/ch06_inflows_gdp.png)
 
-**About a fifth of GDP every year, second only to the United States in dollars.** Net inflows averaged 22 percent of GDP between 2004 and 2024, against 3 percent in Malaysia and 5 percent in Vietnam, and reached $135 billion in 2024, 6th of 194 relative to GDP (2nd in East Asia and the Pacific) and 2nd in the world in value. UNCTAD records $151 billion for 2025.
+**About a fifth of GDP every year, second only to the United States in dollars.** Net inflows averaged 22 percent of GDP between 2004 and 2024, against 3 percent in Malaysia and 5 percent in Vietnam, and reached $135 billion in 2024, 6th of 194 relative to GDP (2nd in the region) and 2nd in the world in value.
+
+**Slightly more new plants than takeovers.** Over 2016 to 2025 announced greenfield projects were worth 1.3 times net acquisitions, between Malaysia and Vietnam, where new factories dominate, and Hong Kong SAR, where buying firms dominates.
 
 <details class="more" markdown="1">
-<summary>More: the accumulated stock of inward and outward FDI</summary>
+<summary>More: the accumulated stock, and greenfield and M&A for all four economies</summary>
 
 ![Foreign firms own assets worth 4.1 times Singapore's GDP](../figures/ch06_stocks_gdp.png)
 
-Inward FDI rose from 142 percent of GDP at the end of 2004 to 409 percent (S$3,130 billion) at the end of 2024, the profile of a base from which multinationals hold and finance operations in other countries. UNCTAD, which leaves out special purpose entities, puts the inward stock at 389 percent of GDP in 2024, the 4th highest of 193 economies and 2nd in East Asia and the Pacific, and at US$2.2 trillion the 6th largest in the world. Malaysia and Vietnam, whose FDI goes mainly into factories, receive far less relative to GDP.
+Inward FDI rose from 142 percent of GDP in 2004 to 409 percent (S$3,130 billion) in 2024. UNCTAD, which leaves out special purpose entities, puts it at 389 percent, the 4th highest of 193 economies and 2nd in East Asia and the Pacific.
+
+![Greenfield projects bring more new FDI than acquisitions](../figures/ch06_greenfield_ma.png)
+
+<!-- include: data/derived/ch06_entry_mode_table.md -->
 
 </details>
 
-## Who invests, and in what? {Module 2 · Phantom FDI}
-
-<!-- interactive: fdi -->
+## Who invests, and in what? {Modules 2 and 6 · Phantom FDI · Dunning OLI}
 
 ![Holding companies hold 55% of foreign investment in Singapore](../figures/ch06_industries.png)
 
-**American firms and Caribbean holding companies, mostly in holding companies themselves.** The United States holds 24.9 percent of the inward stock and the Cayman Islands and British Virgin Islands together 17.5 percent, and by industry holding companies hold 55.4 percent. Because the data record the immediate investor, much of this is pass through money owned by American, European and Japanese parents and invested onward in Asia.
+**American firms and Caribbean holding companies, mostly in holding companies themselves.** The United States holds 24.9 percent of the inward stock and the Cayman Islands and British Virgin Islands 17.5 percent, and by industry holding companies hold 55.4 percent. Because the data record the immediate investor, much of this is pass through money invested onward in Asia.
 
 <details class="more" markdown="1">
 <summary>More: sources by country, and immediate versus ultimate investors</summary>
 
 ![The US is the largest investor](../figures/ch06_sources.png)
 
-Finance and insurance hold 65.5 percent of the stock, wholesale and retail trade 13.4 percent and manufacturing 8.0 percent, of which semiconductors are 2.2 percent and pharmaceuticals only 0.3 percent (Chapter 9). Singapore publishes no series by ultimate investor ([SingStat technical notes](https://www.singstat.gov.sg/files/4603e8e3-2291-424f-9c8d-b96962ef6a02.pdf)). Damgaard, Elkjaer and Johannesen (2019) estimate that close to 40 percent of global FDI is "phantom" investment through empty corporate shells and name Singapore among the ten economies that host most of it ([IMF Finance and Development](https://www.imf.org/en/Publications/fandd/issues/2019/09/the-rise-of-phantom-FDI-in-tax-havens-damgaard)).
+Manufacturing holds 8.0 percent of the stock, semiconductors 2.2 percent and pharmaceuticals only 0.3 percent (Chapter 9). Singapore publishes no series by ultimate investor, and Damgaard, Elkjaer and Johannesen (2019) name it among the ten economies that host most of the world's "phantom" investment through empty shells ([IMF Finance and Development](https://www.imf.org/en/Publications/fandd/issues/2019/09/the-rise-of-phantom-FDI-in-tax-havens-damgaard)).
 
 </details>
 
-## New plants or takeovers?
-
-![Greenfield projects bring more new FDI than acquisitions](../figures/ch06_greenfield_ma.png)
-
-**Slightly more new plants.** Announced greenfield projects were worth $17.5 billion in 2025 against $4.0 billion of net acquisitions, and over 2016 to 2025 greenfield was 1.3 times acquisitions. That places Singapore between Malaysia and Vietnam, where new factories dominate, and Hong Kong SAR, where buying firms dominates.
-
-<details class="more" markdown="1">
-<summary>More: greenfield and M&A for all four economies</summary>
-
-<!-- include: data/derived/ch06_entry_mode_table.md -->
-
-Singapore combines a large flow of new plants and headquarters with an active market for corporate control, including a spike of $46 billion of acquisitions in 2021.
-
-</details>
-
-## What do foreign firms seek? {Module 6 · Dunning OLI · export platform FDI}
-
-**A base for the region.** Six million people are too few to explain market seeking investment, so firms come for export platform investment (Ekholm, Forslid and Markusen, 2007) and regional headquarters, about 4,200 of them ([EDB](https://www.edb.gov.sg/en/news-and-insights/futuristic-workspace-spore-a-hub-for-corporate-headquarters)). In Dunning's OLI terms the location advantages are the institutions and logistics of Chapter 2, a 17 percent corporate tax with incentives, skilled workers and the trade agreements of Chapter 7.
+**What firms seek: a base for the region.** Six million people are too few for market seeking investment, so firms come for export platform investment (Ekholm, Forslid and Markusen, 2007) and regional headquarters. In Dunning's OLI terms the location advantages are the institutions of Chapter 2, low taxes with incentives, skilled workers and the agreements of Chapter 7.
 
 ## Does Singapore invest abroad?
 
 ![Singapore invests mostly in Asia](../figures/ch06_outward_destinations.png)
 
-**Heavily, mostly in Asia.** Direct investment abroad reached S$1,653 billion at the end of 2024, 216 percent of GDP (205 percent on UNCTAD's figures, 5th of 174 economies and 2nd in the region), and Asia, led by mainland China, India and Indonesia, takes 52 percent. Income from it rose from 19.5 to 36.3 percent of GDP between 2004 and 2024, but foreign investors in Singapore earn even more (53.7 percent of GDP), so gross national income is only 82.7 percent of GDP.
+**Heavily, mostly in Asia.** Direct investment abroad reached S$1,653 billion in 2024, 216 percent of GDP (205 percent on UNCTAD's figures, 5th of 174 economies), and Asia takes 52 percent. Income from it rose from 19.5 to 36.3 percent of GDP, but foreign investors in Singapore earn even more (53.7 percent), so gross national income is only 82.7 percent of GDP.
 
 <details class="more" markdown="1">
 <summary>More: investment income over time and outward FDI by industry</summary>
@@ -68,13 +55,11 @@ Singapore combines a large flow of new plants and headquarters with an active ma
 
 ![Half of Singapore's investment abroad is in finance](../figures/ch06_outward_industries.png)
 
-Half of the outward stock (50.5 percent) is in finance and insurance, much of it holding companies that own firms elsewhere, and 17.0 percent in manufacturing, including labour intensive production moved to neighbouring countries, a shift the Johor Singapore Special Economic Zone agreed with Malaysia in January 2025 is designed to support.
+Half of the outward stock is in finance and insurance and 17.0 percent in manufacturing, including plants moved to neighbouring countries.
 
 </details>
 
-## Implications for trade and investment
-
-FDI brings the capital, technology and market access that six million people could not build alone. Because so much of it is pass through money, the headline numbers overstate productive capital and react to global tax rules such as the minimum tax of 2025 (Chapter 9). Chapter 7 looks at the policies that keep it coming.
+FDI brings capital, technology and market access that six million people could not build alone. Much of it is pass through money that reacts to global tax rules (Chapter 9). Chapter 7 looks at the policies that keep it coming.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

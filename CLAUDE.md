@@ -149,6 +149,12 @@ structure, data routes and methods only; never their text, charts or numbers (th
   HS table a goods-only base; both are labelled.
 - UI restyled as an illustrated poster (hero.svg 1965 vs 2024, Chewy / Patrick Hand SC / Nunito, ink outlines, chapter
   banners with icons in site/app/icons/).
+- Length (Nov 13): cut from 80 screens / 9,000 words to 43 screens, about 30 screen heights at 1440 x 900 (27,400 px)
+  and 5,300 words; the Argentina page is about 21. Openers and full-width screens are compact, chart screens cap at
+  680 px, the text column is 40% wide and holds up to 1,500 characters before a continuation screen. No separate "Implications"
+  sections (the bridge sentence ends each chapter's last section), secondary charts live in "More" toggles, the GVC
+  network and FDI explorer components are no longer placed, and the site opens on a one-minute summary
+  (`data/derived/summary.md`, written by export_site_data.py; the intro opener is skipped). Keep new text inside this budget.
 - Syllabus (Nov 13, `~/Downloads/syllabus_2026 (2).pdf`): 12 modules with readings but no lecture dates. Headings carry
   `{Module N · reading}` tags (filled module chip + reading chip): BoP 2, Ricardo/RCA 3, H-O 4, GVC/MNEs 6 (Fort 2017,
   Boehm et al. 2015), trade policy 7 (Conconi, MFN, US China trade war), gravity 8 (Feyrer), know-how and institutions 9

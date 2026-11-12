@@ -4,10 +4,6 @@
 
 Singapore turned a location into an economy. Trade is three times GDP, foreign firms own assets worth four times GDP and its government ranks first of 205 for effectiveness, which makes it the region's best base for headquarters and high value production and a costly one for everything else.
 
-## What we found
-
-**Location, institutions and foreign capital reinforce each other.** Institutions ranked first in the world (Chapter 2) made Singapore the preferred Asian base for multinationals, whose capital gives it the 14th highest capital per worker and an export mix of capital and skill intensive services and goods, as Heckscher and Ohlin predict (Chapter 4). Half of exports are now services (Chapter 3), and almost half the value of exports is imported, placing Singapore downstream in value chains as the region's processor and coordinator (Chapter 5). Foreign investment, much of it passing through holding companies (Chapter 6), and zero tariffs with 29 agreements (Chapter 7) keep goods and capital moving. **The case adds a caution.** Investment led policy built a lasting chip industry, while in pharmaceuticals it built exports without a deeper industry at home (Chapter 9).
-
 ## SWOT analysis
 
 **World class institutions and connections, set against high costs and exposure to rivalry between its two largest partners.** The strengths come from Chapters 2, 4 and 7, the weaknesses from Chapters 1 and 5, and the opportunities and threats from the policy changes of Chapters 7 and 9.
@@ -20,9 +16,9 @@ Singapore turned a location into an economy. Trade is three times GDP, foreign f
 
 ## Investment recommendation
 
-For a multinational firm deciding where to locate in Southeast Asia, our analysis supports Singapore as the location for activities that depend on reliability and connectivity more than on cost. These include regional headquarters, treasury and trading functions, logistics and distribution hubs, research and development, and the most capital and skill intensive stages of manufacturing, such as advanced wafer fabrication, testing of complex chips and high value pharmaceutical ingredients. For these activities Singapore's institutions, skills, infrastructure and agreements outweigh its high costs, and the Refundable Investment Credit offsets part of the effect of the global minimum tax.
+For a multinational firm choosing a base in Southeast Asia, our analysis supports Singapore for activities that depend on reliability and connectivity more than on cost, such as regional headquarters, treasury and trading, logistics, research and the most capital and skill intensive stages of chip and pharmaceutical production. For these, its institutions, skills and agreements outweigh high costs.
 
-For labour or land intensive production, assembly of consumer electronics and price sensitive manufacturing, Singapore is not the right choice. Malaysia, Vietnam and the Johor side of the new special economic zone offer the same regional market access at much lower cost, and a common strategy is to combine a Singapore headquarters with plants in those countries, as the outward FDI data in Chapter 6 show many firms already do. The main risk to monitor is US trade policy toward Singapore's chip and pharmaceutical exports, which could change the calculation for export platform investment aimed at the American market.
+For labour or land intensive production Singapore is the wrong choice. Malaysia, Vietnam and the Johor side of the new special economic zone offer the same market access at lower cost, and many firms already pair a Singapore headquarters with plants there (Chapter 6). The main risk to watch is US trade policy toward chips and pharmaceuticals.
 
 ## Sources
 

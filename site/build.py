@@ -130,7 +130,7 @@ BLOCK = re.compile(r'<h1>.*?</h1>|<h2>.*?</h2>|<h3>.*?</h3>|<details.*?</details
                    r'|<ul>.*?</ul>|<ol>.*?</ol>|<blockquote>.*?</blockquote>|<hr\s*/?>', re.S)
 CHIP = re.compile(r'\s*<span class="tag[^"]*">.*?</span>')
 WIDE = {"sgmap", "sankey", "treemap", "gvc", "fdi"}
-PAGE_CHARS = 1200  # visible characters that fit on one page beside a figure at the book's type size  # interactive components drawn across both pages
+PAGE_CHARS = 1500  # visible characters that fit on one page beside a figure at the book's type size  # interactive components drawn across both pages
 
 
 def strip_tags(h):
@@ -181,7 +181,7 @@ def paginate(stem, html):
         head = sec.get("h2") or (f'<h2>{sec["head"]}</h2>' if sec["head"] else "")
         cur = None
         for b in sec["blocks"]:
-            if special(b) in WIDE:
+            if special(b) in WIDE or b.startswith('<section class="summary"'):
                 if cur:
                     spreads.append(cur)
                 spreads.append({"kind": "wide", "section": sec["head"], "left": [b], "right": []})
@@ -348,6 +348,8 @@ def build_book(texts):
     for stem, label, color, title, spreads in chapters:
         short = re.sub(r"^\d+\s+", "", label)
         for sp in spreads:
+            if stem == "intro" and sp["kind"] == "opener":
+                continue  # the cover already carries the title, so the overview opens on the one-minute summary
             f = sp["folio"]
             chn = re.match(r"ch(\d+)_", stem)
             attrs = (f'class="spread {sp["kind"]}" id="p{sp["id"]}" data-ch="{stem}" style="--c:{color}"'
