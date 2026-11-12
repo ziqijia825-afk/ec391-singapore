@@ -17,7 +17,7 @@ The ratio peaked at 437 percent in 2008 and has drifted down as services and dom
 
 </details>
 
-## Does it earn more on goods or on services?
+## Does it earn more on goods or on services? {Module 2 · Balance of payments}
 
 ![Singapore earns surpluses on goods and services](../figures/ch03_balances.png)
 
@@ -70,7 +70,7 @@ Singapore's Herfindahl Hirschman index has barely moved since 2004 (0.060), whil
 
 </details>
 
-## Does its trade follow gravity? {Gravity model · Feyrer 2009}
+## Does its trade follow gravity? {Module 8 · Gravity model · Feyrer 2009}
 
 ![Trade falls with distance](../figures/ch03_gravity.png)
 

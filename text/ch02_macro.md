@@ -74,7 +74,7 @@ Transparency International scores Singapore 84 of 100 in 2024, third of 178 econ
 
 </details>
 
-## Implications for trade and investment {Nunn 2007}
+## Implications for trade and investment {Module 9 · Nunn 2007}
 
 Nunn (2007) shows that countries that enforce contracts well specialize in goods built from made to order inputs, such as electronics and machinery. Singapore's courts, regulators and logistics are that kind of advantage, and they explain why supply chains and regional headquarters settle there despite high costs. Chapter 3 follows the trade these institutions carry.
 

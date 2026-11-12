@@ -4,7 +4,7 @@
 
 Singapore's comparative advantage has moved from factories to services, and transport and finance are now its strongest sectors. The pattern fits its abundance of capital and skills, and it fits Nunn's institutional explanation even better.
 
-## How do we measure it? {Balassa RCA}
+## How do we measure it? {Module 3 · Balassa RCA}
 
 **With Balassa's index, which we computed ourselves from raw trade data.** A sector's share in Singapore's exports is divided by its share in world exports, so a value above 1 is a revealed comparative advantage. Goods come from CEPII's BACI database and services from the World Bank's balance of payments, grouped in the team's sector table (see the [appendix](appendix.html)). BACI assigns most re-exports to the country that made the goods (Chapter 3), so these RCAs track what Singapore produces, and Vietnam's services RCAs are missing because the World Bank has no breakdown for it.
 
@@ -40,7 +40,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 </details>
 
-## Does it fit Heckscher Ohlin? {Heckscher Ohlin · Nunn 2007}
+## Does it fit Heckscher Ohlin? {Modules 4 and 9 · Heckscher Ohlin · Nunn 2007}
 
 ![Singapore has the 14th highest capital per worker](../figures/ch04_capital_per_worker.png)
 

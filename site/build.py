@@ -73,7 +73,11 @@ TAG = re.compile(r"^(#{2,3} .*?)\s*\{([^{}]+)\}\s*$", re.M)  # "## Heading {Cour
 
 
 def tags_to_chips(md):
-    return TAG.sub(lambda m: f'{m.group(1)} <span class="tag">{m.group(2)}</span>', md)
+    def chip(m):  # "Module 8 · Gravity model" -> a filled module chip, then the reading chip
+        mod, rest = re.match(r"(Modules? [\d and]+?)(?: · (.*))?$", m.group(2)) and re.match(r"(Modules? [\d and]+?)(?: · (.*))?$", m.group(2)).groups() or (None, m.group(2))
+        out = f'<span class="tag mod">{mod}</span>' if mod else ''
+        return f'{m.group(1)} {out}' + (f'<span class="tag">{rest}</span>' if rest else '')
+    return TAG.sub(chip, md)
 
 
 def tags_strip(md):
@@ -124,7 +128,7 @@ BLOCK = re.compile(r'<h1>.*?</h1>|<h2>.*?</h2>|<h3>.*?</h3>|<details.*?</details
                    r'|<div data-(?:fig|special)=[^>]*>.*?</div>|<div class="tablewrap">.*?</div>'
                    r'|<section class="\w+">.*?</section>'
                    r'|<ul>.*?</ul>|<ol>.*?</ol>|<blockquote>.*?</blockquote>|<hr\s*/?>', re.S)
-CHIP = re.compile(r'\s*<span class="tag">.*?</span>')
+CHIP = re.compile(r'\s*<span class="tag[^"]*">.*?</span>')
 WIDE = {"sgmap", "sankey", "treemap", "gvc", "fdi"}
 PAGE_CHARS = 1200  # visible characters that fit on one page beside a figure at the book's type size  # interactive components drawn across both pages
 
@@ -185,7 +189,7 @@ def paginate(stem, html):
                 continue
             if cur is None:
                 cur = {"kind": "text", "section": sec["head"],
-                       "left": [head if not any(x.get("section") == sec["head"] for x in spreads[1:])
+                       "left": [head if not any(x.get("section") == sec["head"] and x["kind"] != "wide" for x in spreads[1:])
                                 else f'<h2 class="cont">{sec["head"]}</h2>'] if head else [], "right": []}
             if is_visual(b):
                 if cur["right"]:

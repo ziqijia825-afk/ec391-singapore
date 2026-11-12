@@ -19,7 +19,7 @@ Inward FDI rose from 142 percent of GDP at the end of 2004 to 409 percent (S$3,1
 
 </details>
 
-## Who invests, and in what? {Phantom FDI}
+## Who invests, and in what? {Module 2 · Phantom FDI}
 
 <!-- interactive: fdi -->
 
@@ -51,7 +51,7 @@ Singapore combines a large flow of new plants and headquarters with an active ma
 
 </details>
 
-## What do foreign firms seek? {Dunning OLI · export platform FDI}
+## What do foreign firms seek? {Module 6 · Dunning OLI · export platform FDI}
 
 **A base for the region.** Six million people are too few to explain market seeking investment, so firms come for export platform investment (Ekholm, Forslid and Markusen, 2007) and regional headquarters, about 4,200 of them ([EDB](https://www.edb.gov.sg/en/news-and-insights/futuristic-workspace-spore-a-hub-for-corporate-headquarters)). In Dunning's OLI terms the location advantages are the institutions and logistics of Chapter 2, a 17 percent corporate tax with incentives, skilled workers and the trade agreements of Chapter 7.
 

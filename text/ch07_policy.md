@@ -4,7 +4,7 @@
 
 Singapore is close to a pure free trader at home and uses 29 free trade agreements to open markets abroad. Its new risks come from outside, as US tariffs and export controls reach it whatever its own policy.
 
-## How high are its tariffs?
+## How high are its tariffs? {Module 7 · MFN}
 
 ![Singapore's average MFN tariff is effectively zero](../figures/ch07_tariffs.png)
 
@@ -21,7 +21,7 @@ Singapore's average bound rate is 8.9 percent, far above what it applies ([WTO t
 
 </details>
 
-## What are its trade agreements for? {Rules of origin · Conconi et al. 2016}
+## What are its trade agreements for? {Module 7 · Rules of origin · Conconi et al. 2016}
 
 ![Singapore has signed its way to 29 FTAs](../figures/ch07_fta_count.png)
 
@@ -38,7 +38,7 @@ Singapore also pioneered digital economy agreements, starting with Chile and New
 
 </details>
 
-## How far has regional integration gone? {Balassa's stages}
+## How far has regional integration gone? {Module 7 · Balassa's stages}
 
 **ASEAN is still a free trade area, the first rung of Balassa's ladder.** Each member keeps its own external tariff, and Singapore's zero next to Vietnam's 9.7 percent shows there is no common one, so ASEAN cannot become a customs union without one side changing. The ASEAN Economic Community of 2015 reaches toward a common market in services, investment and skilled labour, but only in part.
 
@@ -72,7 +72,7 @@ Recent treaties with Kazakhstan, Nigeria and Côte d'Ivoire follow Singaporean i
 
 </details>
 
-## What is the controversy now?
+## What is the controversy now? {Module 7 · US China trade war}
 
 **US tariffs and chip export controls.** The United States imposed a 10 percent tariff on Singapore in April 2025 despite its goods surplus and their FTA, and after a court ruling a 12.5 percent Section 301 tariff has applied since July 2026 to about a third of Singapore's domestic exports to the US, with pharmaceuticals and chips under separate investigation ([METI](https://www.meti.gov.sg/newsroom/mti-media-statement-on-the-office-of-the-united-states-trade-representative--ustr--s-determination-on-the-section-301-investigation-on-forced-labour/)). Singapore has not retaliated and has tightened its own export controls.
 

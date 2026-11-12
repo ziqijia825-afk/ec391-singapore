@@ -149,5 +149,9 @@ structure, data routes and methods only; never their text, charts or numbers (th
   HS table a goods-only base; both are labelled.
 - UI restyled as an illustrated poster (hero.svg 1965 vs 2024, Chewy / Patrick Hand SC / Nunito, ink outlines, chapter
   banners with icons in site/app/icons/).
+- Syllabus (Nov 13, `~/Downloads/syllabus_2026 (2).pdf`): 12 modules with readings but no lecture dates. Headings carry
+  `{Module N · reading}` tags (filled module chip + reading chip): BoP 2, Ricardo/RCA 3, H-O 4, GVC/MNEs 6 (Fort 2017,
+  Boehm et al. 2015), trade policy 7 (Conconi, MFN, US China trade war), gravity 8 (Feyrer), know-how and institutions 9
+  (Juhász 2015, Nunn 2007). Final exam Dec 15.
 - Still to do by members: check 2–3 numbers per chart; rewrite text in own words; link chapters to specific lectures;
   confirm case topic; download TI's CPI 2025 file; ask the professor the open questions in the appendix.
