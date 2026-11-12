@@ -110,8 +110,10 @@ structure, data routes and methods only; never their text, charts or numbers (th
   figure in `site/data/figs/` (same numbers, units, source), `data/derived/chNN.json` and `data/derived/*.md` tables.
   `export_site_data.py` writes the interactive datasets (KPIs, Sankey, GVC network, FDI explorer, WGI by year, RCA by
   year). `run_all.py` reruns everything and builds the site.
-- Site: `site/build.py` builds `_site/index.html` (single-page interactive app from `site/app/`: landing map, scroll-spy
-  nav, global year slider, ECharts 5.5.0 vendored in `site/app/vendor/`) + `_site/article/*.html` (static version) +
+- Site: `site/build.py` builds `_site/index.html` (interactive picture book from `site/app/`: poster cover with map, then
+  each chapter paginated into two-page spreads by `paginate()` (text left, figure right, interactive components across
+  both pages), turned with a 3D flip in `js/book.js`, one page at a time below 820px; global year slider, ECharts 5.5.0
+  vendored in `site/app/vendor/`) + `_site/article/*.html` (static version) +
   the Markdown deliverable `report/EC391_Singapore.md`. In `text/*.md`, `<!-- include: data/derived/X.md -->` inserts a
   table and `<!-- interactive: NAME -->` places a component (sgmap, sankey, treemap, gvc, fdi). Build adds `?v=` cache
   busting to JS and data. Local preview `ec391-site` on :8391 (`~/.claude/launch.json`).

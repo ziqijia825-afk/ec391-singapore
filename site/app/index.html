@@ -19,14 +19,14 @@
     <div class="ph"><b>How a city with no resources<br>became a global trade hub</b><b class="r">Hover over Singapore<br>for its rankings</b></div>
     <div id="landing-map" role="img" aria-label="Map of Southeast Asia with Singapore and its main shipping routes"></div>
     <div class="pf"><span>Every chart built from raw data<br><span class="accent">EC 391 &middot; Fall 2026</span></span>
-      <button id="enter" type="button">Explore the data &darr;</button></div>
+      <button id="enter" type="button">Open the book &rarr;</button></div>
   </div>
   <p class="lettering title-bottom">&hellip;to a Global Hub</p>
   <span class="credit">Illustration drawn by the team &middot; 1&deg;17&prime;N 103&deg;51&prime;E</span>
 </section>
 <div id="topbar">
   <div class="row">
-    <a class="brand" href="#intro"><img src="merlion.svg" alt=""><span>Singapore</span></a>
+    <a class="brand" href="#cover" title="Back to the cover"><img src="merlion.svg" alt=""><span>Singapore</span></a>
     <nav id="nav">{{NAV}}</nav>
     <div id="timebar" title="Time control: line charts show 2004 to the selected year; snapshot charts show the selected year">
       <label for="year">Year</label><input type="range" id="year" step="1"><output id="yearout"></output>
@@ -34,11 +34,13 @@
     </div>
   </div>
 </div>
-<main id="content">
+<main id="reader" aria-label="Report as a book">
+  <button class="turn prev" type="button" aria-label="Previous page">&lsaquo;</button>
+  <div id="book" aria-live="polite">
 {{SECTIONS}}
-<footer class="site"><img src="merlion.svg" alt=""><div>EC 391 Country Team Project: Singapore. Every chart is built by the team from raw
-data with the scripts in the project repository; sources are under each figure and in the <a href="#appendix">appendix</a>.
-<a href="EC391_Singapore.md">Full text (Markdown)</a> · <a href="article/index.html">Static article version</a></div></footer>
+  </div>
+  <button class="turn next" type="button" aria-label="Next page">&rsaquo;</button>
+  <div id="pager"><span id="pageno"></span><div class="progress"><i></i></div><span class="keys">&larr; &rarr; to turn pages</span></div>
 </main>
 </body>
 </html>

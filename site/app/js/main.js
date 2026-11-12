@@ -1,34 +1,9 @@
-// Page wiring: landing map, scroll-spy navigation, the global year control and lazy chart rendering.
+// Page wiring: the poster cover with its map, the book of chapters, and the global year control.
 import { state, set, YEARS } from './state.js';
-import { renderFigure } from './chart.js';
-import { landingMap, sgMap, wgiRadar, tradeSankey, rcaTreemap, gvcNetwork, fdiExplorer, scrolly } from './components.js';
+import { landingMap, sgMap, wgiRadar, tradeSankey, rcaTreemap, gvcNetwork, fdiExplorer } from './components.js';
+import { initBook } from './book.js';
 
 const SPECIALS = { sgmap: sgMap, wgi: wgiRadar, sankey: tradeSankey, treemap: rcaTreemap, gvc: gvcNetwork, fdi: fdiExplorer };
-
-function enter() {
-  document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
-}
-
-// lazy rendering: draw a chart when its card comes near the viewport
-const io = new IntersectionObserver((entries) => entries.forEach((e) => {
-  if (!e.isIntersecting) return;
-  io.unobserve(e.target);
-  const el = e.target;
-  const job = el.dataset.fig ? renderFigure(el, el.dataset.fig) : SPECIALS[el.dataset.special]?.(el);
-  Promise.resolve(job).catch((err) => { console.error(err); el.classList.add('card'); el.insertAdjacentHTML('beforeend', `<p class="hint">Chart could not load (${err.message}).</p>`); });
-}), { rootMargin: '600px 0px' });
-
-function setupNav() {
-  const links = [...document.querySelectorAll('#nav a')];
-  const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
-  const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
-    if (!e.isIntersecting) return;
-    links.forEach((a) => a.classList.remove('on'));
-    const a = byId.get(e.target.id);
-    if (a) { a.classList.add('on'); a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }
-  }), { rootMargin: '-45% 0px -50% 0px' });
-  document.querySelectorAll('section.chapter').forEach((s) => spy.observe(s));
-}
 
 function setupTime() {
   const input = document.getElementById('year');
@@ -51,10 +26,25 @@ function setupTime() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  landingMap(document.getElementById('landing-map'), enter).catch(console.error);
-  document.getElementById('enter').addEventListener('click', enter);
-  setupNav();
+  const book = initBook(SPECIALS);
+  const cover = document.getElementById('landing');
+  let opened = false;
+  const open = (animate = true) => {
+    if (document.body.classList.contains('reading')) return;
+    if (animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      cover.animate([{ transform: 'perspective(1800px) rotateY(0deg)', opacity: 1 }, { transform: 'perspective(1800px) rotateY(-75deg)', opacity: 0 }],
+        { duration: 650, easing: 'ease-in' }).finished.then(() => { document.body.classList.add('reading'); if (!opened) { book.open(); opened = true; } });
+    } else {
+      document.body.classList.add('reading');
+      if (!opened) { book.open(); opened = true; }
+    }
+  };
+  const close = () => { document.body.classList.remove('reading'); history.replaceState(null, '', '#cover'); };
+  landingMap(document.getElementById('landing-map'), () => open()).catch(console.error);
+  document.getElementById('enter').addEventListener('click', () => open());
+  document.addEventListener('click', (e) => { if (e.target.closest('a[href="#cover"]')) { e.preventDefault(); close(); } });
   setupTime();
-  document.querySelectorAll('[data-fig], [data-special]').forEach((el) => io.observe(el));
-  document.querySelectorAll('.scrolly').forEach(scrolly);
+  const topbar = document.getElementById('topbar');
+  new ResizeObserver(() => document.documentElement.style.setProperty('--tb', `${topbar.offsetHeight}px`)).observe(topbar);
+  if (book.hasTarget) open(false);
 });

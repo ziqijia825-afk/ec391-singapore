@@ -1,5 +1,5 @@
 // Interactive components that go beyond the static figures: maps, Sankey, treemap, network, FDI explorer,
-// WGI radar by year and the case-study scrollytelling. All data come from site/data/*.json (built by Python).
+// WGI radar by year, FDI explorer. All data come from site/data/*.json (built by Python).
 import { state, set, on, getJSON, pickYear, YEARS } from './state.js';
 import { cardShell, baseOption, tipFooter, shortSource, radarOption, registry, nameOf } from './chart.js';
 
@@ -181,7 +181,7 @@ export async function rcaTreemap(el) {
   let d;
   try { d = await getJSON('data/rca.json'); } catch { el.innerHTML = ''; return; }
   const spec = { title: 'Singapore\'s exports by sector, coloured by revealed comparative advantage',
-    subtitle: 'Box size = export value (US$ billions); colour = Balassa RCA (blue above 1 = advantage). Click a sector to see its RCA over time; click again to drill into HS chapters. RCA here is measured against world exports of goods and services, so HS chapter values are lower than the goods-only RCAs in the table further down.',
+    subtitle: 'Box size = export value (US$ billions); colour = Balassa RCA (blue above 1 = advantage). Click a sector to see its RCA over time; click again to drill into HS chapters. RCA here is measured against world exports of goods and services, so HS chapter values are lower than the goods-only RCAs in the HS chapter table later in this chapter.',
     source: d.source };
   const chart = cardShell(el, spec, { tall: true });
   el.querySelector('.extra').innerHTML = '<div class="panel" style="margin-top:8px"><h5 class="pt">Click a sector</h5><div class="mini"></div></div>';
@@ -327,18 +327,3 @@ export async function fdiExplorer(el) {
 }
 
 // ---------- case study: sticky chart + text steps; the years mentioned in the active step are highlighted ----------
-export function scrolly(container) {
-  const steps = [...container.querySelectorAll('.step')];
-  const target = container.querySelector('.sticky [data-fig]');
-  const highlight = (stepEl) => {
-    const chart = registry.get(target?.dataset.fig);
-    if (!chart) return;
-    const years = [...new Set((stepEl.textContent.match(/\b(19[6-9]\d|20[0-2]\d)\b/g) || []).map(Number))].filter((y) => y >= 1995 && y <= 2024);
-    chart.setOption({ series: [{ id: '__year', markArea: { silent: true, itemStyle: { color: 'rgba(42,120,214,.08)' },
-      data: years.map((y) => [{ xAxis: y - .5 }, { xAxis: y + .5 }]) } }] });
-  };
-  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
-    if (e.isIntersecting) { steps.forEach((s) => s.classList.toggle('active', s === e.target)); highlight(e.target); }
-  }), { rootMargin: '-40% 0px -45% 0px' });
-  steps.forEach((s) => io.observe(s));
-}
