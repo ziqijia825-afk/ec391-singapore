@@ -69,7 +69,30 @@ Nov 29 text rewritten (Thanksgiving, no meeting) · Dec 6 case + peer review, re
   implications for trade and investment + bridge sentence → sources.
 - Log every downloaded file in `data/SOURCES.md` (database, version, date, link, who).
 
-## Repo
+## Lessons from the Argentina team's site (same course)
+
+Another EC 391 team's site (https://piranha315.github.io/Argentina-Interactive-Website/, checked Nov 12, 2026). Borrow
+structure, data routes and methods only; never their text, charts or numbers (the professor requires our own charts).
+
+- **Tie every section to the course.** Their strongest move: each chapter names the lecture model or reading it tests
+  (Ch. 8 learning function and infant industry, Nunn 2007 institutions → specialization, Juhász natural experiment,
+  the Ireland / "dark matter" FDI readings) and compares team estimates with the class estimate (gravity distance
+  elasticity, class value on 2024 world data −1.46). Do the same in every chapter (likely the "depth of analysis" 35%).
+- **Appendix page:** sources grouped by provider and tagged by type (Government / IGO / UN / NGO), data-access date,
+  methods with formulas (RCA, gravity, HHI, export groups by HS range), and a "Still to collect" list.
+- **Tables to copy in form:** RCA by HS chapter vs peers with shading (dark ≥ 10, mid 1–10, pale < 1); PTA table with
+  columns Agreement · In force · Type · Scope · Note (sources: WTO RTA database, etc.).
+- **Ch. 3 gravity:** OLS of ln(exports to partner) on ln(partner GDP) and ln(capital-to-capital distance) from Comtrade
+  + WDI country coordinates; scatter of size-adjusted exports vs distance. For Singapore, use domestic exports where
+  possible, since re-exports follow entrepôt routes, not gravity alone.
+- **Ch. 4 RCA:** they use 2023 Comtrade as the latest year with near-complete reporter coverage (world = sum of 167
+  reporters). Services matter for Singapore: consider the Harvard Atlas services data (see Emily-coding/comparative-advantage).
+- **Ch. 6 FDI:** label stock by *immediate* investor country and footnote that holding-company hubs hide the ultimate
+  parent. For Singapore this cuts both ways (it is itself such a hub): say so.
+- **Ch. 9 case structure:** course argument → policy facts (legal texts) → data test (RCA, exports vs imports) →
+  verdict in the model's terms → what further data would confirm it.
+- **Do not copy:** their GDP chart uses bars + line on two y-axes (our rule: single y-axis); their map hero and
+  game-style design. TiVA, UNCTAD NTM counts and IIA BIT counts blocked their automated download: plan manual exports.
 
 - `scripts/fetch_worldbank.py`: downloads WDI + WGI for all economies into `data/raw/wdi/` (run locally or via the
   "Fetch data" workflow). WGI codes are tried as `XX.EST` and `GOV_WGI_XX.EST`.
