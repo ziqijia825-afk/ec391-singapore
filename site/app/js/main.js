@@ -2,6 +2,7 @@
 import { state, set, YEARS, getJSON } from './state.js';
 import { coverMap, sgMap, wgiRadar, tradeSankey, rcaTreemap, gvcNetwork, fdiExplorer } from './components.js';
 import { initStory } from './story.js';
+import { sleepWhenHidden } from './chart.js';
 import { enhance } from './enhance.js';
 import { ICON } from './icons.js';
 
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const setTb = () => document.documentElement.style.setProperty('--tb', `${topbar.offsetHeight}px`);
   setTb();
   new ResizeObserver(setTb).observe(topbar);
-  coverMap(document.getElementById('cover-map'), document.getElementById('cover-kpis')).catch(console.error);
+  coverMap(document.getElementById('cover-map'), document.getElementById('cover-kpis')).then(() => sleepWhenHidden(document.getElementById('cover'))).catch(console.error);
   // key numbers that stay in view under the top bar, each with its own icon
   const icons = [ICON.gdp, ICON.income, ICON.trade, ICON.fdi, ICON.hdi, ICON.gov];
   getJSON('data/kpis.json').then((k) => {

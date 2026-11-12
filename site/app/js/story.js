@@ -1,6 +1,6 @@
 // The report as a column of screens: one question per screen, text on the left and its chart on the right.
 // Charts render as they come near the viewport; the chapter tab, address and progress bar follow the reader.
-import { renderFigure } from './chart.js';
+import { renderFigure, sleepWhenHidden } from './chart.js';
 
 export function initStory(specials) {
   const spreads = [...document.querySelectorAll('#story .spread')];
@@ -10,16 +10,17 @@ export function initStory(specials) {
   spreads.forEach((sp) => { if (!firstOf.has(sp.dataset.ch)) firstOf.set(sp.dataset.ch, sp); });
 
   // ---------- lazy charts ----------
+  const idle = window.requestIdleCallback ? (f) => requestIdleCallback(f, { timeout: 300 }) : (f) => setTimeout(f, 30);
   const run = (el) => {
     if (el.dataset.done) return;
     el.dataset.done = '1';
     const job = el.dataset.fig ? renderFigure(el, el.dataset.fig) : specials[el.dataset.special]?.(el);
-    Promise.resolve(job).catch((err) => { console.error(err); el.insertAdjacentHTML('beforeend', `<p class="hint">Chart could not load (${err.message}).</p>`); });
+    Promise.resolve(job).then(() => sleepWhenHidden(el)).catch((err) => { console.error(err); el.insertAdjacentHTML('beforeend', `<p class="hint">Chart could not load (${err.message}).</p>`); });
   };
   const io = new IntersectionObserver((entries) => entries.forEach((e) => {
     if (!e.isIntersecting || e.target.closest('details:not([open])')) return;
     io.unobserve(e.target);
-    run(e.target);
+    idle(() => run(e.target));  // build charts between scroll frames, not during them
   }), { rootMargin: '600px 0px' });
   document.querySelectorAll('#story [data-fig], #story [data-special]').forEach((el) => io.observe(el));
   document.addEventListener('toggle', (e) => {
@@ -53,8 +54,11 @@ export function initStory(specials) {
     const ch = current.dataset.ch;
     navLinks.forEach((a) => {
       const on = a.getAttribute('href') === `#${ch}`;
+      if (on && !a.classList.contains('on')) {  // centre the chip inside the bar only; never move the page
+        const nav = a.parentElement;
+        nav.scrollTo({ left: a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2, behavior: 'smooth' });
+      }
       a.classList.toggle('on', on);
-      if (on) a.scrollIntoView({ block: 'nearest', inline: 'center' });
     });
     current.classList.add('seen');  // whatever the reader is looking at is always shown
     history.replaceState(null, '', `#${current.id}`);
@@ -102,11 +106,16 @@ export function initStory(specials) {
   }), { threshold: 0.12 });
   spreads.forEach((sp) => seen.observe(sp));
   spreads.forEach((sp) => spy.observe(sp));
+  let ticking = false, max = 0;
+  const measure = () => { max = document.documentElement.scrollHeight - innerHeight; };
   const progress = () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    bar.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+    ticking = false;
+    bar.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
+    document.body.classList.toggle('past-cover', scrollY > innerHeight);
   };
-  addEventListener('scroll', progress, { passive: true });
+  measure();
+  new ResizeObserver(measure).observe(document.body);
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(progress); } }, { passive: true });
   progress();
 
   // ---------- links and keys ----------

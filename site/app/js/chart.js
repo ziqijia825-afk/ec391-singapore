@@ -290,3 +290,16 @@ export async function renderFigure(el, id) {
   registry.set(id, chart);
   return { chart, spec };
 }
+
+// Charts with endless effects (ships, ripples, force layouts) stop animating while off screen, so scrolling stays smooth.
+const sleepers = new IntersectionObserver((entries) => entries.forEach((e) => {
+  const chart = echarts.getInstanceByDom(e.target);
+  if (!chart || chart.isDisposed()) return;
+  const anim = chart.getZr().animation;
+  if (e.isIntersecting) anim.resume(); else anim.pause();
+}), { rootMargin: '100px 0px' });
+export function sleepWhenHidden(root) {
+  const els = root.hasAttribute?.('_echarts_instance_') ? [root] : [];
+  root.querySelectorAll('[_echarts_instance_]').forEach((x) => els.push(x));
+  els.forEach((x) => { if (!x.dataset.sleeps) { x.dataset.sleeps = '1'; sleepers.observe(x); } });
+}
