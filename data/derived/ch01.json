@@ -83,16 +83,16 @@
       },
       "EAS": {
         "Life expectancy (years)": 76.7,
-        "Adult literacy (%)": 96.6,
+        "Adult literacy (%)": 96.2,
         "Secondary enrolment, gross (%)": 92.0,
-        "Tertiary enrolment, gross (%)": 63.3,
+        "Tertiary enrolment, gross (%)": 61.9,
         "Human Development Index (x100)": 77.5
       },
       "WLD": {
         "Life expectancy (years)": 73.5,
-        "Adult literacy (%)": 87.7,
-        "Secondary enrolment, gross (%)": 77.3,
-        "Tertiary enrolment, gross (%)": 43.6,
+        "Adult literacy (%)": 87.2,
+        "Secondary enrolment, gross (%)": 77.2,
+        "Tertiary enrolment, gross (%)": 43.2,
         "Human Development Index (x100)": 75.6
       }
     },
@@ -104,18 +104,18 @@
       },
       "Adult literacy (%)": {
         "SGP": 2021,
-        "EAS": 2024,
-        "WLD": 2024
+        "EAS": 2021,
+        "WLD": 2021
       },
       "Secondary enrolment, gross (%)": {
         "SGP": 2023,
-        "EAS": 2024,
-        "WLD": 2024
+        "EAS": 2023,
+        "WLD": 2023
       },
       "Tertiary enrolment, gross (%)": {
         "SGP": 2023,
-        "EAS": 2024,
-        "WLD": 2024
+        "EAS": 2023,
+        "WLD": 2023
       }
     }
   },

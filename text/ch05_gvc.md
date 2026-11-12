@@ -10,7 +10,7 @@ Almost half the value of Singapore's exports is created abroad, which makes it o
 
 ![46% of the value of Singapore's exports is foreign](../figures/ch05_backward.png)
 
-**Almost half, 46.1 percent in 2022, the 7th highest share of 80 economies.** The share was already 43.3 percent in 2004. Among the peers only Vietnam, with its foreign owned electronics assembly, is higher, while Malaysia (34.2 percent) exports more home grown resources and Hong Kong SAR (18.0 percent) mostly services.
+**Almost half, 46.1 percent in 2022, the 7th highest share of 80 economies and 2nd of 17 in East Asia and the Pacific.** The share was already 43.3 percent in 2004. Among the peers only Vietnam, with its foreign owned electronics assembly, is higher, while Malaysia (34.2 percent) exports more home grown resources and Hong Kong SAR (18.0 percent) mostly services.
 
 <details class="more" markdown="1">
 <summary>How we measured participation from the OECD TiVA data</summary>

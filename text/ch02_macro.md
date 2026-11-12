@@ -8,7 +8,7 @@ Singapore is the second richest economy in the world per person at purchasing po
 
 ![Singapore's economy grew about fivefold in 20 years](../figures/ch02_gdp_current_usd.png)
 
-**About five times bigger than in 2004, and second in the world per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world and from 9th to 6th of 33 in East Asia and the Pacific, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, and real growth averaged 5.0 percent a year, 41st of 193.
+**About five times bigger than in 2004, and second in the world and first in East Asia and the Pacific per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world and from 9th to 6th of 33 in East Asia and the Pacific, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, and real growth averaged 5.0 percent a year, 41st of 193.
 
 <details class="more" markdown="1">
 <summary>More: income per person, real growth, GDP at PPP and the current account</summary>

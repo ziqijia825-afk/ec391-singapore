@@ -29,7 +29,7 @@ Hong Kong SAR's largest advantages are finance (3.8), transport (3.0) and gold a
 
 ![Singapore's comparative advantage shifted toward services](../figures/ch04_rca_change.png)
 
-**From goods to services within twenty years.** Between 2004 and 2024 the RCA in transport rose from 2.3 to 4.5, finance from 1.2 to 2.8 and ICT and business services from 0.8 to 1.3. Electronics stayed above 1 but fell from 1.95 to 1.41, and machinery, chemicals and refined petroleum lost their advantage as assembly moved to the region and refining grew in the Middle East and China. Pharmaceuticals moved the other way, from 0.2 to 1.2 (Chapter 9).
+**From goods to services within twenty years.** Between 2004 and 2024 the RCA in transport rose from 2.3 to 4.5, finance from 1.2 to 2.8 and ICT and business services from 0.8 to 1.3. Electronics stayed above 1 but fell from 1.95 to 1.41, and machinery, chemicals and refined petroleum lost their advantage as assembly moved to the region and refining grew in the Middle East and China. Pharmaceuticals moved the other way, from 0.2 to 1.2 (Chapter 9). The last decade shows the shift is still under way. Between 2014 and 2024 refined petroleum fell from 1.19 to 0.87 and chemicals from 1.28 to 0.76, losing their advantage, while pharmaceuticals rose from 0.80 to 1.18 and transport from 3.0 to 4.5.
 
 <details class="more" markdown="1">
 <summary>More: RCA by HS chapter</summary>
@@ -44,7 +44,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 ![Singapore has the 14th highest capital per worker](../figures/ch04_capital_per_worker.png)
 
-**Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143 and the least arable land per person of 205, so it exports capital and skill intensive services and goods and imports food (RCA 0.3).
+**Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143, the least arable land per person of 205 and almost no natural resource rents (178th of 197), so it is capital and skill abundant and resource poor. It exports capital and skill intensive services and goods and imports food (RCA 0.3).
 
 **The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law, and its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, while the sectors it lost, refining and plastics, sit among his least. Those industries are skill intensive and less capital intensive than average, so Singapore's skills and courts appear to matter more than its capital.
 

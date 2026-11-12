@@ -8,7 +8,7 @@ Singapore is the third most open economy in the world, and almost half of what i
 
 ![Singapore trades 313% of its GDP](../figures/ch03_openness.png)
 
-**Trade is three times GDP, the third highest ratio of 172 economies.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific. Only Hong Kong SAR (359 percent) and one other economy are higher.
+**Trade is three times GDP, the third highest ratio of 172 economies and second in East Asia and the Pacific.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific. Only Hong Kong SAR (359 percent) and one other economy are higher.
 
 <details class="more" markdown="1">
 <summary>More: why openness has fallen since 2008</summary>
@@ -59,7 +59,7 @@ Imports mirror exports. Electronics and instruments were 34.8 percent of goods i
 
 ![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
 
-**Mostly Asia, and no single market dominates.** Mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
+**Mostly Asia, and no single market dominates.** On Singapore's own figures mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets on reconciled BACI data, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
 
 <details class="more" markdown="1">
 <summary>More: partner shares and how concentration changed</summary>
@@ -80,7 +80,7 @@ Singapore's Herfindahl Hirschman index has barely moved since 2004 (0.060), whil
 
 <!-- include: data/derived/ch03_gravity_table.md -->
 
-**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 and above the value of about 1 typical in the literature (Head and Mayer, 2014). **Size.** The GDP elasticity of 0.79 is below the class value of 1.00, so small nearby economies buy more than their size predicts, as expected of a regional hub.
+**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 and above the value of about 1 typical in the literature (Head and Mayer, 2014). On BACI's reconciled data, which assign most re-exports to their origin, it is −1.69, so re-exports do not drive the result. **Size.** The GDP elasticity of 0.79 is below the class value of 1.00, so small nearby economies buy more than their size predicts, as expected of a regional hub.
 
 **Trade agreements.** The 64 partners with an agreement in force in 2024 buy about seven times as much as size and distance predict (coefficient 1.98), and the distance elasticity falls to −1.29 because the nearest partners are mostly agreement partners. This is an association, since Singapore signed first with its largest markets.
 

@@ -8,7 +8,7 @@ Singapore is close to a pure free trader at home and uses 29 free trade agreemen
 
 ![Singapore's average MFN tariff is effectively zero](../figures/ch07_tariffs.png)
 
-**Close to zero.** A GATT member since 1973 and a founding member of the WTO in 1995, Singapore had an average MFN tariff of 0.07 percent in 2022, 3rd lowest of 143 economies, against 5.5 percent in Malaysia and 9.7 percent in Vietnam. Only beer, stout and two rice spirits pay customs duty, so peak tariffs above 15 percent cover just 0.2 percent of farm lines, against 41.8 percent in Vietnam.
+**Close to zero.** A GATT member since 1973 and a founding member of the WTO in 1995, Singapore had an average MFN tariff of 0.07 percent in 2022, 3rd lowest of 143 economies and of 21 in East Asia and the Pacific, against 5.5 percent in Malaysia and 9.7 percent in Vietnam. Only beer, stout and two rice spirits pay customs duty, so peak tariffs above 15 percent cover just 0.2 percent of farm lines, against 41.8 percent in Vietnam.
 
 <!-- include: data/derived/ch07_wto_profile_table.md -->
 

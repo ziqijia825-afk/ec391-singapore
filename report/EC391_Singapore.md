@@ -65,7 +65,7 @@ Raffles's free port of 1819 lived by moving goods it did not produce ([NLB Infop
 
 ![Singapore is ahead of the East Asia & Pacific average on every human development measure](../figures/ch01_vs_region.png)
 
-**It leads the region on every human development measure, most of all in university education and longevity.** Gross tertiary enrolment is 97 percent against 63 percent in East Asia and the Pacific, and life expectancy 83.3 years against 76.7. Literacy (97.7 percent) is close to the regional 96.6 percent because basic literacy is now near universal in the region.
+**It leads the region on every human development measure, most of all in university education and longevity.** Gross tertiary enrolment is 97 percent against 62 percent in East Asia and the Pacific (2023), and life expectancy 83.3 years against 76.7. Literacy (97.7 percent in 2021) is close to the regional 96.2 percent because basic literacy is now near universal in the region.
 
 <details class="more" markdown="1">
 <summary>More: HDI over time, schooling, PISA and the full ranking table</summary>
@@ -123,7 +123,7 @@ Singapore is the second richest economy in the world per person at purchasing po
 
 ![Singapore's economy grew about fivefold in 20 years](../figures/ch02_gdp_current_usd.png)
 
-**About five times bigger than in 2004, and second in the world per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world and from 9th to 6th of 33 in East Asia and the Pacific, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, and real growth averaged 5.0 percent a year, 41st of 193.
+**About five times bigger than in 2004, and second in the world and first in East Asia and the Pacific per person.** GDP rose from $115 billion to $573 billion between 2004 and 2024, from 43rd to 26th in the world and from 9th to 6th of 33 in East Asia and the Pacific, overtaking Malaysia in 2015 and Hong Kong SAR in 2017 with a sixth of Malaysia's population. GDP per person at purchasing power parity is $153,161, almost four times Malaysia's, and real growth averaged 5.0 percent a year, 41st of 193.
 
 <details class="more" markdown="1">
 <summary>More: income per person, real growth, GDP at PPP and the current account</summary>
@@ -236,7 +236,7 @@ Singapore is the third most open economy in the world, and almost half of what i
 
 ![Singapore trades 313% of its GDP](../figures/ch03_openness.png)
 
-**Trade is three times GDP, the third highest ratio of 172 economies.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific. Only Hong Kong SAR (359 percent) and one other economy are higher.
+**Trade is three times GDP, the third highest ratio of 172 economies and second in East Asia and the Pacific.** Exports plus imports were 313 percent of GDP in 2024, against 137 percent in Malaysia and 58 percent in East Asia and the Pacific. Only Hong Kong SAR (359 percent) and one other economy are higher.
 
 <details class="more" markdown="1">
 <summary>More: why openness has fallen since 2008</summary>
@@ -286,7 +286,7 @@ Imports mirror exports. Electronics and instruments were 34.8 percent of goods i
 
 ![Singapore's export markets are diversified](../figures/ch03_partner_hhi.png)
 
-**Mostly Asia, and no single market dominates.** Mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
+**Mostly Asia, and no single market dominates.** On Singapore's own figures mainland China took 14.0 percent of exports in 2024, Hong Kong SAR 11.0 percent and Malaysia 10.4 percent. The concentration index of export markets on reconciled BACI data, 0.074, is the lowest of the four economies, so a downturn in one market hurts Singapore less than its neighbours.
 
 <details class="more" markdown="1">
 <summary>More: partner shares and how concentration changed</summary>
@@ -313,7 +313,7 @@ Singapore's Herfindahl Hirschman index has barely moved since 2004 (0.060), whil
 
 *OLS of ln(Singapore's exports to partner j) on ln(GDP of j, current US$, 2024) and ln(great-circle distance between capitals, km). Robust (HC1) standard errors in parentheses. FTA in force = 1 for the 64 partners covered by an agreement in force in 2024 (team list from Enterprise Singapore and METI). The class estimate is the 2024 gravity regression on all country pairs in the EC 391 gravity lecture (CEPII and UN Comtrade data). Sources: UN Comtrade; CEPII BACI; World Bank WDI (GDP, capital coordinates). Taiwan is excluded (no World Bank GDP).*
 
-**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 and above the value of about 1 typical in the literature (Head and Mayer, 2014). **Size.** The GDP elasticity of 0.79 is below the class value of 1.00, so small nearby economies buy more than their size predicts, as expected of a regional hub.
+**Distance.** A partner 1 percent farther away buys 1.59 percent less, close to the class estimate of −1.46 and above the value of about 1 typical in the literature (Head and Mayer, 2014). On BACI's reconciled data, which assign most re-exports to their origin, it is −1.69, so re-exports do not drive the result. **Size.** The GDP elasticity of 0.79 is below the class value of 1.00, so small nearby economies buy more than their size predicts, as expected of a regional hub.
 
 **Trade agreements.** The 64 partners with an agreement in force in 2024 buy about seven times as much as size and distance predict (coefficient 1.98), and the distance elasticity falls to −1.29 because the nearest partners are mostly agreement partners. This is an association, since Singapore signed first with its largest markets.
 
@@ -388,7 +388,7 @@ Hong Kong SAR's largest advantages are finance (3.8), transport (3.0) and gold a
 
 ![Singapore's comparative advantage shifted toward services](../figures/ch04_rca_change.png)
 
-**From goods to services within twenty years.** Between 2004 and 2024 the RCA in transport rose from 2.3 to 4.5, finance from 1.2 to 2.8 and ICT and business services from 0.8 to 1.3. Electronics stayed above 1 but fell from 1.95 to 1.41, and machinery, chemicals and refined petroleum lost their advantage as assembly moved to the region and refining grew in the Middle East and China. Pharmaceuticals moved the other way, from 0.2 to 1.2 (Chapter 9).
+**From goods to services within twenty years.** Between 2004 and 2024 the RCA in transport rose from 2.3 to 4.5, finance from 1.2 to 2.8 and ICT and business services from 0.8 to 1.3. Electronics stayed above 1 but fell from 1.95 to 1.41, and machinery, chemicals and refined petroleum lost their advantage as assembly moved to the region and refining grew in the Middle East and China. Pharmaceuticals moved the other way, from 0.2 to 1.2 (Chapter 9). The last decade shows the shift is still under way. Between 2014 and 2024 refined petroleum fell from 1.19 to 0.87 and chemicals from 1.28 to 0.76, losing their advantage, while pharmaceuticals rose from 0.80 to 1.18 and transport from 3.0 to 4.5.
 
 <details class="more" markdown="1">
 <summary>More: RCA by HS chapter</summary>
@@ -420,7 +420,7 @@ Measured within goods trade alone, which is why these values are higher than in 
 ## Does it fit Heckscher Ohlin?
 ![Singapore has the 14th highest capital per worker](../figures/ch04_capital_per_worker.png)
 
-**Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143 and the least arable land per person of 205, so it exports capital and skill intensive services and goods and imports food (RCA 0.3).
+**Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143, the least arable land per person of 205 and almost no natural resource rents (178th of 197), so it is capital and skill abundant and resource poor. It exports capital and skill intensive services and goods and imports food (RCA 0.3).
 
 **The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law, and its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, while the sectors it lost, refining and plastics, sit among his least. Those industries are skill intensive and less capital intensive than average, so Singapore's skills and courts appear to matter more than its capital.
 
@@ -466,7 +466,7 @@ Almost half the value of Singapore's exports is created abroad, which makes it o
 
 ![46% of the value of Singapore's exports is foreign](../figures/ch05_backward.png)
 
-**Almost half, 46.1 percent in 2022, the 7th highest share of 80 economies.** The share was already 43.3 percent in 2004. Among the peers only Vietnam, with its foreign owned electronics assembly, is higher, while Malaysia (34.2 percent) exports more home grown resources and Hong Kong SAR (18.0 percent) mostly services.
+**Almost half, 46.1 percent in 2022, the 7th highest share of 80 economies and 2nd of 17 in East Asia and the Pacific.** The share was already 43.3 percent in 2004. Among the peers only Vietnam, with its foreign owned electronics assembly, is higher, while Malaysia (34.2 percent) exports more home grown resources and Hong Kong SAR (18.0 percent) mostly services.
 
 <details class="more" markdown="1">
 <summary>How we measured participation from the OECD TiVA data</summary>
@@ -560,7 +560,7 @@ Singapore is the world's second largest destination for foreign direct investmen
 
 ![FDI inflows averaged 22% of Singapore's GDP](../figures/ch06_inflows_gdp.png)
 
-**About a fifth of GDP every year, second only to the United States in dollars.** Net inflows averaged 22 percent of GDP between 2004 and 2024, against 3 percent in Malaysia and 5 percent in Vietnam, and reached $135 billion in 2024, 6th of 194 relative to GDP and 2nd in the world in value. UNCTAD records $151 billion for 2025.
+**About a fifth of GDP every year, second only to the United States in dollars.** Net inflows averaged 22 percent of GDP between 2004 and 2024, against 3 percent in Malaysia and 5 percent in Vietnam, and reached $135 billion in 2024, 6th of 194 relative to GDP (2nd in East Asia and the Pacific) and 2nd in the world in value. UNCTAD records $151 billion for 2025.
 
 <details class="more" markdown="1">
 <summary>More: the accumulated stock of inward and outward FDI</summary>
@@ -651,7 +651,7 @@ Singapore is close to a pure free trader at home and uses 29 free trade agreemen
 ## How high are its tariffs?
 ![Singapore's average MFN tariff is effectively zero](../figures/ch07_tariffs.png)
 
-**Close to zero.** A GATT member since 1973 and a founding member of the WTO in 1995, Singapore had an average MFN tariff of 0.07 percent in 2022, 3rd lowest of 143 economies, against 5.5 percent in Malaysia and 9.7 percent in Vietnam. Only beer, stout and two rice spirits pay customs duty, so peak tariffs above 15 percent cover just 0.2 percent of farm lines, against 41.8 percent in Vietnam.
+**Close to zero.** A GATT member since 1973 and a founding member of the WTO in 1995, Singapore had an average MFN tariff of 0.07 percent in 2022, 3rd lowest of 143 economies and of 21 in East Asia and the Pacific, against 5.5 percent in Malaysia and 9.7 percent in Vietnam. Only beer, stout and two rice spirits pay customs duty, so peak tariffs above 15 percent cover just 0.2 percent of farm lines, against 41.8 percent in Vietnam.
 
 | WTO tariff profile, 2025 | Singapore | Malaysia | Hong Kong SAR | Vietnam |
 | --- | --- | --- | --- | --- |

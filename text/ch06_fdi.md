@@ -8,7 +8,7 @@ Singapore is the world's second largest destination for foreign direct investmen
 
 ![FDI inflows averaged 22% of Singapore's GDP](../figures/ch06_inflows_gdp.png)
 
-**About a fifth of GDP every year, second only to the United States in dollars.** Net inflows averaged 22 percent of GDP between 2004 and 2024, against 3 percent in Malaysia and 5 percent in Vietnam, and reached $135 billion in 2024, 6th of 194 relative to GDP and 2nd in the world in value. UNCTAD records $151 billion for 2025.
+**About a fifth of GDP every year, second only to the United States in dollars.** Net inflows averaged 22 percent of GDP between 2004 and 2024, against 3 percent in Malaysia and 5 percent in Vietnam, and reached $135 billion in 2024, 6th of 194 relative to GDP (2nd in East Asia and the Pacific) and 2nd in the world in value. UNCTAD records $151 billion for 2025.
 
 <details class="more" markdown="1">
 <summary>More: the accumulated stock of inward and outward FDI</summary>

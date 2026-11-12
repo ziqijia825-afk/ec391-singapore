@@ -42,7 +42,7 @@ Raffles's free port of 1819 lived by moving goods it did not produce ([NLB Infop
 
 ![Singapore is ahead of the East Asia & Pacific average on every human development measure](../figures/ch01_vs_region.png)
 
-**It leads the region on every human development measure, most of all in university education and longevity.** Gross tertiary enrolment is 97 percent against 63 percent in East Asia and the Pacific, and life expectancy 83.3 years against 76.7. Literacy (97.7 percent) is close to the regional 96.6 percent because basic literacy is now near universal in the region.
+**It leads the region on every human development measure, most of all in university education and longevity.** Gross tertiary enrolment is 97 percent against 62 percent in East Asia and the Pacific (2023), and life expectancy 83.3 years against 76.7. Literacy (97.7 percent in 2021) is close to the regional 96.2 percent because basic literacy is now near universal in the region.
 
 <details class="more" markdown="1">
 <summary>More: HDI over time, schooling, PISA and the full ranking table</summary>

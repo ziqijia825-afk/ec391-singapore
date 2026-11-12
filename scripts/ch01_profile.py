@@ -92,16 +92,22 @@ comp_years = {}
 for label, code in [("Life expectancy (years)", "SP.DYN.LE00.IN"), ("Adult literacy (%)", "SE.ADT.LITR.ZS"),
                     ("Secondary enrolment, gross (%)", "SE.SEC.ENRR"), ("Tertiary enrolment, gross (%)", "SE.TER.ENRR")]:
     d = load(code)
-    d = d[d.iso3.isin([FOCUS, "EAS", "WLD"]) & (d.year <= 2024)].sort_values("year").groupby("iso3").tail(1)
-    comp_rows[label] = d.set_index("iso3").value.reindex([FOCUS, "EAS", "WLD"])
-    comp_years[label] = d.set_index("iso3").year.reindex([FOCUS, "EAS", "WLD"]).astype(int).to_dict()
+    d = d[d.iso3.isin([FOCUS, "EAS", "WLD"]) & (d.year <= 2024) & d.value.notna()]
+    yr = int(d[d.iso3 == FOCUS].year.max())  # compare in Singapore's latest year, as the profile table does
+    pick = {}
+    for iso in [FOCUS, "EAS", "WLD"]:
+        di = d[d.iso3 == iso].sort_values("year")
+        row = di[di.year == yr] if (di.year == yr).any() else di.tail(1)
+        pick[iso] = (float(row.value.iloc[0]), int(row.year.iloc[0]))
+    comp_rows[label] = pd.Series({k: v[0] for k, v in pick.items()})
+    comp_years[label] = {k: v[1] for k, v in pick.items()}
 comp = pd.DataFrame(comp_rows).T
 comp.loc["Human Development Index (x100)"] = [h.loc[FOCUS, "hdi_2023"] * 100, h.loc["ZZF.EAP", "hdi_2023"] * 100,
                                             h.loc["ZZK.WORLD", "hdi_2023"] * 100]
 grouped_bars(
     comp,
     title=f"Singapore is ahead of the East Asia & Pacific average on every human development measure",
-    subtitle="Singapore vs regional and world averages, latest year (see note for years)",
+    subtitle="Singapore vs regional and world averages, each in Singapore's latest year with data",
     xlabel="Value (units in each row label)", fmt=lambda v: f"{v:.0f}",
     source=f"Source: World Bank WDI (SP.DYN.LE00.IN, SE.ADT.LITR.ZS, SE.SEC.ENRR, SE.TER.ENRR; East Asia & Pacific "
            f"and World aggregates), retrieved {retrieved('SE.ADT.LITR.ZS')}; UNDP HDR 2025 for HDI (UNDP's East Asia "
