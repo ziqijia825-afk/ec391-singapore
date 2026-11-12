@@ -290,3 +290,25 @@ html = ['<section class="chains">'] + [
     for t, p, d, v, lab in cards] + [f'<p class="chains-src">OECD TiVA 2025 edition ({c5["year"]}) and CEPII BACI, team calculations.</p></section>']
 (ROOT / "data" / "derived" / "ch05_chains.md").write_text("".join(html) + "\n")
 print("wrote data/derived/ch05_chains.md")
+
+# ---------------------------------------------------------------- Ch. 9 scorecard (numbers from ch09.json)
+g, va, fs = c9["rca_groups"], c9["va_share"], c9["fdi_stock_sgd_bn"]
+first_semi = min(fs["Semiconductors"], key=int)
+rows = [
+    ("Revealed comparative advantage, 2004 to 2024",
+     f"{g['Chips']['2004']:.1f} to {g['Chips']['2024']:.1f}",
+     f"finished {g['Finished pharma']['2004']:.2f} to {g['Finished pharma']['2024']:.2f}, ingredients {g['Pharma ingredients']['2004']:.1f} to {g['Pharma ingredients']['2024']:.1f}"),
+    ("Share of manufacturing value added, 2004 to 2025",
+     f"{va['Semiconductors']['2004']:.0f}% to {va['Semiconductors']['2025']:.0f}%", f"{va['Pharmaceuticals']['2004']:.0f}% to {va['Pharmaceuticals']['2025']:.1f}%"),
+    ("Inward FDI stock, S$ billion",
+     f"{fs['Semiconductors'][first_semi]:.0f} ({first_semi}) to {fs['Semiconductors']['2024']:.0f} (2024)",
+     f"{fs['Pharmaceuticals']['2004']:.0f} (2004) to {fs['Pharmaceuticals']['2024']:.0f} (2024)"),
+    ("Reading in the learning curve model", "a strong advantage held while value added and investment grew",
+     "export advantage without a deeper domestic industry"),
+]
+md = ["| Scorecard | Chips (HS 8541, 8542) | Pharmaceuticals (HS 2933 to 2941, 3002, 3004) |", "| --- | --- | --- |"]
+md += [f"| {a} | {b} | {c} |" for a, b, c in rows]
+md.append("\n*Sources: team calculation from CEPII BACI (RCA, world shares); EDB Census of Manufacturing Activities via SingStat "
+          "M355181 (value added, 2025 preliminary); SingStat M084831 (FDI stock).*\n")
+(ROOT / "data" / "derived" / "ch09_scorecard.md").write_text("\n".join(md))
+print("wrote data/derived/ch09_scorecard.md")

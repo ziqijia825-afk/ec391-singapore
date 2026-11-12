@@ -125,7 +125,8 @@ BLOCK = re.compile(r'<h1>.*?</h1>|<h2>.*?</h2>|<h3>.*?</h3>|<details.*?</details
                    r'|<section class="\w+">.*?</section>'
                    r'|<ul>.*?</ul>|<ol>.*?</ol>|<blockquote>.*?</blockquote>|<hr\s*/?>', re.S)
 CHIP = re.compile(r'\s*<span class="tag">.*?</span>')
-WIDE = {"sgmap", "sankey", "treemap", "gvc", "fdi"}  # interactive components drawn across both pages
+WIDE = {"sgmap", "sankey", "treemap", "gvc", "fdi"}
+PAGE_CHARS = 1200  # visible characters that fit on one page beside a figure at the book's type size  # interactive components drawn across both pages
 
 
 def strip_tags(h):
@@ -135,7 +136,16 @@ def strip_tags(h):
 def paginate(stem, html):
     """Split one chapter into book spreads. Text goes on the left page, the figure it discusses on the right;
     interactive components get a two-page spread of their own."""
-    blocks = BLOCK.findall(html)
+    blocks = []
+    for b in BLOCK.findall(html):  # a paragraph longer than a page is split at the sentence nearest its middle
+        if b.startswith("<p>") and len(strip_tags(b)) > PAGE_CHARS:
+            inner = b[3:-4]
+            cuts = [m.end() for m in re.finditer(r"(?<=[a-z0-9%)])\. (?=[A-Z])", inner)]
+            if cuts:
+                mid = min(cuts, key=lambda c: abs(c - len(inner) / 2))
+                blocks += [f"<p>{inner[:mid].rstrip()}</p>", f"<p>{inner[mid:].lstrip()}</p>"]
+                continue
+        blocks.append(b)
     rest = BLOCK.sub("", html).strip()
     if rest:
         raise SystemExit(f"{stem}: content the book layout does not place: {rest[:120]!r}")
@@ -158,12 +168,11 @@ def paginate(stem, html):
         body = body[1:]
     pre_text = [b for b in pre["blocks"] if not is_visual(b)]
     pre_vis = [b for b in pre["blocks"] if is_visual(b)]
-    spreads = [{"kind": "opener", "title": title, "left": [], "right": key or pre_text,
+    opener_right, pre_rest = (key, pre_text) if key else fill(pre_text, PAGE_CHARS)
+    spreads = [{"kind": "opener", "title": title, "left": [], "right": opener_right,
                 "heads": [x["head"] for x in body if x["head"] != "Sources"]}]
-    if key and pre_text:
-        body.insert(0, {"head": None, "blocks": pre["blocks"]})
-    elif pre_vis:
-        body.insert(0, {"head": "Overview", "blocks": pre_vis})
+    if pre_rest or pre_vis:
+        body.insert(0, {"head": None if key else "Overview", "blocks": pre_rest + pre_vis})
     for sec in body:
         head = sec.get("h2") or (f'<h2>{sec["head"]}</h2>' if sec["head"] else "")
         cur = None
@@ -190,28 +199,75 @@ def paginate(stem, html):
                 cur["left"].append(b)
         if cur:
             spreads.append(cur)
+    # text that would overflow the page beside a figure runs on to a continuation spread, as in a printed book
+    flowed = []
+    for sp in spreads:
+        flowed.append(sp)
+        if sp["kind"] != "text" or not sp["right"]:
+            continue
+        while sum(visible_len(b) for b in sp["left"]) > PAGE_CHARS and len(sp["left"]) > 2:
+            keep, acc = [], 0
+            for b in sp["left"]:
+                acc += visible_len(b)
+                if acc > PAGE_CHARS and len(keep) >= 2:
+                    break
+                keep.append(b)
+            rest = sp["left"][len(keep):]
+            if not rest:
+                break
+            sp["left"] = keep
+            cont = (f'<h2 class="cont">{sp["section"]}</h2>' if sp.get("section") else "")
+            sp = {"kind": "text", "section": sp.get("section"), "left": ([cont] if cont else []) + rest, "right": []}
+            flowed.append(sp)
+    spreads = flowed
     # two text-only spreads in a row share one spread (second one on the right page)
     merged = []
     for sp in spreads:
         prev = merged[-1] if merged else None
-        if (prev and prev["kind"] == "text" and not prev["right"] and sp["kind"] == "text" and not sp["right"]):
+        if (prev and prev["kind"] == "text" and not prev["right"] and sp["kind"] == "text" and not sp["right"]
+                and sum(visible_len(b) for b in prev["left"]) <= PAGE_CHARS and sum(visible_len(b) for b in sp["left"]) <= PAGE_CHARS):
             prev["right"] = sp["left"]
+            prev.setdefault("also", []).append(sp.get("section"))
             continue
         merged.append(sp)
+    final = []
     for sp in merged:
+        while sp["kind"] == "text" and not sp["right"] and len(sp["left"]) > 2 and \
+                sum(visible_len(b) for b in sp["left"]) > 1100:  # long text runs on over both pages, then further
+            left, rest = fill(sp["left"], PAGE_CHARS)
+            right, rest = fill(rest, PAGE_CHARS) if rest else ([], [])
+            if not right:  # everything fitted on the left page: balance the two pages instead
+                half = sum(visible_len(b) for b in left) / 2
+                left, right = fill(left, half)
+            sp["left"], sp["right"] = left, right
+            final.append(sp)
+            if not rest:
+                sp = None
+                break
+            cont = f'<h2 class="cont">{sp["section"]}</h2>' if sp.get("section") else ""
+            sp = {"kind": "text", "section": sp.get("section"), "left": ([cont] if cont else []) + rest, "right": []}
+        if sp is None:
+            continue
         if sp["kind"] == "text" and not sp["right"]:
-            sizes = [visible_len(b) for b in sp["left"]]
-            if sum(sizes) > 1100 and len(sp["left"]) > 2:  # long text runs on over both pages
-                half, acc, cut = sum(sizes) / 2, 0, len(sizes) - 1
-                for j, z in enumerate(sizes):
-                    acc += z
-                    if acc >= half:
-                        cut = max(1, min(j + 1, len(sizes) - 1))
-                        break
-                sp["left"], sp["right"] = sp["left"][:cut], sp["left"][cut:]
+            if len(sp["left"]) > 2 and sum(visible_len(b) for b in sp["left"]) > 1100:
+                left, right = fill(sp["left"], sum(visible_len(b) for b in sp["left"]) / 2)
+                sp["left"], sp["right"] = left, right
             else:
                 sp["kind"] = "plate"  # right page becomes an illustration plate
-    return title, merged
+        final.append(sp)
+    return title, final
+
+
+def fill(blocks, limit):
+    """Take blocks in order while they fit within `limit` visible characters (always at least one)."""
+    taken, acc = [], 0
+    for j, b in enumerate(blocks):
+        size = visible_len(b)
+        if taken and acc + size > limit:
+            return taken, blocks[j:]
+        taken.append(b)
+        acc += size
+    return taken, []
 
 
 def visible_len(b):
@@ -272,8 +328,9 @@ def build_book(texts):
         for k, sp in enumerate(spreads):
             n += 1
             sp["id"], sp["folio"] = n, 2 * n - 1
-            if sp.get("section") and (stem, sp["section"]) not in sid:
-                sid[(stem, sp["section"])] = sp
+            for sec in [sp.get("section"), *sp.get("also", [])]:
+                if sec and (stem, sec) not in sid:
+                    sid[(stem, sec)] = sp
     out = []
     for stem, label, color, title, spreads in chapters:
         short = re.sub(r"^\d+\s+", "", label)

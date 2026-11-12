@@ -2,13 +2,13 @@
 
 ## Key finding
 
-Singapore is one of the smallest countries in the world and one of the most developed. Its land area of about 725 square kilometres ranks 181st of 214 economies, while its Human Development Index of 0.946 ranks 13th of 193 countries and 3rd in East Asia and the Pacific. Six million people live on an island that has grown by 28 percent through land reclamation since independence, which makes Singapore the third most densely populated economy on earth.
+Singapore is a city state with the land of a small county and the human development of a rich nation. Its 6.2 million people live on 725 square kilometres, 181st of 214 economies by area, and its Human Development Index ranks 13th of 193 and 3rd in East Asia and the Pacific.
 
-## Geography, people and government
+## What kind of country is it?
 
 <!-- interactive: sgmap -->
 
-Singapore is an island city state on the Strait of Malacca, the sea route between the Indian Ocean and the South China Sea, and its capital is the city itself. Its 6.21 million people (June 2026) include 4.23 million residents and about 1.98 million foreign workers and students, and its four official languages are Malay, Mandarin, Tamil and English. It is a parliamentary republic in which the People's Action Party has governed since 1959.
+**A crowded island republic on one of the world's busiest sea lanes.** Singapore sits on the Strait of Malacca, its capital is the city itself, and the People's Action Party has governed the parliamentary republic since 1959. A third of the 6.21 million people (June 2026) are foreign workers and students, so the labour force can grow with demand, and the four official languages, with English for business, connect it to China, India and the Malay world.
 
 <details class="more" markdown="1">
 <summary>More on land, population, languages and politics</summary>
@@ -21,11 +21,11 @@ The prime minister and cabinet answer to an elected parliament, and a directly e
 
 </details>
 
-## Development phases and structural breaks {Structural breaks}
+## How did it get rich? {Structural breaks}
 
 ![Singapore's real GDP grew 64-fold since 1960, with six sharp breaks](../figures/ch01_long_run_gdp.png)
 
-Singapore's real GDP grew 64-fold between 1960 and 2023, and the path has six structural breaks in which output grew by less than 1 percent. These were 1964, before separation from Malaysia, the 1985 recession, the Asian financial crisis of 1998, the electronics downturn of 2001, the global financial crisis of 2009 and the pandemic of 2020. Each shock came from outside through trade, and each was followed by policy that pushed the economy toward higher value activities.
+**By answering every outside shock with a move up the value chain.** Real GDP grew 64-fold between 1960 and 2023, interrupted six times when growth fell below 1 percent, in 1964, 1985, 1998, 2001, 2009 and 2020. Each break came through trade, and each was followed by a policy push toward higher value work, from export factories in the 1960s to services, biomedicine and digital trade.
 
 <section class="timeline"><div class="era"><b>1819</b><span>Free port</span><p>Raffles opens a free port and Singapore lives by moving goods it does not make.</p></div><div class="era"><b>1961</b><span>EDB founded</span><p>The Economic Development Board begins to court foreign manufacturers.</p></div><div class="era brk"><b>1964 to 65</b><span>Break and independence</span><p>Output falls, then separation from Malaysia ends a brief turn to import substitution.</p></div><div class="era"><b>1965 to 79</b><span>Export factories</span><p>Multinationals build labour intensive plants in Jurong until full employment.</p></div><div class="era"><b>1979</b><span>Wage correction</span><p>Higher wages push firms toward higher value work.</p></div><div class="era brk"><b>1985</b><span>Recession</span><p>Cost cuts and services become a second engine of growth.</p></div><div class="era"><b>1990s</b><span>Clusters and the region</span><p>Industry clusters at home and parks abroad, such as Suzhou in 1994.</p></div><div class="era brk"><b>1998 and 2001</b><span>Asian crisis, chip slump</span><p>Two external shocks hit trade and electronics.</p></div><div class="era"><b>2000</b><span>Biomedical pillar</span><p>Biomedicine joins electronics, chemicals and engineering.</p></div><div class="era brk"><b>2009 and 2020</b><span>Global crisis, pandemic</span><p>World demand collapses twice and recovers.</p></div><div class="era"><b>2020s</b><span>Resilience</span><p>Digital trade, AI, energy and supply chain security.</p></div><p class="timeline-src">Shaded: years in which real GDP grew by less than 1 percent (Penn World Table). Sources: NLB Infopedia, METI, EDB.</p></section>
 
@@ -42,11 +42,11 @@ The 1990s brought a Strategic Economic Plan built on industry clusters and a dri
 
 </details>
 
-## Human development and education against the region
+## How does it compare with the region?
 
 ![Singapore is ahead of the East Asia & Pacific average on every human development measure](../figures/ch01_vs_region.png)
 
-Singapore is ahead of the East Asia and Pacific average on every measure, and the gap is largest in higher education and longevity. Life expectancy is 83.3 years against 76.7 in the region, gross tertiary enrolment 97 percent against 63 percent, and the HDI 0.946 against 0.775. Adult literacy (97.7 percent) is close to the regional average of 96.6 percent because basic literacy is now near universal in East Asia.
+**It leads the region on every human development measure, most of all in university education and longevity.** Gross tertiary enrolment is 97 percent against 63 percent in East Asia and the Pacific, and life expectancy 83.3 years against 76.7. Literacy (97.7 percent) is close to the regional 96.6 percent because basic literacy is now near universal in the region.
 
 <details class="more" markdown="1">
 <summary>More: HDI over time, schooling, PISA and the full ranking table</summary>
@@ -59,15 +59,15 @@ Singapore's Human Development Index rose from 0.905 in 2004 to 0.946 in 2023. It
 
 </details>
 
-## Economic structure
+## What does the economy produce?
 
 ![Manufacturing is still 16% of Singapore's GDP](../figures/ch01_structure.png)
 
-Services produce 73 percent of Singapore's value added, but manufacturing still contributes 16 percent of GDP, against less than 1 percent in Hong Kong SAR. The two city economies started from the same entrepôt model, and Hong Kong moved its factories into mainland China while Singapore kept courting high value manufacturing at home, a choice that shapes the export structure in Chapter 3 and the semiconductor case in Chapter 9.
+**Mostly services, with a factory sector that Hong Kong SAR gave up.** Services are 73 percent of value added and manufacturing 16 percent, against less than 1 percent in Hong Kong SAR, which moved its factories into mainland China while Singapore kept courting high value manufacturing at home.
 
 ## Implications for trade and investment
 
-A small territory with no resources and a highly educated, partly foreign workforce has little choice but to trade. It must import its food, water, energy and most inputs, and it can only reach scale by selling to the world. For an investor, the profile combines a skilled labour force and stable government with a very high cost of land and a population that is ageing quickly (13.7 percent were 65 or older in 2024). The next chapter asks how this combination has translated into income, growth and institutions.
+A small island with no resources and a skilled, partly foreign workforce has to trade to live, importing food, water and energy and reaching scale only in world markets. Investors get skills and stable government at the price of very expensive land and a population ageing fast (13.7 percent were 65 or older in 2024). Chapter 2 asks how this mix has turned into income and institutions.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

@@ -2,15 +2,15 @@
 
 ## Key finding
 
-Almost half of the value of Singapore's exports was created abroad. In 2022, the latest year of the OECD Trade in Value Added database, foreign value added made up 46.1 percent of Singapore's gross exports, the 7th highest share of 80 economies and the 2nd highest in East Asia and the Pacific after Vietnam. Singapore's own value added used in other countries' exports was 17.3 percent of its exports, so its total participation in global value chains, 63.4 percent, is the 5th highest in the world. The balance between the two puts Singapore at the downstream end of most chains. It buys components, crude oil and services from abroad, adds processing, logistics and coordination, and ships the result on.
+Almost half the value of Singapore's exports is created abroad, which makes it one of the most integrated and most downstream economies in global value chains. It buys components, crude oil and services, adds processing and coordination, and ships the result on.
 
-## Value added versus gross exports
+## How much of its exports is foreign?
 
 <!-- interactive: gvc -->
 
 ![46% of the value of Singapore's exports is foreign](../figures/ch05_backward.png)
 
-Backward participation, the foreign value added in a country's exports, was already 43.3 percent for Singapore in 2004 and has stayed between 46 and 49 percent since 2008. Only Vietnam, where foreign owned electronics assembly expanded fast, now has a higher share among the peers. Malaysia's share is lower (34.2 percent) because it exports resources produced at home, and Hong Kong SAR's is lowest (18.0 percent) because its exports are now mostly services.
+**Almost half, 46.1 percent in 2022, the 7th highest share of 80 economies.** The share was already 43.3 percent in 2004. Among the peers only Vietnam, with its foreign owned electronics assembly, is higher, while Malaysia (34.2 percent) exports more home grown resources and Hong Kong SAR (18.0 percent) mostly services.
 
 <details class="more" markdown="1">
 <summary>How we measured participation from the OECD TiVA data</summary>
@@ -19,32 +19,34 @@ Value added trade data split the value of a country's exports into the part crea
 
 </details>
 
-## Participation and position: upstream or downstream? {Koopman et al. 2010}
+## Upstream or downstream? {Koopman et al. 2010}
 
 ![Singapore buys far more foreign value added than it sells into others' exports](../figures/ch05_backward_forward.png)
 
-Exporters of raw materials such as Norway, Saudi Arabia and Australia have low backward and high forward participation, because their oil, gas and minerals become inputs into other countries' exports. Small open processing economies such as Luxembourg, Vietnam, Ireland and Singapore have the opposite profile. Singapore's position index (Koopman and coauthors, 2010) is −0.22, 73rd of 80, so it is among the most downstream economies in the database.
+**Far downstream, 73rd of 80 on the position index.** Singapore's own value added used in other countries' exports is only 17.3 percent of its exports, against 46.1 percent foreign content, so total participation of 63.4 percent ranks 5th in the world while the position index (Koopman and coauthors, 2010) is −0.22. Raw material exporters such as Norway and Australia show the mirror image.
+
+<details class="more" markdown="1">
+<summary>More: participation table and re-exported inputs</summary>
 
 <!-- include: data/derived/ch05_participation_table.md -->
 
-<details class="more" markdown="1">
-<summary>More: re-exported intermediate inputs</summary>
 
 A Singapore specific measure in TiVA is the value of re-exported intermediate imports, inputs that are imported and leave the country again inside exports. It equalled 47.1 percent of Singapore's gross exports in 2022, the 7th highest share in the world. Together with the re-export figures in Chapter 3, this confirms that a large part of Singapore's role in value chains is to receive, process and redistribute inputs for the region. The position index is the logarithm of one plus forward participation minus the logarithm of one plus backward participation.
 
+
 </details>
 
-## Where Singapore sits in four chains
+## What does downstream look like in practice?
 
-Four of Singapore's main export activities show what a downstream position means in practice. In chips and medicines Singapore makes intermediate goods inside multinational networks, in refining it processes imported crude, and in logistics and finance it coordinates goods made elsewhere, which is why finance carries the most domestic value of any sector.
+**Four activities show it.** In chips and medicines Singapore makes intermediate goods inside multinational networks, in refining it processes imported crude, and in logistics and finance it coordinates goods made elsewhere.
 
 <!-- include: data/derived/ch05_chains.md -->
 
-## Which sectors are most integrated?
+## Which sectors rely most on foreign inputs?
 
 ![Refining and transport carry the most foreign content](../figures/ch05_sector_fva.png)
 
-Refined petroleum has the highest foreign share (72 percent) because the crude oil is all imported, followed by transport and logistics (60 percent), where fuel, ships and aircraft are bought abroad. Electronics, chemicals and machinery are close to the national average of 46 percent, while finance and insurance (28 percent) and wholesale trade (34 percent) carry the most domestic value, which supports the conclusion of Chapter 4 that services are where Singapore now adds most value of its own.
+**Refining and transport, while finance is the most home grown.** Refined fuels carry 72 percent foreign value because all crude is imported, and transport 60 percent because fuel, ships and aircraft are bought abroad. Finance (28 percent) and wholesale trade (34 percent) carry the most domestic value, which confirms Chapter 4's finding that services are where Singapore adds most of its own value.
 
 <details class="more" markdown="1">
 <summary>More: sector table and where Singapore's foreign inputs come from</summary>
@@ -61,9 +63,7 @@ The United States and China each supplied 13.7 percent of the foreign value adde
 
 ## Implications for trade and investment {Fort 2017}
 
-Fort (2017) helps explain why firms choose a high cost location like Singapore for some stages of production. Using plant data for the United States, she finds that communication technology makes firms more likely to split production across locations, most of all in industries whose designs can be codified electronically, with semiconductor machinery at the top, and that the effect appears for sourcing from countries with high human capital and not from low skill ones. Singapore has the 28th highest human capital index of 143 economies (Chapter 4), so cheaper coordination favours it for the design intensive stages of electronics, while labour intensive assembly goes to Malaysia and Vietnam. Her evidence is for American firms, so for Singapore it is suggestive.
-
-Being downstream and highly integrated lets Singapore specialize in the stages where it is most productive, such as advanced wafer fabrication, testing, logistics and finance, without producing raw materials or every component itself. It also exposes the economy to shocks anywhere upstream, from chip shortages to oil prices and export controls, and to the rivalry between its two largest suppliers of foreign value added, the United States and China. Chapter 6 turns to the foreign firms that operate these links.
+**Why a high cost location wins some stages.** Fort (2017) finds with American plant data that communication technology helps firms split production, most of all in industries with codified designs such as semiconductor machinery, and only toward countries with high human capital. Singapore, 28th of 143 on human capital, is that kind of location, so it keeps the design intensive stages of electronics while assembly goes to Malaysia and Vietnam. The cost of this position is exposure to every upstream shock and to rivalry between its two largest suppliers of foreign value, the United States and China. Chapter 6 turns to the foreign firms that run these links.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

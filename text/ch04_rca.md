@@ -2,11 +2,11 @@
 
 ## Key finding
 
-Measured by Balassa's revealed comparative advantage, Singapore specializes in transport and logistics services (RCA 4.5), finance and insurance (2.8), electronics and instruments (1.4), ICT and business services (1.3) and pharmaceuticals (1.2). Over twenty years its advantage moved from manufactured goods to services. Transport rose from an RCA of 2.3 in 2004 to 4.5 in 2024 and finance from 1.2 to 2.8, while electronics fell from 2.0 to 1.4 and machinery, chemicals and refined petroleum lost their advantage. The pattern fits Singapore's endowments. It has the 14th highest capital per worker of 173 economies, a skilled workforce and almost no land or natural resources, so in the spirit of Heckscher and Ohlin it exports capital and skill intensive goods and services and imports land and resource intensive ones.
+Singapore's comparative advantage has moved from factories to services, and transport and finance are now its strongest sectors. The pattern fits its abundance of capital and skills, and it fits Nunn's institutional explanation even better.
 
-## How we measure comparative advantage {Balassa RCA}
+## How do we measure it? {Balassa RCA}
 
-The Balassa index divides a sector's share in a country's exports by the sector's share in world exports, and a value above 1 is a revealed comparative advantage. We computed it ourselves for goods from CEPII's BACI database (HS 1992 chapters, about 200 exporters) and for services from the World Bank's balance of payments categories, using the team's shared sector table so that this chapter lines up with Chapters 5 and 6 (see the [appendix](appendix.html)).
+**With Balassa's index, which we computed ourselves from raw trade data.** A sector's share in Singapore's exports is divided by its share in world exports, so a value above 1 is a revealed comparative advantage. Goods come from CEPII's BACI database and services from the World Bank's balance of payments, grouped in the team's sector table (see the [appendix](appendix.html)).
 
 <p class="equation">RCA<sub>ik</sub> = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>)<span>X = exports · i = Singapore · k = sector · w = world · above 1 = comparative advantage</span></p>
 
@@ -19,11 +19,11 @@ BACI reconciles exporter and importer reports, and importers record the country 
 
 </details>
 
-## Singapore against its peers
+## What is Singapore good at?
 
 <!-- include: data/derived/ch04_rca_heat.md -->
 
-Singapore and Hong Kong SAR are the only two of the four economies with advantages in both transport and finance, the statistical fingerprint of regional hubs, and Singapore differs from Hong Kong SAR in still making much of the electronics and medicines it exports. Malaysia's advantages are in electronics (2.7), refined petroleum (1.9), machinery and food and agriculture, the profile of a manufacturing economy with natural resources. Vietnam's are in electronics (3.1), machinery (1.7) and other goods such as garments and footwear (2.9), the profile of a labour abundant assembly economy.
+**Moving goods and money, plus a core of high technology manufacturing.** Singapore's RCA is 4.5 in transport and logistics, 2.8 in finance, 1.4 in electronics, 1.3 in ICT and business services and 1.2 in pharmaceuticals. Only Singapore and Hong Kong SAR have advantages in both transport and finance, the fingerprint of a regional hub, while Malaysia's strengths are electronics, refined oil and food and Vietnam's are electronics and garments.
 
 <details class="more" markdown="1">
 <summary>More: Hong Kong SAR's profile</summary>
@@ -32,11 +32,11 @@ Hong Kong SAR's largest advantages are finance (3.8), transport (3.0), gold and 
 
 </details>
 
-## How the pattern changed
+## How has it changed?
 
 ![Singapore's comparative advantage shifted toward services](../figures/ch04_rca_change.png)
 
-Between 2004 and 2024 the RCA in transport and logistics almost doubled (2.3 to 4.5) and the RCA in finance more than doubled (1.2 to 2.8), and ICT and business services crossed 1 (0.8 to 1.3). Electronics remains an advantage but fell from 1.95 to 1.41. Machinery (1.7 to 0.8) lost its advantage when disk drive and computer assembly left Singapore in the 2000s, and chemicals (1.4 to 0.8) and refined petroleum (1.3 to 0.9) lost theirs as refining and petrochemical capacity in the Middle East and China grew. Pharmaceuticals moved the other way, from 0.2 to 1.2, which Chapter 9 examines.
+**From goods to services within twenty years.** Between 2004 and 2024 the RCA in transport rose from 2.3 to 4.5, finance from 1.2 to 2.8 and ICT and business services from 0.8 to 1.3. Electronics stayed above 1 but fell from 1.95 to 1.41, and machinery, chemicals and refined petroleum lost their advantage as assembly moved to the region and refining grew in the Middle East and China. Pharmaceuticals moved the other way, from 0.2 to 1.2 (Chapter 9).
 
 <details class="more" markdown="1">
 <summary>More: RCA by HS chapter</summary>
@@ -47,26 +47,28 @@ Measured within goods trade alone, which is why these values are higher than in 
 
 </details>
 
-## Endowments and the Heckscher Ohlin test {Heckscher Ohlin · Nunn 2007}
+## Does it fit Heckscher Ohlin? {Heckscher Ohlin · Nunn 2007}
 
 ![Singapore has the 14th highest capital per worker](../figures/ch04_capital_per_worker.png)
 
-The Heckscher Ohlin model predicts that a country exports goods that use its abundant factors intensively. Singapore's capital stock per worker was $657,000 in 2023 at constant 2021 prices, 14th of 173 economies in the Penn World Table and above Japan, Germany and the United States. Its human capital index of 3.40 ranks 28th of 143, and its arable land per person is the smallest of 205 economies. The sectors with an RCA above 1 (logistics, finance, chips, instruments and medicines) all use capital and skilled labour intensively, while food and agriculture (RCA 0.3) are imported, so the export pattern matches the endowments.
+**Yes, and institutions explain it even better.** Singapore has the 14th highest capital per worker of 173 economies ($657,000 in 2023), a human capital index 28th of 143 and the least arable land per person of 205, so it exports capital and skill intensive services and goods and imports food (RCA 0.3).
+
+**The Nunn test.** Nunn (2007) finds that contract enforcement explains more of world trade than capital and skilled labour combined, because good courts favour goods built from made to order inputs. Singapore ranks 18th of 207 on rule of law. Its surviving goods advantage, electronics and instruments, sits among Nunn's most contract intensive industries, and the sectors it lost, refining and plastics, among his least. Since those industries are skill intensive and less capital intensive than average in his data, Singapore's skills and courts appear to matter more than its capital.
+
+<details class="more" markdown="1">
+<summary>More: endowments against the peers, and caveats</summary>
 
 <!-- include: data/derived/ch04_endowments.md -->
 
-Nunn (2007) adds an institutional source of comparative advantage that fits Singapore better than endowments alone. Countries that enforce contracts well specialize in goods whose inputs are made to order for a particular buyer, and in his estimates contract enforcement explains more of the world's pattern of trade than capital and skilled labour combined. Singapore ranks 18th of 207 economies on the World Bank's rule of law indicator (Chapter 2). Its remaining goods advantage is in electronics and instruments (RCA 1.4), where Nunn's most contract intensive industries include electronic components and analytical and testing instruments. The two goods sectors that lost their advantage between 2004 and 2024, refined petroleum and chemicals and plastics, contain several of his least contract intensive industries, among them petroleum refineries, plastic resins and synthetic rubber. In his data contract intensive industries are skill intensive and less capital intensive than average, which suggests that Singapore's skills and courts matter more for its current advantages than its high capital per worker.
-
-<details class="more" markdown="1">
-<summary>More: caveats to the Heckscher Ohlin reading</summary>
 
 Large exports of refined petroleum are consistent with the model too, because they rest on imported crude processed in very large, capital intensive refineries. Two caveats apply. Factor intensities are not observed directly in these data, so the test is a qualitative comparison. And much of the capital and technology was brought in by foreign multinationals, the point Young (1992) made when he found that Singapore's growth came mainly from factor accumulation. With mobile capital, Singapore's abundance of capital is itself partly the result of the FDI analysed in Chapter 6.
+
 
 </details>
 
 ## Implications for trade and investment
 
-Activities that need capital, skills, reliable institutions and connectivity, such as advanced semiconductor production, biologics, logistics, trading and finance, play to Singapore's strengths. Activities that need land, cheap labour or local raw materials do not, and those have moved to Malaysia and Vietnam. Gross export data cannot show how much of the value of Singapore's exports is created in Singapore, so the next chapter uses value added data to place Singapore in global value chains.
+Activities that need capital, skills, reliable courts and connections, such as advanced chips, biologics, logistics and finance, play to Singapore's strengths, while those that need land, cheap labour or raw materials have moved to Malaysia and Vietnam. Gross exports cannot show how much of this value is created in Singapore, so Chapter 5 turns to value added.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

@@ -2,15 +2,13 @@
 
 ## Key finding
 
-Singapore is close to a pure free trader. Its average most favoured nation tariff was 0.07 percent in 2022, 3rd lowest of 143 economies, and 99.8 percent of agricultural and all non agricultural tariff lines are duty free. The only goods that pay customs duty are beer, stout and two kinds of rice spirit. With unilateral free trade at home, Singapore's trade policy works outward, through a network of 29 free trade agreements that secure access to markets that are not open. Its regional bloc, ASEAN, is a free trade area at the first stage of Balassa's ladder of integration, and the recent policy debate is about US tariffs and export controls imposed on Singapore's exports.
+Singapore is close to a pure free trader at home and uses 29 free trade agreements to open markets abroad. Its new risks come from outside, as US tariffs and export controls reach it whatever its own policy.
 
-## WTO membership, applied tariffs and peaks
-
-Singapore joined the GATT on 20 August 1973 and was a founding member of the WTO on 1 January 1995 ([WTO](https://www.wto.org/english/thewto_e/countries_e/singapore_e.htm)). It filed the WTO's very first dispute, DS1, against a Malaysian import ban on polyethylene in January 1995.
+## How high are its tariffs?
 
 ![Singapore's average MFN tariff is effectively zero](../figures/ch07_tariffs.png)
 
-The simple average MFN tariff was 0.07 percent in 2022, against 5.5 percent in Malaysia, 9.7 percent in Vietnam and 7.6 percent for the median economy. In the WTO's 2025 tariff profile only 0.2 percent of Singapore's agricultural lines carry a peak tariff above 15 percent, all of them in beverages and tobacco (highest duty 90 percent), while Malaysia and Vietnam keep peaks on 7.6 and 41.8 percent of agricultural lines.
+**Close to zero.** A GATT member since 1973 and a founding member of the WTO in 1995, Singapore had an average MFN tariff of 0.07 percent in 2022, 3rd lowest of 143 economies, against 5.5 percent in Malaysia and 9.7 percent in Vietnam. Only beer, stout and two rice spirits pay customs duty, so peak tariffs above 15 percent cover just 0.2 percent of farm lines, against 41.8 percent in Vietnam.
 
 <!-- include: data/derived/ch07_wto_profile_table.md -->
 
@@ -23,13 +21,11 @@ Singapore's average bound rate is 8.9 percent, so it has committed to keep tarif
 
 </details>
 
-## Preferential trade agreements {Rules of origin · Conconi et al. 2016}
+## What are its trade agreements for? {Rules of origin · Conconi et al. 2016}
 
 ![Singapore has signed its way to 29 FTAs](../figures/ch07_fta_count.png)
 
-Because Singapore's own tariffs are already zero, its agreements matter for the partners' tariff cuts and for rules on services, investment, procurement and intellectual property. The network grew from six agreements in force in 2004 to 29 in 2026 and covers all major partners. The key ones are the US Singapore FTA (2004, goods, services and investment), the China Singapore FTA (2009), CPTPP (2018), the EU Singapore FTA (2019, the EU's first in Southeast Asia) and RCEP (2022).
-
-Because Singapore charges no tariffs, its partners rely on rules of origin to stop goods from third countries entering their markets through Singapore at preferential rates. Conconi and coauthors (2016) show that such rules can protect against outsiders. Strict rules of origin in NAFTA cut Mexico's imports of intermediate inputs from non members by around 30 percentage points, because final producers had to buy inputs inside the agreement to keep their preferential access. For Singapore, whose exports contain 46 percent foreign value added (Chapter 5) and which re-exports more than half of its merchandise, a product earns a partner's preferential tariff only if enough of it is made in Singapore or in other members. This is why the common rules of origin of RCEP, which count inputs from any of its fifteen members, matter for Singapore's processing industries.
+**To open partners' markets, since Singapore's own is already open.** The network grew from 6 agreements in 2004 to 29 in 2026, including the US (2004), China (2009), CPTPP (2018), the EU (2019) and RCEP (2022), and covers services, investment and digital trade. **Rules of origin.** Because Singapore charges no tariffs, partners rely on rules of origin to stop third country goods entering through it, and Conconi and coauthors (2016) show such rules cut NAFTA Mexico's imports of non member inputs by around 30 percentage points. With 46 percent foreign content in its exports (Chapter 5), Singapore gains most from RCEP's common rules, which count inputs from all fifteen members.
 
 <details class="more" markdown="1">
 <summary>Full list of the 29 FTAs: partners, year of entry into force and scope</summary>
@@ -42,15 +38,15 @@ Singapore has also pioneered agreements on digital trade, beginning with the Dig
 
 </details>
 
-## Regional integration {Balassa's stages}
+## How far has regional integration gone? {Balassa's stages}
 
-ASEAN, launched as a free trade area at the 1992 summit in Singapore, became the ASEAN Economic Community in 2015. On Balassa's ladder it is still a free trade area. Each member keeps its own external tariff, and Singapore's zero tariff alongside Vietnam's 9.7 percent shows there is no common external tariff, so ASEAN cannot become a customs union without either side changing its tariffs. The AEC's goals of free movement of services, investment and skilled labour reach toward a common market but are only partly implemented. RCEP, also a free trade area, adds China, Japan, Korea, Australia and New Zealand, with common rules of origin that help firms build supply chains across all fifteen members.
+**ASEAN is still a free trade area, the first rung of Balassa's ladder.** Each member keeps its own external tariff, and Singapore's zero next to Vietnam's 9.7 percent shows there is no common one, so ASEAN cannot become a customs union without one side changing. The ASEAN Economic Community of 2015 reaches toward a common market in services, investment and skilled labour, but only in part.
 
-## Non-tariff measures
+## Are non-tariff measures a barrier?
 
 ![Most of Singapore's non-tariff measures are technical rules](../figures/ch07_ntm_measures.png)
 
-UNCTAD's TRAINS data (via WITS) show that non tariff measures affect 39.3 percent of Singapore's imports by value, against 55.0 percent in Malaysia and 38.0 percent in Vietnam ([WITS](https://wits.worldbank.org/tariff/non-tariff-measures/en/country/SGP)). Nine of the ten most common measures are technical barriers to trade (labelling, testing, inspection and authorisation), and SPS rules are concentrated in food and agriculture. Only an import licence fee and licensing for economic reasons are economic measures, and they apply to a narrow range of goods.
+**Mostly they protect consumers.** Non-tariff measures touch 39.3 percent of Singapore's imports, against 55.0 percent in Malaysia ([WITS](https://wits.worldbank.org/tariff/non-tariff-measures/en/country/SGP)), and nine of the ten most common are technical rules on labelling, testing and inspection, concentrated on food, fuel and chemicals that Singapore hardly produces.
 
 <details class="more" markdown="1">
 <summary>More: non-tariff measures by sector, compared with the peers</summary>
@@ -61,11 +57,11 @@ Almost all imports of fuels, animal and vegetable products and processed food ar
 
 </details>
 
-## Bilateral investment treaties
+## How does it protect investors?
 
 ![Singapore has 45 bilateral investment treaties in force](../figures/ch07_bits.png)
 
-Singapore has 45 bilateral investment treaties and investment guarantee agreements in force, from the first with the United States in 1966 to Nigeria and Côte d'Ivoire in 2025, and investment chapters in 26 FTAs extend protection to more than 60 partners ([METI](https://www.meti.gov.sg/trade-international-economic-relations/agreements-/international-investment-agreements--iias-/)).
+**With 45 investment treaties and investment chapters in 26 trade agreements.** The treaties run from the United States in 1966 to Nigeria and Côte d'Ivoire in 2025, and with the FTA chapters they cover more than 60 partners ([METI](https://www.meti.gov.sg/trade-international-economic-relations/agreements-/international-investment-agreements--iias-/)). Free Trade Zones at the seaports and Changi Airport, and specialised estates such as Jurong Island and the wafer fab parks, add ready infrastructure for foreign plants (map in Chapter 1).
 
 <details class="more" markdown="1">
 <summary>All 45 treaty partners, by decade of entry into force</summary>
@@ -76,13 +72,9 @@ Most treaties date from the 1970s to the 2000s, when Singapore was both attracti
 
 </details>
 
-## Special economic zones
+## What is the controversy now?
 
-Singapore as a whole operates almost as a free zone, but formal Free Trade Zones at the seaports and Changi Airport let goods in transit be stored and re-exported without duty or GST, and licensed warehouses and the Major Exporter Scheme suspend GST for traders. Jurong Island, reclaimed for the chemicals industry, and the wafer fab parks in Woodlands, Tampines and Pasir Ris work as specialised industrial zones with ready infrastructure for foreign investors (see the map in Chapter 1).
-
-## Recent controversies
-
-In April 2025 the United States imposed a 10 percent tariff on Singapore despite a US goods surplus with Singapore and their 2004 FTA. After the US Supreme Court struck those tariffs down in February 2026, a 12.5 percent Section 301 tariff has applied since July 2026 to about a third of Singapore's domestic exports to the US, while pharmaceuticals and semiconductors face separate Section 232 investigations ([METI](https://www.meti.gov.sg/newsroom/mti-media-statement-on-the-office-of-the-united-states-trade-representative--ustr--s-determination-on-the-section-301-investigation-on-forced-labour/)). Singapore has not retaliated. It has also tightened export controls after a 2025 fraud case in which servers that may have contained Nvidia chips were shipped through Singapore.
+**US tariffs and chip export controls.** The United States imposed a 10 percent tariff on Singapore in April 2025 despite its goods surplus and their FTA, and after a court ruling a 12.5 percent Section 301 tariff has applied since July 2026 to about a third of Singapore's domestic exports to the US, with pharmaceuticals and chips under separate investigation ([METI](https://www.meti.gov.sg/newsroom/mti-media-statement-on-the-office-of-the-united-states-trade-representative--ustr--s-determination-on-the-section-301-investigation-on-forced-labour/)). Singapore has not retaliated and has tightened its own export controls.
 
 <details class="more" markdown="1">
 <summary>More on the US tariffs, export controls and relations with Malaysia</summary>
@@ -93,7 +85,7 @@ Between the Supreme Court ruling and July 2026 the US applied a temporary 10 per
 
 ## Implications for trade and investment
 
-Singapore's trade policy minimises the cost of moving goods in and out and maximises market access abroad, which is why it can serve as a regional base for firms that export to dozens of countries. RCEP and CPTPP give preferential access to most of Asia and the Pacific from a single location. The new risk is that the open rules Singapore depends on are weakening, and tariffs and export controls imposed by the largest economies can reach Singapore regardless of its own policy.
+Singapore's policy makes it cheap to move goods in and out and gives a single base preferential access to most of Asia and the Pacific. The open rules it depends on are weakening, and Chapter 9 asks how its industrial policy copes.
 
 <details class="more" markdown="1">
 <summary>Sources for this chapter</summary>

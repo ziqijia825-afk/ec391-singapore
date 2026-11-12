@@ -28,7 +28,7 @@ Every chart and table on this site was built by the team from raw files download
 
 **Global and regional ranks.** For every indicator we rank all economies with data in the same year, excluding the World Bank's regional and income aggregates. Rank 1 is the highest value unless stated otherwise (for inflation and tariffs, 1 is the lowest). Ties share the best rank. The regional rank is among economies in the World Bank's East Asia and Pacific region. B-READY ranks are among the 100 economies it covers, and TiVA ranks among its 80 economies.
 
-**Revealed comparative advantage.** Balassa's index for country *i* and sector *k* is RCA = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>), where X is exports and *w* is the world, here the sum of all economies in the data. Goods exports come from CEPII BACI and services exports from the World Bank's balance of payments data (transport, travel, insurance and financial, and computer, communications and other services). Sector RCAs in Chapter 4 use exports of goods and services; HS chapter and product RCAs in Chapters 4 and 9 use goods only.
+**Revealed comparative advantage.** Balassa's index for country *i* and sector *k* is RCA = (X<sub>ik</sub> / X<sub>i</sub>) ÷ (X<sub>wk</sub> / X<sub>w</sub>), where X is exports and *w* is the world, here the sum of all economies in the data. Goods exports come from CEPII BACI and services exports from the World Bank's balance of payments data (transport, travel, insurance and financial, and computer, communications and other services). Sector RCAs in Chapter 4 use exports of goods and services, while HS chapter and product RCAs in Chapters 4 and 9 use goods only.
 
 **Gravity.** Ordinary least squares of ln(Singapore's exports to partner *j*, 2024) on ln(GDP of *j*, 2024, current US$) and ln(great circle distance between capitals), with heteroskedasticity robust (HC1) standard errors. Capital coordinates come from the World Bank's country metadata.
 
@@ -50,7 +50,7 @@ Is the Singapore Department of Statistics acceptable as a source for inequality 
 
 ## Course readings
 
-Each analytical chapter tests its findings against a course reading. Chapter 3 compares our gravity estimate with Feyrer's natural experiment from the closure of the Suez Canal. Chapters 2 and 4 use Nunn's evidence that contract enforcement is a source of comparative advantage. Chapter 5 uses Fort's evidence on technology, coordination costs and fragmentation toward high human capital locations. Chapter 7 uses Conconi and coauthors on rules of origin as protection in free trade agreements.
+Each analytical chapter tests its findings against a course reading. Chapter 3 compares our gravity estimate with the class estimate of −1.46 from the EC 391 gravity lecture, adds the lecture's shared trade agreement factor as a dummy, and compares both with Feyrer's natural experiment from the closure of the Suez Canal. Chapters 2 and 4 use Nunn's evidence that contract enforcement is a source of comparative advantage. Chapter 5 uses Fort's evidence on technology, coordination costs and fragmentation toward high human capital locations. Chapter 7 uses Conconi and coauthors on rules of origin as protection in free trade agreements.
 
 ## References
 

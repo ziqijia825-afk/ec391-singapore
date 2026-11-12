@@ -5,6 +5,8 @@ structure by sector 2004/2014/latest (BACI goods + WDI services); top partners (
 gravity scatter. Tables: gravity regressions -> data/derived/ch03_gravity_table.md.
 Run: python scripts/ch03_trade.py
 """
+import re
+
 import numpy as np
 import pandas as pd
 
@@ -231,12 +233,49 @@ reported = cx[cx.partner_code != 0].set_index("partner_iso3").value_usd
 baci_x = bil[(bil.country_iso3_code == FOCUS) & (bil.year == bil.year.max())].set_index("partner_iso3_code").export_value
 res = {"Reported exports (incl. re-exports), Comtrade": gravity(reported),
        "BACI reconciled exports": gravity(baci_x)}
-lines = ["| Sample, 2024 | ln partner GDP | ln distance | R² | Partners (N) |", "| --- | --- | --- | --- | --- |"]
+# Same RTA (+) is one of the gravity determinants in the course slides: add a dummy for partners with which Singapore
+# had a free trade agreement in force during 2024 (from data/raw/manual/sg_fta_list.csv, groups expanded below).
+FTA_GROUPS = {
+    "ASEAN": ["BRN", "KHM", "IDN", "LAO", "MYS", "MMR", "PHL", "THA", "VNM"],
+    "EFTA": ["CHE", "NOR", "ISL", "LIE"], "Gulf Cooperation Council": ["SAU", "ARE", "QAT", "KWT", "OMN", "BHR"],
+    "European Union": ["AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL",
+                       "ITA", "LVA", "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE"],
+    "CPTPP": ["AUS", "BRN", "CAN", "CHL", "JPN", "MYS", "MEX", "NZL", "PER", "VNM", "GBR"],
+    "New Zealand": ["NZL"], "Japan": ["JPN"], "Australia": ["AUS"], "United States": ["USA"], "India": ["IND"],
+    "China": ["CHN"], "Jordan": ["JOR"], "Korea": ["KOR"], "Chile": ["CHL"], "Panama": ["PAN"], "Peru": ["PER"],
+    "Costa Rica": ["CRI"], "Türkiye": ["TUR"], "Sri Lanka": ["LKA"], "Hong Kong": ["HKG"], "United Kingdom": ["GBR"],
+}
+ftas = pd.read_csv(RAW / "manual" / "sg_fta_list.csv")
+fta_iso = set()
+for _, r in ftas[pd.to_datetime(ftas.in_force_sg) <= "2024-01-01"].iterrows():
+    for grp, isos in FTA_GROUPS.items():
+        if grp in r.partners or (grp == "CPTPP" and r.agreement == "CPTPP") or (grp == "Hong Kong" and "Hong Kong" in r.partners):
+            fta_iso.update(isos)
+
+
+def gravity_fta(values):
+    d = pd.DataFrame({"x": values}).join(gdp24.rename("gdp")).join(dist.rename("dist")).dropna()
+    d = d[(d.x > 0) & (d.index != FOCUS)].assign(fta=lambda t: t.index.isin(fta_iso).astype(float))
+    beta, se, se_r, r2, n = ols(np.log(d.x.values), np.column_stack([np.log(d.gdp), np.log(d.dist), d.fta]))
+    return d, beta, se, se_r, r2, n
+
+
+res_fta = gravity_fta(reported)
+lines = ["| Sample, 2024 | ln partner GDP | ln distance | FTA in force | R² | Partners (N) |", "| --- | --- | --- | --- | --- | --- |"]
 for label, (d, b, se, se_r, r2, n) in res.items():
-    lines.append(f"| {label} | {b[1]:.2f} (s.e. {se_r[1]:.2f}) | {b[2]:.2f} (s.e. {se_r[2]:.2f}) | {r2:.2f} | {n} |")
+    lines.append(f"| {label} | {b[1]:.2f} (s.e. {se_r[1]:.2f}) | {b[2]:.2f} (s.e. {se_r[2]:.2f}) | not included | {r2:.2f} | {n} |")
+_, bf, _, sf, r2f, nf = res_fta
+lines.append(f"| Reported exports, with FTA dummy | {bf[1]:.2f} (s.e. {sf[1]:.2f}) | {bf[2]:.2f} (s.e. {sf[2]:.2f}) | "
+             f"{bf[3]:.2f} (s.e. {sf[3]:.2f}) | {r2f:.2f} | {nf} |")
+lines.append("| Class estimate, world bilateral trade (slides) | 1.00 (importer), 1.35 (exporter) | −1.46 (s.e. 0.02) | "
+             "not included | 0.63 | 23,790 pairs |")
 note = ("\n*OLS of ln(Singapore's exports to partner j) on ln(GDP of j, current US$, 2024) and ln(great-circle distance "
-        "between capitals, km). Robust (HC1) standard errors in parentheses. Sources: UN Comtrade; CEPII BACI; World "
-        "Bank WDI (GDP, capital coordinates). Taiwan is excluded (no World Bank GDP).*\n")
+        "between capitals, km). Robust (HC1) standard errors in parentheses. FTA in force = 1 for the "
+        f"{len(fta_iso)} partners covered by an agreement in force in 2024 (team list from Enterprise Singapore and METI). "
+        "The class estimate is the 2024 gravity regression on all country pairs in the EC 391 gravity lecture "
+        "(CEPII and UN Comtrade data). Sources: UN Comtrade; CEPII BACI; World Bank WDI (GDP, capital coordinates). "
+        "Taiwan is excluded (no World Bank GDP).*\n")
+lines = [re.sub(r"(?<=\| )-(?=\d)", "−", ln) for ln in lines]  # true minus signs, as in the class row
 (DERIVED / "ch03_gravity_table.md").write_text("\n".join(lines) + "\n" + note)
 d, b, se, se_r, r2, n = res["Reported exports (incl. re-exports), Comtrade"]
 d = d.assign(adj=np.log(d.x) - b[1] * np.log(d.gdp), iso=d.index)
@@ -257,6 +296,9 @@ scatter(
 eq = (f'<p class="equation">ln X<sub>j</sub> = {b[0]:.2f} + {b[1]:.2f} · ln GDP<sub>j</sub> − {abs(b[2]):.2f} · ln Dist<sub>j</sub>'
       f'<span>robust s.e. {se_r[1]:.2f} and {se_r[2]:.2f} · R² {r2:.2f} · N = {n} · UN Comtrade, 2024</span></p>')
 (DERIVED / "ch03_gravity_eq.md").write_text(eq + "\n")
+N["gravity_fta"] = {"b_gdp": float(bf[1]), "b_dist": float(bf[2]), "b_fta": float(bf[3]), "se_fta": float(sf[3]),
+                    "se_dist": float(sf[2]), "r2": float(r2f), "n": int(nf), "n_fta_partners": len(fta_iso),
+                    "fta_effect_pct": float((np.exp(bf[3]) - 1) * 100)}
 N["gravity"] = {k: {"const": float(v[1][0]), "b_gdp": float(v[1][1]), "b_dist": float(v[1][2]), "se_gdp": float(v[3][1]),
                     "se_dist": float(v[3][2]), "r2": float(v[4]), "n": int(v[5])} for k, v in res.items()}
 resid = d.adj - (b[0] + b[2] * np.log(d.dist))
