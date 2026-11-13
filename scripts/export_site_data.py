@@ -279,34 +279,101 @@ tiles = {
 (ROOT / "data" / "derived" / "tiles.json").write_text(json.dumps(tiles, indent=1, ensure_ascii=False))
 
 # ---------------------------------------------------------------- the one-minute summary after the cover (index)
+# One card per chapter: the number that carries its argument, a line of context and a mini chart drawn from the same
+# series as the chapter's figure (site/data/figs), so the summary never shows a number the chapters do not.
 sr = c6["stock_ranks"]["inward"]
 svc = c3["structure"]["services_share"]
+FIGS = OUT / "figs"
+fig = lambda name: json.loads((FIGS / f"{name}.json").read_text())
+series_of = lambda f, key: next(x for x in f["series"] if x.get("key") == key)
+
+
+def spark(years, vals, color, ref=None, mark=None, zero=False, base0=True, w=168, h=42):
+    """Inline SVG line: the series in the card colour, an optional dashed reference series, first and last year below."""
+    pts = [(y, v) for y, v in zip(years, vals) if v is not None]
+    allv = [v for _, v in pts] + ([v for v in ref if v is not None] if ref else []) + ([0] if zero or base0 else [])  # shares start at zero
+    lo, hi = min(allv), max(allv)
+    span = (hi - lo) or 1
+    x0, x1 = years[0], years[-1]
+    X = lambda y: 4 + (w - 8) * (y - x0) / (x1 - x0)
+    Y = lambda v: 4 + (h - 8) * (1 - (v - lo) / span)
+    line = " ".join(f"{X(y):.1f},{Y(v):.1f}" for y, v in pts)
+    out = [f'<svg viewBox="0 0 {w} {h + 14}" class="sm-svg" aria-hidden="true">']
+    if zero:
+        out.append(f'<line x1="4" x2="{w - 4}" y1="{Y(0):.1f}" y2="{Y(0):.1f}" stroke="currentColor" stroke-opacity=".25" stroke-width="1"/>')
+    if mark:
+        out.append(f'<line x1="{X(mark):.1f}" x2="{X(mark):.1f}" y1="2" y2="{h - 2}" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="2 3"/>')
+    if ref:
+        rl = " ".join(f"{X(y):.1f},{Y(v):.1f}" for y, v in zip(years, ref) if v is not None)
+        out.append(f'<polyline points="{rl}" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1.4" stroke-dasharray="3 3"/>')
+    if base0:  # shares: the area down to zero shows the level honestly
+        area = f"{X(pts[0][0]):.1f},{Y(0):.1f} " + line + f" {X(pts[-1][0]):.1f},{Y(0):.1f}"
+        out.append(f'<polygon points="{area}" fill="{color}" fill-opacity=".14"/>')
+    out.append(f'<polyline points="{line}" fill="none" stroke="{color}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>')
+    ly, lv = pts[-1]
+    out.append(f'<circle cx="{X(ly):.1f}" cy="{Y(lv):.1f}" r="3.4" fill="{color}"/>')
+    out.append(f'<text x="4" y="{h + 12}" class="sm-yr">{x0}</text><text x="{w - 4}" y="{h + 12}" text-anchor="end" class="sm-yr">{x1}</text></svg>')
+    return "".join(out)
+
+
+def bars(labels, vals, color, w=168, h=42):
+    out = [f'<svg viewBox="0 0 {w} {h + 14}" class="sm-svg" aria-hidden="true">']
+    bw, gap, hi = 36, 18, max(vals)
+    for i, (lab, v) in enumerate(zip(labels, vals)):
+        x = 8 + i * (bw + gap); bh = (h - 6) * v / hi
+        out.append(f'<rect x="{x}" y="{h - bh:.1f}" width="{bw}" height="{bh:.1f}" rx="3" fill="{color}" fill-opacity="{0.35 + 0.3 * i}"/>')
+        out.append(f'<text x="{x + bw / 2}" y="{h + 12}" text-anchor="middle" class="sm-yr">{lab}</text>')
+    return "".join(out) + "</svg>"
+
+
+def meter(rank, n, color, w=168, h=42):
+    x = 6 + (w - 12) * (rank - 1) / (n - 1)
+    return (f'<svg viewBox="0 0 {w} {h + 14}" class="sm-svg" aria-hidden="true">'
+            f'<rect x="6" y="{h / 2 - 3}" width="{w - 12}" height="6" rx="3" fill="currentColor" fill-opacity=".14"/>'
+            f'<circle cx="{x:.1f}" cy="{h / 2}" r="7" fill="{color}"/><circle cx="{x:.1f}" cy="{h / 2}" r="12" fill="{color}" fill-opacity=".18"/>'
+            f'<text x="6" y="{h + 12}" class="sm-yr">1st</text><text x="{w - 6}" y="{h + 12}" text-anchor="end" class="sm-yr">{ordinal(n)}</text></svg>')
+
+
+op, bk, st, tf, dd = fig("ch03_openness"), fig("ch05_backward"), fig("ch06_stocks_gdp"), fig("ch07_tariffs"), fig("ch09_did")
+COL = {"ch02_macro": "#4338ca", "ch03_trade": "#e2562b", "ch04_rca": "#15803d", "ch05_gvc": "#7c3aed", "ch06_fdi": "#0369a1",
+       "ch07_policy": "#b45309", "ch09_case": "#be123c"}  # the chapters' accent colours (BANNER_COLORS in site/build.py)
 cards = [
-    ("ch03_trade", "Chapter 3", f"{c3['openness']['2024']['SGP']:.0f}%",
-     f"Trade in goods and services is three times GDP, {ordinal(c3['openness']['rank']['rank'])} of {c3['openness']['rank']['n']} economies."),
-    ("ch04_rca", "Chapter 4", f"{svc['2024']:.0f}%",
+    ("ch02_macro", "02", "Institutions", ordinal(ge["rank"]),
+     f"of {ge['n']} on government effectiveness. Courts and regulators work as an export advantage.",
+     meter(ge["rank"], ge["n"], COL["ch02_macro"]), "World rank"),
+    ("ch03_trade", "03", "Openness", f"{c3['openness']['2024']['SGP']:.0f}%",
+     f"Trade in goods and services is three times GDP, {ordinal(c3['openness']['rank']['rank'])} of {c3['openness']['rank']['n']} economies.",
+     spark(op["years"], series_of(op, "SGP")["values"], COL["ch03_trade"]), "Trade, % of GDP"),
+    ("ch04_rca", "04", "Advantage", f"{svc['2024']:.0f}%",
      f"of exports are services, up from {svc['2004']:.0f}% in 2004, led by transport (RCA "
      f"{c4['rca_sector']['2024']['SGP']['Transport & logistics']:.1f}) and finance "
-     f"({c4['rca_sector']['2024']['SGP']['Finance & insurance']:.1f})."),
-    ("ch02_macro", "Chapter 2", ordinal(ge["rank"]),
-     f"of {ge['n']} on government effectiveness. Courts and regulators work as an export advantage."),
-    ("ch05_gvc", "Chapter 5", f"{c5['backward']['sgp']:.0f}%",
-     "of the value of exports is made abroad. Singapore sits downstream, processing and coordinating Asia's supply chains."),
-    ("ch06_fdi", "Chapter 6", ordinal(sr["rank"]),
-     f"of {sr['n']} for inward FDI stock relative to GDP, much of it passing through holding companies."),
-    ("ch07_policy", "Chapter 7", f"{c7['TM.TAX.MRCH.SM.FN.ZS']['value']:.2f}%",
-     f"average MFN tariff, while {c7['fta']['n']} trade agreements open partners' markets."),
-    ("ch09_case", "Chapter 9", f"{c9['did']['pct'] / 100 + 1:.1f}×",
+     f"({c4['rca_sector']['2024']['SGP']['Finance & insurance']:.1f}).",
+     bars(["2004", "2014", "2024"], [svc["2004"], svc["2014"], svc["2024"]], COL["ch04_rca"]), "Services, % of exports"),
+    ("ch05_gvc", "05", "Value chains", f"{c5['backward']['sgp']:.0f}%",
+     "of the value of exports is made abroad. Singapore sits downstream, processing and coordinating Asia's supply chains.",
+     spark(bk["years"], series_of(bk, "SGP")["values"], COL["ch05_gvc"]), "Foreign value, % of exports"),
+    ("ch06_fdi", "06", "Investment", ordinal(sr["rank"]),
+     f"of {sr['n']} for inward FDI stock relative to GDP, much of it passing through holding companies.",
+     spark(st["years"], series_of(st, "Inward FDI stock")["values"], COL["ch06_fdi"]), "Inward stock, % of GDP"),
+    ("ch07_policy", "07", "Policy", f"{c7['TM.TAX.MRCH.SM.FN.ZS']['value']:.2f}%",
+     f"average MFN tariff, while {c7['fta']['n']} trade agreements open partners' markets.",
+     spark(tf["years"], series_of(tf, "SGP")["values"], COL["ch07_policy"], ref=series_of(tf, "Median")["values"]),
+     "Tariff, dashed: median economy"),
+    ("ch09_case", "09", "Case study", f"{c9['did']['pct'] / 100 + 1:.1f}×",
      f"rise in the pharmaceutical advantage after the 2000 biomedical push, while chips kept an RCA of "
-     f"{c9['rca_groups']['Chips']['2024']:.1f}."),
+     f"{c9['rca_groups']['Chips']['2024']:.1f}.",
+     spark(dd["years"], series_of(dd, "SGP")["values"], COL["ch09_case"], mark=2000, zero=True, base0=False), "Pharma vs. controls, 2000 marked"),
 ]
-cards.sort(key=lambda c: c[1])  # in chapter order
-summary = ('<section class="summary"><p class="sm-eyebrow">Singapore in one minute</p>'
-           '<h2 class="sm-h">A location turned into an economy by institutions and foreign capital</h2><div class="sm-grid">'
-           + "".join(f'<a class="sm" href="#{ch}"><b>{num}</b><span>{txt}</span><i>{lab} &rarr;</i></a>'
-                     for ch, lab, num, txt in cards)
-           + '<a class="sm sm-verdict" href="#conclusion"><b>Verdict</b><span>The region\'s best base for headquarters and high '
-             'value production, and a costly one for everything else.</span><i>Conclusion &rarr;</i></a></div></section>')
+summary = ('<section class="summary"><div class="sm-head"><p class="sm-eyebrow">Singapore in one minute</p>'
+           '<h2 class="sm-h">A location turned into an economy by institutions and foreign capital</h2>'
+           '<p class="sm-dek">One number from each chapter carries the argument. Click a card to read the chapter.</p></div>'
+           '<div class="sm-grid">'
+           + "".join(f'<a class="sm" href="#{ch}" style="--k:{COL[ch]}"><span class="sm-top"><i>{n}</i>{topic}</span>'
+                     f'<b>{num}</b><span class="sm-txt">{txt}</span><span class="sm-chart">{svg}<small>{cap}</small></span></a>'
+                     for ch, n, topic, num, txt, svg, cap in cards)
+           + '<a class="sm sm-verdict" href="#conclusion"><span class="sm-top"><i>&#10003;</i>Verdict</span>'
+             '<b>Base for high value work</b><span class="sm-txt">The region\'s best base for headquarters and high value production, '
+             'and a costly one for everything else.</span><span class="sm-go">Read the recommendation &rarr;</span></a></div></section>')
 (ROOT / "data" / "derived" / "summary.md").write_text(summary + "\n", encoding="utf-8")
 print("wrote data/derived/summary.md")
 print("wrote data/derived/tiles.json")

@@ -589,3 +589,46 @@ body.past-cover #cover *, body.past-cover #cover *::after { animation-play-state
 #cover .card.atlas .controls .mapcap b { color: #fff; font-size: 15px; }
 .card.atlas .controls .mapcap b { color: var(--ink); }
 #cover .card.atlas .controls .mapcap span { color: #9fb6cc; }
+
+/* ---------- one-minute summary, redesigned: chapter colours, a mini chart per card ---------- */
+.spread.wide[data-ch="intro"] { background:
+  radial-gradient(circle at 8% 12%, rgba(226,86,43,.07) 0, transparent 34%),
+  radial-gradient(circle at 92% 88%, rgba(67,56,202,.07) 0, transparent 36%),
+  linear-gradient(180deg, #fbf8f2 0%, #ffffff 100%); }
+.spread.wide[data-ch="intro"] .page.full { height: auto; min-height: min(calc(100vh - var(--tb, 58px)), 760px); justify-content: center; }
+.summary { max-width: 1260px; width: 100%; margin: 0 auto; }
+.summary .sm-head { display: grid; grid-template-columns: minmax(0, 1fr); margin-bottom: 22px; }
+.summary .sm-eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #b45309; }
+.summary .sm-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+.summary .sm-h { margin: 0 0 8px; max-width: 980px; font-size: clamp(28px, 2.8vw, 42px); }
+.summary .sm-dek { margin: 0; font: 15px/1.5 var(--sans); color: var(--muted); }
+.summary .sm-grid { gap: 16px; }
+.summary .sm { --k: var(--ink); position: relative; overflow: hidden; gap: 6px; padding: 16px 18px 12px; border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--k) 16%, #e9e4da); background: #fff;
+  box-shadow: 0 1px 0 rgba(20,33,46,.03), 0 8px 22px -14px color-mix(in srgb, var(--k) 45%, transparent); }
+.summary .sm::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--k); }
+.summary .sm:hover { transform: translateY(-3px); border-color: var(--k); box-shadow: 0 14px 30px -14px color-mix(in srgb, var(--k) 60%, transparent); }
+.summary .sm-top { display: flex; align-items: center; gap: 8px; font: 600 11.5px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--k); margin-top: 4px; }
+.summary .sm-top i { font: 700 11px/1 var(--mono); font-style: normal; color: #fff; background: var(--k); border-radius: 6px; padding: 4px 6px; letter-spacing: 0; }
+.summary .sm b { color: var(--k); font-size: clamp(32px, 2.9vw, 44px); margin-top: 4px; }
+.summary .sm .sm-txt { font: 13.5px/1.45 var(--sans); color: var(--ink-2); flex: 1; }
+.summary .sm-chart { display: block; margin-top: 4px; color: var(--k); }
+.summary .sm-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.summary .sm-yr { font: 500 9.5px var(--mono); fill: #8a93a0; }
+.summary .sm-chart small { display: block; font: 500 10.5px/1.3 var(--sans); color: var(--muted); margin-top: 2px; }
+.summary .sm.sm-verdict { --k: #ffcf7a; background: linear-gradient(160deg, #0f2f4d 0%, #0b2239 60%, #081a2c 100%); border-color: transparent;
+  box-shadow: 0 16px 34px -18px rgba(11,34,57,.8); }
+.summary .sm.sm-verdict::before { background: linear-gradient(90deg, #ffcf7a, #e2562b); }
+.summary .sm.sm-verdict .sm-top { color: #ffcf7a; }
+.summary .sm.sm-verdict .sm-top i { background: #ffcf7a; color: #0b2239; }
+.summary .sm.sm-verdict b { color: #fff; font-size: clamp(24px, 2.1vw, 30px); line-height: 1.15; }
+.summary .sm.sm-verdict .sm-txt { color: #d3dfeb; font-size: 14.5px; }
+.summary .sm-go { font: 600 12.5px var(--sans); color: #ffcf7a; }
+@media (max-width: 999px) { .spread.wide[data-ch="intro"] .page.full { min-height: 0; padding-top: 28px; } }
+.summary .sm { justify-content: flex-start; }
+.summary .sm-yr { font-size: 7px; }
+.summary .sm-chart { margin-top: auto; padding-top: 6px; }
+.summary .sm .sm-txt { flex: 0 0 auto; }
+.summary .sm > span { flex: 0 0 auto; }
+.summary .sm > .sm-chart { margin-top: auto; }
