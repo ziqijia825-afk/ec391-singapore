@@ -117,10 +117,13 @@ export async function sgMap(el, { start = 'country' } = {}) {
   const chart = cardShell(el, spec, {});
   el.classList.add('atlas');
   const segBtn = (v, label) => `<button type="button" data-v="${v}"${v === start ? ' class="on"' : ''}>${label}</button>`;
-  el.querySelector('.controls').innerHTML = `<div class="seg">${segBtn('country', 'The country')}`
-    + `${segBtn('sites', `${a.sites.length} places of trade`)}${segBtn('partners', `${a.partners.length} trading partners`)}</div>`;
+  el.querySelector('.controls').innerHTML = `<div class="seg mode">${segBtn('country', 'The country')}`
+    + `${segBtn('sites', `${a.sites.length} places of trade`)}${segBtn('partners', `${a.partners.length} trading partners`)}</div>`
+    + '<div class="seg flow"><button type="button" data-f="X" class="on">Exports</button><button type="button" data-f="M">Imports</button></div>'
+    + '<div class="mapcap"></div>';
   const panel = el.querySelector('.extra');
-  let mode = start, sel = null;
+  let mode = start, sel = null, flow = 'X';  // flow: X exports, M imports (partners view)
+  const share = (p) => (flow === 'X' ? p.share_x : p.share_m);
   const SETS = { country: a.country || [], sites: a.sites, partners: a.partners };
   const island = () => mode !== 'partners';
   const items = () => SETS[mode];
@@ -134,12 +137,12 @@ export async function sgMap(el, { start = 'country' } = {}) {
   const sub = (x) => {
     if (mode === 'country') return `${x.rows[0][0]} ${x.rows[0][1]}`;
     if (mode === 'sites') return `${x.tag} · ${x.chapter_label}`;
-    const share = x.share_x != null ? `${x.share_x.toFixed(1)}% of exports` : 'largest import source';
-    return [share, x.km ? `${Math.round(x.km).toLocaleString()} km` : '', x.edge ? 'off map' : ''].filter(Boolean).join(' · ');
+    const sh = share(x) != null ? `${share(x).toFixed(1)}% of ${flow === 'X' ? 'exports' : 'imports'}` : '';
+    return [sh, x.km ? `${Math.round(x.km).toLocaleString()} km` : '', x.edge ? 'off map' : ''].filter(Boolean).join(' · ');
   };
   const HEAD = { country: 'The country at a glance', sites: 'Places that matter for trade', partners: 'Twelve largest partners' };
   const HINT = { country: 'Capital and politics, land, people and the link to Malaysia. Pick one here or on the map.',
-    sites: 'Pick a place here or on the map.', partners: 'Line width is the share of Singapore’s exports. Each card compares actual exports with the gravity prediction of Chapter 3.' };
+    sites: 'Pick a place here or on the map.', partners: 'Pick a partner. Each card compares actual exports with the gravity prediction of Chapter 3.' };
   const list = () => `<div class="panel atlas-card atlas-list"><p class="al-h">${HEAD[mode]}</p>
     <ul>${items().map((x) => `<li><button type="button" data-id="${x.id}">${badge(x)}<span><b>${esc(x.name)}</b><small>${esc(sub(x))}</small></span></button></li>`).join('')}</ul>
     <p class="hint">${HINT[mode]}</p></div>`;
@@ -163,7 +166,8 @@ export async function sgMap(el, { start = 'country' } = {}) {
   let zoom = 1;
   const plotEl = el.querySelector('.plot');
   plotEl.insertAdjacentHTML('beforeend', `<div class="mapctl"><button type="button" data-z="in" aria-label="Zoom in">${ICON.plus}</button>`
-    + `<button type="button" data-z="out" aria-label="Zoom out">${ICON.minus}</button><button type="button" data-z="reset" aria-label="Reset view">${ICON.reset}</button></div>`);
+    + `<button type="button" data-z="out" aria-label="Zoom out">${ICON.minus}</button><button type="button" data-z="reset" aria-label="Reset view">${ICON.reset}</button></div>`
+    + '<div class="maplegend"></div>');
   el.querySelectorAll('.mapctl button').forEach((b) => b.addEventListener('click', () => {
     zoom = b.dataset.z === 'in' ? Math.min(zoom * 1.6, 6) : b.dataset.z === 'out' ? Math.max(zoom / 1.6, 1) : 1;
     if (b.dataset.z === 'reset') sel = null;
@@ -210,10 +214,25 @@ export async function sgMap(el, { start = 'country' } = {}) {
         regions: [{ name: 'Singapore', itemStyle: { areaColor: ECON.SGP, borderColor: ECON.SGP } }] };
       o.series.push(water([{ name: 'SOUTH CHINA SEA', value: [114, 13] }, { name: 'INDIAN OCEAN', value: [95.5, -3] },
         { name: 'STRAIT OF MALACCA', value: [97.8, 6] }]));
+      // distance from Singapore, the cost the gravity model of Chapter 3 measures
+      const ring = (km) => Array.from({ length: 91 }, (_, i) => {
+        const b = (i * 4 * Math.PI) / 180, dlat = (km / 111.32) * Math.cos(b);
+        return [SG[0] + ((km / 111.32) * Math.sin(b)) / Math.cos(((SG[1] + dlat) * Math.PI) / 180), SG[1] + dlat];
+      });
+      const RINGS = [1000, 2000, 3000];
+      // each label sits at the first bearing that keeps it on the map, over open water where possible
+      const onMap = ([lon, lat]) => lon > 93.5 && lon < 127 && lat > -10.5 && lat < 25;
+      const LABEL_I = { 1000: 17, 2000: 20, 3000: 8 };  // bearings that avoid partner labels
+      const labelAt = (km) => { const pts = ring(km); for (const i of [LABEL_I[km], 17, 14, 12]) if (onMap(pts[i])) return pts[i]; return pts[45]; };
+      o.series.push({ type: 'lines', coordinateSystem: 'geo', polyline: true, silent: true, z: 1,
+        lineStyle: { color: 'rgba(255,255,255,.34)', width: 1, type: [4, 5] }, data: RINGS.map((km) => ({ coords: ring(km) })) });
+      o.series.push({ type: 'scatter', coordinateSystem: 'geo', silent: true, symbolSize: 0, z: 1,
+        data: RINGS.map((km) => ({ name: `${km.toLocaleString()} km`, value: labelAt(km) })),
+        label: { show: true, formatter: '{b}', fontFamily: 'Inter, sans-serif', fontSize: 10.5, color: 'rgba(214,226,238,.7)' } });
       o.series.push({ type: 'lines', coordinateSystem: 'geo', silent: true, z: 2,
         effect: { show: true, period: 6, trailLength: 0.3, symbol: 'circle', symbolSize: 3, color: '#ffe2a3' },
-        data: a.partners.filter((p) => p.share_x).map((p) => ({ coords: [SG, p.coord],
-          lineStyle: { width: 0.8 + p.share_x / 2.4, color: sel === p.id ? '#ffffff' : 'rgba(242,184,75,.75)',
+        data: a.partners.filter((p) => share(p)).map((p) => ({ coords: [SG, p.coord],
+          lineStyle: { width: 0.8 + share(p) / 2.4, color: sel === p.id ? '#ffffff' : (flow === 'X' ? 'rgba(242,184,75,.75)' : 'rgba(126,200,227,.8)'),
             opacity: sel && sel !== p.id ? 0.18 : 1, curveness: 0.22 } })) });
       o.series.push({ type: 'effectScatter', coordinateSystem: 'geo', z: 3, data: [{ name: 'Singapore', value: SG }], symbolSize: 11,
         rippleEffect: { scale: 3.5, brushType: 'stroke' }, itemStyle: { color: ECON.SGP }, silent: true,
@@ -226,11 +245,44 @@ export async function sgMap(el, { start = 'country' } = {}) {
         label: lab({ fontSize: 11.5 }), emphasis: { scale: 1.4 } });
     }
     chart.setOption(o, true);
+    overlays();
+  };
+  // caption, legend, scale bar and north arrow drawn over the map
+  const overlays = () => {
+    const word = flow === 'X' ? 'exports' : 'imports';
+    const total = a.partners.reduce((t, p) => t + (share(p) || 0), 0);
+    const CAP = {
+      partners: [`Singapore's ${flow === 'X' ? 'exports to' : 'imports from'} its twelve largest partners, 2024`,
+        `Together ${total.toFixed(0)}% of all ${word} · rings at 1,000, 2,000 and 3,000 km from Singapore`],
+      country: ['The country', 'Capital and politics, land, people and the link to Malaysia'],
+      sites: ['Seven places that matter for trade', 'Each tied to the chapter that tests it'],
+    };
+    const [t, s2] = CAP[mode];
+    el.querySelector('.mapcap').innerHTML = `<b>${esc(t)}</b><span>${esc(s2)}</span>`;
+    el.querySelector('.seg.flow').hidden = mode !== 'partners';
+    // scale bar measured on the map itself: the pixel length of a fixed distance east of Singapore
+    const km = island() ? 5 : 1000;
+    let px = 0;
+    try {
+      const p0 = chart.convertToPixel({ geoIndex: 0 }, SG);
+      const p1 = chart.convertToPixel({ geoIndex: 0 }, [SG[0] + km / (111.32 * Math.cos((SG[1] * Math.PI) / 180)), SG[1]]);
+      px = Math.abs(p1[0] - p0[0]);
+    } catch (e) { px = 0; }
+    const sample = (v) => `<span class="lg-line"><i style="height:${(0.8 + v / 2.4).toFixed(1)}px;background:${flow === 'X' ? '#f2b84b' : '#7ec8e3'}"></i>${v}%</span>`;
+    const key = mode === 'partners'
+      ? `<div class="lg-row">${sample(5)}${sample(10)}${sample(15)}<em>line width = share of ${word}</em></div><div class="lg-row"><em>↗ partner beyond the map</em></div>`
+      : '';
+    const bar = px > 4 ? `<div class="lg-row lg-scale"><span class="lg-n" aria-label="North">N<b>↑</b></span><span class="lg-bar"><i style="width:${px.toFixed(0)}px"></i>${km.toLocaleString()} km</span></div>` : '';
+    plotEl.querySelector('.maplegend').innerHTML = key + bar;
   };
   chart.on('click', (p) => { if (p.seriesType === 'scatter' && p.data?.id && p.data.id !== sel) { sel = p.data.id; draw(); show(); } });
-  el.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
-    el.querySelectorAll('.seg button').forEach((x) => x.classList.toggle('on', x === b));
+  el.querySelectorAll('.seg.mode button').forEach((b) => b.addEventListener('click', () => {
+    el.querySelectorAll('.seg.mode button').forEach((x) => x.classList.toggle('on', x === b));
     mode = b.dataset.v; sel = null; zoom = 1; draw(); show();
+  }));
+  el.querySelectorAll('.seg.flow button').forEach((b) => b.addEventListener('click', () => {
+    el.querySelectorAll('.seg.flow button').forEach((x) => x.classList.toggle('on', x === b));
+    flow = b.dataset.f; draw(); show();
   }));
   draw(); show();
   new ResizeObserver(() => draw()).observe(el.querySelector('.plot'));  // re-fit the map when its box settles

@@ -115,7 +115,9 @@ structure, data routes and methods only; never their text, charts or numbers (th
   year). `run_all.py` reruns everything and builds the site.
 - Site: `site/build.py` builds `_site/index.html`, an editorial country profile modelled on the Growth Lab and OEC
   profiles (Nov 13, after the picture book was dropped): a cover that is the interactive atlas (title and six ranked
-  KPIs on the left, `sgMap` on the right opening on the twelve partners' trade lanes, with the country and places views), then one screen per question, made by `paginate()`: text column on the left (question, bold answer,
+  KPIs on the left, `sgMap` on the right opening on the twelve partners' trade lanes, with the country and places views,
+  a caption per view, an exports/imports switch with the twelve partners' total share, a line-width legend, distance
+  rings at 1,000/2,000/3,000 km, and a scale bar and north arrow measured on the map), then one screen per question, made by `paginate()`: text column on the left (question, bold answer,
   short paragraphs, expandable details, previous/next section links), a sticky full-height chart on the right,
   full-width screens for interactive components, single-column prose screens, navy chapter openers with contents and
   three number cards. `js/story.js` renders charts lazily, follows the reader (chapter tab, address, progress bar) and

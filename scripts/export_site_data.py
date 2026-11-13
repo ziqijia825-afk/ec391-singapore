@@ -478,7 +478,7 @@ for iso, (pos, edge) in partner_pos.items():
         rows.append([f"{c6['outward_2024']['top'][OUT_NAME[iso]]:.1f}%", "of Singapore's FDI abroad, 2024", "SingStat"])
     partners.append({"id": iso, "name": p.get("name") or NAMES.get(iso, iso), "coord": pos, "edge": edge,
                      "km": p.get("km"), "fta": p.get("fta"), "rows": rows[:5], "note": pnotes[iso],
-                     "share_x": p.get("share_x", {}).get("2024"), "chapter": "ch03_trade", "chapter_label": "Chapter 3",
+                     "share_x": p.get("share_x", {}).get("2024"), "share_m": p.get("share_m", {}).get("2024"), "chapter": "ch03_trade", "chapter_label": "Chapter 3",
                      "section": "Does its trade follow gravity?", "tag": "Gravity model"})
 # the country itself: capital and politics, land, people and the link to Malaysia (Chapter 1's profile on the map)
 kf = json.loads((OUT / "kpis.json").read_text())["facts"]
